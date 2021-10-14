@@ -57,15 +57,15 @@ function scr_build_the_path(xgoal, ygoal){
 	                    }
 	                                    else {
 											/// Check if long horizontal jump possible
-											//if ds_grid_value_exists(ds_gridpathfinding, xgoal-3, ygoal, xgoal+3, ygoal, i)
-											//{
-											//	xgoal = ds_grid_value_x(ds_gridpathfinding, xgoal-3, ygoal, xgoal+3, ygoal, i);
-											//	if ds_grid_get (ds_gridpathfinding, x_previous + sign(xgoal-x_previous), ygoal) == -1 /// Edge case: sides have no collision, check if enemy could really jump
-						                    //    {
-						                    //    ygoal = ds_grid_value_y(ds_gridpathfinding, x_previous-3,ygoal, x_previous+3,ygoal,i);
-						                    //    path_add_point(path_building, xgoal*oGrid.cell_width + (oGrid.cell_width/2), ygoal*oGrid.cell_height +(oGrid.cell_height/2), 100);
-						                    //    }
-											//} else {
+											if ds_grid_value_exists(ds_gridpathfinding, xgoal-3, ygoal, xgoal+3, ygoal, i)
+											{
+												xgoal = ds_grid_value_x(ds_gridpathfinding, xgoal-3, ygoal, xgoal+3, ygoal, i);
+												if ds_grid_get (ds_gridpathfinding, x_previous + sign(xgoal-x_previous), ygoal) == -1 /// Edge case: sides have no collision, check if enemy could really jump
+						                        {
+						                        ygoal = ds_grid_value_y(ds_gridpathfinding, x_previous-3,ygoal, x_previous+3,ygoal,i);
+						                        path_add_point(path_building, xgoal*oGrid.cell_width + (oGrid.cell_width/2), ygoal*oGrid.cell_height +(oGrid.cell_height/2), 100);
+						                        }
+											} else {
 											
 												/// When enemy fall
 		                                            {
@@ -83,7 +83,7 @@ function scr_build_the_path(xgoal, ygoal){
 		                                                   ygoal = ds_grid_value_y(ds_gridpathfinding, x_previous-1,ygoal-n, x_previous+1,ygoal,i);
 		                                                   path_add_point(path_building, xgoal*oGrid.cell_width + (oGrid.cell_width/2), ygoal*oGrid.cell_height +(oGrid.cell_height/2), 100);
 		                                                }
-											//}
+											}
 	                                    }
 	                }
 	}

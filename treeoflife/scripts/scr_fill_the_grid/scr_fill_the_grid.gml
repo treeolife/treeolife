@@ -70,13 +70,19 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 						ds_list_add (point_list, ay-1);
 			        }
 					
-					/// TODO: Can include check for bigger horizontal jumps
 					///Check if the enemy can jump horizontally (jump over a void). (Right side)
 					if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay+1)==-2 {
 				        ds_grid_set(ds_gridpathfinding,ax+2,ay,i);
 				        ds_list_add (point_list, ax + 2);
 				        ds_list_add (point_list, ay);
 					}
+					else
+					///Check if the enemy can big jump horizontally (over big void). (Right side)
+						if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+3,ay+1)==-2 && ds_grid_get(ds_gridpathfinding,ax+3,ay)==-1 {
+							ds_grid_set(ds_gridpathfinding,ax+3,ay,i);
+							ds_list_add (point_list, ax+3);
+							ds_list_add (point_list, ay);
+						}
 
 					/// Check if the enemy can fall (Right side).
 					if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay+1)==-1 {
@@ -119,22 +125,20 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 						ds_list_add (point_list, ay-1);
 					}
 					
-					/// TODO: Can include check for bigger horizontal jumps
 					///Check if the enemy can jump horizontally (over a void). (left side)
 					if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay+1)==-2{
 						ds_grid_set(ds_gridpathfinding,ax-2,ay,i);
 						ds_list_add (point_list, ax-2);
 						ds_list_add (point_list, ay);
 					} 
-					//else {
+					else
 						
 						///Check if the enemy can big jump horizontally (over big void). (left side)
-						//if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-3,ay+1)==-2 && ds_grid_get(ds_gridpathfinding,ax-3,ay)==-1 {
-						//	ds_grid_set(ds_gridpathfinding,ax-3,ay,i);
-						//	ds_list_add (point_list, ax-3);
-						//	ds_list_add (point_list, ay);
-						//}
-					//}
+						if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-3,ay+1)==-2 && ds_grid_get(ds_gridpathfinding,ax-3,ay)==-1 {
+							ds_grid_set(ds_gridpathfinding,ax-3,ay,i);
+							ds_list_add (point_list, ax-3);
+							ds_list_add (point_list, ay);
+						}
 
 					/// Check if the enemy can fall (left side).
 					if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay+1)==-1 {
