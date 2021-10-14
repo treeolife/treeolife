@@ -22,7 +22,7 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 	for (var i=1; i<200; i+=1) {
 	    if path_found == 1 {
 		    ds_list_destroy(point_list); // We don't need the list anymore because we find a path.
-		    ds_grid_destroy(ds_gridpathfinding); /// Grid has to be delete. We keep it only for debuger purposes
+		    //ds_grid_destroy(ds_gridpathfinding); /// Grid has to be delete. We keep it only for debuger purposes
 		    return path_found ;
 			break ;
 	    }
@@ -56,7 +56,8 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 			} else {   /// If the enemy can go to the right, the other movement will be impossible. So we can put a else to skip all the following code
 
 				/// Check if we can go jump one block vertically (right side)
-				if (ds_grid_get(ds_gridpathfinding,ax+1,ay)==-2 && ds_grid_get(ds_gridpathfinding,ax+1,ay-1)==-1) {
+				if (ds_grid_get(ds_gridpathfinding,ax+1,ay)==-2 && ds_grid_get(ds_gridpathfinding,ax+1,ay-1)==-1
+				&& ds_grid_get(ds_gridpathfinding,ax,ay-1)==-1) {
 		            ds_grid_set(ds_gridpathfinding,ax+1,ay-1,i);
 		            ds_list_add (point_list, ax + 1);
 		            ds_list_add (point_list, ay-1);
@@ -64,20 +65,30 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 
 					/// TODO: Can include check for bigger diagonal jumps
 					/// Check if the enemy can do a diagonal jump (Big Jump). (Right side);
-					if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay)==-2 && ds_grid_get(ds_gridpathfinding,ax+2,ay-1)==-1 {
+					if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay)==-2 && ds_grid_get(ds_gridpathfinding,ax+2,ay-1)==-1 
+					/// Three tile clearance for jump
+					&& ds_grid_get(ds_gridpathfinding,ax,ay-2)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay-2)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay-2)==-1
+					{
 					    ds_grid_set(ds_gridpathfinding,ax+2,ay-1,i);
 					    ds_list_add (point_list, ax + 2);
 						ds_list_add (point_list, ay-1);
 			        }
 					
-					///Check if the enemy can jump horizontally (jump over a void). (Right side)
-					if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay+1)==-2 {
+					/// Check if the enemy can jump horizontally (jump over a void). (Right side)
+					if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay+1)==-2 
+					/// Check above 3 tiles are empty for jump
+					&& ds_grid_get(ds_gridpathfinding,ax,ay+1)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay+1)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay+1)==-1
+					{
 				        ds_grid_set(ds_gridpathfinding,ax+2,ay,i);
 				        ds_list_add (point_list, ax + 2);
 				        ds_list_add (point_list, ay);
 					} else
 					///Check if the enemy can big jump horizontally (over big void). (Right side)
-					if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+3,ay+1)==-2 && ds_grid_get(ds_gridpathfinding,ax+3,ay)==-1 {
+					if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+3,ay+1)==-2 && ds_grid_get(ds_gridpathfinding,ax+3,ay)==-1 
+					/// Check above 3 tiles are empty for jump
+					&& ds_grid_get(ds_gridpathfinding,ax,ay+1)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay+1)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay+1)==-1
+					&& ds_grid_get(ds_gridpathfinding,ax+3,ay+1)==-1
+					{
 						ds_grid_set(ds_gridpathfinding,ax+3,ay,i);
 						ds_list_add (point_list, ax+3);
 						ds_list_add (point_list, ay);
@@ -85,19 +96,33 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 
 					/// Check if the enemy can fall (Right side).
 					if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay+1)==-1 {
-		                {
-		                do {
-		                       n=n+1 ;
-		                       a = ds_grid_get(ds_gridpathfinding,ax+1,ay+n);
-							} 
-							until (a==-2) ||  (ay+n == ds_grid_height(ds_gridpathfinding))
-						}
-                    
-				        if ds_grid_get(ds_gridpathfinding,ax+1,ay+n-1)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay+n)== -2 {
-				            ds_grid_set(ds_gridpathfinding,ax+1,ay+n-1,i);
-				            ds_list_add (point_list, ax + 1);
-				            ds_list_add (point_list, ay+n-1);
-				        }
+						
+						///// Check if the enemy can fall far (Right side).
+						//if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay+1)==-1 {
+						var find_diagonal_fall = false;
+			                {
+			                do {
+			                       n=n+1 ;
+			                       a = ds_grid_get(ds_gridpathfinding,ax+1,ay+n);
+								   
+								   /// Check if the enemy can fall far (Right side). Check four tiles.
+									if ds_grid_get(ds_gridpathfinding,ax+2,ay+n-2)==-1 
+									&& ds_grid_get(ds_gridpathfinding,ax+2,ay+n-1)==-1 
+									&& ds_grid_get(ds_gridpathfinding,ax+2,ay+n)==-2 {
+										find_diagonal_fall = true;
+										ds_grid_set(ds_gridpathfinding,ax+2,ay+n-1,i);
+							            ds_list_add (point_list, ax + 2);
+							            ds_list_add (point_list, ay+n-1);
+									}
+								} 
+								until (a==-2) || (ay+n == ds_grid_height(ds_gridpathfinding)) || find_diagonal_fall
+							}
+					        if !find_diagonal_fall && ds_grid_get(ds_gridpathfinding,ax+1,ay+n-1)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay+n)== -2 {
+					            ds_grid_set(ds_gridpathfinding,ax+1,ay+n-1,i);
+					            ds_list_add (point_list, ax + 1);
+					            ds_list_add (point_list, ay+n-1);
+					        }
+						//}
 					}
 				}
 			}
@@ -118,21 +143,30 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 				} else {
 					
 					/// Check if the enemy can do a diagonal jump (Big Jump). (left side)
-					if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay)==-2 && ds_grid_get(ds_gridpathfinding,ax-2,ay-1)==-1{
+					if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay)==-2 && ds_grid_get(ds_gridpathfinding,ax-2,ay-1)==-1
+					/// Three tile clearance for jump
+					&& ds_grid_get(ds_gridpathfinding,ax-2,ay-2)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay-2)==-1 && ds_grid_get(ds_gridpathfinding,ax,ay-2)==-1
+					{
 						ds_grid_set(ds_gridpathfinding,ax-2,ay-1,i);
 						ds_list_add (point_list, ax-2);
 						ds_list_add (point_list, ay-1);
 					}
 					
 					///Check if the enemy can jump horizontally (over a void). (left side)
-					if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay+1)==-2{
+					if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay+1)==-2
+					/// Check above 3 tiles are empty for jump
+					&& ds_grid_get(ds_gridpathfinding,ax,ay+1)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay+1)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay+1)==-1{
 						ds_grid_set(ds_gridpathfinding,ax-2,ay,i);
 						ds_list_add (point_list, ax-2);
 						ds_list_add (point_list, ay);
 					} 
 					else
 					///Check if the enemy can big jump horizontally (over big void). (left side)
-					if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-3,ay+1)==-2 && ds_grid_get(ds_gridpathfinding,ax-3,ay)==-1 {
+					if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-3,ay+1)==-2 && ds_grid_get(ds_gridpathfinding,ax-3,ay)==-1 
+					/// Check above 3 tiles are empty for big jump
+					&& ds_grid_get(ds_gridpathfinding,ax,ay+1)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay+1)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay+1)==-1
+					&& ds_grid_get(ds_gridpathfinding,ax-3,ay+1)==-1
+					{
 						ds_grid_set(ds_gridpathfinding,ax-3,ay,i);
 						ds_list_add (point_list, ax-3);
 						ds_list_add (point_list, ay);

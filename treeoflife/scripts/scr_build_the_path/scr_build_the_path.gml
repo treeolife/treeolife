@@ -3,12 +3,14 @@
 /// @param {var} ygoal Y coordinate where we want to go
 function scr_build_the_path(xgoal, ygoal){
 	path_building = path_add(); /// Create a path where we will add all the points
-	var value;   /// Value in the enemy grid
-	var x_previous ; /// Coordinate of X previous
+	var value;		/// Value in the enemy grid
+	var x_previous; /// Coordinate of X previous
 	var x_two_previous; /// Coordinate of X two previous
-	var a = -1 ;  /// Use when enemy falls. We will store data from grid_pathfinding
-	var b = -1 ;  /// Use when enemy falls. We will store data from grid_pathfinding
-	var n = 0 ;  /// Use when enemy falls.
+	var a = -1;		/// Use when enemy falls. We will store data from grid_pathfinding
+	var b = -1;		/// Use when enemy falls. We will store data from grid_pathfinding
+	var c = -1;		/// Use when enemy falls.
+	var d = -1;		/// Use when enemy falls.
+	var n = 0 ;		/// Use when enemy falls.
 
 	path_add_point(path_building, xgoal*oGrid.cell_width + (oGrid.cell_width/2), ygoal*oGrid.cell_height +(oGrid.cell_height/2), 100); /// Initialize the first point of the path
 	value = ds_grid_get(ds_gridpathfinding,xgoal,ygoal) ; /// Value in grid pathfinding of the goal position
@@ -74,9 +76,19 @@ function scr_build_the_path(xgoal, ygoal){
 		                                               n=n+1 ;
 		                                               a= ds_grid_get(ds_gridpathfinding,x_previous-1,ygoal-n);
 		                                               b= ds_grid_get(ds_gridpathfinding,x_previous+1,ygoal-n);
+													   c= ds_grid_get(ds_gridpathfinding,x_previous-2,ygoal-n);
+													   d= ds_grid_get(ds_gridpathfinding,x_previous+2,ygoal-n);
 		                                               }
-		                                                until (a==i) || (b==i) || ((ygoal-n) < 0)
+		                                                until (a==i) || (b==i) || ((ygoal-n) < 0) || (c==i) || (d==i)
 		                                            }
+														/// long diagonal fall
+														if ds_grid_value_exists(ds_gridpathfinding, x_previous-2,ygoal-n, x_previous+2,ygoal-n, i)
+		                                                {
+		                                                   xgoal = ds_grid_value_x(ds_gridpathfinding, x_previous-2,ygoal-n, x_previous+2,ygoal,i);
+		                                                   ygoal = ds_grid_value_y(ds_gridpathfinding, x_previous-2,ygoal-n, x_previous+2,ygoal,i);
+		                                                   path_add_point(path_building, xgoal*oGrid.cell_width + (oGrid.cell_width/2), ygoal*oGrid.cell_height +(oGrid.cell_height/2), 100);
+		                                                } else /// end of long diagonal fall
+														///
 		                                                if ds_grid_value_exists(ds_gridpathfinding, x_previous-1,ygoal-n, x_previous+1,ygoal-n, i)
 		                                                {
 		                                                   xgoal = ds_grid_value_x(ds_gridpathfinding, x_previous-1,ygoal-n, x_previous+1,ygoal,i);

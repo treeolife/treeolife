@@ -9,7 +9,7 @@ function scr_follow_the_path(nPath) {
 	if action == 0
 	{
 	    /// Check if the next point is to move left or right
-	    if path_get_point_y(nPath, path_point) == path_get_point_y(nPath, path_point+1) && path_get_point_x(nPath, path_point) + oGrid.cell_width*path_direction == path_get_point_x(nPath, path_point+1)
+	    if path_get_point_y(nPath, path_point) == path_get_point_y(nPath, path_point+1) && path_get_point_x(nPath, path_point) + (oGrid.cell_width)*path_direction == path_get_point_x(nPath, path_point+1)
 	    {
 	    speed_h = max_speed * path_direction ;
 	    action = 1;
@@ -17,6 +17,8 @@ function scr_follow_the_path(nPath) {
 	     else {
 	            /// Check if the next point is horizontal jump / jump over a void.
 	            if path_get_point_y(nPath, path_point) == path_get_point_y(nPath, path_point+1) && path_get_point_x(nPath, path_point) + 2*oGrid.cell_width*path_direction == path_get_point_x(nPath, path_point+1)
+				/// Check top 3 tiles for horizontal jump over / over a void is empty.
+				/// TODO
 	            {
 	            speed_h = max_speed * path_direction ;
 	            speed_v = jump_height *0.7 ;
@@ -24,6 +26,8 @@ function scr_follow_the_path(nPath) {
 	            }
 				/// Check if the next point is big horizontal jump.
 	            if path_get_point_y(nPath, path_point) == path_get_point_y(nPath, path_point+1) && path_get_point_x(nPath, path_point) + 3*oGrid.cell_width*path_direction == path_get_point_x(nPath, path_point+1)
+				/// Check top 4 tiles for big horizontal jump are empty.
+				//&& checkAboveClearanceTiles(path_get_point_x(nPath, path_point+1), path_get_point_y(nPath, path_point+1), path_direction, 4)
 	            {
 	            speed_h = max_speed * path_direction ;
 	            speed_v = jump_height *1.1 ;
@@ -33,7 +37,7 @@ function scr_follow_the_path(nPath) {
 	                    /// Check if the next point is to fall
 	                    if path_get_point_y(nPath, path_point) < path_get_point_y(nPath, path_point+1)
 	                    {
-	                    speed_h = max_speed * path_direction ;
+	                    speed_h = max_speed * path_direction;
 	                        if x <= path_get_point_x(nPath, path_point+1) && path_get_point_x(nPath, path_point+1) <(x + speed_h*path_direction)
 	                        {
 	                        action = 1 ;
@@ -42,7 +46,7 @@ function scr_follow_the_path(nPath) {
 	                        }
 	                    }
 	                        else {
-	                                /// Check if the next point is a diagonal jum /big jump
+	                                /// Check if the next point is a diagonal jump / big jump
 	                                if path_get_point_x(nPath, path_point) == path_get_point_x(nPath, path_point+1)-oGrid.cell_width*2*path_direction && path_get_point_y(nPath, path_point) == path_get_point_y(nPath, path_point+1)+oGrid.cell_height
 	                                {
 	                                speed_h = max_speed * path_direction * 0.625 ;
