@@ -22,7 +22,7 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 	for (var i=1; i<200; i+=1) {
 	    if path_found == 1 {
 		    ds_list_destroy(point_list); // We don't need the list anymore because we find a path.
-		    //ds_grid_destroy(ds_gridpathfinding); /// Grid has to be delete. We keep it only for debuger purposes
+		    if (!debugger_mode) ds_grid_destroy(ds_gridpathfinding); /// Grid has to be delete. We keep it only for debuger purposes
 		    return path_found ;
 			break ;
 	    }
@@ -77,7 +77,7 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 					/// Check if the enemy can jump horizontally (jump over a void). (Right side)
 					if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay+1)==-2 
 					/// Check above 3 tiles are empty for jump
-					&& ds_grid_get(ds_gridpathfinding,ax,ay+1)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay+1)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay+1)==-1
+					&& ds_grid_get(ds_gridpathfinding,ax,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay-1)==-1
 					{
 				        ds_grid_set(ds_gridpathfinding,ax+2,ay,i);
 				        ds_list_add (point_list, ax + 2);
@@ -85,9 +85,9 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 					} else
 					///Check if the enemy can big jump horizontally (over big void). (Right side)
 					if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+3,ay+1)==-2 && ds_grid_get(ds_gridpathfinding,ax+3,ay)==-1 
-					/// Check above 3 tiles are empty for jump
-					&& ds_grid_get(ds_gridpathfinding,ax,ay+1)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay+1)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay+1)==-1
-					&& ds_grid_get(ds_gridpathfinding,ax+3,ay+1)==-1
+					/// Check above 4 tiles are empty for jump
+					&& ds_grid_get(ds_gridpathfinding,ax,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay-1)==-1
+					&& ds_grid_get(ds_gridpathfinding,ax+3,ay-1)==-1
 					{
 						ds_grid_set(ds_gridpathfinding,ax+3,ay,i);
 						ds_list_add (point_list, ax+3);
@@ -155,7 +155,7 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 					///Check if the enemy can jump horizontally (over a void). (left side)
 					if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay+1)==-2
 					/// Check above 3 tiles are empty for jump
-					&& ds_grid_get(ds_gridpathfinding,ax,ay+1)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay+1)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay+1)==-1{
+					&& ds_grid_get(ds_gridpathfinding,ax,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay-1)==-1{
 						ds_grid_set(ds_gridpathfinding,ax-2,ay,i);
 						ds_list_add (point_list, ax-2);
 						ds_list_add (point_list, ay);
@@ -163,9 +163,9 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 					else
 					///Check if the enemy can big jump horizontally (over big void). (left side)
 					if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-3,ay+1)==-2 && ds_grid_get(ds_gridpathfinding,ax-3,ay)==-1 
-					/// Check above 3 tiles are empty for big jump
-					&& ds_grid_get(ds_gridpathfinding,ax,ay+1)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay+1)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay+1)==-1
-					&& ds_grid_get(ds_gridpathfinding,ax-3,ay+1)==-1
+					/// Check above 4 tiles are empty for big jump
+					&& ds_grid_get(ds_gridpathfinding,ax,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay-1)==-1
+					&& ds_grid_get(ds_gridpathfinding,ax-3,ay-1)==-1
 					{
 						ds_grid_set(ds_gridpathfinding,ax-3,ay,i);
 						ds_list_add (point_list, ax-3);
