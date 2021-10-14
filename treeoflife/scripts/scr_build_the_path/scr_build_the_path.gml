@@ -2,8 +2,6 @@
 /// @param {var} xgoal X coordinates where we want to go
 /// @param {var} ygoal Y coordinate where we want to go
 function scr_build_the_path(xgoal, ygoal){
-	//var xgoal = argument0;   /// X coordinates where we want to go
-	//var ygoal = argument1;  /// Y coordinate where we want to go
 	path_building = path_add(); /// Create a path where we will add all the points
 	var value;   /// Value in the enemy grid
 	var x_previous ; /// Coordinate of X previous
