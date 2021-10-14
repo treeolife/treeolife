@@ -24,7 +24,7 @@ if path_exists(path_building)
 // Apply gravity
 if !place_meeting (x, y+1, oCollision)
     {
-        speed_v = speed_v + game_gravity ;
+        speed_v += game_gravity ;
     }
 
 // Check if there is a collsiion

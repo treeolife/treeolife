@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sAir",
-    "path": "sprites/sAir/sAir.yy",
+    "name": "sLand",
+    "path": "sprites/sLand/sLand.yy",
   },
   "solid": false,
   "visible": true,
@@ -23,9 +23,7 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
@@ -33,7 +31,7 @@
     "path": "folders/Pollution.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oAir",
+  "name": "oLand",
   "tags": [],
   "resourceType": "GMObject",
 }

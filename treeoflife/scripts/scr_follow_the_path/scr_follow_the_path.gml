@@ -21,7 +21,7 @@ function scr_follow_the_path(nPath) {
 				/// TODO
 	            {
 	            speed_h = max_speed * path_direction ;
-	            speed_v = jump_height *0.7 ;
+	            speed_v = jump_height * 0.7; // 0.7 Too fast may fall off short platforms
 	            action = 1;
 	            }
 				/// Check if the next point is big horizontal jump.
@@ -30,7 +30,7 @@ function scr_follow_the_path(nPath) {
 				//&& checkAboveClearanceTiles(path_get_point_x(nPath, path_point+1), path_get_point_y(nPath, path_point+1), path_direction, 4)
 	            {
 	            speed_h = max_speed * path_direction ;
-	            speed_v = jump_height *1.1 ;
+	            speed_v = jump_height *1.0 ;
 	            action = 1;
 	            }
 	                else {
@@ -49,8 +49,8 @@ function scr_follow_the_path(nPath) {
 	                                /// Check if the next point is a diagonal jump / big jump
 	                                if path_get_point_x(nPath, path_point) == path_get_point_x(nPath, path_point+1)-oGrid.cell_width*2*path_direction && path_get_point_y(nPath, path_point) == path_get_point_y(nPath, path_point+1)+oGrid.cell_height
 	                                {
-	                                speed_h = max_speed * path_direction * 0.625 ;
-	                                speed_v = jump_height * 1.1 ;
+	                                speed_h = max_speed * path_direction * 0.7 ; // 0.625 was too slow
+	                                speed_v = jump_height * 1.0 ;
 	                                action = 1;
 	                                }
 	                                    else {
@@ -60,7 +60,7 @@ function scr_follow_the_path(nPath) {
 	                                            speed_h = max_speed * path_direction / 2;
 	                                                if place_meeting(x, y+1, oCollision) && jump_action == 0
 	                                                {
-	                                                speed_v = jump_height * 0.9 ;
+	                                                speed_v = jump_height * 1.0 ;
 	                                                jump_action = 1 ;
 	                                                speed_h = max_speed * path_direction ;
 	                                                }

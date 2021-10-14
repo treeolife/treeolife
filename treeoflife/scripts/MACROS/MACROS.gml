@@ -1,1 +1,1 @@
-#macro debugger_mode false
+#macro debugger_mode true
