@@ -65,7 +65,7 @@ function scr_build_the_path(xgoal, ygoal){
 						                    //    ygoal = ds_grid_value_y(ds_gridpathfinding, x_previous-3,ygoal, x_previous+3,ygoal,i);
 						                    //    path_add_point(path_building, xgoal*oGrid.cell_width + (oGrid.cell_width/2), ygoal*oGrid.cell_height +(oGrid.cell_height/2), 100);
 						                    //    }
-											//} 
+											//} else {
 											
 												/// When enemy fall
 		                                            {
@@ -83,7 +83,8 @@ function scr_build_the_path(xgoal, ygoal){
 		                                                   ygoal = ds_grid_value_y(ds_gridpathfinding, x_previous-1,ygoal-n, x_previous+1,ygoal,i);
 		                                                   path_add_point(path_building, xgoal*oGrid.cell_width + (oGrid.cell_width/2), ygoal*oGrid.cell_height +(oGrid.cell_height/2), 100);
 		                                                }
-	                                        }
+											//}
+	                                    }
 	                }
 	}
 

@@ -128,12 +128,12 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 					} 
 					//else {
 						
-					//	///Check if the enemy can big jump horizontally (over big void). (left side)
-					//	if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-3,ay+1)==-2 && ds_grid_get(ds_gridpathfinding,ax-,ay)==-1{
-					//		ds_grid_set(ds_gridpathfinding,ax-3,ay,i);
-					//		ds_list_add (point_list, ax-3);
-					//		ds_list_add (point_list, ay);
-					//	}
+						///Check if the enemy can big jump horizontally (over big void). (left side)
+						//if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-3,ay+1)==-2 && ds_grid_get(ds_gridpathfinding,ax-3,ay)==-1 {
+						//	ds_grid_set(ds_gridpathfinding,ax-3,ay,i);
+						//	ds_list_add (point_list, ax-3);
+						//	ds_list_add (point_list, ay);
+						//}
 					//}
 
 					/// Check if the enemy can fall (left side).

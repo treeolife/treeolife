@@ -22,6 +22,13 @@ function scr_follow_the_path(nPath) {
 	            speed_v = jump_height *0.7 ;
 	            action = 1;
 	            }
+				/// Check if the next point is big horizontal jump.
+	            //else if path_get_point_y(nPath, path_point) == path_get_point_y(nPath, path_point+1) && path_get_point_x(nPath, path_point) + 3*oGrid.cell_width*path_direction == path_get_point_x(nPath, path_point+1)
+	            //{
+	            //speed_h = max_speed * path_direction ;
+	            //speed_v = jump_height *1.1 ;
+	            //action = 1;
+	            //}
 	                else {
 	                    /// Check if the next point is to fall
 	                    if path_get_point_y(nPath, path_point) < path_get_point_y(nPath, path_point+1)
