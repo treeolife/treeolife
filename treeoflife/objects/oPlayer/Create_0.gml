@@ -2,7 +2,7 @@
 
 speed_v = 0;
 speed_h = 0;
-#region Legacy settings
+#region Legacy settings (not in use)
 	#region Speedier settings, works well
 	//max_speed = 4;
 	//game_gravity = 1;
@@ -19,7 +19,6 @@ speed_h = 0;
 	#endregion
 #endregion
 #region Original settings from Shaun Spalding
-// Shaun spaulding
 //max_speed = 3.5;
 //game_gravity = 0.4;
 //acceleration = 0.3;
@@ -28,7 +27,7 @@ speed_h = 0;
 #endregion
 #region Current settings
 max_speed = 3.5;
-game_gravity = 0.7;
+game_gravity = 0.4;
 acceleration = 0.3;
 game_friction = 0.1;
 jump_height = -7;
