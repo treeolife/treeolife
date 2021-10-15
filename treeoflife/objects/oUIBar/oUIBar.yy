@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sGUI",
-    "path": "sprites/sGUI/sGUI.yy",
+    "name": "sNothing",
+    "path": "sprites/sNothing/sNothing.yy",
   },
   "solid": false,
   "visible": true,
