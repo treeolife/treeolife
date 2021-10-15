@@ -11,6 +11,7 @@ var GUI_Y = (window_get_height()/2 - height/2)
 
 if (showGUI) {
 	_xx = GUI_X;
+	//show_debug_message("drawing at" + string(GUI_X) + " " + string(GUI_Y));
 	draw_sprite_stretched(sBox, 0, GUI_X, GUI_Y, width, height);
 	for (var opt = 0; opt < ds_list_size(options); opt++) {
 		

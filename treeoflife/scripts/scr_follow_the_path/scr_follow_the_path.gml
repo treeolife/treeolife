@@ -3,9 +3,13 @@
 function scr_follow_the_path(nPath) {
 	var number_of_points = path_get_number(nPath);
 	var path_direction;
-
 	path_direction = sign(path_get_point_x(nPath, path_point+1)-path_get_point_x(nPath, path_point)) ;
-
+	
+	if path_direction > 0
+		image_index = 1;
+	else if path_direction < 0
+		image_index = 0;
+		
 	if action == 0
 	{
 	    /// Check if the next point is to move left or right

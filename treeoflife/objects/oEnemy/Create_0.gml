@@ -1,4 +1,7 @@
 /// @description initialise
+
+image_speed = 0;
+
 /// Initialize the color
 draw_set_color (c_black) ;
 
