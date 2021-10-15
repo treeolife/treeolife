@@ -9,7 +9,7 @@ var height	= 32 + border * 2;
 var GUI_X = (window_get_width()/2 - width/2)
 var GUI_Y = (window_get_height()/2 - height/2)
 
-if (showGUI) {
+//if (showGUI) {
 	_xx = GUI_X;
 	//show_debug_message("drawing at" + string(GUI_X) + " " + string(GUI_Y));
 	draw_sprite_stretched(sBox, 0, GUI_X, GUI_Y, width, height);
@@ -22,4 +22,4 @@ if (showGUI) {
 		_xx += 32 + border * 2;
 		
 	}
-}
+//}

@@ -1,16 +1,13 @@
 /// @description user input
 
 if (keyboard_check_pressed(vk_enter)) {
-	switch(showGUI) {
-		case true:
-			showGUI = false;
-			break;
-		case false:
-			selection = 0;
-			showGUI = true;
-			break;
-		default:
-			break;
+	selection = 0;
+	if (!showGUI) {
+		show();
+		showGUI = true;
+	} else {
+		hide();
+		showGUI = false;
 	}
 }
 

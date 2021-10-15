@@ -30,7 +30,7 @@
     "path": "folders/GUI.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oBox",
+  "name": "oUIDefender",
   "tags": [],
   "resourceType": "GMObject",
 }

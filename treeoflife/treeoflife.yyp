@@ -15,7 +15,7 @@
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},"order":1,},
     {"id":{"name":"PlayerStateIdle","path":"scripts/PlayerStateIdle/PlayerStateIdle.yy",},"order":0,},
     {"id":{"name":"sLand","path":"sprites/sLand/sLand.yy",},"order":4,},
-    {"id":{"name":"oBox","path":"objects/oBox/oBox.yy",},"order":2,},
+    {"id":{"name":"oUIDefender","path":"objects/oUIDefender/oUIDefender.yy",},"order":2,},
     {"id":{"name":"oUIBar","path":"objects/oUIBar/oUIBar.yy",},"order":6,},
     {"id":{"name":"sMidori","path":"sprites/sMidori/sMidori.yy",},"order":2,},
     {"id":{"name":"scr_fill_the_grid","path":"scripts/scr_fill_the_grid/scr_fill_the_grid.yy",},"order":2,},
