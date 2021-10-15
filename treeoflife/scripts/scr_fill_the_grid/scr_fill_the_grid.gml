@@ -22,7 +22,7 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 	for (var i=1; i<200; i+=1) {
 	    if path_found == 1 {
 		    ds_list_destroy(point_list); // We don't need the list anymore because we find a path.
-		    if (!debugger_mode) ds_grid_destroy(ds_gridpathfinding); /// Grid has to be delete. We keep it only for debuger purposes
+		    if (!debugger_mode) ds_grid_destroy(ds_gridpathfinding); /// Grid has to be deleted. Kept only for debugger purposes.
 		    return path_found ;
 			break ;
 	    }
@@ -46,6 +46,7 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 				break ;
 			}
 
+			/// right side considerations
 			n=1 ; /// Variable for the Fall
 
 			/// Check if the enemy can go to the right
@@ -106,9 +107,12 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 			                       a = ds_grid_get(ds_gridpathfinding,ax+1,ay+n);
 								   
 								   /// Check if the enemy can fall far (Right side). Check four tiles.
-									if ds_grid_get(ds_gridpathfinding,ax+2,ay+n-2)==-1 
-									&& ds_grid_get(ds_gridpathfinding,ax+2,ay+n-1)==-1 
-									&& ds_grid_get(ds_gridpathfinding,ax+2,ay+n)==-2 {
+								   b = ds_grid_get(ds_gridpathfinding,ax+2,ay+n-2);
+								   c = ds_grid_get(ds_gridpathfinding,ax+2,ay+n-1);
+								   d = ds_grid_get(ds_gridpathfinding,ax+2,ay+n);
+								   
+									if b == -1 && c == -1 && d == -2 {
+										show_debug_message("Found far fall")
 										find_diagonal_fall = true;
 										ds_grid_set(ds_gridpathfinding,ax+2,ay+n-1,i);
 							            ds_list_add (point_list, ax + 2);
@@ -126,6 +130,7 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 					}
 				}
 			}
+			/// Left side considerations
 			n=1 ; /// Re-initialize variable for the Fall (left side)
 
 			/// Check if the enemy can go to the left
@@ -175,12 +180,27 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 					/// Check if the enemy can fall (left side).
 					if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay+1)==-1 {
 		                {
+						find_diagonal_fall = false;
 		                do {
-							n=n+1 ;
-							a = ds_grid_get(ds_gridpathfinding,ax-1,ay+n);
-							} until (a=-2) || (ay+n==ds_grid_height(ds_gridpathfinding))
+								n=n+1 ;
+							
+								/// Check if the enemy can fall far (Left side). Check four tiles.
+								b = ds_grid_get(ds_gridpathfinding,ax-2,ay+n-2);
+								c = ds_grid_get(ds_gridpathfinding,ax-2,ay+n-1);
+								d = ds_grid_get(ds_gridpathfinding,ax-2,ay+n);
+								   
+								if b == -1 && c == -1 && d == -2 {
+									show_debug_message("Found far fall")
+									find_diagonal_fall = true;
+									ds_grid_set(ds_gridpathfinding,ax-2,ay+n-1,i);
+							        ds_list_add (point_list, ax - 2);
+							        ds_list_add (point_list, ay+n-1);
+								}
+							
+								a = ds_grid_get(ds_gridpathfinding,ax-1,ay+n);
+							} until (a=-2) || (ay+n==ds_grid_height(ds_gridpathfinding)) || find_diagonal_fall
 						}   
-		                if ds_grid_get(ds_gridpathfinding,ax-1,ay+n-1)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay+n)== -2 {
+		                if !find_diagonal_fall && ds_grid_get(ds_gridpathfinding,ax-1,ay+n-1)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay+n)== -2 {
 			                ds_grid_set(ds_gridpathfinding,ax-1,ay+n-1,i);
 			                ds_list_add (point_list, ax-1);
 			                ds_list_add (point_list, ay+n-1);
