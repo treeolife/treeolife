@@ -11,7 +11,7 @@ function scr_follow_the_path(nPath) {
 	    /// Check if the next point is to move left or right
 	    if path_get_point_y(nPath, path_point) == path_get_point_y(nPath, path_point+1) && path_get_point_x(nPath, path_point) + (oGrid.cell_width)*path_direction == path_get_point_x(nPath, path_point+1)
 	    {
-	    speed_h = max_speed * path_direction ;
+	    speed_h = max_speed * path_direction * GAME_SPEED;
 	    action = 1;
 	    }
 	     else {
@@ -37,7 +37,7 @@ function scr_follow_the_path(nPath) {
 	                    /// Check if the next point is to fall
 	                    if path_get_point_y(nPath, path_point) < path_get_point_y(nPath, path_point+1)
 	                    {
-	                    speed_h = max_speed * path_direction;
+	                    speed_h = max_speed * path_direction * GAME_SPEED;
 	                        if x <= path_get_point_x(nPath, path_point+1) && path_get_point_x(nPath, path_point+1) <(x + speed_h*path_direction)
 	                        {
 	                        action = 1 ;
@@ -57,7 +57,7 @@ function scr_follow_the_path(nPath) {
 	                                            /// Check if the next point is a jump one block vertically
 	                                            if path_get_point_y(nPath, path_point) == path_get_point_y(nPath, path_point+1)+oGrid.cell_height && path_get_point_x(nPath, path_point) + oGrid.cell_width*path_direction == path_get_point_x(nPath, path_point+1)
 	                                            {
-	                                            speed_h = max_speed * path_direction / 2;
+	                                            speed_h = max_speed * (path_direction / 2);
 	                                                if place_meeting(x, y+1, oCollision) && jump_action == 0
 	                                                {
 	                                                speed_v = jump_height * 1.0 ;

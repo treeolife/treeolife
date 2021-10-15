@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Map",
-    "path": "folders/Map.yy",
+    "name": "treeoflife",
+    "path": "treeoflife.yyp",
   },
   "resourceVersion": "1.0",
   "name": "oGrid",
