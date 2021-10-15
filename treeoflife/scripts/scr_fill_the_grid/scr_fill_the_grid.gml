@@ -45,27 +45,29 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 		        scr_build_the_path(xgoal,ygoal);
 				break ;
 			}
-
-			/// right side considerations
-			n=1 ; /// Variable for the Fall
-
-			/// Check if the enemy can go to the right
+			n=1 ; /// Variable for "fall" cases
+			#region horizontal move (Right)
 			if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay+1)==-2 {
 				ds_grid_set(ds_gridpathfinding,ax+1,ay,i);
 				ds_list_add (point_list, ax + 1);
 				ds_list_add (point_list, ay);
-			} else {   /// If the enemy can go to the right, the other movement will be impossible. So we can put a else to skip all the following code
-
-				/// Check if we can go jump one block vertically (right side)
+			} 
+			#endregion
+			else 
+			#region blocked cases (Right)
+			{   /// If the enemy can go to the right, the other movement will be impossible. So we can put a else to skip all the following code
+				#region vertically jump one block (Right)
 				if (ds_grid_get(ds_gridpathfinding,ax+1,ay)==-2 && ds_grid_get(ds_gridpathfinding,ax+1,ay-1)==-1
 				&& ds_grid_get(ds_gridpathfinding,ax,ay-1)==-1) {
 		            ds_grid_set(ds_gridpathfinding,ax+1,ay-1,i);
 		            ds_list_add (point_list, ax + 1);
 		            ds_list_add (point_list, ay-1);
-	            } else {  /// If the enemy can go jump one block horizontally, the others movement will be impossible. So we can put a else to skip all the following code
-
-					/// TODO: Can include check for bigger diagonal jumps
-					/// Check if the enemy can do a diagonal jump (Big Jump). (Right side);
+	            } 
+				#endregion
+				else 
+				#region gap cases (Right)
+				{  /// If the enemy can go jump one block horizontally, the others movement will be impossible. So we can put a else to skip all the following code
+					#region big diagonal jump (Right)
 					if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay)==-2 && ds_grid_get(ds_gridpathfinding,ax+2,ay-1)==-1 
 					/// Three tile clearance for jump
 					&& ds_grid_get(ds_gridpathfinding,ax,ay-2)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay-2)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay-2)==-1
@@ -74,8 +76,8 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 					    ds_list_add (point_list, ax + 2);
 						ds_list_add (point_list, ay-1);
 			        }
-					
-					/// Check if the enemy can jump horizontally (jump over a void). (Right side)
+					#endregion
+					#region horizontally jump over a void (Right)
 					if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay+1)==-2 
 					/// Check above 3 tiles are empty for jump
 					&& ds_grid_get(ds_gridpathfinding,ax,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay-1)==-1
@@ -83,8 +85,10 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 				        ds_grid_set(ds_gridpathfinding,ax+2,ay,i);
 				        ds_list_add (point_list, ax + 2);
 				        ds_list_add (point_list, ay);
-					} else
-					///Check if the enemy can big jump horizontally (over big void). (Right side)
+					}
+					#endregion
+					else
+					#region horizontally jump over a big void (Right)
 					if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+3,ay+1)==-2 && ds_grid_get(ds_gridpathfinding,ax+3,ay)==-1 
 					/// Check above 4 tiles are empty for jump
 					&& ds_grid_get(ds_gridpathfinding,ax,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay-1)==-1
@@ -94,60 +98,66 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 						ds_list_add (point_list, ax+3);
 						ds_list_add (point_list, ay);
 					}
-
-					/// Check if the enemy can fall (Right side).
+					#endregion
+					#region fall cases (Right)
 					if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay+1)==-1 {
-						
-						///// Check if the enemy can fall far (Right side).
-						//if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay+1)==-1 {
 						var find_diagonal_fall = false;
-			                {
-			                do {
-			                       n=n+1 ;
-			                       a = ds_grid_get(ds_gridpathfinding,ax+1,ay+n);
+			            {
+			            do {
+			                    n=n+1 ;
+			                    a = ds_grid_get(ds_gridpathfinding,ax+1,ay+n);
+								#region fall far (Right)
+								/// Check if the enemy can fall far (Right side). Check four tiles.
+								b = ds_grid_get(ds_gridpathfinding,ax+2,ay+n-2);
+								c = ds_grid_get(ds_gridpathfinding,ax+2,ay+n-1);
+								d = ds_grid_get(ds_gridpathfinding,ax+2,ay+n);
 								   
-								   /// Check if the enemy can fall far (Right side). Check four tiles.
-								   b = ds_grid_get(ds_gridpathfinding,ax+2,ay+n-2);
-								   c = ds_grid_get(ds_gridpathfinding,ax+2,ay+n-1);
-								   d = ds_grid_get(ds_gridpathfinding,ax+2,ay+n);
-								   
-									if b == -1 && c == -1 && d == -2 {
-										show_debug_message("Found far fall")
-										find_diagonal_fall = true;
-										ds_grid_set(ds_gridpathfinding,ax+2,ay+n-1,i);
-							            ds_list_add (point_list, ax + 2);
-							            ds_list_add (point_list, ay+n-1);
-									}
-								} 
-								until (a==-2) || (ay+n == ds_grid_height(ds_gridpathfinding)) || find_diagonal_fall
-							}
-					        if !find_diagonal_fall && ds_grid_get(ds_gridpathfinding,ax+1,ay+n-1)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay+n)== -2 {
-					            ds_grid_set(ds_gridpathfinding,ax+1,ay+n-1,i);
-					            ds_list_add (point_list, ax + 1);
-					            ds_list_add (point_list, ay+n-1);
-					        }
-						//}
+								if b == -1 && c == -1 && d == -2 {
+									show_debug_message("Found far fall right")
+									find_diagonal_fall = true;
+									ds_grid_set(ds_gridpathfinding,ax+2,ay+n-1,i);
+							        ds_list_add (point_list, ax + 2);
+							        ds_list_add (point_list, ay+n-1);
+								}
+								#endregion
+							} until (a==-2) || (ay+n == ds_grid_height(ds_gridpathfinding)) || find_diagonal_fall
+						}
+						#region fall near (Right)
+					    if !find_diagonal_fall && ds_grid_get(ds_gridpathfinding,ax+1,ay+n-1)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay+n)== -2 {
+					        ds_grid_set(ds_gridpathfinding,ax+1,ay+n-1,i);
+					        ds_list_add (point_list, ax + 1);
+					        ds_list_add (point_list, ay+n-1);
+					    }
+						#endregion
 					}
+					#endregion
 				}
+				#endregion
 			}
-			/// Left side considerations
-			n=1 ; /// Re-initialize variable for the Fall (left side)
-
-			/// Check if the enemy can go to the left
+			#endregion
+			n=1 ; /// Re-initialize variable for the Fall (Left)
+			#region horizontal move (Left)
 			if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay+1)==-2 {
 				ds_grid_set(ds_gridpathfinding,ax-1,ay,i);
 				ds_list_add (point_list, ax -1);
 				ds_list_add (point_list, ay);
-			} else {
+			} 
+			#endregion
+			else 
+			#region blocked cases (Left)
+			{
 
-				/// Check if we can go jump one block vertically (left side)
+				#region vertically jump one block (Left)
 				if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-2 && ds_grid_get(ds_gridpathfinding,ax-1,ay-1)==-1{
 					ds_grid_set(ds_gridpathfinding,ax-1,ay-1,i);
 					ds_list_add (point_list, ax-1);
 					ds_list_add (point_list, ay-1);
-				} else {
-					
-					/// Check if the enemy can do a diagonal jump (Big Jump). (left side)
+				} 
+				#endregion
+				else 
+				#region gap cases (Left)
+				{
+					#region big diagonal jump (Left)
 					if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay)==-2 && ds_grid_get(ds_gridpathfinding,ax-2,ay-1)==-1
 					/// Three tile clearance for jump
 					&& ds_grid_get(ds_gridpathfinding,ax-2,ay-2)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay-2)==-1 && ds_grid_get(ds_gridpathfinding,ax,ay-2)==-1
@@ -156,8 +166,8 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 						ds_list_add (point_list, ax-2);
 						ds_list_add (point_list, ay-1);
 					}
-					
-					///Check if the enemy can jump horizontally (over a void). (left side)
+					#endregion
+					#region horizontally jump over a void (Left)
 					if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay+1)==-2
 					/// Check above 3 tiles are empty for jump
 					&& ds_grid_get(ds_gridpathfinding,ax,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay-1)==-1{
@@ -165,8 +175,9 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 						ds_list_add (point_list, ax-2);
 						ds_list_add (point_list, ay);
 					} 
+					#endregion
 					else
-					///Check if the enemy can big jump horizontally (over big void). (left side)
+					#region horizontally jump over a big void (Left)
 					if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-3,ay+1)==-2 && ds_grid_get(ds_gridpathfinding,ax-3,ay)==-1 
 					/// Check above 4 tiles are empty for big jump
 					&& ds_grid_get(ds_gridpathfinding,ax,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay-1)==-1
@@ -176,38 +187,42 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 						ds_list_add (point_list, ax-3);
 						ds_list_add (point_list, ay);
 					}
-
-					/// Check if the enemy can fall (left side).
+					#endregion
+					#region fall cases (Left)
 					if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay+1)==-1 {
 		                {
-						find_diagonal_fall = false;
+						var find_diagonal_left_fall = false;
 		                do {
 								n=n+1 ;
-							
-								/// Check if the enemy can fall far (Left side). Check four tiles.
+								a = ds_grid_get(ds_gridpathfinding,ax-1,ay+n);
+								#region fall far (Left)
 								b = ds_grid_get(ds_gridpathfinding,ax-2,ay+n-2);
 								c = ds_grid_get(ds_gridpathfinding,ax-2,ay+n-1);
 								d = ds_grid_get(ds_gridpathfinding,ax-2,ay+n);
 								   
 								if b == -1 && c == -1 && d == -2 {
-									show_debug_message("Found far fall")
-									find_diagonal_fall = true;
+									show_debug_message("Found far fall left")
+									find_diagonal_left_fall = true;
 									ds_grid_set(ds_gridpathfinding,ax-2,ay+n-1,i);
 							        ds_list_add (point_list, ax - 2);
 							        ds_list_add (point_list, ay+n-1);
 								}
-							
-								a = ds_grid_get(ds_gridpathfinding,ax-1,ay+n);
-							} until (a=-2) || (ay+n==ds_grid_height(ds_gridpathfinding)) || find_diagonal_fall
-						}   
-		                if !find_diagonal_fall && ds_grid_get(ds_gridpathfinding,ax-1,ay+n-1)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay+n)== -2 {
+								#endregion
+							} until (a==-2) || (ay+n==ds_grid_height(ds_gridpathfinding)) || find_diagonal_left_fall
+						}
+						#region fall near (Left)
+		                if !find_diagonal_left_fall && ds_grid_get(ds_gridpathfinding,ax-1,ay+n-1)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay+n)== -2 {
 			                ds_grid_set(ds_gridpathfinding,ax-1,ay+n-1,i);
 			                ds_list_add (point_list, ax-1);
 			                ds_list_add (point_list, ay+n-1);
 		                }
+						#endregion
 		            }
+					#endregion
 		        }
+				#endregion
 			}
+			#endregion
 		}
 		/// Delete all the previous points
 		for (var k=0; k< size_list; k+=1) {

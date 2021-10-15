@@ -5,7 +5,7 @@ function scr_build_the_path(xgoal, ygoal){
 	path_building = path_add(); /// Create a path where we will add all the points
 	var value;		/// Value in the enemy grid
 	var x_previous; /// Coordinate of X previous
-	var x_two_previous; /// Coordinate of X two previous
+
 	var a = -1;		/// Use when enemy falls. We will store data from grid_pathfinding
 	var b = -1;		/// Use when enemy falls. We will store data from grid_pathfinding
 	var c = -1;		/// Use when enemy falls.
