@@ -19,6 +19,7 @@
     {"id":{"name":"oUIBar","path":"objects/oUIBar/oUIBar.yy",},"order":6,},
     {"id":{"name":"sMidori","path":"sprites/sMidori/sMidori.yy",},"order":2,},
     {"id":{"name":"scr_fill_the_grid","path":"scripts/scr_fill_the_grid/scr_fill_the_grid.yy",},"order":2,},
+    {"id":{"name":"oCactus","path":"objects/oCactus/oCactus.yy",},"order":4,},
     {"id":{"name":"scr_draw_set","path":"scripts/scr_draw_set/scr_draw_set.yy",},"order":0,},
     {"id":{"name":"oUIMaster","path":"objects/oUIMaster/oUIMaster.yy",},"order":5,},
     {"id":{"name":"oLand","path":"objects/oLand/oLand.yy",},"order":5,},

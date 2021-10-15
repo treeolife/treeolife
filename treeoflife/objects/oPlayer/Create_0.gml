@@ -33,4 +33,5 @@ game_friction = 0.1;
 jump_height = -7;
 #endregion
 
+j = 0;
 state = PlayerStateIdle

@@ -17,3 +17,7 @@ hide = function() {
 show = function() {
 	visible = true;
 }
+
+isOpen = function() {
+	return visible;
+}
