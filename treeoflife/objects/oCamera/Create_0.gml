@@ -3,6 +3,8 @@
 oFollow = oPlayer;
 cam = view_camera[0]
 cam_speed = 4;
+cam_width = camera_get_view_width(cam);
+cam_height = camera_get_view_height(cam);
 
 follow = function(_oFollow) {
 	cam_speed = 20;
