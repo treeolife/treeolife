@@ -1,19 +1,29 @@
 /// @function PlayerStateIdle();
 function PlayerStateIdle(){
-	speed_h = player_input * max_speed;
+	if !oUIDefender.isOpen()
+		speed_h = player_input * max_speed;
 	PlayerAnimateSprite();
 	scr_collision();
 	// TODO: animate midori idle
 	
+	if !place_meeting (x, y+2, oSoil) {
+		oUIDefender.hide();
+	}
+	
 	#region If not on ground, apply game gravity in vertical movement 
 	if !place_meeting (x, y+1, oCollision) {	
-		speed_v += game_gravity ;
+		speed_v += game_gravity;
 	} 
 	#endregion
 	#region Else If on ground, go to Jump state
 	else {
 		if keySpace {
 			state = PlayerStateJump;	
+		}
+		
+		if keyPlant && instance_place(x, y+2, oSoil) {
+			var soil = instance_place(x, y+2, oSoil);
+			oUIDefender.show(soil);
 		}
 	}
 	#endregion

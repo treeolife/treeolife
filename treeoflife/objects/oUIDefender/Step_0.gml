@@ -1,34 +1,27 @@
 /// @description user input
 
-if (keyboard_check_pressed(vk_enter)) {
-	selection = 0;
-	if (!showGUI) {
-		show();
-		showGUI = true;
-	} else {
-		hide();
-		showGUI = false;
-	}
-}
-
 var options_size = ds_list_size(global.options);
-if(isOpen()) {
-	if (keyboard_check_pressed(vk_up)) {
-		selection = 0;
-		ds_list_add(global.options, sCactus);
-	}
-	if (keyboard_check_pressed(vk_down)) {
-		selection = 0;
-		ds_list_delete(global.options, options_size - 1);
-	}
-}
 
-if (keyboard_check_pressed(ord("A"))) {
-	if selection > 0
+if (keyboard_check_pressed(vk_left)) {
+	if (selection > 0) && isOpen()
 		selection -= 1;
 }
 
-if (keyboard_check_pressed(ord("D"))) {
-	if selection < options_size - 1
+if (keyboard_check_pressed(vk_right)) {
+	if (selection < options_size - 1) && isOpen()
 	selection += 1;
+}
+
+if (keyboard_check_pressed(vk_enter)) {
+	if (isOpen()) {
+		if(soil_instance.createDefender(oCactus) == -1)
+			col_msg = c_red;
+		else
+			hide();
+	}
+}
+
+if (keyboard_check_pressed(vk_escape)) {
+	if (isOpen())
+		hide();
 }
