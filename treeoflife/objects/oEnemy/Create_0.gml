@@ -1,5 +1,7 @@
 /// @description initialise
 
+alarm[0] = 5 * 15;
+
 image_speed = 0;
 
 /// Initialize the color
@@ -20,3 +22,17 @@ speed_h = 0 ;
 action = 0 ;
 path_point = 0 ;
 jump_action = 0 ;
+
+function target(targ) {
+	/// Reset all variable when we build a new path because enemy might be in path when we press S
+	speed_h = 0;
+	speed_v = 0;
+	if path_exists(path_building) {
+	    path_delete (path_building);
+	}
+	path_point = 0 ;
+	action = 0 ;
+	jump_action = 0 ;
+
+	scr_fill_the_grid(floor(x/oGrid.cell_width), floor(y/oGrid.cell_height), floor(targ.x/oGrid.cell_width), floor(targ.y/oGrid.cell_height));
+}
