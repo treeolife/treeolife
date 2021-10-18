@@ -14,9 +14,7 @@ if (keyboard_check_pressed(vk_right)) {
 
 if (keyboard_check_pressed(vk_enter)) {
 	if (isOpen()) {
-		if(soil_instance.createDefender(oCactus) == -1)
-			col_msg = c_red;
-		else
+		if(soil_instance.createDefender(oCactus) == -1) col_msg = c_red;
 			hide();
 	}
 }

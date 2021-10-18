@@ -15,6 +15,7 @@
     {"id":{"name":"fText","path":"fonts/fText/fText.yy",},"order":0,},
     {"id":{"name":"PlayerStateJump","path":"scripts/PlayerStateJump/PlayerStateJump.yy",},"order":1,},
     {"id":{"name":"tLevelOne","path":"tilesets/tLevelOne/tLevelOne.yy",},"order":3,},
+    {"id":{"name":"oSeedling","path":"objects/oSeedling/oSeedling.yy",},"order":5,},
     {"id":{"name":"MACROS","path":"scripts/MACROS/MACROS.yy",},"order":6,},
     {"id":{"name":"scr_camera_follow","path":"scripts/scr_camera_follow/scr_camera_follow.yy",},"order":7,},
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},"order":1,},
