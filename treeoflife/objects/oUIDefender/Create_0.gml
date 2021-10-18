@@ -5,17 +5,24 @@ ds_list_add(global.options, sCactus);
 ds_list_add(global.options, sCactus);
 ds_list_add(global.options, sCactus);
 	
-showGUI = false;
 visible = false;
-
+col_msg = c_white;
+defender_cost = 20;
 selection = 0;
+soil_instance = 0;
 
 hide = function() {
 	visible = false;
 }
 
-show = function() {
+show = function(_instance) {
+	selection = 0;
 	visible = true;
+	soil_instance = _instance;
+	if global.water_amount >= defender_cost 
+		col_msg = c_white;
+	else
+		col_msg = c_red;
 }
 
 isOpen = function() {

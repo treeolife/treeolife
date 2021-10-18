@@ -113,7 +113,6 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 								d = ds_grid_get(ds_gridpathfinding,ax+2,ay+n);
 								   
 								if b == -1 && c == -1 && d == -2 {
-									show_debug_message("Found far fall right")
 									find_diagonal_fall = true;
 									ds_grid_set(ds_gridpathfinding,ax+2,ay+n-1,i);
 							        ds_list_add (point_list, ax + 2);
@@ -201,7 +200,6 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 								d = ds_grid_get(ds_gridpathfinding,ax-2,ay+n);
 								   
 								if b == -1 && c == -1 && d == -2 {
-									show_debug_message("Found far fall left")
 									find_diagonal_left_fall = true;
 									ds_grid_set(ds_gridpathfinding,ax-2,ay+n-1,i);
 							        ds_list_add (point_list, ax - 2);
