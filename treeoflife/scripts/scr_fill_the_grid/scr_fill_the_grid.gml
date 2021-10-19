@@ -19,7 +19,7 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 	ds_list_add (point_list, ay);
 	ds_grid_set(ds_gridpathfinding,ax,ay,0);
 
-	for (var i=1; i<200; i+=1) {
+	for (var i=1; i<400; i+=1) {
 	    if path_found == 1 {
 		    ds_list_destroy(point_list); // We don't need the list anymore because we find a path.
 		    if (!debugger_mode) ds_grid_destroy(ds_gridpathfinding); /// Grid has to be deleted. Kept only for debugger purposes.

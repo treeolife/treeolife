@@ -1,3 +1,4 @@
 /// @description 
 
-global.wave -= 1;
+if global.wave > 0
+	global.wave -= 1;

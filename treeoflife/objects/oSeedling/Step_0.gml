@@ -5,10 +5,10 @@ if healthBar == noone {
 }
 
 // on death
-if hp == 0 {
-	instance_destroy(healthBar);
-	instance_destroy();
-}
+//if hp == 0 {
+//	//instance_destroy(healthBar);
+//	//instance_destroy();
+//}
 
 // Update health bar
 healthBar.update(x, y, hp, hp_max, flash, true);
