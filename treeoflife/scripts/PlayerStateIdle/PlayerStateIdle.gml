@@ -21,9 +21,11 @@ function PlayerStateIdle(){
 			state = PlayerStateJump;	
 		}
 		
-		if keyPlant && instance_place(x, y+2, oSoil) {
-			var soil = instance_place(x, y+2, oSoil);
-			oUIDefender.show(soil);
+		if keyPlant {
+			var soil = instance_place(x, y+2, oSoil)
+			if soil && soil.plantable {
+				oUIDefender.show(soil);
+			}
 		}
 	}
 	#endregion
