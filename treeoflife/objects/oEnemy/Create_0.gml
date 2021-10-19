@@ -1,5 +1,8 @@
 /// @description initialise
 
+attacked = false;
+attackedBy = noone;
+
 old_x = 0;
 old_y = 0;
 
