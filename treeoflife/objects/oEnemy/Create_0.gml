@@ -1,13 +1,18 @@
 /// @description initialise
 
+flash = 0;
+
 alarm[0] = 5 * 15;
 
 image_speed = 0;
 
+// Health bar
+healthBar = instance_create_depth(x, y, LAYER.enemy, oHealthbar);
+
 /// Initialize the color
 draw_set_color (c_black) ;
 
-/// initialize variables in order to draw grid and the path
+/// Initialize variables in order to draw grid and the path
 ds_gridpathfinding = noone ;
 path_building = noone ;
 

@@ -1,5 +1,8 @@
 /// @description check path
 
+// Update health bar
+healthBar.update(x, y, hp, hp_max, flash, false);
+
 // Follow the path if path exists
 if path_exists(path_building)
 {
