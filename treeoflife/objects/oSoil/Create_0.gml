@@ -44,6 +44,8 @@ function createDefender(defender_obj) {
 		return defenderId;
 	}
 	
+	//defenderId.healthbar = instance_create_depth(x, y, LAYER.towers, oHealthbar);
+	
 	return;
 }
 

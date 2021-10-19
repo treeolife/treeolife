@@ -1,6 +1,15 @@
 /// @description 
 
+hp = 100;
+hp_max = 100;
+flash = 0;
+
 cost = 20;
+
+// Health bar
+healthBar = noone;
+
+damage = 2;
 
 function getCost() {
 	return cost;

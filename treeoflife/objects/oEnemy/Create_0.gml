@@ -2,6 +2,7 @@
 
 attacked = false;
 attackedBy = noone;
+damage = 0.1;
 
 old_x = 0;
 old_y = 0;
