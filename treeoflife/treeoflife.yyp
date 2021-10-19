@@ -38,6 +38,7 @@
     {"id":{"name":"scr_draw_set","path":"scripts/scr_draw_set/scr_draw_set.yy",},"order":0,},
     {"id":{"name":"oUIMaster","path":"objects/oUIMaster/oUIMaster.yy",},"order":5,},
     {"id":{"name":"oLand","path":"objects/oLand/oLand.yy",},"order":5,},
+    {"id":{"name":"scr_seedling","path":"scripts/scr_seedling/scr_seedling.yy",},"order":11,},
     {"id":{"name":"fKey","path":"fonts/fKey/fKey.yy",},"order":1,},
     {"id":{"name":"shWhite","path":"shaders/shWhite/shWhite.yy",},"order":0,},
     {"id":{"name":"scr_build_the_path","path":"scripts/scr_build_the_path/scr_build_the_path.yy",},"order":0,},

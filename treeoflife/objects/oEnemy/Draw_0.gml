@@ -1,4 +1,7 @@
 /// @description draw path
+
+draw_self();
+
 // Draw the grid
 if ds_exists(ds_gridpathfinding,ds_type_grid) {
 	if (debugger_mode)

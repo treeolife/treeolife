@@ -1,6 +1,22 @@
 /// @description initialise
 
+old_x = 0;
+old_y = 0;
+
+seedlingArray = 0;
+if(seedlingArray == 0) {
+	seedlingArray = array_create(6, noone);
+	seedlingArray[level.ZERO]	= noone;
+	seedlingArray[level.ONE]	= inst_52C744DE;
+	seedlingArray[level.TWO]	= inst_2D47EF8B;
+	seedlingArray[level.THREE]	= inst_62AAB3A5;
+	seedlingArray[level.FOUR]	= inst_5D9B2EAF;
+	seedlingArray[level.FIVE]	= noone;
+}
+
 flash = 0;
+
+tar = oPlayer;
 
 alarm[0] = 5 * 15;
 
