@@ -1,7 +1,5 @@
 /// @description targeting
 
-global.wave = 2;
-
 if seedlingArray[global.wave] != noone && action == 0 {
 	tar = seedlingArray[global.wave];
 	target(tar);
