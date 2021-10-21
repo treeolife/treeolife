@@ -1,30 +1,22 @@
 /// @description initialise
 
-attacked = false;
-attackedBy = noone;
 damage = 0.1;
 
-old_x = 0;
-old_y = 0;
-
-seedlingArray = 0;
-if(seedlingArray == 0) {
-	seedlingArray = array_create(6, noone);
-	seedlingArray[level.ZERO]	= noone;
-	seedlingArray[level.ONE]	= inst_52C744DE;
-	seedlingArray[level.TWO]	= inst_2D47EF8B;
-	seedlingArray[level.THREE]	= inst_62AAB3A5;
-	seedlingArray[level.FOUR]	= inst_5D9B2EAF;
-	seedlingArray[level.FIVE]	= noone;
-}
-
-flash = 0;
+// Behaviour
+attackDefender = false;
 
 tar = oPlayer;
 
-alarm[0] = 5 * 15;
+alarm[0] = 2 * 15;
 
 image_speed = 0;
+
+flash = 0;
+old_x = 0;
+old_y = 0;
+attacked = false;
+attackedBy = noone;
+seedlingArray = global.seedlings;
 
 // Health bar
 healthBar = instance_create_depth(x, y, LAYER.enemy, oHealthbar);
@@ -55,9 +47,13 @@ function target(targ) {
 	if path_exists(path_building) {
 	    path_delete (path_building);
 	}
-	path_point = 0 ;
-	action = 0 ;
-	jump_action = 0 ;
-
-	scr_fill_the_grid(floor(x/oGrid.cell_width), floor(y/oGrid.cell_height), floor(targ.x/oGrid.cell_width), floor(targ.y/oGrid.cell_height));
+	path_point = 0;
+	action = 0;
+	jump_action = 0;
+	scr_fill_the_grid(
+		floor(x/oGrid.cell_width),
+		floor(y/oGrid.cell_height), 
+		floor(targ.x/oGrid.cell_width), 
+		floor(targ.y/oGrid.cell_height)
+	);
 }

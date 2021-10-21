@@ -1,14 +1,12 @@
 /// @description check path
 
-// on death
-if hp == 0 {
-	instance_destroy(healthBar);
-	instance_destroy();
-}
-
 // Update location each step to determine if moving
 old_x = x;
 old_y = y;
+
+//if (attackedBy == noone) {
+	
+//}
 
 // Update health bar
 healthBar.update(x, y, hp, hp_max, flash, false);
@@ -27,3 +25,9 @@ if !place_meeting (x, y+1, oCollision) {
 
 // Check if there is a collsiion
 scr_collision();
+
+// on death
+if hp <= 0 {
+	instance_destroy(healthBar);
+	instance_destroy();
+}

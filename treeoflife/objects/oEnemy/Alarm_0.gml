@@ -11,4 +11,4 @@ if (x == old_x && y == old_y && seedlingArray[global.wave] != noone) {
 	target(tar);	
 }
 	
-alarm[0] = 5 * 15;
+alarm[0] = 2 * 15;

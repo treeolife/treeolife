@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sCollision",
-    "path": "sprites/sCollision/sCollision.yy",
+    "name": "sNothing",
+    "path": "sprites/sNothing/sNothing.yy",
   },
   "solid": false,
   "visible": true,
