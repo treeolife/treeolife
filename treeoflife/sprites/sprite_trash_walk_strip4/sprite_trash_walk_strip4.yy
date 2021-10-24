@@ -81,8 +81,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "treeoflife",
-    "path": "treeoflife.yyp",
+    "name": "Pollution",
+    "path": "folders/Pollution.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprite_trash_walk_strip4",

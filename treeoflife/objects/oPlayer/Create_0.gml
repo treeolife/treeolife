@@ -42,6 +42,5 @@ state = PlayerStateIdle;
 startTimer = function(time_in_seconds) {
 	global.currentTime = real(time_in_seconds);
 	global.timer = real(time_in_seconds);
-	global.pausedTimer = true;
 }
 

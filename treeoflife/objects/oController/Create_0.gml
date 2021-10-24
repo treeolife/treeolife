@@ -6,7 +6,7 @@ global.seed_amount	= 1;
 global.wave			= 0;
 global.cost			= 0;
 global.timer		= 30;
-global.pausedTimer		= true;
+global.pausedTimer	= false;
 global.currentTime	= 0;
 
 advanceLevel = function(wave) {

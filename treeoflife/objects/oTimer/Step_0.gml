@@ -14,3 +14,7 @@ if (current_seconds <= 0) {
 } else {
 	current_seconds -= 1;
 }
+
+if (global.currentTime == 0) {
+	oController.advanceLevel(global.wave);	
+}
