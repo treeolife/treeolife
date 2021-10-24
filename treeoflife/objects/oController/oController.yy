@@ -3,7 +3,7 @@
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
-  "persistent": false,
+  "persistent": true,
   "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
@@ -27,7 +27,7 @@
     "path": "folders/GUI.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oLevel",
+  "name": "oController",
   "tags": [],
   "resourceType": "GMObject",
 }

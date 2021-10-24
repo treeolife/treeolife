@@ -2,8 +2,6 @@
 global.options = ds_list_create();
 	
 ds_list_add(global.options, sCactus);
-ds_list_add(global.options, sCactus);
-ds_list_add(global.options, sCactus);
 	
 visible = false;
 col_msg = c_white;
