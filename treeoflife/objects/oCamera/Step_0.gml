@@ -6,7 +6,7 @@ if (initialised == false) {
 		default: 
 			factor = 0.5;
 			original_width = 1366*factor; original_height = 768*factor;
-			zoom = 0.5; target_zoom = 1.0;
+			zoom = 0.5; target_zoom = 0.625;
 			initialised = true;
 			break;
 		case 1:
