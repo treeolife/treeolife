@@ -19,7 +19,7 @@ attackedBy = noone;
 seedlingArray = global.seedlings;
 
 // Health bar
-healthBar = instance_create_depth(x, y, LAYER.enemy, oHealthbar);
+healthBar = instance_create_depth(x, y, get_layer_depth(LAYER.ui), oHealthbar);
 
 /// Initialize the color
 draw_set_color (c_black) ;

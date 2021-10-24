@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "treeoflife",
-    "path": "treeoflife.yyp",
+    "name": "GUI",
+    "path": "folders/GUI.yy",
   },
   "resourceVersion": "1.0",
   "name": "sFertiliser",

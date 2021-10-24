@@ -1,10 +1,23 @@
 /// @description 
 
+// Temps
+prev_oPlayer_y = oPlayer.y;
+
+// Following
 oFollow = oPlayer;
 cam = view_camera[0]
 cam_speed = 4;
-cam_width = camera_get_view_width(cam);
-cam_height = camera_get_view_height(cam);
+
+// Zoom tween
+zoom = 0.1;
+target_zoom = 0.5;
+zoom_speed = 0.01;
+
+original_width = 1366;
+original_height = 768;
+
+factor = 0;
+initialised = false;
 
 follow = function(_oFollow) {
 	cam_speed = 20;

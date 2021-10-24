@@ -1,5 +1,8 @@
 /// @description initialise
 
+// instance timer
+instance_create_depth(0,0,0, oTimer);
+
 speed_v = 0;
 speed_h = 0;
 #region Legacy settings (not in use)
@@ -34,4 +37,10 @@ jump_height = -7;
 #endregion
 
 j = 0;
-state = PlayerStateIdle
+state = PlayerStateIdle;
+
+startTimer = function(time_in_seconds) {
+	global.currentTime = real(time_in_seconds);
+	global.timer = real(time_in_seconds);
+}
+

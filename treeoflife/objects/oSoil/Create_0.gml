@@ -17,8 +17,8 @@ function createDefender(defender_obj) {
 	if defenderId == 0 {
 		defenderId = instance_create_depth(
 			getXWidth(defender_obj),
-			getYHeight(defender_obj),
-			LAYER.towers,
+			getYHeight(defender_obj)-oGrid.cell_height/1.8,
+			get_layer_depth(LAYER.defender),
 			defender_obj);
 		defenderObj = defender_obj;
 		
@@ -36,7 +36,7 @@ function createDefender(defender_obj) {
 		defenderId = instance_create_depth(
 			getXWidth(defender_obj),
 			getYHeight(defender_obj),
-			LAYER.towers,
+			get_layer_depth(LAYER.defender),
 			defender_obj);
 			
 		global.water_amount -= defender_obj.getCost();
@@ -44,7 +44,7 @@ function createDefender(defender_obj) {
 		return defenderId;
 	}
 	
-	//defenderId.healthbar = instance_create_depth(x, y, LAYER.towers, oHealthbar);
+	//defenderId.healthbar = instance_create_depth(x, y, LAYER.defender, oHealthbar);
 	
 	return;
 }
