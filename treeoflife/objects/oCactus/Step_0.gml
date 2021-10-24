@@ -1,7 +1,7 @@
 /// @description 
 
 if healthBar == noone {
-	healthBar = instance_create_depth(x, y, LAYER.towers, oHealthbar)
+	healthBar = instance_create_depth(x, y, LAYER.defenders, oHealthbar)
 }
 
 // Update health bar

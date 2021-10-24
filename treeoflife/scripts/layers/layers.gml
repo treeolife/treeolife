@@ -2,11 +2,8 @@ enum LAYER {
 	ui,
 	shop,
 	build,
-	lighting,
-	effects,
-	bullets,
 	enemy,
-	towers,
+	defenders,
 	background,
 }
 
@@ -24,18 +21,9 @@ function get_layer_depth(layer){
 		break;
 		case LAYER.build:
 			return 30;
-		break
-		case LAYER.lighting:
-			return 100;
-		break;
-		case LAYER.bullets:
-			return 250;
 		break;
 		case LAYER.enemy:
 			return 275;
-		break;
-		case LAYER.effects:
-			return 450;
 		break;
 		case LAYER.background:
 			return 900;

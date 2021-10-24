@@ -13,6 +13,7 @@
     {"id":{"name":"layers","path":"scripts/layers/layers.yy",},"order":1,},
     {"id":{"name":"oHealthbar","path":"objects/oHealthbar/oHealthbar.yy",},"order":4,},
     {"id":{"name":"oGrid","path":"objects/oGrid/oGrid.yy",},"order":5,},
+    {"id":{"name":"rFirstOld","path":"rooms/rFirstOld/rFirstOld.yy",},"order":2,},
     {"id":{"name":"oSoil","path":"objects/oSoil/oSoil.yy",},"order":6,},
     {"id":{"name":"sWater","path":"sprites/sWater/sWater.yy",},"order":8,},
     {"id":{"name":"fText","path":"fonts/fText/fText.yy",},"order":0,},
@@ -27,6 +28,7 @@
     {"id":{"name":"sHealthRed","path":"sprites/sHealthRed/sHealthRed.yy",},"order":3,},
     {"id":{"name":"oUIDefender","path":"objects/oUIDefender/oUIDefender.yy",},"order":2,},
     {"id":{"name":"oUIBar","path":"objects/oUIBar/oUIBar.yy",},"order":6,},
+    {"id":{"name":"sprite_trash_walk_strip4","path":"sprites/sprite_trash_walk_strip4/sprite_trash_walk_strip4.yy",},"order":15,},
     {"id":{"name":"oLevel","path":"objects/oLevel/oLevel.yy",},"order":10,},
     {"id":{"name":"sMidori","path":"sprites/sMidori/sMidori.yy",},"order":2,},
     {"id":{"name":"sSeedling","path":"sprites/sSeedling/sSeedling.yy",},"order":12,},
@@ -86,6 +88,7 @@
   "RoomOrderNodes": [
     {"roomId":{"name":"rInit","path":"rooms/rInit/rInit.yy",},},
     {"roomId":{"name":"rFirst","path":"rooms/rFirst/rFirst.yy",},},
+    {"roomId":{"name":"rFirstOld","path":"rooms/rFirstOld/rFirstOld.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":0,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
