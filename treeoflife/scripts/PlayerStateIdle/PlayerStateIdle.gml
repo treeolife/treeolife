@@ -21,7 +21,7 @@ function PlayerStateIdle(){
 			state = PlayerStateJump;	
 		}
 		
-		if keyPlant {
+		if keyPlant && !oUIDefender.isOpen() {
 			var soil = instance_place(x, y+2, oSoil)
 			if soil && soil.plantable {
 				oUIDefender.show(soil);

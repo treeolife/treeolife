@@ -22,7 +22,7 @@ scr_draw_set(1, c_white, function() {
 	//if(global.currentTime >= 0) draw_text_ext_transformed(window_get_width() - 200 - 16, 8, "Next", 0, 400,1,1,0);
 	
 	/// Seeds information
-	draw_text_ext_transformed(window_get_width() - 16, window_get_height() - 60, "Seeds: " + string(global.seed_amount), 0, 400,1,1,0);
+	//draw_text_ext_transformed(window_get_width() - 16, window_get_height() - 60, "Seeds: " + string(global.seed_amount), 0, 400,1,1,0);
 	
 	/// Timer border and text
 	if(global.currentTime >= 0) draw_sprite_stretched(sGUI, 0, window_get_width() - 200 - 16, 14, 200, 40);

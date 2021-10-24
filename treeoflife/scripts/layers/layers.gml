@@ -3,7 +3,7 @@ enum LAYER {
 	shop,
 	build,
 	enemy,
-	defenders,
+	defender,
 	background,
 }
 
@@ -24,6 +24,9 @@ function get_layer_depth(layer){
 		break;
 		case LAYER.enemy:
 			return 275;
+		break;
+		case LAYER.defender:
+			return 375;
 		break;
 		case LAYER.background:
 			return 900;
