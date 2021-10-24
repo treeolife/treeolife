@@ -31,6 +31,7 @@
     {"id":{"name":"sSelector","path":"sprites/sSelector/sSelector.yy",},"order":6,},
     {"id":{"name":"oUIBar","path":"objects/oUIBar/oUIBar.yy",},"order":6,},
     {"id":{"name":"sprite_trash_walk_strip4","path":"sprites/sprite_trash_walk_strip4/sprite_trash_walk_strip4.yy",},"order":7,},
+    {"id":{"name":"oMountain","path":"sprites/oMountain/oMountain.yy",},"order":13,},
     {"id":{"name":"sMidori","path":"sprites/sMidori/sMidori.yy",},"order":2,},
     {"id":{"name":"sSeedling","path":"sprites/sSeedling/sSeedling.yy",},"order":7,},
     {"id":{"name":"scr_fill_the_grid","path":"scripts/scr_fill_the_grid/scr_fill_the_grid.yy",},"order":2,},
