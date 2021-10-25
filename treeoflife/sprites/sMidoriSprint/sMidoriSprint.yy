@@ -89,8 +89,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "treeoflife",
-    "path": "treeoflife.yyp",
+    "name": "Friendly",
+    "path": "folders/Friendly.yy",
   },
   "resourceVersion": "1.0",
   "name": "sMidoriSprint",
