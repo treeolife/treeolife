@@ -1,10 +1,25 @@
 /// @function PlayerAnimateSprite();
 function PlayerAnimateSprite(){
-	#region animate midori facing direction
-	image_speed = 0;
+	switch(midoriState) {
+		case MIDORI.idle:
+			#region animate midori facing direction
+			image_speed = 1;
+			sprite_index = sMidoriIdle;;
+			break;
+			#endregion
+		case MIDORI.sprint:
+			image_speed = 1;
+			sprite_index = sMidoriSprint;
+			break;
+		default:
+			break;
+	}
+	HandlePlayerDirection();
+}
+
+function HandlePlayerDirection() {
 	if speed_h > 0
-		image_index = 1;
+		image_xscale = -1;
 	else if speed_h < 0
-		image_index = 0;
-	#endregion
+		image_xscale = 1;
 }
