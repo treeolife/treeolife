@@ -1,10 +1,16 @@
 /// @function PlayerStateIdle();
 function PlayerStateIdle(){
-	if !oUIDefender.isOpen()
-		speed_h = player_input * max_speed;
+	if (positionX == x && positionY == y)
+		midoriState = MIDORI.idle;
+	
+	if !oUIDefender.isOpen() {
+			if (player_input != 0) 
+				midoriState = MIDORI.sprint;
+			speed_h = player_input * max_speed;
+	}
 	PlayerAnimateSprite();
+	
 	scr_collision();
-	// TODO: animate midori idle
 	
 	if !place_meeting (x, y+2, oSoil) {
 		oUIDefender.hide();

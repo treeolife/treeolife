@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sMidori",
-    "path": "sprites/sMidori/sMidori.yy",
+    "name": "sMidoriIdle",
+    "path": "sprites/sMidoriIdle/sMidoriIdle.yy",
   },
   "solid": false,
   "visible": true,

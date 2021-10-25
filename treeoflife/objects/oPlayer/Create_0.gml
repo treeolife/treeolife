@@ -1,10 +1,17 @@
 /// @description initialise
 
+enum MIDORI {
+	idle	= 0,
+	sprint	= 1,
+}
+
 // instance timer
 instance_create_depth(0,0,0, oTimer);
 
 speed_v = 0;
 speed_h = 0;
+positionX = 0;
+positionY = 0;
 #region Legacy settings (not in use)
 	#region Speedier settings, works well
 	//max_speed = 4;
@@ -38,9 +45,9 @@ jump_height = -7;
 
 j = 0;
 state = PlayerStateIdle;
+midoriState = MIDORI.idle;
 
 startTimer = function(time_in_seconds) {
 	global.currentTime = real(time_in_seconds);
 	global.timer = real(time_in_seconds);
 }
-

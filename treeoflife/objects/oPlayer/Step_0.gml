@@ -8,5 +8,9 @@ keyPlant =	keyboard_check_pressed(ord("Z"));
 // Apply horizontal movement on player input
 player_input =  keyRight - keyLeft;
 
+// Position
+positionX = x;
+positionY = y;
+
 // Starts script PlayerStateIdle, found in oPlayer's Create section
 script_execute(state);
