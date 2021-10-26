@@ -2,5 +2,6 @@
 
 if global.wave > 0 {
  	global.wave -= 1;
- 	oCamera.initialised = false;
+	
+	oController.advanceLevel(global.wave);
  }

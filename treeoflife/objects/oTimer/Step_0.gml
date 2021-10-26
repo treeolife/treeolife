@@ -18,6 +18,9 @@ if !global.gamePaused {
 
 	if (global.currentTime == 0) {
 		show_debug_message("Advancing...");
-		oController.advanceLevel();	
+		if global.wave < 4 {
+			global.wave += 1;
+			oController.advanceLevel(global.wave);	
+		}
 	}
 }
