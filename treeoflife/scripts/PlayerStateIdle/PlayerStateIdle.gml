@@ -16,26 +16,42 @@ function PlayerStateIdle(){
 		oUIDefender.hide();
 	}
 	
-	#region If not on ground, apply game gravity in vertical movement 
-	if !place_meeting (x, y+1, oCollision) {	
-		speed_v += game_gravity;
-	} 
-	#endregion
-	#region Else If on ground, go to Jump state
-	else {
-		if keySpace {
-			state = PlayerStateJump;	
-		}
-		
-		if keyPlant && !oUIDefender.isOpen() {
-			var soil = instance_place(x, y+2, oSoil)
-			if soil && soil.plantable {
-				oUIDefender.show(soil);
+	if (global.gamePaused) {
+		if (keyPause) {
+			if(!oUIPause.isOpen()) { 
+				oUIPause.show();
+				global.gamePaused = true;
+			} else {
+				// Unpause
+				oUIPause.hide();
+				global.gamePaused = false;
 			}
 		}
+	} else {
+		if (keyPause) {
+			global.gamePaused = true;
+			exit;
+		}
+		#region If not on ground, apply game gravity in vertical movement 
+		if !place_meeting (x, y+1, oCollision) {	
+			speed_v += game_gravity;
+		} 
+		#endregion
+		#region Else If on ground, go to Jump state
+		else {
+			if keySpace {
+				state = PlayerStateJump;	
+			}
+		
+			if keyPlant && !oUIDefender.isOpen() {
+				var soil = instance_place(x, y+2, oSoil)
+				if soil && soil.plantable {
+					oUIDefender.show(soil);
+				}
+			}
+		}
+		#endregion
 	}
-	#endregion
-	
 }
 
 #region Legacy system (not in use)
