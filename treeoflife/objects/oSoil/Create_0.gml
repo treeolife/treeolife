@@ -17,7 +17,7 @@ function createDefender(defender_obj) {
 	if defenderId == 0 {
 		defenderId = instance_create_depth(
 			getXWidth(defender_obj),
-			getYHeight(defender_obj)-oGrid.cell_height/1.8,
+			getYHeight(defender_obj),
 			get_layer_depth(LAYER.defender),
 			defender_obj);
 		defenderObj = defender_obj;

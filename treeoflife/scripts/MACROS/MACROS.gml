@@ -1,2 +1,2 @@
-#macro debugger_mode true
+#macro debugger_mode false
 #macro GAME_SPEED 0.5

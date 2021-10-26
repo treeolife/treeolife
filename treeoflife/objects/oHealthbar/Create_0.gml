@@ -1,5 +1,7 @@
 /// @description 
 
+visible = false;
+
 healthbar_width = 32;
 healthbar_height = 8;
 
