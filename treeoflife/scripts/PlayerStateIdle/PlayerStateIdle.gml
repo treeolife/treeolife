@@ -49,15 +49,3 @@ function PlayerStateIdle(){
 	}
 	
 }
-
-#region Legacy system (not in use)
-//if player_input != 0
-//    {
-		//speed_h += player_input * acceleration;
-		//speed_h = clamp(speed_h, -max_speed, max_speed);
-	//}
-		//else
-		//{
-		//    speed_h = lerp(speed_h, 0, game_friction);
-		//}
-#endregion	

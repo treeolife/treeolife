@@ -4,10 +4,9 @@ instance_create_depth(0,0,0, oRoomInit);
 instance_create_depth(0,0,0, oGrid);
 instance_create_depth(x,y,0, oCamera);
 
-/// @description check collision
-//Fill the grid to see if there is a collision object
-var hcells = ceil (room_width/oGrid.cell_width) ;
-var vcells = ceil (room_height/oGrid.cell_height);
+// Fill the grid to see if there is a collision object
+var hcells = ceil(room_width/oGrid.cell_width);
+var vcells = ceil(room_height/oGrid.cell_height);
 global.ds_grid_pathfinding = ds_grid_create(hcells, vcells);
 for (var i=0; i<hcells; i+=1)
 {

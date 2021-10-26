@@ -1,16 +1,14 @@
 /// @desc GUI setup
 
-enum credits_options
-{
+enum credits_options {
 	back = 0,
 }
 
-enum credits
-{
-	draw_art_1 = 3,
-	break_things = 2,
-	draw_art_2 = 1,
-	write_code = 0,
+enum credits {
+	draw_art_1		= 3,
+	break_things	= 2,
+	draw_art_2		= 1,
+	write_code		= 0,
 }
 
 gui_width	= display_get_gui_width();
@@ -18,15 +16,19 @@ gui_height	= display_get_gui_height();
 gui_margin	= 32;
 
 title			= "Credits";
-help_text		= "Press 'h' for help";
+title_font		= fCredits;
+title_txt_offset= 3;
+
+help_text		= "Press 'H' for help";
 control_text	= "Use up, down keys, and ENTER to select";
-menu_x			= gui_margin * 2;
-menu_y			= 0;
-menu_y_target	= 30;
+menu_x			= gui_width/2;
+menu_y			= gui_height;
+menu_y_target	= gui_height - gui_margin;
 menu_speed		= 25; // lower is faster
 menu_font		= fStart;
 menu_help_font	= fDebug;
 menu_itemheight = font_get_size(menu_font);
+menu_help_itemheight = font_get_size(menu_help_font);
 menu_committed	= -1;
 menu_control	= true;
 menu_txt_offset	= 2;

@@ -1,10 +1,9 @@
 /// @description 
 
 // Creation grow animation
-defender_created = false;
-curveAsset = animCurveDefenderGrow;
+curveCompleted = false;
 curvePosition = 0;
-curveSpeed = 0.025;
+curveSpeed = 0.02;
 
 // Attributes
 hp = 100;
@@ -20,4 +19,19 @@ damage = 2;
 
 function getCost() {
 	return cost;
+}
+
+function animateCurve(
+	curveSpeed, 
+	curvePosition, 
+	curveAsset) {
+		
+	curvePosition += curveSpeed;
+	var _curveStruct = animcurve_get(curveAsset);
+	var _channel = animcurve_get_channel(_curveStruct, "x");
+	var _value = animcurve_channel_evaluate(
+		_channel,
+		curvePosition);
+	var output = _value/1;
+	return { curvePosition:curvePosition, output:output };
 }

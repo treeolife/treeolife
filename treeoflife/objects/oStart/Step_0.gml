@@ -30,15 +30,11 @@ if (menu_control)
 	}
 }
 
-if (menu_y > gui_height + 150) && (menu_committed != -1)
-{
-	switch (menu_committed)
-	{
+if (menu_y > gui_height + 150) && (menu_committed != -1) {
+	switch (menu_committed) {
 		case menu_options.start_game:
 			room_goto(rZero);
 			break;
-		//case menu_options.continue_game:
-		//	break;
 		default:
 			break;
 		case menu_options.credits:

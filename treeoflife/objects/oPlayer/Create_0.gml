@@ -5,36 +5,14 @@ enum MIDORI {
 	sprint	= 1,
 }
 
-// instance timer
+// Instance timer
 instance_create_depth(0,0,0, oTimer);
 
 speed_v = 0;
 speed_h = 0;
 positionX = 0;
 positionY = 0;
-#region Legacy settings (not in use)
-	#region Speedier settings, works well
-	//max_speed = 4;
-	//game_gravity = 1;
-	//acceleration = 0.3;
-	//game_friction = 0.2;
-	//jump_height = -11;
-	#endregion
-	#region Original settings, works well
-	//max_speed = 3.5;
-	//game_gravity = 1;
-	//acceleration = 0.3;
-	//game_friction = 0.1;
-	//jump_height = -11;
-	#endregion
-#endregion
-#region Original settings from Shaun Spalding
-//max_speed = 3.5;
-//game_gravity = 0.4;
-//acceleration = 0.3;
-//game_friction = 0.1;
-//jump_height = -7;
-#endregion
+
 #region Current settings
 max_speed = 3.5;
 game_gravity = 0.4;
