@@ -8,6 +8,7 @@ global.cost			= 0;
 global.timer		= 30;
 global.pausedTimer	= false;
 global.currentTime	= 0;
+global.gamePaused	= false;
 
 advanceLevel = function(wave) {
 	var roomName;
