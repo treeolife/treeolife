@@ -24,4 +24,4 @@ advanceLevel = function(wave) {
 	room_goto(roomName);
 }
 
-room_goto(rZero);
+room_goto(rStart);
