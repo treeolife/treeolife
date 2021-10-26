@@ -5,11 +5,11 @@ damage = 0.1;
 // Behaviour
 attackDefender = false;
 
-tar = oPlayer;
+tar = noone;
 
 alarm[0] = 2 * 15;
 
-image_speed = 0;
+image_speed = 1;
 
 flash = 0;
 old_x = 0;

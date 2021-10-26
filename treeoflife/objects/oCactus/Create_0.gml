@@ -4,7 +4,7 @@
 defender_created = false;
 curveAsset = animCurveDefenderGrow;
 curvePosition = 0;
-curveSpeed = 0.05;
+curveSpeed = 0.025;
 
 // Attributes
 hp = 100;

@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sLand",
-    "path": "sprites/sLand/sLand.yy",
+    "name": "sLandIdle",
+    "path": "sprites/sLandIdle/sLandIdle.yy",
   },
   "solid": false,
   "visible": true,

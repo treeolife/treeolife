@@ -1,16 +1,10 @@
 {
-  "spriteId": {
-    "name": "sAirIdle",
-    "path": "sprites/sAirIdle/sAirIdle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "oEnemy",
-    "path": "objects/oEnemy/oEnemy.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -24,17 +18,18 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
+    {"isDnD":false,"eventNum":64,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"oCactus","path":"objects/oCactus/oCactus.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Pollution",
-    "path": "folders/Pollution.yy",
+    "name": "GUI",
+    "path": "folders/GUI.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oAir",
+  "name": "oUIPause",
   "tags": [],
   "resourceType": "GMObject",
 }
