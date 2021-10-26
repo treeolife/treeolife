@@ -10,19 +10,29 @@ global.pausedTimer	= false;
 global.currentTime	= 0;
 global.gamePaused	= false;
 
-advanceLevel = function(wave) {
+advanceLevel = function() {
 	var roomName;
-	var wave_number = real(wave);
+	var wave_number = real(global.wave + 1);
+	//show_debug_message("wave " + string(global.wave));
+	//show_debug_message("wave num " + string(wave_number));
 	switch(wave_number) {
-		case 1: roomName = rOne; break;
-		case 2: roomName = rTwo; break;
-		case 3: roomName = rThree; break;
-		case 4: roomName = rFour; break;
+		case 1: roomName = rOne; 
+		room_goto(rOne);
+		break;
+		case 2: roomName = rTwo; 
+		room_goto(rTwo);
+		break;
+		case 3: roomName = rThree; 
+		room_goto(rThree);
+		break;
+		case 4: roomName = rFour; 
+		room_goto(rFour);
+		break;
 		case 0: 
 		default: roomName = rZero;
+		room_goto(rZero);
 		break;
 	}
-	room_goto(roomName);
 }
 
 room_goto(rStart);
