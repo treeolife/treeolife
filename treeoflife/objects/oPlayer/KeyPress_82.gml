@@ -1,2 +1,2 @@
-/// @description restart 
-game_restart();
+/// @description does nothing 
+//game_restart();

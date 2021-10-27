@@ -12,6 +12,9 @@ global.gamePaused	= false;
 global.textSpeed	= 0.75;
 global.Dialog		= false;
 
+// layers
+global.collisionMapName = "Land";
+
 advanceLevel = function(wave) {
 	var roomName;
 	var wave_number = real(wave);

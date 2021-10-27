@@ -11,3 +11,5 @@ x2Target = RESOLUTION_W-75;
 
 lerpProgress = 0;
 textProgress = 0;
+
+responseSelected = 0;
