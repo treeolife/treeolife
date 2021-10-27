@@ -29,14 +29,93 @@ function PlayerStateIdle(){
 	
 		scr_collision();
 	
-		#region Interaction logic
-		if (keyInteract) {
+		#region Full interaction area
+		
+		interact = noone;
+		
+		var _interactionList = ds_list_create();
+		var _nearestInteractionMap = ds_map_create();
+		var _nearestInteractionMapKeys;
+		var _interactionSize = 32;
+		var _interactionFound = collision_rectangle_list(	// returns Integer
+			x-_interactionSize,
+			y-_interactionSize,
+			x+_interactionSize,
+			y+_interactionSize,
+			pEntity,
+			false,
+			true,
+			_interactionList,
+			true);
+		
+		#region Undraw previous interact items
+		numPreviousList = ds_list_size(_previousInteractionList);
+		while(numPreviousList > 0) {
+			var _check = _previousInteractionList[| --numPreviousList];
+			if (_check.entityActivateScript != -1) {
+				_check.draw = false;
+			}
+		}
+		#endregion
+		
+		#region Draw interact item
+		
+		while(_interactionFound > 0) {	// Check nearest interact target
+			ds_list_copy(_previousInteractionList, _interactionList);
+			var _check = _interactionList[| --_interactionFound];
+			if (_check.entityActivateScript != -1) {
+				// Add one to distance, prevent using keys of 0, the case of standing directly on object
+				distance = distance_to_point(_check.x, _check.y) + 1;
+				if(!ds_map_exists(_nearestInteractionMap, distance)) { // Equidistant case not handled
+					ds_map_add(_nearestInteractionMap, distance, _check);
+				}
+			}
+		}
+		
+		_nearestInteractionMapKeys = array_create(ds_map_size(_nearestInteractionMap));
+		numList = ds_list_size(_interactionList);
+		
+		if(numList > 0) {
+			ds_map_keys_to_array(_nearestInteractionMap, _nearestInteractionMapKeys);
+			array_sort(_nearestInteractionMapKeys, function(elm1, elm2) {
+				return elm1 - elm2;
+			});
 			
-			// Collision mask of 10 px border around player
-			//var _activateX = lengthdir_x(10, direction);
-			//var _activateY = lengthdir_y(10, direction);
-			interact = instance_position(
-				x, y, pEntity);
+			for (var i = 0; i < array_length(_nearestInteractionMapKeys); i++) {
+				if (_nearestInteractionMapKeys[i] > 0) {
+					interact = ds_map_find_value(_nearestInteractionMap, _nearestInteractionMapKeys[i]);
+					interact.draw = true;
+					break;
+				}
+			}
+			
+			//break;
+		}
+		
+		ds_map_destroy(_nearestInteractionMap);
+		
+		#endregion
+			
+		#region Undraw interaction outline when multiple in range	
+		
+		while(numPreviousList > 0) {
+				var _check = _previousInteractionList[| --numPreviousList];
+				if (_check.entityActivateScript != -1) {
+					if (numList == 0) {
+						_check.draw = false;
+					} else {
+						if(interact != _check)
+							_check.draw = false;
+					}
+				}
+		}
+		
+		ds_list_destroy(_interactionList);
+	
+		#endregion
+	
+		#region Interaction logic on key press
+		if (keyInteract) {
 			
 			if (interact == noone || 
 				interact.entityActivateScript == -1) {
@@ -50,26 +129,28 @@ function PlayerStateIdle(){
 				script_execute_ext(
 					interact.entityActivateScript,
 					interact.entityActivateArgs);
-					
+				
 				if (interact.entityNPC) {
 					with (interact) {
 						// Do something with the npc
 					}
 				}
 			}
-			
-			
 		}
+		#endregion
+		
 		#endregion
 	
 		#region Remove defender UI if not colliding on soil
 		if !place_meeting (x, y+2, oSoil) {
+			
 			oUIDefender.hide();
 		}
 		#endregion
 		
  		#region If not on ground, apply game gravity in vertical movement 
  		if !place_meeting (x, y+1, oCollision) {	
+			
  			speed_v += game_gravity;
  		} 
  		#endregion
@@ -77,12 +158,15 @@ function PlayerStateIdle(){
  		#region Else If on ground, go to Jump state
  		else {
  			if keySpace {
+				
  				state = PlayerStateJump;	
  			}
 
  			if keyInteract && !oUIDefender.isOpen() {
+				
  				var soil = instance_place(x, y+2, oSoil)
  				if soil && soil.plantable {
+					
  					oUIDefender.show(soil);
  				}
 			}

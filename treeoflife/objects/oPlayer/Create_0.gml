@@ -25,6 +25,10 @@ j = 0;
 state = PlayerStateIdle;
 midoriState = MIDORI.idle;
 
+// For shaders
+previousInteract = noone;
+_previousInteractionList = ds_list_create();
+
 startTimer = function(time_in_seconds) {
 	global.currentTime = real(time_in_seconds);
 	global.timer = real(time_in_seconds);

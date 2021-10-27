@@ -16,3 +16,13 @@ NewTextBox(
 NewTextBox(
 	"It was a horrible sight."
 	, TEXTBOX.defender);
+	
+gui_width	= display_get_gui_width();
+gui_height	= display_get_gui_height();
+gui_margin	= 32;
+
+help_text		= "Press Esc to fast forward";
+//control_text	= "Use up, down keys, and ENTER to select";
+menu_help_font	= fDebug;
+menu_help_itemheight = font_get_size(menu_help_font);
+menu_fade		= 0;

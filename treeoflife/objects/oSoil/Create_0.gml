@@ -1,5 +1,7 @@
 /// @description 
 
+event_inherited();
+
 defenderObj = 0;
 
 function getYHeight(defender_obj) {
