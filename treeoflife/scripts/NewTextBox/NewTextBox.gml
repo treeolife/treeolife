@@ -1,3 +1,11 @@
+enum TEXTBOX {
+	defender= 0,
+	entity	= 1,
+	player	= 2,
+	select	= 3,
+	empty	= 4,
+}
+
 function NewTextBox() {
 	global.Dialog = true;
 	
