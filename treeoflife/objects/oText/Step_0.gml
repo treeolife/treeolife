@@ -17,7 +17,7 @@ if (responseSelected < _min) responseSelected = _max;
 keySpace = keyboard_check_pressed(vk_space);
 keyEnter = keyboard_check_pressed(vk_enter);
 
-if (keySpace || keyEnter) {
+if ((keySpace || keyEnter) && global.Dialog) {
 	var _messageLength = string_length(message)
 	if (textProgress >= _messageLength) {
 		

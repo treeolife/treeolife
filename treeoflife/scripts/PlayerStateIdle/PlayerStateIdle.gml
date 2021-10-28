@@ -36,7 +36,7 @@ function PlayerStateIdle(){
 		var _interactionList = ds_list_create();
 		var _nearestInteractionMap = ds_map_create();
 		var _nearestInteractionMapKeys;
-		var _interactionSize = 32;
+		var _interactionSize = 24;
 		var _interactionFound = collision_rectangle_list(	// returns Integer
 			x-_interactionSize,
 			y-_interactionSize,
@@ -115,7 +115,7 @@ function PlayerStateIdle(){
 		#endregion
 	
 		#region Interaction logic on key press
-		if (keyInteract) {
+		if (keyInteract && !global.Dialog) {
 			
 			if (interact == noone || 
 				interact.entityActivateScript == -1) {
