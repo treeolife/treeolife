@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"scr_text_outline","path":"scripts/scr_text_outline/scr_text_outline.yy",},"order":3,},
+    {"id":{"name":"sCactusAttack","path":"sprites/sCactusAttack/sCactusAttack.yy",},"order":11,},
     {"id":{"name":"shEntity","path":"shaders/shEntity/shEntity.yy",},"order":3,},
     {"id":{"name":"sHealthbarBg","path":"sprites/sHealthbarBg/sHealthbarBg.yy",},"order":0,},
     {"id":{"name":"spr_Particle_Rain_Soft__Blood","path":"sprites/spr_Particle_Rain_Soft__Blood/spr_Particle_Rain_Soft__Blood.yy",},"order":0,},
@@ -50,7 +51,7 @@
     {"id":{"name":"spr_Particle_Rain_Soft__DarkBlue","path":"sprites/spr_Particle_Rain_Soft__DarkBlue/spr_Particle_Rain_Soft__DarkBlue.yy",},"order":1,},
     {"id":{"name":"sSelector","path":"sprites/sSelector/sSelector.yy",},"order":6,},
     {"id":{"name":"sParticleLava","path":"sprites/sParticleLava/sParticleLava.yy",},"order":1,},
-    {"id":{"name":"oUIBar","path":"objects/oUIBar/oUIBar.yy",},"order":6,},
+    {"id":{"name":"oUIHud","path":"objects/oUIHud/oUIHud.yy",},"order":6,},
     {"id":{"name":"DialogResponses","path":"scripts/DialogResponses/DialogResponses.yy",},"order":12,},
     {"id":{"name":"sLandWalk","path":"sprites/sLandWalk/sLandWalk.yy",},"order":7,},
     {"id":{"name":"oMountain","path":"sprites/oMountain/oMountain.yy",},"order":13,},
@@ -74,6 +75,7 @@
     {"id":{"name":"sParticleLeaf2","path":"sprites/sParticleLeaf2/sParticleLeaf2.yy",},"order":1,},
     {"id":{"name":"spr_Particle_Rain_Hard__LightBlue","path":"sprites/spr_Particle_Rain_Hard__LightBlue/spr_Particle_Rain_Hard__LightBlue.yy",},"order":3,},
     {"id":{"name":"oRainDrop","path":"objects/oRainDrop/oRainDrop.yy",},"order":16,},
+    {"id":{"name":"sCactusAttack2","path":"sprites/sCactusAttack2/sCactusAttack2.yy",},"order":12,},
     {"id":{"name":"sParticleEmber","path":"sprites/sParticleEmber/sParticleEmber.yy",},"order":0,},
     {"id":{"name":"rThree","path":"rooms/rThree/rThree.yy",},"order":2,},
     {"id":{"name":"sFertiliser","path":"sprites/sFertiliser/sFertiliser.yy",},"order":12,},

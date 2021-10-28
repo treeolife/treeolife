@@ -1,9 +1,8 @@
 /// @description 
 	
 NewTextBox(
-	"The last beacon of hope" +
-	"\nfor the human race:" +
-	"\nMidori."
-	, 0);
+	"You are Midori," +
+	"\nthe final beacon of hope."
+	, TEXTBOX.defender);
 
 instance_destroy();

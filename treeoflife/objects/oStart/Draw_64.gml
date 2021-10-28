@@ -7,10 +7,10 @@ draw_set_color(c_black);
 draw_set_font(menu_help_font);
 draw_set_valign(fa_bottom);
 draw_set_halign(fa_left);
-draw_text_transformed(
-	gui_margin,
-	gui_height-menu_help_itemheight * 2,
-	help_text,1,1,0);
+//draw_text_transformed(
+//	gui_margin,
+//	gui_height-menu_help_itemheight * 2,
+//	help_text,1,1,0);
 draw_text_transformed(
 	gui_margin,
 	gui_height-menu_help_itemheight,

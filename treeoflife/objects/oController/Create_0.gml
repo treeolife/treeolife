@@ -11,6 +11,7 @@ global.currentTime	= 0;
 global.gamePaused	= false;
 global.textSpeed	= 0.75;
 global.Dialog		= false;
+global.max_water_amount = 10;
 
 // layers
 global.collisionMapName = "Land";

@@ -43,7 +43,7 @@ menu_cursor = credits_options.back;
 roles_menu[credits.draw_art_1] = "Producer, Artist";
 roles_menu[credits.break_things] = "QA, Levels";
 roles_menu[credits.draw_art_2] = "Artist";
-roles_menu[credits.write_code] = "Coder";
+roles_menu[credits.write_code] = "Coder, UX";
 
 roles_menu_items = array_length(roles_menu);
 

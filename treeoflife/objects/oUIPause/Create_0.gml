@@ -19,13 +19,13 @@ pauseOption[PAUSE.exit_game] = "Exit";
 pauseOptionSelected = 0;
 
 hide = function() {
-	oUIBar.visible = true;
+	oUIHud.visible = true;
 	visible = false;
 }
 
 show = function() {
 	selection = 0;
-	oUIBar.visible = false;
+	oUIHud.visible = false;
 	visible = true;
 }
 
