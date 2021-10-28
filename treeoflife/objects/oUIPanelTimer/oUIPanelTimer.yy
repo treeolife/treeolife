@@ -4,7 +4,10 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "pUIPanel",
+    "path": "objects/pUIPanel/pUIPanel.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -17,15 +20,17 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":64,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "GUI",
-    "path": "folders/GUI.yy",
+    "name": "UI Panels",
+    "path": "folders/GUI/UI Panels.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oUIHud",
+  "name": "oUIPanelTimer",
   "tags": [],
   "resourceType": "GMObject",
 }

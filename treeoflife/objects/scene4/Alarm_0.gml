@@ -3,6 +3,6 @@
 NewTextBox(
 	"You are Midori," +
 	"\nthe final beacon of hope."
-	, TEXTBOX.defender);
+	, TEXTBOX.forest);
 
 instance_destroy();

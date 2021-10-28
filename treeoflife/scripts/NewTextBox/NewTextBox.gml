@@ -8,6 +8,7 @@ enum TEXTBOX {
 	player	= 2,
 	select	= 3,
 	empty	= 4,
+	forest	= 5,
 }
 
 function NewTextBox() {

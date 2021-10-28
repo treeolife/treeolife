@@ -21,11 +21,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "GUI",
-    "path": "folders/GUI.yy",
+    "name": "UI Panels",
+    "path": "folders/GUI/UI Panels.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oUIHud",
+  "name": "pUIPanel",
   "tags": [],
   "resourceType": "GMObject",
 }
