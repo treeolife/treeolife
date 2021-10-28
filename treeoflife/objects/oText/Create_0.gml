@@ -6,8 +6,8 @@ y1 = RESOLUTION_H - 120;
 x2 = RESOLUTION_W/2;
 y2 = RESOLUTION_H;
 
-x1Target = 75;
-x2Target = RESOLUTION_W-75;
+x1Target = 18;
+x2Target = RESOLUTION_W-18;
 
 lerpProgress = 0;
 textProgress = 0;
