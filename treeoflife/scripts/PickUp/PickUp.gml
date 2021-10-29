@@ -1,15 +1,16 @@
 /// @function PickUp(item);
 /// @param {object} item An item object to pick up
 function PickUp(item){	
+	if (item == -1) exit;
+	if (item.interactOrigin == noone) exit;
 	
 	origin = item.interactOrigin;
+	item.picked = true;
 	
 	// Move item from surface to appear in inventory
 	// Positioned out of the way
 	
-	item.x = 0;
-	item.y = 0;
-	item.visible = false;
+	//item.visible = false;
 	item.persistent = true;
 	
 	// Add item to origin inventory
