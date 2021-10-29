@@ -10,6 +10,7 @@ function PickUp(item){
 	item.x = 0;
 	item.y = 0;
 	item.visible = false;
+	item.persistent = true;
 	
 	// Add item to origin inventory
 	inventory = origin.inventory

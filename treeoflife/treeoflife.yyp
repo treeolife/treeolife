@@ -92,6 +92,7 @@
     {"id":{"name":"sSoil","path":"sprites/sSoil/sSoil.yy",},"order":7,},
     {"id":{"name":"sSeed","path":"sprites/sSeed/sSeed.yy",},"order":1,},
     {"id":{"name":"sLandIdle","path":"sprites/sLandIdle/sLandIdle.yy",},"order":8,},
+    {"id":{"name":"pItem","path":"objects/pItem/pItem.yy",},"order":6,},
     {"id":{"name":"PickUp","path":"scripts/PickUp/PickUp.yy",},"order":14,},
     {"id":{"name":"scene2","path":"objects/scene2/scene2.yy",},"order":1,},
     {"id":{"name":"sGUIPanel","path":"sprites/sGUIPanel/sGUIPanel.yy",},"order":20,},
