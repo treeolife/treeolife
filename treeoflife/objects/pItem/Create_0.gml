@@ -7,4 +7,6 @@ frequency = 0.05;
 amplitude = 0.01;
 timer = 0;
 
-_y = ystart;
+picked = false;
+interactX = -1;
+pickedTime = 0;

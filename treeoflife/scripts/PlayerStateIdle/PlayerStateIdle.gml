@@ -36,7 +36,7 @@ function PlayerStateIdle(){
 		var _interactionList = ds_list_create();
 		var _nearestInteractionMap = ds_map_create();
 		var _nearestInteractionMapKeys;
-		var _interactionSize = 33;
+		var _interactionSize = 24;
 		var _interactionFound = collision_rectangle_list(	// returns Integer
 			x-_interactionSize,
 			y-_interactionSize,
@@ -68,6 +68,9 @@ function PlayerStateIdle(){
 				//distance = distance_to_point(_check.x, _check.y) + 1;
 				distance = floor(abs(x - _check.x)) + 1;
 				if(!ds_map_exists(_nearestInteractionMap, distance)) { // Equidistant case not handled
+					if (object_get_parent(_check.object_index) == pItem) 
+						if(_check.picked) continue;	// Avoid interacting with picked items
+						
 					ds_map_add(_nearestInteractionMap, distance, _check);
 				}
 			}
@@ -126,8 +129,14 @@ function PlayerStateIdle(){
 				}
 			} else {
 				
-				if (oPlayer != noone)
-					interact.interactOrigin = oPlayer;
+				if (oPlayer != noone) { // We should check for null value in player state
+					with(interact) {
+						interactOrigin = other;
+						if(object_get_parent(object_index) == pItem)
+							interactX = other.x;
+							pickedTime = 0;
+					}
+				}
 				
 				// Interact with entity
 				script_execute_ext(
