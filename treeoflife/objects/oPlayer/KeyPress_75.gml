@@ -1,4 +1,4 @@
-/// @description temporary advance
+/// @description advance level with timer
 
 oPlayer.startTimer(5);
 

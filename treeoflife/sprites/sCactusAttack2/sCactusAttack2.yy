@@ -65,7 +65,7 @@
     "spriteId": {"name":"sCactusAttack2","path":"sprites/sCactusAttack2/sCactusAttack2.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 12.0,
+    "playbackSpeed": 13.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,

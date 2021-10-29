@@ -4,3 +4,4 @@ delay = 0;
 delayDelta = 0;
 alpha = 0;
 fadeColor = c_black;
+destination = noone;

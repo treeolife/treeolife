@@ -5,6 +5,7 @@ if(delta < duration) { // calculate alpha based on duration
     delayDelta++;
 } else {
     //end of transition event goes here    
-    room_goto_next();
+    if(destination == noone) room_goto_next();
+		else room_goto(destination);
 	instance_destroy(id);
 }
