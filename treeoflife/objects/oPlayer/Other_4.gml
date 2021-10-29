@@ -2,6 +2,9 @@
 
 instance_create_depth(0,0,0, oRoomInit);
 instance_create_depth(0,0,0, oGrid);
+instance_create_depth(0,0,0, oInventory);
+oInventory.persistent = true;
+
 instance_create_depth(x,y,0, oCamera);
 
 // First step of pathfinding algorithm

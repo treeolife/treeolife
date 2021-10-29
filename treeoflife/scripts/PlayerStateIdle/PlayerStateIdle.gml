@@ -125,6 +125,9 @@ function PlayerStateIdle(){
 				}
 			} else {
 				
+				if (oPlayer != noone)
+					interact.interactOrigin = oPlayer;
+				
 				// Interact with entity
 				script_execute_ext(
 					interact.entityActivateScript,

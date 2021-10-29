@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sSeedling",
-    "path": "sprites/sSeedling/sSeedling.yy",
+    "name": "sSeedling2",
+    "path": "sprites/sSeedling2/sSeedling2.yy",
   },
   "solid": false,
   "visible": true,

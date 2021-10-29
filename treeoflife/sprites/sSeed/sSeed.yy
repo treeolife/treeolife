@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "GUI",
-    "path": "folders/GUI.yy",
+    "name": "Items",
+    "path": "folders/Items.yy",
   },
   "resourceVersion": "1.0",
   "name": "sSeed",

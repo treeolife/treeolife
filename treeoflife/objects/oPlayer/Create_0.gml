@@ -13,6 +13,9 @@ speed_h = 0;
 positionX = 0;
 positionY = 0;
 
+// Attributes
+inventory = global.inventory;
+
 #region Current settings
 max_speed = 3.5;
 game_gravity = 0.4;

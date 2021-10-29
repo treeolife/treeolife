@@ -205,10 +205,6 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"scene4","path":"objects/scene4/scene4.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":128.0,"y":512.0,"resourceVersion":"1.0","name":"inst_3AFE01A3","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
             {"propertyId":{"name":"entityActivateScript","path":"objects/pEntity/pEntity.yy",},"objectId":{"name":"pEntity","path":"objects/pEntity/pEntity.yy",},"value":"NewTextBox","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-            {"propertyId":{"name":"entityActivateArgs","path":"objects/pEntity/pEntity.yy",},"objectId":{"name":"pEntity","path":"objects/pEntity/pEntity.yy",},"value":"[\"oSeed\", 0]","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-          ],"isDnd":false,"objectId":{"name":"oSeed","path":"objects/oSeed/oSeed.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":732.0,"y":576.0,"resourceVersion":"1.0","name":"inst_43974745","tags":[],"resourceType":"GMRInstance",},
-        {"properties":[
-            {"propertyId":{"name":"entityActivateScript","path":"objects/pEntity/pEntity.yy",},"objectId":{"name":"pEntity","path":"objects/pEntity/pEntity.yy",},"value":"NewTextBox","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
             {"propertyId":{"name":"entityActivateArgs","path":"objects/pEntity/pEntity.yy",},"objectId":{"name":"pEntity","path":"objects/pEntity/pEntity.yy",},"value":"[\"The end.\", 0, [\"0:Wut?\",\"4:Take me to the hidden street.\"]]","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
             {"propertyId":{"name":"entityCollision","path":"objects/pEntity/pEntity.yy",},"objectId":{"name":"pEntity","path":"objects/pEntity/pEntity.yy",},"value":"False","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"oSignpost","path":"objects/oSignpost/oSignpost.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":58.0,"y":561.0,"resourceVersion":"1.0","name":"inst_51E8B0F4","tags":[],"resourceType":"GMRInstance",},
@@ -491,7 +487,6 @@
     {"name":"inst_31CA01D5","path":"rooms/rZero/rZero.yy",},
     {"name":"inst_619F700F","path":"rooms/rZero/rZero.yy",},
     {"name":"inst_3AFE01A3","path":"rooms/rZero/rZero.yy",},
-    {"name":"inst_43974745","path":"rooms/rZero/rZero.yy",},
     {"name":"inst_1A3951FC","path":"rooms/rZero/rZero.yy",},
     {"name":"inst_6F0549FD","path":"rooms/rZero/rZero.yy",},
     {"name":"inst_7F4FCD38","path":"rooms/rZero/rZero.yy",},

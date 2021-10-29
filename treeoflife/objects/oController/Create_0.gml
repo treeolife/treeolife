@@ -12,6 +12,7 @@ global.gamePaused	= false;
 global.textSpeed	= 0.75;
 global.Dialog		= false;
 global.max_water_amount = 10;
+global.inventory	= ds_list_create();
 
 // layers
 global.collisionMapName = "Land";
