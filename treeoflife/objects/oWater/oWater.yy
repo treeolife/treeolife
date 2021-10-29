@@ -6,10 +6,10 @@
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
-  "persistent": true,
+  "persistent": false,
   "parentObjectId": {
-    "name": "pEntity",
-    "path": "objects/pEntity/pEntity.yy",
+    "name": "pItem",
+    "path": "objects/pItem/pItem.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

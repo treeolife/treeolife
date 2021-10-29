@@ -36,7 +36,7 @@ function PlayerStateIdle(){
 		var _interactionList = ds_list_create();
 		var _nearestInteractionMap = ds_map_create();
 		var _nearestInteractionMapKeys;
-		var _interactionSize = 24;
+		var _interactionSize = 33;
 		var _interactionFound = collision_rectangle_list(	// returns Integer
 			x-_interactionSize,
 			y-_interactionSize,
@@ -65,7 +65,8 @@ function PlayerStateIdle(){
 			var _check = _interactionList[| --_interactionFound];
 			if (_check.entityActivateScript != -1) {
 				// Add one to distance, prevent using keys of 0, the case of standing directly on object
-				distance = distance_to_point(_check.x, _check.y) + 1;
+				//distance = distance_to_point(_check.x, _check.y) + 1;
+				distance = floor(abs(x - _check.x)) + 1;
 				if(!ds_map_exists(_nearestInteractionMap, distance)) { // Equidistant case not handled
 					ds_map_add(_nearestInteractionMap, distance, _check);
 				}
