@@ -3,7 +3,7 @@
 // stores global variables
 global.water_amount = 100;
 global.seed_amount	= 1;
-global.wave			= 0;
+global.wave			= -1;
 global.cost			= 0;
 global.timer		= 30;
 global.pausedTimer	= false;
@@ -13,9 +13,27 @@ global.textSpeed	= 0.75;
 global.Dialog		= false;
 global.max_water_amount = 10;
 global.inventory	= ds_list_create();
+global.gameStarted	= -1;
 
 // layers
 global.collisionMapName = "Land";
+
+getLevelRoom = function() {
+	
+	switch (global.wave) {
+		default:
+		case 0:
+			return rZero;
+		case 1:
+			return rOne;
+		case 2:
+			return rTwo;
+		case 3:
+			return rThree;
+		case 4:
+			return rFour;
+	}
+}
 
 advanceLevel = function(wave) {
 	var roomName;

@@ -4,7 +4,7 @@ gui_margin	= 32;
 
 destinationRoom = noone;
 
-transition_text	= "Transitioning...";
+transition_text	= "";
 menu_help_font	= fDebug;
 menu_help_itemheight = font_get_size(menu_help_font);
 menu_fade		= 0;

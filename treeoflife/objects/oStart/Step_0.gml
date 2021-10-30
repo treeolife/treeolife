@@ -29,19 +29,28 @@ if (menu_control) {
 if (menu_y > gui_height + 150) && (menu_committed != -1) {
 	switch (menu_committed) {
 		case menu_options.start_game:
-			instance_create_depth(
-				0,
-				0,
-				get_layer_depth(LAYER.ui)-100,
-				fadeOut);
-			alarm[0] = room_speed;
+
+			if (global.gameStarted == -1) {
+				TransitionRoom(rExposition1, "...");
+			} else {
+				TransitionRoom(oController.getLevelRoom(), "Loading...");
+			}
 			break;
 		default:
 			break;
+			
+		case menu_options.new_game:
+			
+			game_restart();
+			break;
+			
 		case menu_options.credits:
+		
 			room_goto(rCredits);
 			break;
+			
 		case menu_options.quit:
+		
 			game_end();
 			break;
 	}

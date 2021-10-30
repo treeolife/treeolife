@@ -26,6 +26,7 @@ jump_height = -7;
 
 j = 0;
 state = PlayerStateIdle;
+pauseState = 0;
 midoriState = MIDORI.idle;
 
 // For shaders
