@@ -3,9 +3,11 @@
 // Inherit the parent event
 event_inherited();
 
-frequency = 0.05;
-amplitude = 0.01;
+frequency = 0.1;
+amplitude = 0.05;
 timer = 0;
+
+sineWave = 0;
 
 picked = false;
 interactX = -1;

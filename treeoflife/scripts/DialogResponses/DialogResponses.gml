@@ -14,6 +14,7 @@ function DialogResponses(argument0) {
 		case 8: instance_create_depth(0,0,get_layer_depth(LAYER.ui), oUIPanelMiddle); break;
 		case 9: instance_destroy(oUIPanelHighlight); break;
 		case 10: instance_destroy(oUIPanelMiddle); break;
+		case 11: instance_create_depth(x,y,depth,oSeed);
 		default: break;
 	}
 

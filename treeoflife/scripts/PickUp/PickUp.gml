@@ -12,6 +12,8 @@ function PickUp(item){
 	
 	//item.visible = false;
 	item.persistent = true;
+	item.interactX = origin.x;
+	item.pickedTime = 10;
 	
 	// Add item to origin inventory
 	inventory = origin.inventory
