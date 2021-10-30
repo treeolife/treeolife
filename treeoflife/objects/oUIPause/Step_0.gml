@@ -36,10 +36,11 @@ if (global.gamePaused) {
 			break;
 		
 			case PAUSE.exit_game: {
+				global.gamePaused = false;
 				if debugger_mode {
 					show_debug_message("PAUSE.exit_game");
 				}
-				room_goto(rStart);
+				TransitionRoom(rStart, "...");
 			}
 			break;
 		}
