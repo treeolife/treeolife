@@ -132,9 +132,6 @@ function PlayerStateIdle(){
 				if (oPlayer != noone) { // We should check for null value in player state
 					with(interact) {
 						interactOrigin = other;
-						if(object_get_parent(object_index) == pItem)
-							interactX = other.x;
-							pickedTime = 0;
 					}
 				}
 				
