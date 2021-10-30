@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sCactus",
-    "path": "sprites/sCactus/sCactus.yy",
+    "name": "sCactusIdle",
+    "path": "sprites/sCactusIdle/sCactusIdle.yy",
   },
   "solid": false,
   "visible": true,

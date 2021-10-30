@@ -14,8 +14,8 @@ player_input =  keyRight - keyLeft;
 positionX = x;
 positionY = y;
 
-// Starts script PlayerStateIdle, found in oPlayer's Create section
+// Starts script PlayerStateIdle
+// found in oPlayer's Create section
 script_execute(state);
 
-// Collision ?
 depth = -bbox_bottom;

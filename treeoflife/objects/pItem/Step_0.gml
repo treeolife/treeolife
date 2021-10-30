@@ -1,7 +1,5 @@
 /// @description 
 
-y = y + sin(timer*frequency) * amplitude;
-
 timer++;
 
 // alpha
@@ -17,14 +15,19 @@ var percent = ((distanceX - distanceLeft) / distanceX);
 //if(time > .4)
 //	image_alpha = 1 - time;
 
-if (picked)
+if (!picked) {
+	y = y + sin(timer*frequency) * amplitude;
+	x = floor(x);
+} else {
 	if (distanceLeft <= 0) {
 	
 		visible = false;
 		x = 0;
 		y = 0; 
-		picked = false;
+
 	} else {
+	
+		image_alpha -= (0.5 + image_alpha) / room_speed;
 	
 		// Sine trajectory
 		if (distanceX > 4) {
@@ -50,5 +53,6 @@ if (picked)
 			x -= time;
 		}
 
-		x = floor(x);
+		
 	}
+}
