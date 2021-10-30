@@ -286,6 +286,7 @@
       ],"visible":false,"depth":100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Land","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":864.0,"y":384.0,"resourceVersion":"1.0","name":"inst_3FF24E7C_1","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"fadeIn","path":"objects/fadeIn/fadeIn.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":896.0,"y":352.0,"resourceVersion":"1.0","name":"inst_2B5EE1B3","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":200,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Player","tags":[],"resourceType":"GMRInstanceLayer",},
     {"tilesetId":{"name":"tDirtSet","path":"tilesets/tDirtSet/tDirtSet.yy",},"x":0,"y":0,"tiles":{"SerialiseWidth":52,"SerialiseHeight":29,"TileSerialiseData":[
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -593,6 +594,7 @@
     {"name":"inst_5DC0D5C4","path":"rooms/rOne/rOne.yy",},
     {"name":"inst_4A0C434D","path":"rooms/rOne/rOne.yy",},
     {"name":"inst_D0AADEB","path":"rooms/rOne/rOne.yy",},
+    {"name":"inst_2B5EE1B3","path":"rooms/rOne/rOne.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

@@ -13,7 +13,7 @@ if (hp <= 0) {
 
 if (flash > 0) {
 	flash--;
-	shader_set(shWhite);
+	shader_set(shOutline);
 	draw_self();
 	shader_reset();
 }

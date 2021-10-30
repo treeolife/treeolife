@@ -13,6 +13,9 @@ speed_h = 0;
 positionX = 0;
 positionY = 0;
 
+// When player loads, transition is complete
+global.transitioning = false;
+
 // Attributes
 inventory = global.inventory;
 

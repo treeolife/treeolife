@@ -5,7 +5,7 @@
     "path": "folders/Shaders.yy",
   },
   "resourceVersion": "1.0",
-  "name": "shWhite",
+  "name": "shOutline",
   "tags": [],
   "resourceType": "GMShader",
 }

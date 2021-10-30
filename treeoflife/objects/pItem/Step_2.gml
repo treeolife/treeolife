@@ -7,7 +7,5 @@ if (picked) {
 	
 	draw = false;
 	
-	if (pickedTime < room_speed * 1)
-	
-		pickedTime++;
+	pickedTime++;
 }

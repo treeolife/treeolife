@@ -29,7 +29,7 @@ scr_draw_set(1, c_black, function() {
 				unitSprite, 
 				0, 
 				unit*5*sScale/2 + sScale/2 + border / 2, 
-				gridSize - border * 5, 
+				gridSize - border * 4 + 1, 
 				32, 
 				32);
 				

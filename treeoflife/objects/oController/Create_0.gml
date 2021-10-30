@@ -14,6 +14,23 @@ global.Dialog		= false;
 global.max_water_amount = 10;
 global.inventory	= ds_list_create();
 global.gameStarted	= -1;
+global.transitioning = false;
+
+global.levelAccessed = {
+	zero:	-1,
+	one	:	-1,
+	two	:	-1,
+	three:	-1,
+	four:	-1,
+}
+
+// UI state machine
+global.panelState = {
+	defender:	-1,
+	highlight:	-1,
+	middle:		-1,
+	timer:	-1,
+}
 
 // layers
 global.collisionMapName = "Land";
@@ -36,31 +53,35 @@ getLevelRoom = function() {
 }
 
 advanceLevel = function(wave) {
-	var roomName;
-	var wave_number = real(wave);
-	
+
 	oCamera.initialised = false;
+	global.transitioning = true;
 	
-	switch(wave_number) {
+	if (global.transitioning)
+		switch(wave) {
 		
-		case 1: roomName = rOne; 
-		room_goto(rOne);
-		break;
-		case 2: roomName = rTwo; 
-		room_goto(rTwo);
-		break;
-		case 3: roomName = rThree; 
-		room_goto(rThree);
-		break;
-		case 4: roomName = rFour; 
-		room_goto(rFour);
-		break;
-		case 0: 
-		default: roomName = rZero;
-		room_goto(rZero);
-		break;
+			case 1: roomName = rOne; 
+			room_goto(roomName);
+			break;
+			
+			case 2: roomName = rTwo; 
+			room_goto(roomName);
+			break;
+			
+			case 3: roomName = rThree; 
+			room_goto(roomName);
+			break;
+			
+			case 4: roomName = rFour; 
+			room_goto(roomName);
+			break;
+			
+			case 0: 
+			default: roomName = rZero;
+			room_goto(roomName);
+			break;
 		
-	}
+		}
 }
 
 room_goto(rStart);

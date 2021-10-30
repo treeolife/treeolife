@@ -1,17 +1,21 @@
 /// @description oUIPanelHighlight
 
-scr_draw_set(1, c_white, function() {
+event_inherited();
 	
+// draw icon
+draw_sprite_ext(
+	icon, 
+	iconSubimg, 
+	x - width/2 + 20, 
+	y + sprite_get_yoffset(icon) / 3 + 2,
+	1,
+	1,
+	image_angle,
+	image_blend,
+	image_alpha);
+	
+scr_draw_set(image_alpha, c_black, function() {
 	scr_set_align(fa_center, fa_middle);
-	draw_set_font(fText);
-	var sScale = 32 + 4;
-	var adjWidth = 200;
-	
-	#region oUIPanelHighlight
-	
-	draw_sprite_stretched(sGUIFull, 0, window_get_width()/2, sScale * 5.5, adjWidth, sScale);
-	draw_sprite(sWater, 0, (window_get_width() - adjWidth)/ 2 + 20, sScale * 5.5);
-	
-	#endregion
-
-});
+	draw_set_font(fInventory);
+	draw_text(x + offset,y,message);
+})

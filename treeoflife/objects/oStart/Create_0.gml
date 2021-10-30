@@ -36,7 +36,7 @@ if (global.gameStarted == -1) {
 	menu[menu_options.start_game]	= "Play";
 } else {
 	menu[menu_options.start_game]	= "Continue";
-	menu[menu_options.new_game]		= "New";
+	menu[menu_options.new_game]		= "New Game";
 }
 
 //menu[menu_options.help]			= "Help";

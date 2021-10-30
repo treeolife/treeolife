@@ -4,7 +4,7 @@
 event_inherited();
 
 frequency = 0.1;
-amplitude = 0.05;
+amplitude = 0.03;
 timer = 0;
 
 sineWave = 0;

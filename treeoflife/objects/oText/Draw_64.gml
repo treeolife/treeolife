@@ -1,5 +1,6 @@
-var longerResponses = (responses[0] != -1) && array_length(responses) > 2;
-var additionalHeight = 0;
+var longerResponses = (responses[0] != -1) 
+	&& array_length(responses) > 2;
+var addedHeight = 0;
 
 if longerResponses {
 	
