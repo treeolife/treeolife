@@ -90,3 +90,13 @@ for (var i = 0; i < menu_items; i++)
 	draw_set_color(col);
 	draw_text(xx,yy,txt);
 }
+
+
+// Year created
+draw_set_alpha(menu_fade);
+scr_set_align(fa_middle, fa_center);
+scr_text_outline(gui_width/2,gui_height/2,offset,"Made in 2021");
+draw_set_color(c_white);
+draw_text(gui_width / 2, gui_height / 2, "Made in 2021");
+
+draw_set_alpha(1);

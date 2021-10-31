@@ -10,24 +10,51 @@ if menu_committed == -1 {
 	menu_fade -= 0.05;
 }
 
+function checkHelpMenu() {
+	if(instance_exists(oUIPanelMiddle))
+		instance_destroy(oUIPanelMiddle);
+}
+	
+
 if (menu_control) {	
 	if (keyboard_check_pressed(vk_up)) {
+		checkHelpMenu();
 		menu_cursor++;
 		if (menu_cursor >= menu_items) menu_cursor = 0;
 	}
 	if (keyboard_check_pressed(vk_down)) {
+		checkHelpMenu();
 		menu_cursor--;
 		if (menu_cursor < 0) menu_cursor = menu_items - 1;
 	}
 	if (keyboard_check_pressed(vk_enter)) {
-		menu_y_target	= gui_height + 200;
-		menu_committed	= menu_cursor;
-		menu_control	= false;
+		
+		// exclude Help menu option
+		if (menu_cursor != menu_options.help) {
+			menu_y_target	= gui_height + 200;
+			menu_committed	= menu_cursor;
+			menu_control	= false;
+		} else {
+			// Help menu option chosen
+			if(!instance_exists(oUIPanelMiddle)) NewPanelMiddle(sSignpost,
+			"How to Play", 
+			//"Inputs\n\n1. Use arrow keys to move.\n2.Jump with space bar.\n3. Enter to select, Esc to escape menu.\n4. Interact with items with \"Z\".\n\n\n" +
+			"Nurture and protect the Tree of Life from pollution monsters.\n\n" +
+			"Plant Defender plants so they can fight against pollution monsters and stop them from approaching the Tree of Life.\n\n" +
+			"A) Collect seeds dropped from the Tree of Life -> seeds give you defenders\n" +
+			"B) Select which type of Defender plant to plant -> each one has a different ability!\n" +
+			"C) Nurture them by watering\n" +
+			"D) Collect items dropped by defeated pollution monsters, feed them to the Tree of Life");
+			
+			else instance_destroy(oUIPanelMiddle);
+		}
 	}
 }
 
 if (menu_y > gui_height + 150) && (menu_committed != -1) {
+	
 	switch (menu_committed) {
+		
 		case menu_options.start_game:
 
 			if (global.gameStarted == -1) {
