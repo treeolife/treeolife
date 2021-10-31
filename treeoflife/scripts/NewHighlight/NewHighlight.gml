@@ -5,7 +5,7 @@ function NewHighlight(
 	h = instance_create_depth(
 		_y,
 		_x,
-		get_layer_depth(LAYER.ui)-200,
+		get_layer_depth(LAYER.ui)-101,
 		oUIPanelHighlight);
 	
 	h.highlight = highlight;

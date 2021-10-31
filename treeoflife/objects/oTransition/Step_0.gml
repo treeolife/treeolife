@@ -7,7 +7,7 @@ if (!global.Dialog && destinationRoom != noone) {
 	fade = instance_create_depth(
 		0,
 		0,
-		get_layer_depth(LAYER.ui)-100,
+		get_layer_depth(LAYER.ui)-200,
 		fadeOut);
 	fade.destination = destinationRoom;
 }
