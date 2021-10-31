@@ -23,11 +23,14 @@ if (global.gamePaused) {
 		
 			case PAUSE.continue_game: {
 					global.gamePaused = false;
+					checkHelpMenu();
 					oUIPause.hide();
 			}
 			break;
 		
 			case PAUSE.help: {
+				if(!instance_exists(oUIPanelMiddle)) NewPanelMiddle(sSignpost, "Help", "1. Use arrow keys to move.\n2.Jump with space bar.\n3. Enter to select, Esc to escape menu.\n4. Interact with items with \"Z\".");
+				else instance_destroy(oUIPanelMiddle);
 			}
 			break;
 		
@@ -37,6 +40,7 @@ if (global.gamePaused) {
 		
 			case PAUSE.exit_game: {
 				global.gamePaused = false;
+				checkHelpMenu();
 				if debugger_mode {
 					show_debug_message("PAUSE.exit_game");
 				}
@@ -45,4 +49,9 @@ if (global.gamePaused) {
 			break;
 		}
 	}
+}
+
+function checkHelpMenu() {
+	if(instance_exists(oUIPanelMiddle))
+		instance_destroy(oUIPanelMiddle);
 }
