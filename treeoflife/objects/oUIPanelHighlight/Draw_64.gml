@@ -6,7 +6,7 @@ event_inherited();
 draw_sprite_ext(
 	icon, 
 	iconSubimg, 
-	x - width/2 + 20, 
+	x - width/2 + 21, 
 	y + sprite_get_yoffset(icon) / 3 + 2,
 	1,
 	1,

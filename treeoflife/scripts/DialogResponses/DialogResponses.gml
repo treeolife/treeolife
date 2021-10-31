@@ -10,8 +10,8 @@ function DialogResponses(argument0) {
 		case 4: TransitionRoom(rHidden); break;
 		case 5: TransitionRoom(rZero); break;
 		case 6: instance_destroy(oUIPanelRight); break;
-		case 7: instance_create_depth(0,0,get_layer_depth(LAYER.ui), oUIPanelHighlight); break;
-		case 8: instance_create_depth(0,0,get_layer_depth(LAYER.ui), oUIPanelMiddle); break;
+		case 7: instance_create_depth(0,0,get_layer_depth(LAYER.ui)-200, oUIPanelHighlight); break;
+		case 8: NewPanelMiddle(sSignpost, "Help", "Press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123."); break;
 		case 9: instance_destroy(oUIPanelHighlight); break;
 		case 10: instance_destroy(oUIPanelMiddle); break;
 		case 11: instance_create_depth(x,y,depth,oSeed); break;
