@@ -4,10 +4,7 @@ scr_draw_set(1, c_white, function() {
 	scr_set_align(fa_center, fa_middle);
 	draw_set_font(fText);
 	
-	var border = 18;
-	var adjWidth = 200;
-	var adjHeight = window_get_height() - border * 2;
-	var fullPanelMarginTop = border + 38;
+	var height = window_get_height() - border * 2;
 	var fullPanelMarginBot = 120;
 	
 	#region oUIPanelRight
@@ -15,14 +12,10 @@ scr_draw_set(1, c_white, function() {
 	draw_sprite_stretched(
 		sGUIPanel, 
 		0, 
-		window_get_width() - adjWidth - border, 
+		window_get_width() - width - border, 
 		border + fullPanelMarginTop, 
-		adjWidth, 
-		adjHeight - fullPanelMarginTop - fullPanelMarginBot);
-
-	///// oUITitlePanel
-	//draw_sprite_stretched(sGUIFull, 0, , , adjWidth, sScale);
-	//draw_sprite(sWater, 0, (window_get_width() - adjWidth) + 1, border*5 + 2);
+		width, 
+		height - fullPanelMarginTop - fullPanelMarginBot);
 	
 	#endregion
 	

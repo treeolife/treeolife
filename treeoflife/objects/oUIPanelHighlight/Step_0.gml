@@ -8,7 +8,7 @@ if (animate) {
 	
 	if (y < yTarget && seconds <= 5) {
 		image_alpha = y/yTarget;
-		y+= (yTarget - y) / menuSpeed;
+		y+= floor((yTarget - y) / menuSpeed);
 	}
 	
 	if (seconds > secondsToFade) {
