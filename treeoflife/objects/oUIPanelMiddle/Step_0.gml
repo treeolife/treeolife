@@ -9,4 +9,4 @@ if (title == noone && icon != noone && string_length(panelTitle) > 0)
 				x - 3,
 				y + border,
 				width,
-				panelTitle);               
+				panelTitle);  
