@@ -18,6 +18,7 @@ function NewPanelDefender(id){
 				0,
 				get_layer_depth(LAYER.ui), 
 				oUIPanelRight);
+		defenderPanel.panelTitle = "Plant the seed";
 	}
 	
 	with(defenderPanel) {
