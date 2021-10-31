@@ -3,11 +3,10 @@
 // Inherit the parent event
 event_inherited();
 
-if string_length(panelTitle) > 0 && title == noone {
+if (title == noone && icon != noone) 
 	title = NewHighlight(
-		icon,
-		x-3,
-		border*2,
-		width,
-		panelTitle);
-}
+				icon,
+				x - 3,
+				y + border,
+				width,
+				"Help");               

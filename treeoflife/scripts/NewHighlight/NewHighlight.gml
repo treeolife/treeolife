@@ -3,9 +3,9 @@ function NewHighlight(
 	animate=false, flex=false, highlight=false)
 {
 	h = instance_create_depth(
-		0,
-		0,
-		get_layer_depth(LAYER.ui)-300,
+		_y,
+		_x,
+		get_layer_depth(LAYER.ui)-200,
 		oUIPanelHighlight);
 	
 	h.highlight = highlight;
