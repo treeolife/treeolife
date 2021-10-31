@@ -10,7 +10,7 @@ function DialogResponses(argument0) {
 		case 4: TransitionRoom(rHidden); break;
 		case 5: TransitionRoom(rZero); break;
 		case 6: instance_destroy(oUIPanelRight); break;
-		case 7: NewHighlight(sWater,window_get_width()/2,0,100,"This is a test",true, true, true); break;
+		case 7: NewHighlight(sWater,window_get_width()/2,0,100,"Use arrow keys to move!",true, true, true); break;
 		case 8: NewPanelMiddle(sSignpost, "Help", "Press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123, press 123."); break;
 		case 9: instance_destroy(oUIPanelHighlight); break;
 		case 10: instance_destroy(oUIPanelMiddle); break;
