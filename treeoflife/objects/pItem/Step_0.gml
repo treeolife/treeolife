@@ -19,23 +19,21 @@ if (!picked) {
 	y = y + sin(timer*frequency) * amplitude;
 	x = floor(x);
 } else {
-	if (distanceLeft <= 0) {
+		image_alpha -= (1 + image_alpha) / room_speed;
 	
-		visible = false;
-		x = 0;
-		y = 0; 
-
-	} else {
-	
-		image_alpha -= (0.5 + image_alpha) / room_speed;
+		if (image_alpha < 0.2 || sin(time * 2 * pi) < 0) { 
+			visible = false;
+			x = 0;
+			y = 0;
+		}
 	
 		// Sine trajectory
-		if (distanceX > 4) {
+		//if (distanceX > 2) {
 	
-			y = floor(ystart - sin(percent * pi) * 24);
-		} else {
-			y = floor(ystart - sin(time * pi) * 24);
-		}
+		//	y = floor(ystart - sin(percent * pi) * 24);
+		//} else {
+			y = floor(ystart - sin(time * 2 * pi) * 24);
+		//}
 
 		// consider item on left
 		if (x - interactX < 0) {
@@ -43,16 +41,13 @@ if (!picked) {
 								+ "time: " + string(time) 
 								+ " . percent: " + string(percent)
 								+ " . distanceX: " + string(distanceX));
-			x += time; 
+			x += ceil(time); 
 		} else {
 		// consider item on right
 			if debugger_mode show_debug_message("item on right . " 
 								+ "time: " + string(time) 
 								+ " . percent: " + string(percent)
 								+ " . distanceX: " + string(distanceX));
-			x -= time;
+			x -= ceil(time);
 		}
-
-		
-	}
 }
