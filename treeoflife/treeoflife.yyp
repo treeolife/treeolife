@@ -23,6 +23,7 @@
     {"id":{"name":"fDialogText","path":"fonts/fDialogText/fDialogText.yy",},"order":6,},
     {"id":{"name":"particle_rain_Mild_Down","path":"objects/particle_rain_Mild_Down/particle_rain_Mild_Down.yy",},"order":15,},
     {"id":{"name":"particle_rain_Strong_East","path":"objects/particle_rain_Strong_East/particle_rain_Strong_East.yy",},"order":11,},
+    {"id":{"name":"landfill_1","path":"sprites/landfill_1/landfill_1.yy",},"order":43,},
     {"id":{"name":"oHealthbar","path":"objects/oHealthbar/oHealthbar.yy",},"order":4,},
     {"id":{"name":"pEntity","path":"objects/pEntity/pEntity.yy",},"order":0,},
     {"id":{"name":"oGrid","path":"objects/oGrid/oGrid.yy",},"order":5,},
@@ -256,7 +257,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.4.583",
+    "IDEVersion": "2.3.3.574",
   },
   "resourceVersion": "1.4",
   "name": "treeoflife",
