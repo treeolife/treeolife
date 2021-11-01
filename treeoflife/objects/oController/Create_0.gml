@@ -1,9 +1,7 @@
 /// @description Runs 1st
 
-// stores global variables
+// Stores global variables
 global.water_amount = 100;
-global.seed_amount	= 1;
-global.wave			= -1;
 global.cost			= 0;
 global.timer		= 30;
 global.pausedTimer	= false;
@@ -11,11 +9,14 @@ global.currentTime	= 0;
 global.gamePaused	= false;
 global.textSpeed	= 0.75;
 global.Dialog		= false;
-global.max_water_amount = 10;
 global.inventory	= ds_list_create();
-global.gameStarted	= -1;
+
+// Tracking to complete transition only once
 global.transitioning = false;
 
+// Tracking levels accessed for replayability
+global.wave			= -1;
+global.gameStarted	= -1;
 global.levelAccessed = {
 	zero:	-1,
 	one	:	-1,
@@ -24,7 +25,7 @@ global.levelAccessed = {
 	four:	-1,
 }
 
-// UI state machine
+// UI panel state machine
 global.panelState = {
 	defender:	-1,
 	highlight:	-1,
@@ -35,7 +36,9 @@ global.panelState = {
 // Layers
 global.collisionMapName = "Land";
 
+// Instructions
 global.howToPlayTitle = "How to play";
+global.howToPlayIcon = sSignpost;
 global.howToPlayInfo = 
 			"Nurture and protect the Tree of Life from pollution monsters.\n\n" +
 			"Plant Defender plants so they can fight against pollution monsters. " + 
@@ -47,13 +50,15 @@ global.howToPlayInfo =
 			"C) Nurture them by watering.\n" +
 			"D) Collect items dropped by defeated pollution monsters, " + 
 				"feed them to the Tree of Life.";
-
 global.helpTitle = "Help";
+global.helpIcon = sSignpost;
 global.helpInfo = 
 			"1. Use arrow keys to move.\n" + 
 			"2. Jump with space bar.\n" +
 			"3. Enter to select, Esc to escape menu.\n" + 
 			"4. Interact with items with \"Z\".";
+
+/// Everything below are for Room states ///
 
 getLevelRoom = function() {
 	
@@ -104,4 +109,5 @@ advanceLevel = function(wave) {
 		}
 }
 
+// Goes to start room after initialising global vars
 room_goto(rStart);

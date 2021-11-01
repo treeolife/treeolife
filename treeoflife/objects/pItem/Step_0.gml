@@ -3,7 +3,8 @@
 timer++;
 
 // alpha
-sineWave = 0 + (1 + sin(2*pi*current_time/1000 * 0.30)) * 0.8 // 0 - 0.8
+sineWave = (0 + sin(2*pi*(current_time/1000) * 0.30)) * amplitude; // 0 - 0.8
+//antiSineWave = (0 + sin(2*pi*(current_time - ) * (0.30 / 1000))) * amplitude;
 
 if(interactOrigin == noone || interactX == -1) exit;
 
@@ -16,7 +17,7 @@ var percent = ((distanceX - distanceLeft) / distanceX);
 //	image_alpha = 1 - time;
 
 if (!picked) {
-	y = y + sin(timer*frequency) * amplitude;
+	//y = y + sin(timer*frequency) * amplitude;
 	x = floor(x);
 } else {
 		image_alpha -= (1 + image_alpha) / room_speed;

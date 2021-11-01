@@ -36,9 +36,11 @@ if (menu_control) {
 			menu_control	= false;
 		} else {
 			// Help menu option chosen
-			if(!instance_exists(oUIPanelMiddle)) NewPanelMiddle(sSignpost,
-			global.howToPlayTitle, 
-			global.howToPlayInfo);
+			if(!instance_exists(oUIPanelMiddle)) 
+				NewPanelMiddle(
+					global.howToPlayIcon,
+					global.howToPlayTitle, 
+					global.howToPlayInfo);
 			
 			else instance_destroy(oUIPanelMiddle);
 		}
