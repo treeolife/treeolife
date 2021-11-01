@@ -17,7 +17,7 @@ if !picked {
 			image_yscale,
 			image_angle,
 			image_blend,
-			sineWave*0.02
+			sineWave*1
 		);
 	}
 

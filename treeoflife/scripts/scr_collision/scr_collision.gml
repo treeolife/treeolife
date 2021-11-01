@@ -1,5 +1,6 @@
 /// @function scr_collision();
-function scr_collision() {
+   function scr_collision() {
+	
 	//Collision horizontal with object Collision
 	if place_meeting(x+speed_h, y, oCollision) {
 	    while !place_meeting(x+sign(speed_h), y, oCollision) {

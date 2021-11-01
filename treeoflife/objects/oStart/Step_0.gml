@@ -36,15 +36,11 @@ if (menu_control) {
 			menu_control	= false;
 		} else {
 			// Help menu option chosen
-			if(!instance_exists(oUIPanelMiddle)) NewPanelMiddle(sSignpost,
-			"How to Play", 
-			//"Inputs\n\n1. Use arrow keys to move.\n2.Jump with space bar.\n3. Enter to select, Esc to escape menu.\n4. Interact with items with \"Z\".\n\n\n" +
-			"Nurture and protect the Tree of Life from pollution monsters.\n\n" +
-			"Plant Defender plants so they can fight against pollution monsters and stop them from approaching the Tree of Life.\n\n" +
-			"A) Collect seeds dropped from the Tree of Life -> seeds give you defenders\n" +
-			"B) Select which type of Defender plant to plant -> each one has a different ability!\n" +
-			"C) Nurture them by watering\n" +
-			"D) Collect items dropped by defeated pollution monsters, feed them to the Tree of Life");
+			if(!instance_exists(oUIPanelMiddle)) 
+				NewPanelMiddle(
+					global.howToPlayIcon,
+					global.howToPlayTitle, 
+					global.howToPlayInfo);
 			
 			else instance_destroy(oUIPanelMiddle);
 		}
