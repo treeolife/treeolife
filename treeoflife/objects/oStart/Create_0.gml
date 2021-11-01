@@ -48,3 +48,8 @@ menu_items = array_length(menu);
 //menu_top = menu_y - ((menu_itemheight * 2.5) * menu_items);
 
 menu_cursor = menu_options.start_game;
+
+if (global.levelAccessed.start == -1) {
+	global.levelAccessed.start = 1;
+	instance_create_depth(0,0,get_layer_depth(LAYER.ui),fadeIn);
+}

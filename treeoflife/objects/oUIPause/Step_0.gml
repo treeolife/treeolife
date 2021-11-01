@@ -48,7 +48,7 @@ if (global.gamePaused) {
 				if debugger_mode {
 					show_debug_message("PAUSE.exit_game");
 				}
-				TransitionRoom(rStart, "...");
+				TransitionRoom(rStart, global.loadingGeneric);
 			}
 			break;
 		}

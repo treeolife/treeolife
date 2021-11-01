@@ -11,10 +11,11 @@ if (picked) {
 	
 	onGroundHover(sineWave, function() {
 		scr_collision();
+		ystart = y;
 		y += game_gravity;
 	})
 }
 
 if (!global.gamePaused) {
-	depth = -1;
+	depth = -1000;
 }

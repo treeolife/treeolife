@@ -28,6 +28,9 @@ if (menu_control) {
 		if (menu_cursor < 0) menu_cursor = menu_items - 1;
 	}
 	if (keyboard_check_pressed(vk_enter)) {
+		if (menu_cursor == menu_options.new_game) {
+			instance_create_depth(0,0,get_layer_depth(LAYER.ui),fadeOut);
+		}
 		
 		// exclude Help menu option
 		if (menu_cursor != menu_options.help) {
@@ -54,16 +57,15 @@ if (menu_y > gui_height + 150) && (menu_committed != -1) {
 		case menu_options.start_game:
 
 			if (global.gameStarted == -1) {
-				TransitionRoom(rExposition1, "...");
+				TransitionRoom(rExposition1, global.loadingGeneric);
 			} else {
-				TransitionRoom(oController.getLevelRoom(), "Loading...");
+				TransitionRoom(oController.getLevelRoom(), global.loadingInfo);
 			}
 			break;
 		default:
 			break;
 			
 		case menu_options.new_game:
-			
 			game_restart();
 			break;
 			

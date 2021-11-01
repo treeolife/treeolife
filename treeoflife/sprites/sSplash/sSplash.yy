@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"a90f8c04-cb4f-4502-9d97-a372289316d3","path":"sprites/midori_splash_art4/midori_splash_art4.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"a90f8c04-cb4f-4502-9d97-a372289316d3","path":"sprites/midori_splash_art4/midori_splash_art4.yy",},"LayerId":{"name":"0b34d0d1-07d0-49ce-9e68-d5f8e57227de","path":"sprites/midori_splash_art4/midori_splash_art4.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"midori_splash_art4","path":"sprites/midori_splash_art4/midori_splash_art4.yy",},"resourceVersion":"1.0","name":"a90f8c04-cb4f-4502-9d97-a372289316d3","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"83db3039-5e49-403b-a9c3-fedf7a53dcbc","path":"sprites/sSplash/sSplash.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"83db3039-5e49-403b-a9c3-fedf7a53dcbc","path":"sprites/sSplash/sSplash.yy",},"LayerId":{"name":"6410d432-649d-4303-b0f1-4fc14651dd6d","path":"sprites/sSplash/sSplash.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sSplash","path":"sprites/sSplash/sSplash.yy",},"resourceVersion":"1.0","name":"83db3039-5e49-403b-a9c3-fedf7a53dcbc","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"midori_splash_art4","path":"sprites/midori_splash_art4/midori_splash_art4.yy",},
+    "spriteId": {"name":"sSplash","path":"sprites/sSplash/sSplash.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 15.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"d649f834-cb71-4ac9-a702-23dd6a2c0f6a","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a90f8c04-cb4f-4502-9d97-a372289316d3","path":"sprites/midori_splash_art4/midori_splash_art4.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"a9a6e68c-ae1c-46a0-a398-d8bbf85db53b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"83db3039-5e49-403b-a9c3-fedf7a53dcbc","path":"sprites/sSplash/sSplash.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,14 +58,14 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"midori_splash_art4","path":"sprites/midori_splash_art4/midori_splash_art4.yy",},
+    "parent": {"name":"sSplash","path":"sprites/sSplash/sSplash.yy",},
     "resourceVersion": "1.3",
-    "name": "midori_splash_art4",
+    "name": "sSplash",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"0b34d0d1-07d0-49ce-9e68-d5f8e57227de","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"6410d432-649d-4303-b0f1-4fc14651dd6d","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "treeoflife.yyp",
   },
   "resourceVersion": "1.0",
-  "name": "midori_splash_art4",
+  "name": "sSplash",
   "tags": [],
   "resourceType": "GMSprite",
 }

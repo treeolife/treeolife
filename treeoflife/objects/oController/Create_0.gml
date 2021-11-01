@@ -18,6 +18,7 @@ global.transitioning = false;
 global.wave			= -1;
 global.gameStarted	= -1;
 global.levelAccessed = {
+	start:	-1,
 	zero:	-1,
 	one	:	-1,
 	two	:	-1,
@@ -35,6 +36,11 @@ global.panelState = {
 
 // Layers
 global.collisionMapName = "Land";
+
+// Info
+global.loadingDefault = "Transitioning...";
+global.loadingInfo = "Loading...";
+global.loadingGeneric = "...";
 
 // Instructions
 global.howToPlayTitle = "How to play";
@@ -109,5 +115,4 @@ advanceLevel = function(wave) {
 		}
 }
 
-// Goes to start room after initialising global vars
-room_goto(rStart);
+alarm[0] = 3 * room_speed;
