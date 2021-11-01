@@ -29,7 +29,7 @@ if (global.gamePaused) {
 			break;
 		
 			case PAUSE.help: {
-				if(!instance_exists(oUIPanelMiddle)) NewPanelMiddle(sSignpost, "Help", "1. Use arrow keys to move.\n2. Jump with space bar.\n3. Enter to select, Esc to escape menu.\n4. Interact with items with \"Z\".");
+				if(!instance_exists(oUIPanelMiddle)) NewPanelMiddle(sSignpost, global.helpTitle, global.helpInfo);
 				else instance_destroy(oUIPanelMiddle);
 			}
 			break;

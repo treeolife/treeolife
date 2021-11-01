@@ -32,8 +32,28 @@ global.panelState = {
 	timer:	-1,
 }
 
-// layers
+// Layers
 global.collisionMapName = "Land";
+
+global.howToPlayTitle = "How to play";
+global.howToPlayInfo = 
+			"Nurture and protect the Tree of Life from pollution monsters.\n\n" +
+			"Plant Defender plants so they can fight against pollution monsters. " + 
+				"and stop them from approaching the Tree of Life.\n\n" +
+			"A) Collect seeds dropped from the Tree of Life -> " + 
+				"seeds give you defenders.\n" +
+			"B) Select which type of Defender plant to plant -> " + 
+				"each one has a different ability!\n" +
+			"C) Nurture them by watering.\n" +
+			"D) Collect items dropped by defeated pollution monsters, " + 
+				"feed them to the Tree of Life.";
+
+global.helpTitle = "Help";
+global.helpInfo = 
+			"1. Use arrow keys to move.\n" + 
+			"2. Jump with space bar.\n" +
+			"3. Enter to select, Esc to escape menu.\n" + 
+			"4. Interact with items with \"Z\".";
 
 getLevelRoom = function() {
 	
