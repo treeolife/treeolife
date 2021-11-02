@@ -1,5 +1,7 @@
 /// @description GM Guru - Glow & Hover (untested)
 
+event_inherited();
+
 if (highlight) {
 	
 	gpu_set_blendmode(bm_add);
@@ -23,4 +25,5 @@ if (highlight) {
 	gpu_set_blendmode(bm_normal);
 }
 
-draw_self();
+if (!draw)
+	draw_self();

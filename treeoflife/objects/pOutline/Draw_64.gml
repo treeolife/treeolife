@@ -10,9 +10,8 @@ if (draw) {
 	// put stuff in -> vec2 2 values
 	shader_set_uniform_f(sh_texel_handle, texture_Width, texture_Height );
 
-}
-
-draw_self();
-
-if draw
+	draw_self();
+	
 	shader_reset();
+}
+	
