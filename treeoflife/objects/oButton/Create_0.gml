@@ -10,5 +10,7 @@ icon = noone;
 iconSubimg = 0;
 buttonLoaded = false;
 
+col_text = c_black;
+
 _x = 0;
 _y = 0;

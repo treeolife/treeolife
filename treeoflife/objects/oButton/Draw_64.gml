@@ -29,7 +29,7 @@ if (icon != noone) {
 		image_alpha);
 }
 	
-scr_draw_set(image_alpha, c_white, function() {
+scr_draw_set(image_alpha, col_text, function() {
 	scr_set_align(fa_center, fa_middle);
 	draw_set_font(fInventory);
 	draw_text(x+width/2,y+height/2,message);
