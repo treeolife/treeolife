@@ -7,15 +7,15 @@ NewTextBox(
 	"In pursuit of economic and technological progress, the humans " +
 	"\nhave forgotten the fragility of what gives them their home:" + 
 	"\n...the Earth."
-	, TEXTBOX.select);
+	, TEXTBOX.defender);
 NewTextBox(
 	"Factories, power plants pump pollutants into the air. " +
 	"\nChemical wastes dumped into the sea, untreated. The land," + 
 	"\nlittered with metal and plastic."
-	, TEXTBOX.select);
+	, TEXTBOX.defender);
 NewTextBox(
 	"It was a horrible sight."
-	, TEXTBOX.select);
+	, TEXTBOX.defender);
 	
 gui_width	= display_get_gui_width();
 gui_height	= display_get_gui_height();

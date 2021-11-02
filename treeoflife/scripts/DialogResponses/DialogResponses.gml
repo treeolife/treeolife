@@ -4,9 +4,9 @@ function DialogResponses(argument0) {
 	switch(argument0) {
 		
 		case 0: break;
-		case 1: NewHighlight(sSignpost,window_get_width()/2,0,100,"Use up and down keys to select options!",true, true, true);
+		case 1: NewHighlight(sSignpost,window_get_width()/2,0,100,"Use up and down keys to select dialog options!",true, true, true);
 			NewTextBox("Do I want to plant the Tree of Life?", TEXTBOX.select, ["0:Not now.","2:Yes."]); break;
-		case 2: NewTextBox("Walk up to the dark brown patch.", TEXTBOX.player); break;
+		case 2: NewTextBox("Walk up to the dark brown patch.", TEXTBOX.defender); break;
 		//case 3: NewPanelDefender(); break;
 		case 4: TransitionRoom(rHidden); break;
 		case 5: TransitionRoom(rZero); break;
@@ -18,7 +18,7 @@ function DialogResponses(argument0) {
 		case 11: instance_create_depth(x,y,depth,oSeed); break;
 		case 12: global.wave = 1; global.levelAccessed.one = 1; TransitionRoom(rOne); break;
 		case 13: NewHighlight(sSignpost, window_get_width()/2,0,100,
-			"Press Z to interact with the environment!",true,true,true); break;
+			"Press Z to interact with objects in the environment!",true,true,true); break;
 		default: break;
 	}
 

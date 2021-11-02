@@ -23,7 +23,7 @@ function NewPanelDefender(id) {
 	
 	with(defenderPanel) {
 		
-		// Set origin, useful to determine state
+		// Set origin, useful to determine state // Soil
 		originInstance = id;
 		
 		if (debugger_mode)
@@ -33,29 +33,22 @@ function NewPanelDefender(id) {
 					originInstance.object_index)));
 		
 		// For defender
-		if (originInstance.object_index == oSoil) {
-			global.panelState.defender = OpenPanel;
-		}
+		//if (originInstance.object_index == oSoil) {
+		//	global.panelState.defender = OpenPanel;
+		//}
 		
-		// For tree
-		if (originInstance.object_index == oPlayer) {
-			global.panelState.defender = ClosePanel;
-		}
+		//// For tree
+		//if (originInstance.object_index == oPlayer) {
+		//	global.panelState.defender = ClosePanel;
+		//}
 		
-		if (keyboard_check_pressed(vk_down)) {
-			show_debug_message("down!");
-		}
+		//if (keyboard_check_pressed(vk_down)) {
+		//	show_debug_message("down!");
+		//}
 	}
 	
-	script_execute(global.panelState.defender);
+	//script_execute(global.panelState.defender);
 	
-	with (oPlayer) {
-		if (state != PlayerStateLocked) {
-			
-			lastState = state;
-			state = PlayerStateLocked;
-		}
-	}
 }
 
 function OpenPanel() {
