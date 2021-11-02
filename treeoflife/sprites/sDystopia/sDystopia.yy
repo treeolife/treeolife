@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 499,
+  "bbox_right": 1919,
   "bbox_top": 0,
-  "bbox_bottom": 231,
+  "bbox_bottom": 1079,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 500,
-  "height": 232,
+  "width": 1920,
+  "height": 1080,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"ddce0144-38bc-4725-a656-fec49a744b72","path":"sprites/sDystopia/sDystopia.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"ddce0144-38bc-4725-a656-fec49a744b72","path":"sprites/sDystopia/sDystopia.yy",},"LayerId":{"name":"aaebc80f-fc12-4b98-8d5c-4b64c1162f4d","path":"sprites/sDystopia/sDystopia.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sDystopia","path":"sprites/sDystopia/sDystopia.yy",},"resourceVersion":"1.0","name":"ddce0144-38bc-4725-a656-fec49a744b72","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"62a54131-108f-4044-8dd3-3df342569801","path":"sprites/sDystopia/sDystopia.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"62a54131-108f-4044-8dd3-3df342569801","path":"sprites/sDystopia/sDystopia.yy",},"LayerId":{"name":"1a79e0e7-ae48-4d35-9182-17e3dbe59825","path":"sprites/sDystopia/sDystopia.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sDystopia","path":"sprites/sDystopia/sDystopia.yy",},"resourceVersion":"1.0","name":"62a54131-108f-4044-8dd3-3df342569801","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sDystopia","path":"sprites/sDystopia/sDystopia.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"39c99051-190a-44f1-b8a7-25f9bdafebd9","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ddce0144-38bc-4725-a656-fec49a744b72","path":"sprites/sDystopia/sDystopia.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"c22c7bc3-c0b7-47a7-9e30-94eba88ad28d","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"62a54131-108f-4044-8dd3-3df342569801","path":"sprites/sDystopia/sDystopia.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"aaebc80f-fc12-4b98-8d5c-4b64c1162f4d","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"1a79e0e7-ae48-4d35-9182-17e3dbe59825","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

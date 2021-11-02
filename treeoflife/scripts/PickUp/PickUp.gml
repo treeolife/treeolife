@@ -4,6 +4,19 @@ function PickUp(item){
 	if (item == -1) exit;
 	if (item.interactOrigin == noone) exit;
 	
+	if (global.firstTime.pickingItem == -1) {
+		NewHighlight(
+			sSeed,
+			window_get_width()/2,
+			0,
+			100,
+			"You put the seed into your inventory.",
+			true,
+			true,
+			true);
+		global.firstTime.pickingItem = 1;
+	}
+	
 	origin = item.interactOrigin;
 	item.picked = true;
 	

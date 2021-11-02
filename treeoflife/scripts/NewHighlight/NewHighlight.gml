@@ -8,6 +8,14 @@ function NewHighlight(
 		get_layer_depth(LAYER.ui)-101,
 		oUIPanelHighlight);
 	
+	if (global.panelState.highlight > 0) {
+		h.yTarget += (global.panelState.highlight * 40);
+	}
+	
+	if (animate) {
+		h.image_alpha = 0;
+	}
+	
 	h.highlight = highlight;
 	h.flex = flex;
 	h.animate = animate;

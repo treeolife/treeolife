@@ -4,15 +4,28 @@
 event_inherited();
 
 if (animate) {
+	if justCreated {
+		justCreated = false;
+		if (global.panelState.highlight == -1) {
+			global.panelState.highlight = 0;
+		}
+		global.panelState.highlight += 1;
+		image_alpha = 0;
+	}
 	var seconds = timer / room_speed;
 	
-	if (y < yTarget && seconds <= 5) {
-		image_alpha = y/yTarget;
-		y+= (yTarget - y) / menuSpeed;
+	y = yTarget;
+	if (seconds > 1.5 && seconds <= secondsToFade && image_alpha <= 1) {
+		image_alpha += (0.6 + image_alpha) / room_speed;
 	}
 	
+	//if (y < yTarget && seconds <= 5) {
+	//	image_alpha = y/yTarget;
+	//	y+= (yTarget - y) / menuSpeed;
+	//}
+	
 	if (seconds > secondsToFade) {
-		image_alpha -= (0.5 + image_alpha) / room_speed;
+		image_alpha -= (0.8 + image_alpha) / room_speed;
 		highlight = false;
 		
 		if (image_alpha <= 0) {

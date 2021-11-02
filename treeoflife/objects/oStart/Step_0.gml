@@ -43,7 +43,9 @@ if (menu_control) {
 				NewPanelMiddle(
 					global.howToPlayIcon,
 					global.howToPlayTitle, 
-					global.howToPlayInfo);
+					global.howToPlayInfo + "\n\n\n" +
+					global.helpInfo,
+					380);
 			
 			else instance_destroy(oUIPanelMiddle);
 		}

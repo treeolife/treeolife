@@ -3,7 +3,7 @@
 enum PAUSE {
 	continue_game	= 0,
 	help			= 1,
-	sound			= 2,
+	graphics		= 2,
 	exit_game		= 3,
 }
 
@@ -13,7 +13,7 @@ selection = 0;
 
 pauseOption[PAUSE.continue_game] = "Continue";
 pauseOption[PAUSE.help] = "Help";
-pauseOption[PAUSE.sound] = "Sound";
+pauseOption[PAUSE.graphics] = "Gfx";
 pauseOption[PAUSE.exit_game] = "Exit";
 
 pauseOptionSelected = 0;
@@ -48,11 +48,18 @@ pauseGame = function() {
 	show();
 }
 
+function checkHelpMenu() {
+	if(instance_exists(oUIPanelMiddle))
+		instance_destroy(oUIPanelMiddle);
+}
+
 unpauseGame = function() {
 	if inFade() return;
 	
 	if (oPlayer != noone) 
 		oPlayer.state = oPlayer.pauseState;
+	
+	checkHelpMenu();
 		
 	global.gamePaused = false;
 	hide();		

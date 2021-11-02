@@ -1,9 +1,7 @@
 /// @description 
 	
-if (global.levelAccessed.one == -1)
+if (global.levelAccessed.one == -1) {
 	NewTextBox(
-		"You are Midori," +
-		"\nthe final beacon of hope."
-		, TEXTBOX.forest);
-
-instance_destroy();
+		"You are Midori, the final beacon of hope."
+		, TEXTBOX.forest, ["13:"]);
+}

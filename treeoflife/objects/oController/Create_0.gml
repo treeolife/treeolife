@@ -10,6 +10,7 @@ global.gamePaused	= false;
 global.textSpeed	= 0.75;
 global.Dialog		= false;
 global.inventory	= ds_list_create();
+global.inventoryStart = noone;
 
 // Tracking to complete transition only once
 global.transitioning = false;
@@ -26,6 +27,13 @@ global.levelAccessed = {
 	four:	-1,
 }
 
+// Tracking firsts
+global.firstTime = {
+	pickingItem:	-1,
+	planting:		-1,
+	upgrading:		-1,
+}
+
 // UI panel state machine
 global.panelState = {
 	defender:	-1,
@@ -33,6 +41,14 @@ global.panelState = {
 	middle:		-1,
 	timer:	-1,
 }
+
+// Graphics
+enum graphics {
+	low,
+	high
+}
+global.graphicsSettings = graphics.high;
+global.graphicsLayer = "Weather";
 
 // Layers
 global.collisionMapName = "Land";
@@ -49,11 +65,11 @@ global.howToPlayInfo =
 			"Nurture and protect the Tree of Life from pollution monsters.\n\n" +
 			"Plant Defender plants so they can fight against pollution monsters. " + 
 				"and stop them from approaching the Tree of Life.\n\n" +
-			"A) Collect seeds dropped from the Tree of Life -> " + 
-				"seeds give you defenders.\n" +
-			"B) Select which type of Defender plant to plant -> " + 
-				"each one has a different ability!\n" +
-			"C) Nurture them by watering.\n" +
+			"A) Collect seeds dropped from the Tree of Life: " + 
+				"Seeds give you defenders!\n\n" +
+			"B) Select which type of Defender plant to plant: " + 
+				"Each one has a different ability!\n\n" +
+			"C) Nurture them by watering.\n\n" +
 			"D) Collect items dropped by defeated pollution monsters, " + 
 				"feed them to the Tree of Life.";
 global.helpTitle = "Help";
@@ -61,8 +77,10 @@ global.helpIcon = sSignpost;
 global.helpInfo = 
 			"1. Use arrow keys to move.\n" + 
 			"2. Jump with space bar.\n" +
-			"3. Enter to select, Esc to escape menu.\n" + 
-			"4. Interact with items with \"Z\".";
+			"3. Enter to select.\n" + 
+			"4. Interact with items with \"Z\".\n\n" +
+			"Esc to pause.\n" +
+			"Graphics settings are at pause menu.";
 
 /// Everything below are for Room states ///
 

@@ -39,7 +39,7 @@ if (global.gameStarted == -1) {
 	menu[menu_options.new_game]		= "New Game";
 }
 
-menu[menu_options.help]			= "Help";
+menu[menu_options.help]			= "How to Play";
 menu[menu_options.credits]		= "Credits";
 menu[menu_options.quit]			= "Quit";
 

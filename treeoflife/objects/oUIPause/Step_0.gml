@@ -8,13 +8,20 @@ keyActivate = keyboard_check_pressed(vk_space) ||
 				keyboard_check_pressed(vk_enter);
 
 if (global.gamePaused) {
+	
+	if(global.graphicsSettings == graphics.low)
+		pauseOption[PAUSE.graphics] = "Gfx: Low";
+	else if(global.graphicsSettings == graphics.high)
+		pauseOption[PAUSE.graphics] = "Gfx: High";
+	
 	pauseOptionSelected += (keyDown - keyUp);
 
 	// Wrap around
 	if (pauseOptionSelected >= array_length(pauseOption))
 		pauseOptionSelected = 0;
-	if (pauseOptionSelected < 0)
+	if (pauseOptionSelected < 0) {
 		pauseOptionSelected = array_length(pauseOption) -1;
+	}
 	
 	if (keyActivate) {
 		switch (pauseOptionSelected) {
@@ -33,12 +40,21 @@ if (global.gamePaused) {
 					NewPanelMiddle(
 						global.helpIcon, 
 						global.helpTitle, 
-						global.helpInfo);
+						global.helpInfo,
+						150);
 				else instance_destroy(oUIPanelMiddle);
 			}
 			break;
 		
-			case PAUSE.sound: {
+			case PAUSE.graphics: {
+				if(global.graphicsSettings == graphics.low) {
+					global.graphicsSettings = graphics.high;
+				}
+				else
+				if(global.graphicsSettings == graphics.high) {
+					global.graphicsSettings = graphics.low;
+				}
+					
 			}
 			break;
 		
@@ -53,9 +69,4 @@ if (global.gamePaused) {
 			break;
 		}
 	}
-}
-
-function checkHelpMenu() {
-	if(instance_exists(oUIPanelMiddle))
-		instance_destroy(oUIPanelMiddle);
 }
