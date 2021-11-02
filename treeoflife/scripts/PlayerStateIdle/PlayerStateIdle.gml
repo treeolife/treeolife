@@ -89,6 +89,7 @@ function PlayerStateIdle(){
 				if (_nearestInteractionMapKeys[i] > 0) {
 					interact = ds_map_find_value(_nearestInteractionMap, _nearestInteractionMapKeys[i]);
 					interact.draw = true;
+					
 					break;
 				}
 			}

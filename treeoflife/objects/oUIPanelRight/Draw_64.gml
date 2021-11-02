@@ -14,7 +14,8 @@ scr_draw_set(1, c_white, function() {
 	draw_sprite_stretched(
 		sGUIPanel, 
 		0, 
-		window_get_width() - width - border, 
+		x,
+		//window_get_width() - width - border, 
 		border + fullPanelMarginTop, 
 		width, 
 		height);

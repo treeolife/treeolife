@@ -1,5 +1,9 @@
 /// @description 
 
+if (buttonLoaded) {
+	draw = true;
+}
+
 if (!buttonLoaded) {
 
 	image_xscale = width / sprite_width;
@@ -10,3 +14,4 @@ if (!buttonLoaded) {
 	
 	buttonLoaded = true;
 }
+	

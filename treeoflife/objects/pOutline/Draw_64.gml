@@ -1,6 +1,6 @@
-if (draw) {
+if (outline) {
 
-	shader_set(shEntity);
+	shader_set(shUI);
 
 	// grab stuff, pointers
 	var texture = sprite_get_texture(sprite_index, image_index);
@@ -11,9 +11,10 @@ if (draw) {
 	shader_set_uniform_f(sh_texel_handle, texture_Width, texture_Height );
 }
 
-draw_self();
+if draw
+	draw_self();
 
-if draw	
+if outline	
 	shader_reset();
 
 	//draw_nineslice(ns_uniforms, ns_uvs, x, y, sprite_width*image_xscale, sprite_height*image_yscale);

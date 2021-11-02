@@ -3,6 +3,7 @@
 enum MIDORI {
 	idle	= 0,
 	sprint	= 1,
+	locked	= 2,
 }
 
 // Instance timer

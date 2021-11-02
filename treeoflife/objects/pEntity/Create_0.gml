@@ -4,5 +4,4 @@ draw = false;
 
 interactOrigin = noone;
 
-sh_texel_handle = shader_get_uniform(
-	shEntity, "texture_Pixel");
+sh_texel_handle = noone;

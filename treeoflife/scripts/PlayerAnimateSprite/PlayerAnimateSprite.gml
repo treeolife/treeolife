@@ -2,6 +2,7 @@
 function PlayerAnimateSprite(){
 	switch(midoriState) {
 		case MIDORI.idle:
+		case MIDORI.locked:
 			#region animate midori facing direction
 			image_speed = 1;
 			sprite_index = sMidoriIdle;;

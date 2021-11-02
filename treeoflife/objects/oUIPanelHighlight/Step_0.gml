@@ -10,8 +10,6 @@ if (x == 0) {
 	image_xscale = width / sprite_width;
 }
 
-show_debug_message("oUIPanelHighlight x : " + string(x));
-
 if (animate) {
 	if justCreated {
 		justCreated = false;

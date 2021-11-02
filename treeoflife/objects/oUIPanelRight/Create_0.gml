@@ -19,3 +19,5 @@ height = window_get_height() - border * 2 - fullPanelMarginTop - fullPanelMargin
 state = PanelDefenderOpen;
 
 buttonsDrawn = false;
+
+x = window_get_width() + width;

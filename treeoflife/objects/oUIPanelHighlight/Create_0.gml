@@ -5,7 +5,7 @@ event_inherited();
 
 var sScale = 36;
 
-message = "Testing one two three";
+message = "";
 
 justCreated = true;
 timer = 0;

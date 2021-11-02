@@ -1,4 +1,4 @@
 function PlayerStateLocked(){
-	midoriState = MIDORI.idle;
+	midoriState = MIDORI.locked;
 	PlayerAnimateSprite();
 }

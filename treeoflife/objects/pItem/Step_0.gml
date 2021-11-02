@@ -1,5 +1,7 @@
 /// @description 
 
+event_inherited();
+
 timer++;
 
 // alpha
