@@ -47,7 +47,7 @@ enum graphics {
 	low,
 	high
 }
-global.graphicsSettings = graphics.high;
+global.graphicsSettings = graphics.low;
 global.graphicsLayer = "Weather";
 
 // Layers

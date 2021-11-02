@@ -11,3 +11,5 @@ panelTitle = "";
 title = noone;
 
 fullPanelMarginTop = border + 38;
+
+//state = DefenderPanelOpen;

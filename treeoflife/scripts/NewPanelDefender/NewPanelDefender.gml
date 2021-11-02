@@ -1,4 +1,4 @@
-function NewPanelDefender(id){
+function NewPanelDefender(id) {
 	if (id == undefined) exit;
 	if (!instance_exists(id)) exit;
 	
@@ -49,6 +49,13 @@ function NewPanelDefender(id){
 	
 	script_execute(global.panelState.defender);
 	
+	with (oPlayer) {
+		if (state != PlayerStateLocked) {
+			
+			lastState = state;
+			state = PlayerStateLocked;
+		}
+	}
 }
 
 function OpenPanel() {
