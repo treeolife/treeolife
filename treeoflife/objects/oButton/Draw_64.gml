@@ -2,11 +2,14 @@
 
 event_inherited();
 
+show_debug_message("Drawing in oButton. x = " + string(x) + " ... y = " + string(y));
+show_debug_message("Width = " + string(width) + " ... Height = " + string(height));
+
 draw_sprite_stretched(
 	sprite_index,
 	image_index,
-	x,
-	y,
+	x+width/2,
+	y+height/2,
 	width,
 	height
 );

@@ -20,10 +20,8 @@ height = sScale;
 offset = sScale / 2;
 yTarget = sScale * 3.5;
 
-x = window_get_width() / 2;
+x = 0;
 y = 0;
-
-image_yscale = height / sprite_height;
 
 function setWidth(_width) {
 	width = _width;

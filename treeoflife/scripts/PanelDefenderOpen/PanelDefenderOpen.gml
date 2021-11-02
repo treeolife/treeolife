@@ -1,5 +1,3 @@
-/// @function name([pName]);
-/// @param {type} pName OPTIONAL! pDescription
 function PanelDefenderOpen(){
 	if (debugger_mode) show_debug_message("Open defender panel");
 	
@@ -19,15 +17,7 @@ function PanelDefenderOpen(){
 	}
 	
 	if (!buttonsDrawn) {
-		closeButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui), oButton);
-		with(closeButton) {
-			x = other.x;
-			y = other.y;
-			width = other.width;
-			draw = true;
-			message = "Close";
-		}
+		state = PanelDefenderDraw; 
 		buttonsDrawn = true;
 	}
-	
 }

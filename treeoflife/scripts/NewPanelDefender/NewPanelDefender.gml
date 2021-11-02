@@ -26,7 +26,7 @@ function NewPanelDefender(id) {
 		// Set origin, useful to determine state // Soil
 		originInstance = id;
 		
-		if (debugger_mode)
+		//if (debugger_mode)
 			show_debug_message("origin: " 
 			+ string(
 				object_get_name(

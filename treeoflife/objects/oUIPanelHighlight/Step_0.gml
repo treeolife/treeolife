@@ -3,6 +3,15 @@
 // Inherit the parent event
 event_inherited();
 
+// do once, after create
+if (x == 0) {
+	x = window_get_width() / 2;
+	image_yscale = height / sprite_height;
+	image_xscale = width / sprite_width;
+}
+
+show_debug_message("oUIPanelHighlight x : " + string(x));
+
 if (animate) {
 	if justCreated {
 		justCreated = false;

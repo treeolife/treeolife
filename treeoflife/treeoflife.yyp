@@ -37,6 +37,7 @@
     {"id":{"name":"tLevelOne","path":"tilesets/tLevelOne/tLevelOne.yy",},"order":3,},
     {"id":{"name":"oSeedling","path":"objects/oSeedling/oSeedling.yy",},"order":5,},
     {"id":{"name":"scene1","path":"objects/scene1/scene1.yy",},"order":0,},
+    {"id":{"name":"PanelDefenderDraw","path":"scripts/PanelDefenderDraw/PanelDefenderDraw.yy",},"order":2,},
     {"id":{"name":"MACROS","path":"scripts/MACROS/MACROS.yy",},"order":6,},
     {"id":{"name":"sprite_tree_stage3","path":"sprites/sprite_tree_stage3/sprite_tree_stage3.yy",},"order":34,},
     {"id":{"name":"spr_Particle_Rain_Soft__White","path":"sprites/spr_Particle_Rain_Soft__White/spr_Particle_Rain_Soft__White.yy",},"order":5,},
