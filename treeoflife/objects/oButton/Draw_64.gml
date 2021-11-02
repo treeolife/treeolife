@@ -2,8 +2,8 @@
 
 event_inherited();
 
-show_debug_message("Drawing in oButton. x = " + string(x) + " ... y = " + string(y));
-show_debug_message("Width = " + string(width) + " ... Height = " + string(height));
+//show_debug_message("Drawing in oButton. x = " + string(x) + " ... y = " + string(y));
+//show_debug_message("Width = " + string(width) + " ... Height = " + string(height));
 
 // button
 //draw_sprite_stretched(
@@ -14,6 +14,8 @@ show_debug_message("Width = " + string(width) + " ... Height = " + string(height
 //	width,
 //	height
 //);
+
+
 if (icon != noone) {
 	draw_sprite_ext(
 		icon, 

@@ -8,3 +8,7 @@ width = 0;
 height = 0;
 icon = noone;
 iconSubimg = 0;
+buttonLoaded = false;
+
+_x = 0;
+_y = 0;

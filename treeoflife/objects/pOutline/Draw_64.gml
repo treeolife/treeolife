@@ -9,9 +9,12 @@ if (draw) {
 
 	// put stuff in -> vec2 2 values
 	shader_set_uniform_f(sh_texel_handle, texture_Width, texture_Height );
-
-	draw_self();
-	
-	shader_reset();
 }
-	
+
+draw_self();
+
+if draw	
+	shader_reset();
+
+	//draw_nineslice(ns_uniforms, ns_uvs, x, y, sprite_width*image_xscale, sprite_height*image_yscale);
+

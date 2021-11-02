@@ -1,9 +1,12 @@
 /// @description 
 
-if (width == 0) {
+if (!buttonLoaded) {
+
 	image_xscale = width / sprite_width;
 	image_yscale = height / sprite_height;
 	
-	x = xstart + width/2;
-	y = ystart + height/2;
+	x = _x + width/2;
+	y = _y + height/2;	
+	
+	buttonLoaded = true;
 }
