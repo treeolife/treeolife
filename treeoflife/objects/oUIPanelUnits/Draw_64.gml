@@ -27,9 +27,13 @@ scr_draw_set(1, c_black, function() {
 				var by = gridSize - border * 4 + 1 + factor * (sScale + 4);
 				var cy = gridSize + border / 2 + factor * (sScale + 4);
 				
-				var xx = (unit mod oInventory.inventoryRowLength) * 5 * sScale / 2;
+				var xx = (unit mod oInventory.inventoryRowLength) * 10 * sScale / 3;
 				
-				draw_sprite_stretched(sGUI, 1, xx + 4*sScale/2, ay, sScale*1.2, sScale);
+				var lenItemName = string_length(unitName);
+				var widthItemNameOffset = string_width(unitName) + border * 3;
+				
+				draw_sprite_stretched(sGUI, 1, xx + 1.45*sScale + widthItemNameOffset/2, 
+										ay, widthItemNameOffset, sScale);
 				draw_sprite_stretched(sGUI, 0, xx + 4*sScale/2-sScale, ay, sScale, sScale);
 			
 				// Item sprite
@@ -43,7 +47,7 @@ scr_draw_set(1, c_black, function() {
 				
 				// Item name
 				draw_text(
-					xx + 3*sScale/2 + border / 2, 
+					xx + 3*sScale/2 + border / 2 + 1, 
 					cy, 
 					unitName); 
 		
