@@ -29,7 +29,8 @@ function PanelDefenderDraw(){
 			width = other.width/2;
 			height = 50;
 			_x = other.x;
-			_y = other.y + other.height - other.border * (b+1) - height * (b+2);				
+			_y = other.y + other.height - other.border * ((array_length(other.buttons) - b)) 
+										- height * ((array_length(other.buttons) - b)+1);				
 			draw = true;
 			outline = false;
 			message = other.buttonNames[b];
