@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Friendly",
-    "path": "folders/Friendly.yy",
+    "name": "Cactus",
+    "path": "folders/Defenders/Cactus.yy",
   },
   "resourceVersion": "1.0",
   "name": "sCactus",

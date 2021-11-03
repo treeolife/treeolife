@@ -34,8 +34,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Friendly",
-    "path": "folders/Friendly.yy",
+    "name": "Defenders",
+    "path": "folders/Defenders.yy",
   },
   "resourceVersion": "1.0",
   "name": "oPlayer",

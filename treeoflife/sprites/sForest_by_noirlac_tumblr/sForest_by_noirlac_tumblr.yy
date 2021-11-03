@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "treeoflife",
-    "path": "treeoflife.yyp",
+    "name": "Full Page Art",
+    "path": "folders/Full Page Art.yy",
   },
   "resourceVersion": "1.0",
   "name": "sForest_by_noirlac_tumblr",

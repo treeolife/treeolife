@@ -73,8 +73,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Pollution",
-    "path": "folders/Pollution.yy",
+    "name": "Air",
+    "path": "folders/Pollution/Air.yy",
   },
   "resourceVersion": "1.0",
   "name": "sAir",

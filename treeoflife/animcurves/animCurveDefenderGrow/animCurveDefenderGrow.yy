@@ -19,8 +19,8 @@
       ],"resourceVersion":"1.0","name":"y","tags":[],"resourceType":"GMAnimCurveChannel",},
   ],
   "parent": {
-    "name": "treeoflife",
-    "path": "treeoflife.yyp",
+    "name": "Defenders",
+    "path": "folders/Defenders.yy",
   },
   "resourceVersion": "1.2",
   "name": "animCurveDefenderGrow",

@@ -73,8 +73,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Friendly",
-    "path": "folders/Friendly.yy",
+    "name": "Midori",
+    "path": "folders/Defenders/Midori.yy",
   },
   "resourceVersion": "1.0",
   "name": "sMidoriIdle",

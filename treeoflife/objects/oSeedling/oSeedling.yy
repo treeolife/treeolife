@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sSeedling2",
-    "path": "sprites/sSeedling2/sSeedling2.yy",
+    "name": "sTreeTwo",
+    "path": "sprites/sTreeTwo/sTreeTwo.yy",
   },
   "solid": false,
   "visible": true,
@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Friendly",
-    "path": "folders/Friendly.yy",
+    "name": "Tree",
+    "path": "folders/Defenders/Tree.yy",
   },
   "resourceVersion": "1.0",
   "name": "oSeedling",

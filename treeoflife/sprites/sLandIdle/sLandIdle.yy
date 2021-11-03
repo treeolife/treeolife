@@ -81,8 +81,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Pollution",
-    "path": "folders/Pollution.yy",
+    "name": "Land",
+    "path": "folders/Pollution/Land.yy",
   },
   "resourceVersion": "1.0",
   "name": "sLandIdle",
