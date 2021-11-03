@@ -45,6 +45,7 @@ function PanelDefenderOpen(){
 					break;
 				case orderedButtonMenu.cactus:
 					originInstance.createDefender(oCactus);
+					state = PanelDefenderClose;
 					break;
 				default:
 					break;
