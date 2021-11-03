@@ -23,7 +23,7 @@ function PanelDefenderOpen(){
 			buttons[i].col_text = c_white;
 		} else {
 			buttons[i].outline = false;
-			buttons[i].col_text = c_maroon;
+			buttons[i].col_text = c_black;
 		}
 	}
 	
