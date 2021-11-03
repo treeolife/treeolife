@@ -37,8 +37,9 @@ function PanelDefenderOpen(){
 		title.x -= xFactor;
 		
 		if(buttonsDrawn) {
-			buyButton.x -= xFactor;
-			closeButton.x -= xFactor;
+			for (var b = 0; b < array_length(buttons); b++) {
+				buttons[b].x -= xFactor;
+			}
 		}
 	}
 	

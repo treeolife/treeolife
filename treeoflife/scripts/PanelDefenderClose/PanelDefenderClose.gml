@@ -1,5 +1,3 @@
-/// @function name([pName]);
-/// @param {type} pName OPTIONAL! pDescription
 function PanelDefenderClose(){
 	if (debugger_mode) show_debug_message("Close defender panel");
 
@@ -9,8 +7,9 @@ function PanelDefenderClose(){
 		title.x += xFactor;
 		
 		if(buttonsDrawn) {
-			buyButton.x += xFactor;
-			closeButton.x += xFactor;
+			for (var b = 0; b < array_length(buttons); b++) {
+				buttons[b].x += xFactor;
+			}
 		}
 	} 
 	
