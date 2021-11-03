@@ -21,6 +21,10 @@ if (global.gamePaused) {
 		pauseOptionSelected = array_length(pauseOption) -1;
 	}
 	
+	if (pauseOptionSelected != PAUSE.help) {
+		checkHelpMenu();
+	}
+	
 	if (keyActivate) {
 		switch (pauseOptionSelected) {
 		
@@ -34,13 +38,14 @@ if (global.gamePaused) {
 			break;
 		
 			case PAUSE.help: {
-				if(!instance_exists(oUIPanelMiddle)) 
-					NewPanelMiddle(
+				if(!instance_exists(oUIPanelMiddle)) {
+					help = NewPanelMiddle(
 						global.helpIcon, 
 						global.helpTitle, 
 						global.helpInfo,
 						150);
-				else instance_destroy(oUIPanelMiddle);
+					help.y = 230;
+				} else instance_destroy(oUIPanelMiddle);
 			}
 			break;
 		

@@ -57,6 +57,7 @@ global.collisionMapName = "Land";
 global.loadingDefault = "Transitioning...";
 global.loadingInfo = "Loading...";
 global.loadingGeneric = "...";
+global.quitMenuInfo = "> Press enter to close this menu. <";
 
 // Instructions
 global.howToPlayTitle = "How to play";
@@ -65,22 +66,23 @@ global.howToPlayInfo =
 			"Nurture and protect the Tree of Life from pollution monsters.\n\n" +
 			"Plant Defender plants so they can fight against pollution monsters. " + 
 				"and stop them from approaching the Tree of Life.\n\n" +
-			"A) Collect seeds dropped from the Tree of Life: " + 
+			"Collect seeds dropped from the Tree of Life: " + 
 				"Seeds give you defenders!\n\n" +
-			"B) Select which type of Defender plant to plant: " + 
+			"Select which type of Defender plant to plant: " + 
 				"Each one has a different ability!\n\n" +
-			"C) Nurture them by watering.\n\n" +
-			"D) Collect items dropped by defeated pollution monsters, " + 
-				"feed them to the Tree of Life.";
+			"Nurture them by watering.\n\n" +
+			"Collect items dropped by defeated pollution monsters, " + 
+				"feed them to the Tree of Life.\n\n" + 
+			global.quitMenuInfo;
+
 global.helpTitle = "Help";
 global.helpIcon = sSignpost;
 global.helpInfo = 
-			"1. Use arrow keys to move.\n" + 
-			"2. Jump with space bar.\n" +
-			"3. Enter to select.\n" + 
-			"4. Interact with items with \"Z\".\n\n" +
-			"Esc to pause.\n" +
-			"Graphics settings are at pause menu.";
+			"Use arrow keys to move.\n" + 
+			"Jump with space bar.\n" +
+			"Enter to select.\n" + 
+			"\"Z\" to interact.\n\n" +
+			global.quitMenuInfo;
 
 /// Everything below are for Room states ///
 

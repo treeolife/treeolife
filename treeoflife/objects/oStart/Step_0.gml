@@ -46,15 +46,15 @@ if (menu_control) {
 		} else {
 			// Help menu option chosen
 			if (menu_cursor == menu_options.help)
-				if(!instance_exists(oUIPanelMiddle)) 
-					NewPanelMiddle(
+				if(!instance_exists(oUIPanelMiddle)) {
+					help = NewPanelMiddle(
 						global.howToPlayIcon,
 						global.howToPlayTitle, 
-						global.howToPlayInfo + "\n\n\n" +
-						global.helpInfo,
-						380);
+						global.howToPlayInfo,
+						330);
+					help.y = 150;
 			
-				else instance_destroy(oUIPanelMiddle);
+				} else instance_destroy(oUIPanelMiddle);
 				
 			if (menu_cursor == menu_options.graphics) {
 					
