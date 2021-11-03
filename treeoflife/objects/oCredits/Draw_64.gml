@@ -41,7 +41,8 @@ for (var i = 0; i < credits_menu_items; i++)
 	var xx = gui_width/2 - gui_margin/2;
 	var yy = gui_height/2 
 		- (menu_itemheight * (i * 1.1)) 
-		- gui_margin;
+		- gui_margin
+		- 100;
 	
 	scr_text_outline(xx,yy,offset,txt);
 	draw_set_color(col);
@@ -58,7 +59,8 @@ for (var i = 0; i < roles_menu_items; i++)
 	var xx = gui_width/2 + gui_margin/2;
 	var yy = gui_height/2
 		- (menu_itemheight * (i * 1.1)) 
-		- gui_margin;
+		- gui_margin
+		- 100;
 	
 	scr_text_outline(xx,yy,offset,txt);
 	draw_set_color(col);
@@ -95,8 +97,8 @@ for (var i = 0; i < menu_items; i++)
 // Year created
 draw_set_alpha(menu_fade);
 scr_set_align(fa_middle, fa_center);
-scr_text_outline(gui_width/2,gui_height/2,offset,"Made in 2021");
+scr_text_outline(gui_width/2,gui_height/2-100,offset,"Made in 2021");
 draw_set_color(c_white);
-draw_text(gui_width / 2, gui_height / 2, "Made in 2021");
+draw_text(gui_width / 2, gui_height / 2-100, "Made in 2021");
 
 draw_set_alpha(1);

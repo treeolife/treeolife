@@ -14,6 +14,7 @@ global.inventoryStart = noone;
 
 // Tracking to complete transition only once
 global.transitioning = false;
+global.splashScreenTimer = 5;
 
 // Tracking levels accessed for replayability
 global.wave			= -1;
@@ -135,4 +136,4 @@ advanceLevel = function(wave) {
 		}
 }
 
-alarm[0] = 3 * room_speed;
+alarm[0] = global.splashScreenTimer * room_speed;
