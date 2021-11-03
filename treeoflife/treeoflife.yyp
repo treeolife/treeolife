@@ -37,7 +37,7 @@
     {"id":{"name":"fText","path":"fonts/fText/fText.yy",},"order":0,},
     {"id":{"name":"PlayerStateJump","path":"scripts/PlayerStateJump/PlayerStateJump.yy",},"order":1,},
     {"id":{"name":"tLevelOne","path":"tilesets/tLevelOne/tLevelOne.yy",},"order":3,},
-    {"id":{"name":"oSeedling","path":"objects/oSeedling/oSeedling.yy",},"order":2,},
+    {"id":{"name":"oTree","path":"objects/oTree/oTree.yy",},"order":2,},
     {"id":{"name":"scene1","path":"objects/scene1/scene1.yy",},"order":0,},
     {"id":{"name":"PanelDefenderDraw","path":"scripts/PanelDefenderDraw/PanelDefenderDraw.yy",},"order":2,},
     {"id":{"name":"MACROS","path":"scripts/MACROS/MACROS.yy",},"order":6,},

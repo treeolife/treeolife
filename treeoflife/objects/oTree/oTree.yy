@@ -31,7 +31,7 @@
     "path": "folders/Defenders/Tree.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oSeedling",
+  "name": "oTree",
   "tags": [],
   "resourceType": "GMObject",
 }
