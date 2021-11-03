@@ -1,10 +1,10 @@
 /// @desc GUI setup
 
 enum menu_options {
-	new_game	= 4,
-	start_game	= 3,
-	//continue_game	= 4,
-	help		= 2,
+	new_game	= 5,
+	start_game	= 4,
+	help		= 3,
+	graphics	= 2,
 	quit		= 1,
 	credits		= 0,
 }
@@ -40,6 +40,7 @@ if (global.gameStarted == -1) {
 }
 
 menu[menu_options.help]			= "How to Play";
+menu[menu_options.graphics]		= "Graphics";
 menu[menu_options.credits]		= "Credits";
 menu[menu_options.quit]			= "Quit";
 

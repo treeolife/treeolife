@@ -10,9 +10,9 @@ keyActivate = keyboard_check_pressed(vk_space) ||
 if (global.gamePaused) {
 	
 	if(global.graphicsSettings == graphics.low)
-		pauseOption[PAUSE.graphics] = "Gfx: Low";
+		pauseOption[PAUSE.graphics] = "Graphics: Low";
 	else if(global.graphicsSettings == graphics.high)
-		pauseOption[PAUSE.graphics] = "Gfx: High";
+		pauseOption[PAUSE.graphics] = "Graphics: High";
 	
 	pauseOptionSelected += (keyDown - keyUp);
 

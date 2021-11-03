@@ -13,8 +13,8 @@ selection = 0;
 
 pauseOption[PAUSE.continue_game] = "Continue";
 pauseOption[PAUSE.help] = "Help";
-pauseOption[PAUSE.graphics] = "Gfx";
-pauseOption[PAUSE.exit_game] = "Exit";
+pauseOption[PAUSE.graphics] = "Graphics";
+pauseOption[PAUSE.exit_game] = "Back to Main Menu";
 
 pauseOptionSelected = 0;
 

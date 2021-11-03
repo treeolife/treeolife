@@ -15,6 +15,12 @@ function checkHelpMenu() {
 		instance_destroy(oUIPanelMiddle);
 }
 	
+if(global.graphicsSettings == graphics.low)
+	menu[menu_options.graphics] = "Graphics: Low";
+else if(global.graphicsSettings == graphics.high)
+	menu[menu_options.graphics] = "Graphics: High";
+	
+	
 
 if (menu_control) {	
 	if (keyboard_check_pressed(vk_up)) {
@@ -32,22 +38,35 @@ if (menu_control) {
 			instance_create_depth(0,0,get_layer_depth(LAYER.ui),fadeOut);
 		}
 		
-		// exclude Help menu option
-		if (menu_cursor != menu_options.help) {
+		// Exclude Help and Graphics menu - they are toggles
+		if (menu_cursor != menu_options.help && menu_cursor != menu_options.graphics) {
 			menu_y_target	= gui_height + 200;
 			menu_committed	= menu_cursor;
 			menu_control	= false;
 		} else {
 			// Help menu option chosen
-			if(!instance_exists(oUIPanelMiddle)) 
-				NewPanelMiddle(
-					global.howToPlayIcon,
-					global.howToPlayTitle, 
-					global.howToPlayInfo + "\n\n\n" +
-					global.helpInfo,
-					380);
+			if (menu_cursor == menu_options.help)
+				if(!instance_exists(oUIPanelMiddle)) 
+					NewPanelMiddle(
+						global.howToPlayIcon,
+						global.howToPlayTitle, 
+						global.howToPlayInfo + "\n\n\n" +
+						global.helpInfo,
+						380);
 			
-			else instance_destroy(oUIPanelMiddle);
+				else instance_destroy(oUIPanelMiddle);
+				
+			if (menu_cursor == menu_options.graphics) {
+					
+				if(global.graphicsSettings == graphics.low) {
+					global.graphicsSettings = graphics.high;
+				}
+				else
+				if(global.graphicsSettings == graphics.high) {
+					global.graphicsSettings = graphics.low;
+				}
+				
+			}
 		}
 	}
 }
