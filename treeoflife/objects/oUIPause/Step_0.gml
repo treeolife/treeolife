@@ -1,7 +1,5 @@
 /// @description user input
 
-var options_size = ds_list_size(global.options);
-
 keyUp		= keyboard_check_pressed(vk_up);
 keyDown		= keyboard_check_pressed(vk_down);
 keyActivate = keyboard_check_pressed(vk_space) ||

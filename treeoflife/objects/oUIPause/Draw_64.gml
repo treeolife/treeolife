@@ -1,12 +1,5 @@
 /// @description ui
 
-var options = global.options;
-
-var border	= 10;
-var width	= ds_list_size(options) * (32 + border * 2) 
-				+ border * 2;
-var height	= 102 + border * 2;
-
 global.pauseGUI_X = window_get_width();
 global.pauseGUI_Y = window_get_height();
 

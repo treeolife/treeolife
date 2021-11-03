@@ -11,11 +11,11 @@ function PlayerStateIdle(){
  			exit;
  		}
 		
-		if !oUIDefender.isOpen() {
-				if (player_input != 0) 
-					midoriState = MIDORI.sprint;
-				speed_h = player_input * max_speed;
-		}
+		
+		if (player_input != 0) 
+			midoriState = MIDORI.sprint;
+		speed_h = player_input * max_speed;
+		
 		
 		if (speed_v == 0 && 
 			speed_h == 0 &&
@@ -151,13 +151,6 @@ function PlayerStateIdle(){
 		#endregion
 		
 		#endregion
-	
-		#region Remove defender UI if not colliding on soil
-		if !place_meeting (x, y+2, oSoil) {
-			
-			oUIDefender.hide();
-		}
-		#endregion
 		
  		#region If not on ground, apply game gravity in vertical movement 
  		if !place_meeting (x, y+1, oCollision) {	
@@ -173,14 +166,14 @@ function PlayerStateIdle(){
  				state = PlayerStateJump;	
  			}
 
- 			if keyInteract && !oUIDefender.isOpen() {
+ 			//if keyInteract && !oUIDefender.isOpen() {
 				
- 				var soil = instance_place(x, y+2, oSoil)
- 				if soil && soil.plantable {
+ 			//	var soil = instance_place(x, y+2, oSoil)
+ 			//	if soil && soil.plantable {
 					
- 					oUIDefender.show(soil);
- 				}
-			}
+ 			//		oUIDefender.show(soil);
+ 			//	}
+			//}
 		} #endregion
 	}
 	
