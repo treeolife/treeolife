@@ -9,7 +9,7 @@ function getYHeight(defender_obj) {
 }
 
 function getXWidth(defender_obj) {
-	return x+(oSoil.sprite_width/2);
+	return x;
 }
 
 function createDefender(defender_obj) {
