@@ -37,45 +37,5 @@ function PanelDefenderDraw(){
 		}
 	}
 	
-	//with(closeButton) {
-	//	width = other.width/2;
-	//	height = 50;
-	//	_x = other.x;
-	//	_y = other.y + other.height - other.border - height * 2;				
-	//	draw = true;
-	//	outline = false;
-	//	message = "Close";
-	//}
-	
-	//with(cactusButton) {
-	//	width = other.width/2;
-	//	height = 50;
-	//	_x = other.x;
-	//	_y = other.y + other.height - other.border * 2 - height * 3;				
-	//	draw = true;
-	//	outline = false;
-	//	message = "Cactus";
-	//}
-	
-	//with(fernButton) {
-	//	width = other.width/2;
-	//	height = 50;
-	//	_x = other.x;
-	//	_y = other.y + other.height - other.border * 3 - height * 4;				
-	//	draw = true;
-	//	outline = false;
-	//	message = "Fern";
-	//}
-	
-	//with(degrowButton) {
-	//	width = other.width/2;
-	//	height = 50;
-	//	_x = other.x;
-	//	_y = other.y + other.height - other.border * 4 - height * 5;				
-	//	draw = true;
-	//	outline = false;
-	//	message = "Degrow";
-	//}
-	
 	state = PanelDefenderOpen;
 }
