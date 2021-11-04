@@ -20,6 +20,9 @@ healthBar = noone;
 
 damage = 2;
 
+// Only visible after animating starts
+image_alpha = 0;
+
 function getCost() {
 	return { 
 		costQuantity: costQuantity,
@@ -31,7 +34,8 @@ function animateCurve(
 	curveSpeed, 
 	curvePosition, 
 	curveAsset) {
-		
+	
+	image_alpha = 1;
 	curvePosition += curveSpeed;
 	var _curveStruct = animcurve_get(curveAsset);
 	var _channel = animcurve_get_channel(_curveStruct, "x");

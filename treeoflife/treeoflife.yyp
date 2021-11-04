@@ -66,6 +66,7 @@
     {"id":{"name":"sKeyArrows","path":"sprites/sKeyArrows/sKeyArrows.yy",},"order":8,},
     {"id":{"name":"sTreeOne","path":"sprites/sTreeOne/sTreeOne.yy",},"order":0,},
     {"id":{"name":"oPortal","path":"objects/oPortal/oPortal.yy",},"order":2,},
+    {"id":{"name":"sTreeTwoRound","path":"sprites/sTreeTwoRound/sTreeTwoRound.yy",},"order":4,},
     {"id":{"name":"sParticleLava","path":"sprites/sParticleLava/sParticleLava.yy",},"order":1,},
     {"id":{"name":"fInventory","path":"fonts/fInventory/fInventory.yy",},"order":7,},
     {"id":{"name":"oUIHud","path":"objects/oUIHud/oUIHud.yy",},"order":6,},

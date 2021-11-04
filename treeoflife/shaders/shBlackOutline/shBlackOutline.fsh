@@ -32,7 +32,7 @@ void main()
 		 
 		if (alpha != 0.0) { 
 			
-			end_pixel = vec4(0.65, 0.65, 0.65, 0.8); 
+			end_pixel = vec4(0.0, 0.675, 0.262, 1.0); 
 		}
 	}
 	

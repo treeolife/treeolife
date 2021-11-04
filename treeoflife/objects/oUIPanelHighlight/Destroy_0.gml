@@ -7,7 +7,11 @@ if (animate && global.panelState.highlight > 0) {
 			nonAnimatedHighlights++;
 		}
 	}
-	show_debug_message((instance_number(oUIPanelHighlight) - nonAnimatedHighlights));
+	
+	if debugger_mode
+		show_debug_message("Num of highlights: " + 
+			(instance_number(oUIPanelHighlight) - nonAnimatedHighlights));
+			
 	if ((instance_number(oUIPanelHighlight) - nonAnimatedHighlights) == 1)
 				global.panelState.highlight = 0;	
 	

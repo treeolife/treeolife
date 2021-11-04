@@ -23,10 +23,10 @@ function get_layer_depth(layer){
 			return 30;
 		break;
 		case LAYER.enemy:
-			return 275;
+			return 35;
 		break;
 		case LAYER.defender:
-			return 375;
+			return 45;
 		break;
 		case LAYER.background:
 			return 900;
