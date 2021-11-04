@@ -3,6 +3,8 @@
 instance_create_depth(0,0,0, oRoomInit);
 instance_create_depth(0,0,0, oGrid);
 instance_create_depth(0,0,0, oInventory);
+instance_create_depth(0,0, get_layer_depth(LAYER.ui), oUIPanelTimer);
+
 oInventory.persistent = true;
 
 instance_create_depth(x,y,0, oCamera);
