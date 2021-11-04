@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"scr_text_outline","path":"scripts/scr_text_outline/scr_text_outline.yy",},"order":3,},
+    {"id":{"name":"oCursor","path":"objects/oCursor/oCursor.yy",},"order":1,},
     {"id":{"name":"sCactusAttack","path":"sprites/sCactusAttack/sCactusAttack.yy",},"order":2,},
     {"id":{"name":"TransitionRoom","path":"scripts/TransitionRoom/TransitionRoom.yy",},"order":13,},
     {"id":{"name":"shEntity","path":"shaders/shEntity/shEntity.yy",},"order":3,},
@@ -101,12 +102,14 @@
     {"id":{"name":"rTest","path":"rooms/rTest/rTest.yy",},"order":5,},
     {"id":{"name":"oInventory","path":"objects/oInventory/oInventory.yy",},"order":20,},
     {"id":{"name":"sSoil","path":"sprites/sSoil/sSoil.yy",},"order":7,},
+    {"id":{"name":"sCursor","path":"sprites/sCursor/sCursor.yy",},"order":0,},
     {"id":{"name":"sSeed","path":"sprites/sSeed/sSeed.yy",},"order":1,},
     {"id":{"name":"sLandIdle","path":"sprites/sLandIdle/sLandIdle.yy",},"order":2,},
     {"id":{"name":"pItem","path":"objects/pItem/pItem.yy",},"order":6,},
     {"id":{"name":"PickUp","path":"scripts/PickUp/PickUp.yy",},"order":14,},
     {"id":{"name":"scene2","path":"objects/scene2/scene2.yy",},"order":1,},
     {"id":{"name":"sLandfill","path":"sprites/sLandfill/sLandfill.yy",},"order":0,},
+    {"id":{"name":"sCursorSpot","path":"sprites/sCursorSpot/sCursorSpot.yy",},"order":2,},
     {"id":{"name":"sGUIPanel","path":"sprites/sGUIPanel/sGUIPanel.yy",},"order":17,},
     {"id":{"name":"scr_draw_set","path":"scripts/scr_draw_set/scr_draw_set.yy",},"order":0,},
     {"id":{"name":"spr_Particle_Rain_Hard__LightGreen","path":"sprites/spr_Particle_Rain_Hard__LightGreen/spr_Particle_Rain_Hard__LightGreen.yy",},"order":4,},
@@ -269,6 +272,7 @@
     {"folderPath":"folders/Pollution/Air.yy","order":3,"resourceVersion":"1.0","name":"Air","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Pollution/Land.yy","order":4,"resourceVersion":"1.0","name":"Land","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Full Page Art.yy","order":46,"resourceVersion":"1.0","name":"Full Page Art","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/GUI/Guide.yy","order":25,"resourceVersion":"1.0","name":"Guide","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
