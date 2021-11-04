@@ -1,5 +1,8 @@
+enum defenderType {
+	tree = 1,
+}
+
 function PanelDefenderOpen(){
-	if (debugger_mode) show_debug_message("Open defender panel");
 	
 	#region Handle Input
 	
@@ -34,32 +37,21 @@ function PanelDefenderOpen(){
 	#endregion
 	
 	#region Handle Button Action
-	
+		
 		key_enter = keyboard_check_pressed(vk_enter);
 		
-		if(key_enter) {
-			
-			switch(buttonSelected) {
-				case orderedButtonMenu.close:
-					state = PanelDefenderClose;
-					break;
-				case orderedButtonMenu.cactus:
-					originInstance.createDefender(oCactus);
-					state = PanelDefenderClose;
-					break;
-				case orderedButtonMenu.tree:
-					originInstance.createDefender(oTree);
-					state = PanelDefenderClose;
-					break;
-				case orderedButtonMenu.fern:
-				originInstance.createDefender(oFern);
-				state = PanelDefenderClose;
-				break;
-				default:
-					break;
-			}
-			
-		}
+		if (action != noone && key_enter) script_execute(action);
+		
+		//var soilPosition = originInstance.defenderPosition[0];
+		//var upgradeDefender = -1;
+		//if (originInstance.hasDefender()) upgradeDefender = originInstance.defenderId.defenderLevel > 1;
+		//if (soilPosition == defenderType.tree) {
+		//	state = HandleTreeMenu; 
+		//} else if (upgradeDefender) {
+		//	state = HandleUpgradeMenu;
+		//} else {
+		//	state = HandleDrawMenu;
+		//}
 	
 	#endregion
 	
@@ -91,10 +83,21 @@ function PanelDefenderOpen(){
 		
 	#endregion
 	
-	#region Draw Menu GUI
+	#region Draw the Right Menu based on Soil and Defender
 	
 		if (!buttonsDrawn) {
-			state = PanelDefenderDraw; 
+			
+			var soilPosition = originInstance.defenderPosition[0];
+			var upgradeDefender = -1;
+			if (originInstance.hasDefender()) upgradeDefender = originInstance.defenderId.defenderLevel > 1;
+			if (soilPosition == defenderType.tree) {
+				state = PanelDefenderDrawTree; 
+			} else if (upgradeDefender) {
+				state = PanelDefenderDrawUpgrade;
+			} else {
+				state = PanelDefenderDraw;
+			}
+			
 			buttonsDrawn = true;
 		}
 		

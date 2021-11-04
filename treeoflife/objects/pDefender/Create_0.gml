@@ -8,6 +8,7 @@ curvePosition = 0;
 curveSpeed = 0.02;
 
 // Attributes
+defenderLevel = 1;
 hp = 100;
 hp_max = 100;
 flash = 0;

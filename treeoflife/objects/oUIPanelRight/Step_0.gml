@@ -15,5 +15,6 @@ if (title == noone && icon != noone && string_length(panelTitle) > 0) {
 if (title != noone && originInstance != noone ) {
 	xTarget = window_get_width() - width - border;
 	y = border + fullPanelMarginTop;
+	
 	script_execute(state);
 }

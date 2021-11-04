@@ -40,17 +40,9 @@ if (!picked) {
 
 		// consider item on left
 		if (x - interactX < 0) {
-			if debugger_mode show_debug_message("item on left . " 
-								+ "time: " + string(time) 
-								+ " . percent: " + string(percent)
-								+ " . distanceX: " + string(distanceX));
 			x += ceil(time); 
 		} else {
 		// consider item on right
-			if debugger_mode show_debug_message("item on right . " 
-								+ "time: " + string(time) 
-								+ " . percent: " + string(percent)
-								+ " . distanceX: " + string(distanceX));
 			x -= ceil(time);
 		}
 }
