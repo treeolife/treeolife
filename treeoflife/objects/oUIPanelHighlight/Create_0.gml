@@ -7,6 +7,7 @@ var sScale = 36;
 
 message = "";
 
+secondsToShow = 0.5;
 justCreated = true;
 timer = 0;
 flex = true;

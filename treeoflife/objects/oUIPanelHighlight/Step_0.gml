@@ -22,7 +22,7 @@ if (animate) {
 	var seconds = timer / room_speed;
 	
 	y = yTarget;
-	if (seconds > 1.5 && seconds <= secondsToFade && image_alpha <= 1) {
+	if (seconds > secondsToShow && seconds <= secondsToFade && image_alpha <= 1) {
 		image_alpha += (0.6 + image_alpha) / room_speed;
 	}
 	

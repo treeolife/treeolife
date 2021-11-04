@@ -4,7 +4,7 @@ function DialogResponses(argument0) {
 	switch(argument0) {
 		
 		case 0: break;
-		case 1: NewHighlight(sSignpost,window_get_width()/2,0,100,"Use up and down keys to select dialog options!",true, true, true);
+		case 1: NewHighlight(sKeyArrows,window_get_width()/2,0,100,"Use arrow keys for options!",true, true, true);
 			NewTextBox("Do I want to plant the Tree of Life?", TEXTBOX.select, ["0:Not now.","2:Yes."]); break;
 		case 2: NewTextBox("Walk up to the dark brown patch.", TEXTBOX.defender); break;
 		//case 3: NewPanelDefender(); break;
@@ -17,8 +17,8 @@ function DialogResponses(argument0) {
 		case 10: instance_destroy(oUIPanelMiddle); break;
 		case 11: instance_create_depth(x,y,depth,oSeed); break;
 		case 12: global.wave = 1; global.levelAccessed.one = 1; TransitionRoom(rOne); break;
-		case 13: NewHighlight(sSignpost, window_get_width()/2,0,100,
-			"Press Z to interact with objects in the environment!",true,true,true); break;
+		case 13: NewHighlight(sKeyEsc, window_get_width()/2,0,100,
+			"Press ESC to pause the game.",true,true,true); break;
 		case 14: instance_create_depth(x,y,depth,oWater); break;
 		case 15: instance_create_depth(x,y,depth,oFertiliser); break;
 		default: break;

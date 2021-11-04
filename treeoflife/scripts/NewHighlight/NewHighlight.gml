@@ -2,6 +2,7 @@ function NewHighlight(
 	icon, _x, _y, width, _message, 
 	animate=false, flex=false, highlight=false)
 {
+	
 	h = instance_create_depth(
 		_y,
 		_x,
