@@ -3,4 +3,41 @@
 seconds = room_speed;
 current_seconds = seconds;
 can_countdown = true;
-paused = false;
+timer_paused = true;
+callback = noone;
+eventName = "";
+postText = "";
+
+bufferSeconds = 0;
+
+startTime = 0;
+time = 0;
+
+setup = false;
+
+panelTimer = instance_create_depth(
+	0,
+	0,
+	get_layer_depth(LAYER.ui),
+	oUIPanelTimer);
+
+setup = function(_time, _callback, _eventName, _bufferSeconds, _postText) {
+	callback = _callback;
+	time = _time;
+	startTime = _time;
+	eventName = _eventName;
+	postText = _postText;
+	bufferSeconds = _bufferSeconds;
+	
+	panelTimer.time = time;
+	panelTimer.startTime = startTime;
+	panelTimer.eventName = eventName;
+}
+
+pause = function() {
+	timer_paused = true;
+}
+
+start = function() {
+	timer_paused = false;
+}

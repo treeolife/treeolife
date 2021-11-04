@@ -44,7 +44,6 @@
             {"propertyId":{"name":"entityActivateScript","path":"objects/pEntity/pEntity.yy",},"objectId":{"name":"pEntity","path":"objects/pEntity/pEntity.yy",},"value":"NewTextBox","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
             {"propertyId":{"name":"entityActivateArgs","path":"objects/pEntity/pEntity.yy",},"objectId":{"name":"pEntity","path":"objects/pEntity/pEntity.yy",},"value":"[\"A nice planting patch.\", 0, [\"1:\"]]","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"oSignpost","path":"objects/oSignpost/oSignpost.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":622.0,"y":576.0,"resourceVersion":"1.0","name":"inst_F574D0E","tags":[],"resourceType":"GMRInstance",},
-        {"properties":[],"isDnd":false,"objectId":{"name":"oUIPanelTimer","path":"objects/oUIPanelTimer/oUIPanelTimer.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1280.0,"y":384.0,"resourceVersion":"1.0","name":"inst_61AD137E","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oSeed","path":"objects/oSeed/oSeed.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":273.0,"y":537.0,"resourceVersion":"1.0","name":"inst_DB2FAA5","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
             {"propertyId":{"name":"entityActivateScript","path":"objects/pEntity/pEntity.yy",},"objectId":{"name":"pEntity","path":"objects/pEntity/pEntity.yy",},"value":"NewTextBox","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
@@ -518,7 +517,6 @@
     {"name":"inst_7AE1C28E","path":"rooms/rZero/rZero.yy",},
     {"name":"inst_6B7E04B5","path":"rooms/rZero/rZero.yy",},
     {"name":"inst_2E3F2A95","path":"rooms/rZero/rZero.yy",},
-    {"name":"inst_61AD137E","path":"rooms/rZero/rZero.yy",},
     {"name":"inst_DB2FAA5","path":"rooms/rZero/rZero.yy",},
     {"name":"inst_3E0300CA","path":"rooms/rZero/rZero.yy",},
     {"name":"inst_51E8B0F4","path":"rooms/rZero/rZero.yy",},

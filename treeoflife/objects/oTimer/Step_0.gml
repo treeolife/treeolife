@@ -1,26 +1,33 @@
-if !global.gamePaused {
-	if can_countdown {
-		can_countdown = false;
-		current_seconds = seconds;
-	
-		if(!global.pausedTimer)
-			global.currentTime -= 1;
-	
-		if global.currentTime < 0
-			global.currentTime = -1
-	}
+if (!timer_paused) {
+	if (instance_exists(panelTimer))
+		panelTimer.time = time;
+}
 
-	if (current_seconds <= 0) {
-		can_countdown = true;	
-	} else {
-		current_seconds -= 1;
+if can_countdown && setup {
+	can_countdown = false;
+	current_seconds = seconds;
+	
+	time -= 1;
+	
+	if (time < 0 && bufferSeconds == 0) {
+		instance_destroy();
 	}
+}
 
-	if (global.currentTime == 0) {
-		if (debugger_mode) show_debug_message("Advancing...");
-		if global.wave < 4 {
-			global.wave += 1;
-			oController.advanceLevel(global.wave);	
-		}
-	}
+if (current_seconds <= 0) {
+	can_countdown = true;	
+} else if (!timer_paused && !global.gamePaused) {
+	current_seconds -= 1;
+}
+
+if (time == 0) {
+	
+	if (bufferSeconds != 0) {
+			panelTimer.postText = postText;
+			if (bufferSeconds > 1)
+				alarm[1] = (bufferSeconds - 2) * room_speed;
+			else 
+				alarm[0] = bufferSeconds * room_speed;
+	} else if (callback != noone)
+		callback();
 }

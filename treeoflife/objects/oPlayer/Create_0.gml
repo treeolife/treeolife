@@ -6,9 +6,6 @@ enum MIDORI {
 	locked	= 2,
 }
 
-// Instance timer
-instance_create_depth(0,0,0, oTimer);
-
 speed_v = 0;
 speed_h = 0;
 positionX = 0;

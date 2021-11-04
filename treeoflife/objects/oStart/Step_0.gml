@@ -78,7 +78,7 @@ if (menu_y > gui_height + 150) && (menu_committed != -1) {
 		case menu_options.start_game:
 
 			if (global.gameStarted == -1) {
-				TransitionRoom(rExposition1, global.loadingGeneric);
+				TransitionRoom(ROOM_START, global.loadingGeneric);
 			} else {
 				TransitionRoom(oController.getLevelRoom(), global.loadingInfo);
 			}
