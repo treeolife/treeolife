@@ -19,6 +19,8 @@ function DialogResponses(argument0) {
 		case 12: global.wave = 1; global.levelAccessed.one = 1; TransitionRoom(rOne); break;
 		case 13: NewHighlight(sSignpost, window_get_width()/2,0,100,
 			"Press Z to interact with objects in the environment!",true,true,true); break;
+		case 14: instance_create_depth(x,y,depth,oWater); break;
+		case 15: instance_create_depth(x,y,depth,oFertiliser); break;
 		default: break;
 	}
 

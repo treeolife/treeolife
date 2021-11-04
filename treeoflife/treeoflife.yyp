@@ -52,7 +52,7 @@
     {"id":{"name":"oUIPanelUnits","path":"objects/oUIPanelUnits/oUIPanelUnits.yy",},"order":0,},
     {"id":{"name":"scene3","path":"objects/scene3/scene3.yy",},"order":3,},
     {"id":{"name":"sLand","path":"sprites/sLand/sLand.yy",},"order":1,},
-    {"id":{"name":"oFern","path":"objects/oFern/oFern.yy",},"order":6,},
+    {"id":{"name":"oFern","path":"objects/oFern/oFern.yy",},"order":4,},
     {"id":{"name":"spr_Particle_Rain_Soft__LightGreen","path":"sprites/spr_Particle_Rain_Soft__LightGreen/spr_Particle_Rain_Soft__LightGreen.yy",},"order":4,},
     {"id":{"name":"PanelDefenderOpen","path":"scripts/PanelDefenderOpen/PanelDefenderOpen.yy",},"order":0,},
     {"id":{"name":"rHidden","path":"rooms/rHidden/rHidden.yy",},"order":6,},
