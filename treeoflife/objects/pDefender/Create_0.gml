@@ -1,5 +1,7 @@
 /// @description 
 
+event_inherited();
+
 // Creation grow animation
 curveCompleted = false;
 curvePosition = 0;
@@ -10,7 +12,8 @@ hp = 100;
 hp_max = 100;
 flash = 0;
 
-cost = 20;
+cost = oSeed;
+costQuantity = 1;
 
 // Health bar
 healthBar = noone;
@@ -18,7 +21,10 @@ healthBar = noone;
 damage = 2;
 
 function getCost() {
-	return cost;
+	return { 
+		costQuantity: costQuantity,
+		cost: cost,
+	};
 }
 
 function animateCurve(
@@ -34,4 +40,24 @@ function animateCurve(
 		curvePosition);
 	var output = _value/1;
 	return { curvePosition:curvePosition, output:output };
+}
+
+function checkResources(price) {
+	var outstandingValue = price.costQuantity;
+	
+	for (
+		var costItem = 0; 
+		costItem < instance_number(price.cost); 
+		costItem++) {
+			
+		// quick check of items picked up
+		if (!instance_find(price.cost, costItem).visible) {
+			outstandingValue--;
+		}
+		
+		if (outstandingValue == 0)
+			return true;
+	}
+	
+	return false;
 }

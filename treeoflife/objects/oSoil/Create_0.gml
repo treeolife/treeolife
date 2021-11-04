@@ -4,6 +4,18 @@ event_inherited();
 
 defenderObj = 0;
 
+function loadDefender() {
+	defenderId = ds_map_find_value(global.defenders,defenderPosition[0]);
+	defenderId.x = x;
+	defenderId.y = y;
+	defenderId.visible = true;
+}
+
+function hideDefender() {
+	if(instance_exists(defenderId))
+		defenderId.visible = false;
+}
+
 function getYHeight(defender_obj) {
 	return y;
 }
@@ -13,9 +25,9 @@ function getXWidth(defender_obj) {
 }
 
 function createDefender(defender_obj) {
-	if !plantable
-		return;
+	if (!oInventory.playerHasResourcesFor(defender_obj)) return;
 		
+	// no defender on soil
 	if defenderId == 0 {
 		defenderId = instance_create_depth(
 			getXWidth(defender_obj),
@@ -23,15 +35,22 @@ function createDefender(defender_obj) {
 			get_layer_depth(LAYER.defender),
 			defender_obj);
 		defenderObj = defender_obj;
+		defenderId.persistent = true;
 		
-		if defender_obj.getCost() > global.water_amount {
-			instance_destroy(defenderId);
-			return -1;
-		}
-		global.water_amount -= defender_obj.getCost();
+		if defenderPosition[0] != 0
+			ds_map_add(global.defenders,defenderPosition[0],defenderId); 
+		
+		//if (!checkResources(defender_obj.getCost())) {
+		//	instance_destroy(defenderId);
+		//	return -1;
+		//}
+		
+		oInventory.deductResources(defender_obj.getCost());
+		
 		return defenderId;
 	}
-		
+	
+	// different defender chosen than the one on soil
 	if defender_obj != defenderObj {
 		defenderObj = defender_obj;
 		instance_destroy(defenderId);
@@ -41,7 +60,12 @@ function createDefender(defender_obj) {
 			get_layer_depth(LAYER.defender),
 			defender_obj);
 			
-		global.water_amount -= defender_obj.getCost();
+		defenderId.persistent = true;
+			
+		if defenderPosition[0] != 0
+			ds_map_replace(global.defenders,defenderPosition[0],defenderId); 
+			
+		oInventory.deductResources(defender_obj.getCost());
 			
 		return defenderId;
 	}

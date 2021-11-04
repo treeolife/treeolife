@@ -1,16 +1,11 @@
 /// @description attributes
 
+event_inherited();
+
 #region Attributes
 
 		hp = 250;
 		hp_max = 250;
-		flash = 0;
-
-#endregion
-
-#region Health bar
-
-		healthBar = noone;
 
 #endregion
 

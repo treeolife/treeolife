@@ -29,6 +29,8 @@ function PickUp(item){
 	item.pickedTime = 10;
 	
 	// Add item to origin inventory
-	inventory = origin.inventory
+	inventory = origin.inventory;
+	
+	// Add item to inventory;
 	ds_list_add(inventory, item);
 }

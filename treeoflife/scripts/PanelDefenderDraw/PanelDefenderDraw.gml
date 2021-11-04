@@ -1,4 +1,5 @@
 enum orderedButtonMenu {
+	tree,
 	cactus,
 	fern,
 	degrow,
@@ -11,16 +12,19 @@ function PanelDefenderDraw(){
 	buttonNames = array_create(4);
 	closeButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
 	cactusButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
+	treeButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
 	fernButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
 	degrowButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
 	
 	buttons[orderedButtonMenu.close]	= closeButton;
 	buttons[orderedButtonMenu.cactus]	= cactusButton;
+	buttons[orderedButtonMenu.tree]		= treeButton;
 	buttons[orderedButtonMenu.fern]		= fernButton;
 	buttons[orderedButtonMenu.degrow]	= degrowButton;
 	
 	buttonNames[orderedButtonMenu.close]	= "Close";
 	buttonNames[orderedButtonMenu.cactus]	= "Cactus";
+	buttonNames[orderedButtonMenu.tree]		= "Tree of Life";
 	buttonNames[orderedButtonMenu.fern]		= "Fern";
 	buttonNames[orderedButtonMenu.degrow]	= "Degrow";
 	

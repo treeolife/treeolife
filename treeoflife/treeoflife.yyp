@@ -176,6 +176,7 @@
     {"id":{"name":"particleLavaSpot","path":"objects/particleLavaSpot/particleLavaSpot.yy",},"order":2,},
     {"id":{"name":"rStart","path":"rooms/rStart/rStart.yy",},"order":1,},
     {"id":{"name":"particle_rain_Strong_West","path":"objects/particle_rain_Strong_West/particle_rain_Strong_West.yy",},"order":12,},
+    {"id":{"name":"pDefender","path":"objects/pDefender/pDefender.yy",},"order":7,},
     {"id":{"name":"sAirFlinch","path":"sprites/sAirFlinch/sAirFlinch.yy",},"order":3,},
     {"id":{"name":"oSeed","path":"objects/oSeed/oSeed.yy",},"order":3,},
     {"id":{"name":"sGrid","path":"sprites/sGrid/sGrid.yy",},"order":2,},

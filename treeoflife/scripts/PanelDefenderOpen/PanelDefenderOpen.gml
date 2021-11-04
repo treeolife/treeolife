@@ -47,6 +47,10 @@ function PanelDefenderOpen(){
 					originInstance.createDefender(oCactus);
 					state = PanelDefenderClose;
 					break;
+				case orderedButtonMenu.tree:
+					originInstance.createDefender(oTree);
+					state = PanelDefenderClose;
+					break;
 				default:
 					break;
 			}

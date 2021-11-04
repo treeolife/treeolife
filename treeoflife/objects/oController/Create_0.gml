@@ -11,6 +11,8 @@ global.textSpeed	= 0.75;
 global.Dialog		= false;
 global.inventory	= ds_list_create();
 global.inventoryStart = noone;
+global.defenders	= ds_map_create();
+global.defendersStart = noone;
 
 // Tracking to complete transition only once
 global.transitioning = false;

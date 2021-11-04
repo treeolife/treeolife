@@ -52,7 +52,7 @@ function PlayerStateIdle(){
 		numPreviousList = ds_list_size(_previousInteractionList);
 		while(numPreviousList > 0) {
 			var _check = _previousInteractionList[| --numPreviousList];
-			if (_check.entityActivateScript != -1) {
+			if (instance_exists(_check) && _check.entityActivateScript != -1) {
 				_check.draw = false;
 			}
 		}
@@ -63,7 +63,7 @@ function PlayerStateIdle(){
 		while(_interactionFound > 0) {	// Check nearest interact target
 			ds_list_copy(_previousInteractionList, _interactionList);
 			var _check = _interactionList[| --_interactionFound];
-			if (_check.entityActivateScript != -1) {
+			if (instance_exists(_check) && _check.entityActivateScript != -1) {
 				// Add one to distance, prevent using keys of 0, the case of standing directly on object
 				//distance = distance_to_point(_check.x, _check.y) + 1;
 				distance = floor(abs(x - _check.x)) + 1;

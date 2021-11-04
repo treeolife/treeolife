@@ -17,6 +17,7 @@ scr_draw_set(1, c_black, function() {
 		for (unit = 0; unit < unitsSize; unit++) {
 			
 			u = ds_list_find_value(units, unit);
+			if (!instance_exists(u)) continue;
 			unitSprite	= u.sprite_index;
 			unitName	= u.entityName;
 			

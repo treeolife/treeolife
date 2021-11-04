@@ -1,5 +1,7 @@
 /// @description 
 
+event_inherited();
+
 // Creation grow animation
 //if (!curveCompleted) {
 //	if curvePosition >= 1

@@ -1,8 +1,10 @@
 /// @description 
 
-if healthBar == noone {
-	healthBar = instance_create_depth(x, y, get_layer_depth(LAYER.defender), oHealthbar)
-}
+event_inherited();
+
+//if healthBar == noone {
+//	healthBar = instance_create_depth(x, y, get_layer_depth(LAYER.defender), oHealthbar)
+//}
 
 // on death
 //if hp == 0 {
@@ -11,4 +13,4 @@ if healthBar == noone {
 //}
 
 // Update health bar
-healthBar.update(x, y, hp, hp_max, flash, true);
+//healthBar.update(x, y, hp, hp_max, flash, true);
