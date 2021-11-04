@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sSoil",
-    "path": "sprites/sSoil/sSoil.yy",
+    "name": "sSoilTrace",
+    "path": "sprites/sSoilTrace/sSoilTrace.yy",
   },
   "solid": false,
   "visible": true,

@@ -72,6 +72,7 @@
     {"id":{"name":"oMountain","path":"sprites/oMountain/oMountain.yy",},"order":13,},
     {"id":{"name":"spr_Particle_Rain_Hard__White","path":"sprites/spr_Particle_Rain_Hard__White/spr_Particle_Rain_Hard__White.yy",},"order":5,},
     {"id":{"name":"sMidori","path":"sprites/sMidori/sMidori.yy",},"order":0,},
+    {"id":{"name":"sSoilTrace","path":"sprites/sSoilTrace/sSoilTrace.yy",},"order":13,},
     {"id":{"name":"sForest","path":"sprites/sForest/sForest.yy",},"order":16,},
     {"id":{"name":"pText","path":"objects/pText/pText.yy",},"order":1,},
     {"id":{"name":"sGUIFull","path":"sprites/sGUIFull/sGUIFull.yy",},"order":16,},
