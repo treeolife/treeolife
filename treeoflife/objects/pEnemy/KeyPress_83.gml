@@ -1,3 +1,3 @@
 /// @description 
 
-target(oDefenderArea);
+target(oTree.defenderArea);

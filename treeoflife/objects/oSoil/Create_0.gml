@@ -35,7 +35,10 @@ function createDefender(defender_obj) {
 			get_layer_depth(LAYER.defender),
 			defender_obj);
 		defenderObj = defender_obj;
-		defenderId.persistent = true;
+		if instance_exists(defenderId) {
+			defenderId.persistent = true;
+			defenderId.soil = self;
+		}
 		
 		if defenderPosition[0] != 0
 			ds_map_add(global.defenders,defenderPosition[0],defenderId); 
@@ -60,7 +63,10 @@ function createDefender(defender_obj) {
 			get_layer_depth(LAYER.defender),
 			defender_obj);
 			
-		defenderId.persistent = true;
+		if instance_exists(defenderId) {
+			defenderId.persistent = true;
+			defenderId.soil = self;
+		}
 			
 		if defenderPosition[0] != 0
 			ds_map_replace(global.defenders,defenderPosition[0],defenderId); 
@@ -80,5 +86,11 @@ function isDefender(defender_obj) {
 }
 
 function hasDefender() {
-	return defenderId != 0;
+	return defenderId != 0 && instance_exists(defenderId);
+}
+
+function removeDefender() {
+	defenderId = 0;	
+	defenderObj = 0;
+	return;
 }

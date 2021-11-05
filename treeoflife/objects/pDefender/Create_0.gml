@@ -3,6 +3,7 @@
 event_inherited();
 
 defenderArea = noone;
+soil = noone;
 
 // Creation grow animation
 curveCompleted = false;
