@@ -8,8 +8,17 @@ event_inherited();
 //		curveCompleted = true;
 //}
 
-defenderArea.x = x;
-defenderArea.y = y - 16;
+if defenderArea != noone && instance_exists(defenderArea) {
+	defenderArea.x = x;
+	defenderArea.y = y - 16;
+	if (persistent && instance_exists(defenderArea)) defenderArea.persistent = true;
+		else if (instance_exists(defenderArea)) defenderArea.persistent = false;
+} else {
+	if (persistent)
+		defenderArea = instance_create_depth(x,y-16,depth,oDefenderArea);
+		if instance_exists(defenderArea)
+			defenderArea.persistent = true;
+}
 
 var curve = animateCurve(
 	curveSpeed, 
