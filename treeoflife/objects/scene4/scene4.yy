@@ -25,8 +25,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "treeoflife",
-    "path": "treeoflife.yyp",
+    "name": "Exposition",
+    "path": "folders/GUI/Exposition.yy",
   },
   "resourceVersion": "1.0",
   "name": "scene4",
