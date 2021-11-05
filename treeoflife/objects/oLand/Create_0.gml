@@ -21,15 +21,17 @@ states = {
 }
 
 function statePollutionInit() {
-	states.attack.StateOnEnd(states.idle);
-	states.aggro.StateOnEnd(states.attack);
-	states.aggro.StateOnEnd(states.walk);
-	states.walk.StateOnEnd(states.idle);
+	//states.attack.StateOnEnd(states.idle);
+	//states.aggro.StateOnEnd(states.attack);
+	//states.aggro.StateOnEnd(states.walk);
+	//states.walk.StateOnEnd(states.idle);
 	states.idle.StateOnEnd(states.aggro);
 	states.idle.StateOnEnd(states.walk);
-	states.idle.StateOnEnd(states.flinch);
-	states.flinch.StateOnEnd(states.die);
-	states.flinch.StateOnEnd(states.aggro);
+	//test
+	states.aggro.StateOnEnd(states.idle);
+	//states.idle.StateOnEnd(states.flinch);
+	//states.flinch.StateOnEnd(states.die);
+	//states.flinch.StateOnEnd(states.aggro);
 }
 
 statePollutionInit();

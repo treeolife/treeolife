@@ -7,9 +7,9 @@ function scr_follow_the_path(nPath) {
 	
 	// TODO bad handling of direction sprite
 	if path_direction > 0
-		image_index = 1;
+		image_xscale = -1;
 	else if path_direction < 0
-		image_index = 0;
+		image_xscale = 1;
 		
 	if action == 0
 	{

@@ -17,10 +17,12 @@ function state_set(_state) {
 	image_index = 0;
 }
 
-function state_set_attack(_state) {
+function state_set_aggro(_state) {
 	state_set(_state);
 	
 	var _hitbox = instance_create_depth(x,y,depth,oHitbox);
 	_hitbox.sprite_index = sprite_index;
 	_hitbox.image_xscale = image_xscale;
+	
+	target(oTree.defenderArea);
 }
