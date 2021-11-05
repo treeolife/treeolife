@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "States",
+    "path": "folders/Scripts/States.yy",
   },
   "resourceVersion": "1.0",
-  "name": "set_state_sprite",
+  "name": "States",
   "tags": [],
   "resourceType": "GMScript",
 }
