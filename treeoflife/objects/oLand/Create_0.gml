@@ -26,7 +26,7 @@ function statePollutionInit() {
 	//states.aggro.StateOnEnd(states.walk);
 	//states.walk.StateOnEnd(states.idle);
 	states.idle.StateOnEnd(states.aggro);
-	states.idle.StateOnEnd(states.walk);
+	//states.idle.StateOnEnd(states.walk);
 	//test
 	states.aggro.StateOnEnd(states.idle);
 	//states.idle.StateOnEnd(states.flinch);
