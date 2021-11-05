@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"scr_text_outline","path":"scripts/scr_text_outline/scr_text_outline.yy",},"order":3,},
+    {"id":{"name":"sNewDirt","path":"sprites/sNewDirt/sNewDirt.yy",},"order":4,},
     {"id":{"name":"oCursor","path":"objects/oCursor/oCursor.yy",},"order":1,},
     {"id":{"name":"sCactusAttack","path":"sprites/sCactusAttack/sCactusAttack.yy",},"order":2,},
     {"id":{"name":"TransitionRoom","path":"scripts/TransitionRoom/TransitionRoom.yy",},"order":13,},
@@ -77,6 +78,7 @@
     {"id":{"name":"sLandWalk","path":"sprites/sLandWalk/sLandWalk.yy",},"order":3,},
     {"id":{"name":"oMountain","path":"sprites/oMountain/oMountain.yy",},"order":12,},
     {"id":{"name":"spr_Particle_Rain_Hard__White","path":"sprites/spr_Particle_Rain_Hard__White/spr_Particle_Rain_Hard__White.yy",},"order":5,},
+    {"id":{"name":"tNewDirt","path":"tilesets/tNewDirt/tNewDirt.yy",},"order":5,},
     {"id":{"name":"sMidori","path":"sprites/sMidori/sMidori.yy",},"order":0,},
     {"id":{"name":"sSoilTrace","path":"sprites/sSoilTrace/sSoilTrace.yy",},"order":13,},
     {"id":{"name":"sKeyEsc","path":"sprites/sKeyEsc/sKeyEsc.yy",},"order":7,},
