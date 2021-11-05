@@ -8,6 +8,9 @@ event_inherited();
 //		curveCompleted = true;
 //}
 
+defenderArea.x = x;
+defenderArea.y = y - 16;
+
 var curve = animateCurve(
 	curveSpeed, 
 	curvePosition,

@@ -2,6 +2,9 @@
 
 event_inherited();
 
+defenderArea = instance_create_depth(x,y-16,depth,oDefenderArea);
+defenderArea.persistent = true;
+
 // Creation grow animation
 curveCompleted = false;
 curvePosition = 0;
