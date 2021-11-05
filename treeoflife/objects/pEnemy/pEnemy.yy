@@ -39,7 +39,7 @@
     "path": "folders/Pollution.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oEnemy",
+  "name": "pEnemy",
   "tags": [],
   "resourceType": "GMObject",
 }

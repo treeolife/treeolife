@@ -11,8 +11,8 @@
   },
   "persistent": false,
   "parentObjectId": {
-    "name": "oEnemy",
-    "path": "objects/oEnemy/oEnemy.yy",
+    "name": "pEnemy",
+    "path": "objects/pEnemy/pEnemy.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
