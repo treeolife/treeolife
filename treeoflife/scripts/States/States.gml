@@ -18,6 +18,7 @@ function state_set(_state) {
 }
 
 function state_set_aggro(_state) {
+	if (state == _state) return;
 	state_set(_state);
 	
 	var _hitbox = instance_create_depth(x,y,depth,oHitbox);
