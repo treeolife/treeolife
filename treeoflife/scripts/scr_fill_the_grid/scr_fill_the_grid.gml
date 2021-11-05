@@ -8,6 +8,10 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 	var n ;  // Variable when you fall
 	var a ; // Variable when you fall
 	path_found = 0;  // 0 means that the path is not found
+	
+	var enable_loose_jump_pathfinding = true;
+	var enable_long_fall = true;
+	var enable_jump = false;
 
 	/// Copy the global pathfinding
 	ds_gridpathfinding = ds_grid_create(ds_grid_width(global.ds_grid_pathfinding), ds_grid_height(global.ds_grid_pathfinding)) ;
@@ -19,7 +23,7 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 	ds_list_add (point_list, ay);
 	ds_grid_set(ds_gridpathfinding,ax,ay,0);
 
-	for (var i=1; i<400; i+=1) {
+	for (var i=1; i<200; i+=1) {
 	    if path_found == 1 {
 		    ds_list_destroy(point_list); // We don't need the list anymore because we find a path.
 		    if (!debugger_mode) ds_grid_destroy(ds_gridpathfinding); /// Grid has to be deleted. Kept only for debugger purposes.
@@ -58,11 +62,11 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 			{   /// If the enemy can go to the right, the other movement will be impossible. So we can put a else to skip all the following code
 				#region vertically jump one block (Right)
 				if (ds_grid_get(ds_gridpathfinding,ax+1,ay)==-2 && ds_grid_get(ds_gridpathfinding,ax+1,ay-1)==-1
-				&& ds_grid_get(ds_gridpathfinding,ax,ay-1)==-1) {
+				&& (ds_grid_get(ds_gridpathfinding,ax,ay-1)==-1) || enable_jump) {
 		            ds_grid_set(ds_gridpathfinding,ax+1,ay-1,i);
 		            ds_list_add (point_list, ax + 1);
 		            ds_list_add (point_list, ay-1);
-	            } 
+	            }  
 				#endregion
 				else 
 				#region gap cases (Right)
@@ -70,7 +74,7 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 					#region big diagonal jump (Right)
 					if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay)==-2 && ds_grid_get(ds_gridpathfinding,ax+2,ay-1)==-1 
 					/// Three tile clearance for jump
-					&& ds_grid_get(ds_gridpathfinding,ax,ay-2)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay-2)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay-2)==-1
+					&& (ds_grid_get(ds_gridpathfinding,ax,ay-2)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay-2)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay-2)==-1 || enable_loose_jump_pathfinding)
 					{
 					    ds_grid_set(ds_gridpathfinding,ax+2,ay-1,i);
 					    ds_list_add (point_list, ax + 2);
@@ -80,7 +84,7 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 					#region horizontally jump over a void (Right)
 					if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay+1)==-2 
 					/// Check above 3 tiles are empty for jump
-					&& ds_grid_get(ds_gridpathfinding,ax,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay-1)==-1
+					&& (ds_grid_get(ds_gridpathfinding,ax,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay-1)==-1 || enable_loose_jump_pathfinding)
 					{
 				        ds_grid_set(ds_gridpathfinding,ax+2,ay,i);
 				        ds_list_add (point_list, ax + 2);
@@ -91,8 +95,8 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 					#region horizontally jump over a big void (Right)
 					if ds_grid_get(ds_gridpathfinding,ax+1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax+3,ay+1)==-2 && ds_grid_get(ds_gridpathfinding,ax+3,ay)==-1 
 					/// Check above 4 tiles are empty for jump
-					&& ds_grid_get(ds_gridpathfinding,ax,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay-1)==-1
-					&& ds_grid_get(ds_gridpathfinding,ax+3,ay-1)==-1
+					&& (ds_grid_get(ds_gridpathfinding,ax,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax+1,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax+2,ay-1)==-1
+					&& ds_grid_get(ds_gridpathfinding,ax+3,ay-1)==-1 || enable_loose_jump_pathfinding)
 					{
 						ds_grid_set(ds_gridpathfinding,ax+3,ay,i);
 						ds_list_add (point_list, ax+3);
@@ -112,7 +116,7 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 								c = ds_grid_get(ds_gridpathfinding,ax+2,ay+n-1);
 								d = ds_grid_get(ds_gridpathfinding,ax+2,ay+n);
 								   
-								if b == -1 && c == -1 && d == -2 {
+								if b == -1 && c == -1 && d == -2  && enable_long_fall {
 									find_diagonal_fall = true;
 									ds_grid_set(ds_gridpathfinding,ax+2,ay+n-1,i);
 							        ds_list_add (point_list, ax + 2);
@@ -147,7 +151,8 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 			{
 
 				#region vertically jump one block (Left)
-				if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-2 && ds_grid_get(ds_gridpathfinding,ax-1,ay-1)==-1{
+				if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-2 && ds_grid_get(ds_gridpathfinding,ax-1,ay-1)==-1 
+				&& ((ds_grid_get(ds_gridpathfinding,ax,ay-1)==-1) || enable_jump) {
 					ds_grid_set(ds_gridpathfinding,ax-1,ay-1,i);
 					ds_list_add (point_list, ax-1);
 					ds_list_add (point_list, ay-1);
@@ -159,7 +164,7 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 					#region big diagonal jump (Left)
 					if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay)==-2 && ds_grid_get(ds_gridpathfinding,ax-2,ay-1)==-1
 					/// Three tile clearance for jump
-					&& ds_grid_get(ds_gridpathfinding,ax-2,ay-2)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay-2)==-1 && ds_grid_get(ds_gridpathfinding,ax,ay-2)==-1
+					&& (ds_grid_get(ds_gridpathfinding,ax-2,ay-2)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay-2)==-1 && ds_grid_get(ds_gridpathfinding,ax,ay-2)==-1 || enable_loose_jump_pathfinding)
 					{
 						ds_grid_set(ds_gridpathfinding,ax-2,ay-1,i);
 						ds_list_add (point_list, ax-2);
@@ -169,7 +174,8 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 					#region horizontally jump over a void (Left)
 					if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay+1)==-2
 					/// Check above 3 tiles are empty for jump
-					&& ds_grid_get(ds_gridpathfinding,ax,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay-1)==-1{
+					&& (ds_grid_get(ds_gridpathfinding,ax,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay-1)==-1 || enable_loose_jump_pathfinding)
+					{
 						ds_grid_set(ds_gridpathfinding,ax-2,ay,i);
 						ds_list_add (point_list, ax-2);
 						ds_list_add (point_list, ay);
@@ -179,8 +185,8 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 					#region horizontally jump over a big void (Left)
 					if ds_grid_get(ds_gridpathfinding,ax-1,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay)==-1 && ds_grid_get(ds_gridpathfinding,ax-3,ay+1)==-2 && ds_grid_get(ds_gridpathfinding,ax-3,ay)==-1 
 					/// Check above 4 tiles are empty for big jump
-					&& ds_grid_get(ds_gridpathfinding,ax,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay-1)==-1
-					&& ds_grid_get(ds_gridpathfinding,ax-3,ay-1)==-1
+					&& (ds_grid_get(ds_gridpathfinding,ax,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax-1,ay-1)==-1 && ds_grid_get(ds_gridpathfinding,ax-2,ay-1)==-1
+					&& ds_grid_get(ds_gridpathfinding,ax-3,ay-1)==-1 || enable_loose_jump_pathfinding)
 					{
 						ds_grid_set(ds_gridpathfinding,ax-3,ay,i);
 						ds_list_add (point_list, ax-3);
@@ -199,7 +205,7 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 								c = ds_grid_get(ds_gridpathfinding,ax-2,ay+n-1);
 								d = ds_grid_get(ds_gridpathfinding,ax-2,ay+n);
 								   
-								if b == -1 && c == -1 && d == -2 {
+								if b == -1 && c == -1 && d == -2 && enable_long_fall {
 									find_diagonal_left_fall = true;
 									ds_grid_set(ds_gridpathfinding,ax-2,ay+n-1,i);
 							        ds_list_add (point_list, ax - 2);

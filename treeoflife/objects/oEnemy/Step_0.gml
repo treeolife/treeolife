@@ -8,6 +8,7 @@ old_y = y;
 	
 //}
 
+
 // Update health bar
 healthBar.update(x, y, hp, hp_max, flash, false);
 

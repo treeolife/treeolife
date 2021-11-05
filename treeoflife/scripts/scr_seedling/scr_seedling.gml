@@ -11,5 +11,5 @@ enum level {
 }
 
 function scr_seedling(seedlingArray){
-	return seedlingArray[global.wave];
+	return oTree;
 }

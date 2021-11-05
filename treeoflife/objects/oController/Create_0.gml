@@ -138,5 +138,5 @@ advanceLevel = function(wave) {
 		}
 }
 
-if (debugger_mode) TransitionRoom(rZero, "debug mode...");
+if (debugger_mode) TransitionRoom(ROOM_START, "debug mode...");
 else alarm[0] = global.splashScreenTimer * room_speed;

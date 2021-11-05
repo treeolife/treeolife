@@ -7,7 +7,7 @@ defenderObj = 0;
 function loadDefender() {
 	defenderId = ds_map_find_value(global.defenders,defenderPosition[0]);
 	defenderId.x = x;
-	defenderId.y = y;
+	defenderId.y = y-15;
 	defenderId.visible = true;
 }
 
@@ -17,7 +17,7 @@ function hideDefender() {
 }
 
 function getYHeight(defender_obj) {
-	return y;
+	return y-15;
 }
 
 function getXWidth(defender_obj) {

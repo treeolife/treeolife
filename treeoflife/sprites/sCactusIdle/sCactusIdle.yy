@@ -83,7 +83,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 17,
-    "yorigin": 32,
+    "yorigin": 16,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sCactusIdle","path":"sprites/sCactusIdle/sCactusIdle.yy",},

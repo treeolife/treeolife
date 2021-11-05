@@ -6,6 +6,8 @@ function scr_build_the_path(xgoal, ygoal){
 	var value;		/// Value in the enemy grid
 	var x_previous; /// Coordinate of X previous
 
+	var enable_loose_jump_pathfinding = true;
+
 	var a = -1;		/// Use when enemy falls. We will store data from grid_pathfinding
 	var b = -1;		/// Use when enemy falls. We will store data from grid_pathfinding
 	var c = -1;		/// Use when enemy falls.
@@ -38,7 +40,7 @@ function scr_build_the_path(xgoal, ygoal){
 		                        ygoal = ds_grid_value_y(ds_gridpathfinding, x_previous-2,ygoal, x_previous+2,ygoal+1,i);
 		                        path_add_point(path_building, xgoal*oGrid.cell_width + (oGrid.cell_width/2), ygoal*oGrid.cell_height +(oGrid.cell_height/2), 100);
 		                        }
-		                            else {      /// Case where he find a oCollsion, means that we cannot reach it. Means that we have to fall.
+		                            else {      /// Case where he find a oCollision, means that we cannot reach it. Means that we have to fall.
 		                                    {
 		                                    do
 		                                       {

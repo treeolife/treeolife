@@ -1,5 +1,8 @@
 /// @description initialise
 
+grid = instance_create_depth(0,0,0, oGrid);
+grid.visible = false;
+
 enum MIDORI {
 	idle	= 0,
 	sprint	= 1,

@@ -7,8 +7,6 @@ attackDefender = false;
 
 tar = noone;
 
-alarm[0] = 2 * 15;
-
 image_speed = 1;
 
 flash = 0;
@@ -16,7 +14,6 @@ old_x = 0;
 old_y = 0;
 attacked = false;
 attackedBy = noone;
-seedlingArray = global.seedlings;
 
 // Health bar
 healthBar = instance_create_depth(x, y, get_layer_depth(LAYER.ui), oHealthbar);
