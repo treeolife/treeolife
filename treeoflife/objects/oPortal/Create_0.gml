@@ -2,4 +2,4 @@
 
 enemy = noone;
 
-count = 2;
+count = 6;
