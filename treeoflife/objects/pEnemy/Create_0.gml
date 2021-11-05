@@ -1,5 +1,7 @@
 /// @description initialise
 
+state = "-";
+
 damage = 0.1;
 
 // Behaviour
@@ -47,10 +49,11 @@ function target(targ) {
 	path_point = 0;
 	action = 0;
 	jump_action = 0;
-	scr_fill_the_grid(
-		floor(x/oGrid.cell_width),
-		floor(y/oGrid.cell_height), 
-		floor(targ.x/oGrid.cell_width), 
-		floor(targ.y/oGrid.cell_height)
-	);
+	if (instance_exists(targ))
+		scr_fill_the_grid(
+			floor(x/oGrid.cell_width),
+			floor(y/oGrid.cell_height), 
+			floor(targ.x/oGrid.cell_width), 
+			floor(targ.y/oGrid.cell_height)
+		);
 }

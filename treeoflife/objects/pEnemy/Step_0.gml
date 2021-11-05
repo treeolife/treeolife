@@ -1,13 +1,19 @@
 /// @description check path
+	
+//var distanceToDefender = 0;
+		
+//if (instance_exists(oDefenderArea)) {
+//	distanceToDefender = point_distance(x, y, oDefenderArea.x, oDefenderArea.y);
+			
+//	if (distanceToDefender < tileDistance.five)
+//		state = pollutionState.aggro;
+//	else
+//	state = pollutionState.aggroTree;
+//}
 
 // Update location each step to determine if moving
 old_x = x;
 old_y = y;
-
-//if (attackedBy == noone) {
-	
-//}
-
 
 // Update health bar
 healthBar.update(x, y, hp, hp_max, flash, false);
