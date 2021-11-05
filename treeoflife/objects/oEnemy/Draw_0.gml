@@ -25,7 +25,10 @@ if path_exists(path_building)
 
 /// Draw debug status
 if (debugger_mode) {
-	draw_set_font(fDebug);
-	draw_text(x,y,"attacked: " + string(attacked));
-	draw_text(x,y+20,"attackedBy: " + string(attackedBy));
+	scr_draw_set(image_alpha, c_white, function() {
+		scr_set_align(fa_right, fa_middle);
+		draw_set_font(fInventory);
+		draw_text(x,y,"attacked: " + string(attacked));
+		draw_text(x,y+20,"attackedBy: " + string(attackedBy));
+	})
 }

@@ -18,7 +18,7 @@ draw_text_transformed(
 
 draw_set_font(title_font);
 draw_set_valign(fa_top);
-draw_set_halign(fa_middle);
+draw_set_halign(fa_center);
 draw_set_alpha(menu_fade);
 scr_text_outline(
 	gui_width/2,

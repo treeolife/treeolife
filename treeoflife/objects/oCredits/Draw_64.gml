@@ -18,7 +18,7 @@ var offset = menu_txt_offset;
 
 draw_set_font(title_font);
 draw_set_valign(fa_top);
-draw_set_halign(fa_middle);
+draw_set_halign(fa_center);
 draw_set_alpha(menu_fade);
 scr_text_outline(
 	gui_width/2,
@@ -69,7 +69,7 @@ for (var i = 0; i < roles_menu_items; i++)
 
 // Back
 draw_set_alpha(1);
-draw_set_halign(fa_middle);
+draw_set_halign(fa_center);
 draw_set_valign(fa_bottom);
 for (var i = 0; i < menu_items; i++)
 {
@@ -96,7 +96,7 @@ for (var i = 0; i < menu_items; i++)
 
 // Year created
 draw_set_alpha(menu_fade);
-scr_set_align(fa_middle, fa_center);
+scr_set_align(fa_center, fa_middle);
 scr_text_outline(gui_width/2,gui_height/2-100,offset,"Made in 2021");
 draw_set_color(c_white);
 draw_text(gui_width / 2, gui_height / 2-100, "Made in 2021");
