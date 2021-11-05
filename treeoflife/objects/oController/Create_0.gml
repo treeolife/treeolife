@@ -140,3 +140,17 @@ advanceLevel = function(wave) {
 
 if (debugger_mode) TransitionRoom(ROOM_START, "debug mode...");
 else alarm[0] = global.splashScreenTimer * room_speed;
+
+enum tileDistance {
+	half = 16,
+	one = 32,
+	two = 64,
+	three = 96,
+	four = 128,
+	five = 160,
+	six = 192,
+	seven = 224,
+	eight = 256,
+	nine = 288,
+	ten = 320,
+}
