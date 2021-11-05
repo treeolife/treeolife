@@ -4,7 +4,7 @@ draw_self();
 
 // Draw the grid
 if ds_exists(ds_gridpathfinding,ds_type_grid) {
-	if (debugger_mode) && draw_grids
+	if (debugger_mode) && draw_grids_debug
 	    for (var i=0; i<ds_grid_width(ds_gridpathfinding); i+=1)
 	    {
 	        for (var j=0; j<ds_grid_height(ds_gridpathfinding); j+=1)
@@ -19,7 +19,7 @@ if ds_exists(ds_gridpathfinding,ds_type_grid) {
 /// Draw the path
 if path_exists(path_building)
 {
-	if (debugger_mode) && draw_path
+	if (debugger_mode) && draw_path_debug
 		draw_path(path_building,floor(x/oGrid.cell_width), floor(y/oGrid.cell_height),true) ;
 }
 

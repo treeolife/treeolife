@@ -7,5 +7,5 @@
 #macro Debug:ROOM_START rHidden
 
 // draw_grids consume a lot of compute
-#macro draw_grids false
-#macro draw_path true
+#macro draw_grids_debug false
+#macro draw_path_debug true
