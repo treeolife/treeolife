@@ -59,3 +59,39 @@ function target(targ) {
 			floor(targ.y/oGrid.cell_height)
 		);
 }
+
+function canReachTarget(targ) {
+	if path_exists(path_building) {
+	    path_delete (path_building);
+	}
+	
+	if (instance_exists(targ)) {
+		scr_fill_the_grid(
+			floor(x/oGrid.cell_width),
+			floor(y/oGrid.cell_height), 
+			floor(targ.x/oGrid.cell_width), 
+			floor(targ.y/oGrid.cell_height)
+		);
+		
+		return path_exists(path_building);
+	}
+	return false;
+}
+
+function arrivedAtTarget(targ) {
+	if path_exists(path_building) {
+	    path_delete (path_building);
+	}
+	
+	if (instance_exists(targ)) {
+		scr_fill_the_grid(
+			floor(x/oGrid.cell_width),
+			floor(y/oGrid.cell_height), 
+			floor(targ.x/oGrid.cell_width), 
+			floor(targ.y/oGrid.cell_height)
+		);
+	}
+	
+	return scr_arrived(path_building);
+}
+

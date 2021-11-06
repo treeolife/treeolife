@@ -88,6 +88,12 @@ function scr_follow_the_path(nPath) {
 	jump_height = _jump_height;
 
 	/// Check if enemy reached the next point
+	scr_arrived(nPath);
+}
+
+function scr_arrived(nPath) {
+	var path_direction = sign(path_get_point_x(nPath, path_point+1)-path_get_point_x(nPath, path_point));
+	var number_of_points = path_get_number(nPath);
 	if x <= path_get_point_x(nPath, path_point+1) && path_get_point_x(nPath, path_point+1) <= x + speed_h*path_direction && path_get_point_y(nPath, path_point+1)== y - sprite_yoffset - (oGrid.cell_height/2 - sprite_height)
 	    {
 	    path_point = path_point + 1 ;
@@ -99,6 +105,9 @@ function scr_follow_the_path(nPath) {
 	            speed_v = 0;
 	            path_delete (nPath);
 	            path_point = 0 ;
+				
+				return true;
 	            }
 	    }
+	return false;
 }

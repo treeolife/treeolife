@@ -46,6 +46,7 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 
 	        if ax==xgoal && ay==ygoal {
 		        path_found = 1 ;
+				
 		        scr_build_the_path(xgoal,ygoal);
 				break ;
 			}

@@ -150,6 +150,7 @@
     {"id":{"name":"fTitle","path":"fonts/fTitle/fTitle.yy",},"order":4,},
     {"id":{"name":"truestate_cleanup","path":"scripts/truestate_cleanup/truestate_cleanup.yy",},"order":1,},
     {"id":{"name":"scr_seedling","path":"scripts/scr_seedling/scr_seedling.yy",},"order":1,},
+    {"id":{"name":"Approach","path":"scripts/Approach/Approach.yy",},"order":20,},
     {"id":{"name":"sCactusIdle","path":"sprites/sCactusIdle/sCactusIdle.yy",},"order":4,},
     {"id":{"name":"animCurveDefenderGrow","path":"animcurves/animCurveDefenderGrow/animCurveDefenderGrow.yy",},"order":6,},
     {"id":{"name":"rExposition2","path":"rooms/rExposition2/rExposition2.yy",},"order":1,},
