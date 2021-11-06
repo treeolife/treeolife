@@ -5,12 +5,14 @@ event_inherited();
 defenderObj = 0;
 
 function loadDefender() {
-	if (hasDefender()) {
-		defenderId = ds_map_find_value(global.defenders,defenderPosition[0]);
+	defenderId = ds_map_find_value(global.defenders,defenderPosition[0]);
+	if (defenderId != -1)
+	{
 		defenderId.x = x;
 		defenderId.y = y;
 		defenderId.visible = true;
 	}
+	
 	if (debugger_mode)
 		if (hasDefender())
 			if (instance_exists(defenderId.defenderArea))
