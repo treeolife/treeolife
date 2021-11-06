@@ -6,6 +6,9 @@ event_inherited();
 // if state is -1 then initialise
 
 if (state == states.idle || state == states.walk) {
+	if (hp < hp_max)
+		state_set(states.flinch);
+	else
 	if (Chance(0.5))
 		state_set(states.idle);
 	else

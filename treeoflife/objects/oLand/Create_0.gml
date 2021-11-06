@@ -20,7 +20,7 @@ states = {
 	die: new State(sLandDie, "Die"),
 }
 
-function statePollutionInit() {
+function stateDecisionInit() {
 	//states.attack.StateOnEnd(states.idle);
 	//states.aggro.StateOnEnd(states.attack);
 	//states.aggro.StateOnEnd(states.walk);
@@ -31,10 +31,13 @@ function statePollutionInit() {
 	states.aggro.StateOnEnd(states.idle);
 	//states.idle.StateOnEnd(states.flinch);
 	//states.flinch.StateOnEnd(states.die);
-	//states.flinch.StateOnEnd(states.aggro);
+	states.flinch.StateOnEnd(states.aggro);
 }
 
-statePollutionInit();
+stateDecisionInit();
 
 // Initial state
-state = states.idle; 
+state			= states.idle; 
+state_previous	= -1;
+state_next		= -1;
+state_time		= -1;

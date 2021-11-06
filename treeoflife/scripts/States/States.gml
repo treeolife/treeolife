@@ -18,6 +18,7 @@ function state_set(_state) {
 	image_index = 0;
 }
 
+// Decision making
 function state_set_aggro(_state) {
 	if (state == _state) return;
 	state_set(_state);
@@ -28,4 +29,6 @@ function state_set_aggro(_state) {
 	
 	if (instance_exists(oTree))
 		target(oTree.defenderArea);
+	else
+		state_set(states.idle);
 }
