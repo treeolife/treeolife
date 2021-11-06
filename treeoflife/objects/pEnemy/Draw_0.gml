@@ -30,7 +30,5 @@ if (debugger_mode) {
 		draw_set_font(fSmall);
 		draw_text(x+20,y,"attacked: " + string(attacked));
 		draw_text(x+20,y+10,"attackedBy: " + string(attackedBy));
-		if (state != -1)
-			draw_text(x+20,y+20,"state: " + state.stateName);
 	})
 }
