@@ -21,9 +21,9 @@ enum PSTATE {
 
 truestate_system_init();
 
-truestate_create_state(PSTATE.idle, PIdle, "Idle");
-truestate_create_state(PSTATE.aggro, PAggro, "Aggro");
-truestate_create_state(PSTATE.die, PDie, "Die");
-truestate_create_state(PSTATE.wander, PWander, "Wander");
+truestate_create_state(PSTATE.idle, LandIdle, "Idle");
+truestate_create_state(PSTATE.aggro, LandAggro, "Aggro");
+truestate_create_state(PSTATE.die, LandDie, "Die");
+truestate_create_state(PSTATE.wander, LandWander, "Wander");
 
 truestate_set_default(PSTATE.idle);

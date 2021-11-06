@@ -1,108 +1,119 @@
-function PIdle(_event) {
+function LandIdle(_event) {
 
 	switch(_event)
 	{
 		case TRUESTATE_NEW:
 		{
-			truestate_vars[? "Direction"] = image_xscale;
+			if(truestate_previous_state == noone)
+				truestate_vars[? "Wander Dir"] = 1;
 			sprite_index = sLandIdle;
-			image_xscale = truestate_vars[? "Direction"];
-			speed_h = 0;
-			speed_v = 0;
-			truestate_vars[? "Idle time"]=truestate_timer;
-			
 		}break;
 	
 		case TRUESTATE_STEP:
 		{
-			if (hp <= 0)
-				truestate_switch(PSTATE.die, true);
+			h_speed = 0;
+			v_speed = game_gravity;
+			var wanderCooldown = random_range(0,4) * room_speed;
 				
-			if (truestate_timer - truestate_vars[? "Idle time"] > 60 * Chance(0.7) && animation_end()) {
-				
-				if (Chance(0.2)) {
-					if (instance_exists(oTree))
-						truestate_switch(PSTATE.aggro);
-				} else {
-						truestate_switch(PSTATE.wander);
-				}
-			}
-			
-			if (truestate_timer > 150)
-				truestate_reset_current_state();
+			if(choose(true,false)) {
+				if (truestate_timer > wanderCooldown)
+					truestate_switch(PSTATE.wander);
+			} else if (instance_exists(oTree))
+				truestate_switch(PSTATE.aggro);
+		}break;
+		
+		case TRUESTATE_DRAW:
+		{
+			draw_self_facing()
 		}break;
 		
 		case TRUESTATE_FINAL:
 		{
-			truestate_vars[? "Idle time"] = 0;
-		}break;
-	}
-}
-
-function PWander(_event) {
-
-	switch(_event)
-	{
-		case TRUESTATE_NEW:
-		{
-			truestate_vars[? "Direction"] = image_xscale;
-			sprite_index = sLandIdle;
-			image_xscale = truestate_vars[? "Direction"];
-			h_speed = 0;
-			v_speed = 0;
-		}break;
-	
-		case TRUESTATE_STEP:
-		{
-			randomize();
-			if (Chance(0.8)) {
-				image_xscale *= -1;
-				truestate_vars[? "Direction"] = image_xscale;
-				truestate_vars[? "Wandered"] = true;
-			}
 			
 		}break;
 	}
 }
 
-function PAggro(_event) {
+function LandWander(_event) {
+
+	switch(_event)
+	{
+		case TRUESTATE_NEW:
+		{
+			truestate_vars[? "Wander Dir"] = choose(-1,1);
+			truestate_vars[? "Back to Idle Timer"] = random_range(0,2) * room_speed;
+			truestate_vars[? "Walk"] = choose(true,false);
+		}break;
+	
+		case TRUESTATE_STEP:
+		{
+			face_direction = truestate_vars[? "Wander Dir"];
+			speed_h = 0;
+			speed_v = game_gravity;
+			
+			if(truestate_vars[? "Walk"]) {
+				sprite_index = sLandWalk;
+				if (truestate_timer < truestate_vars[? "Back to Idle Timer"] || image_index >= 1) {
+					speed_h = -1 * truestate_vars[? "Wander Dir"] * GAME_SPEED;
+				} else if (image_index < 1) {
+					image_index = 0;
+					truestate_switch(PSTATE.idle);
+				}
+			} else {
+				sprite_index = sLandIdle;
+				if (truestate_timer > truestate_vars[? "Back to Idle Timer"])
+					truestate_switch(PSTATE.idle);
+			}
+			
+		}break;
+		
+		case TRUESTATE_DRAW:
+		{
+			draw_self_facing();
+		}break;
+	}
+}
+
+function LandAggro(_event) {
 
 	switch(_event)
 	{
 		case TRUESTATE_NEW:
 		{
 			sprite_index = sLandWalk;
-			truestate_vars[? "Aggro time"]=truestate_timer;
-			target(oTree.defenderArea);
-			
+			truestate_vars[? "Back to Wander Timer"] = random_range(0,2) * room_speed;
+			if (instance_exists(oTree))
+				target(oTree.defenderArea);
 		}break;
 	
 		case TRUESTATE_STEP:
-		{
-			if (animation_end() 
-				&& truestate_timer - truestate_vars[? "Aggro time"] > 80 * Chance(0.7) ) {
-					
+		{	
+			if (not path_found)
 				truestate_switch(PSTATE.wander);
-			}
+			
+			if (truestate_timer > truestate_vars[? "Back to Wander Timer"])
+				truestate_switch(PSTATE.wander);
 		}break;
 		
-		case TRUESTATE_FINAL:
+		case TRUESTATE_DRAW:
 		{
-			truestate_vars[? "Direction"] = image_xscale;
-			truestate_vars[? "Aggro time"] = 0;
+			draw_self_facing();
 		}break;
 	}
 }
 
-function PDie(_event) {
+function LandDie(_event) {
 
 	switch(_event)
 	{
 		case TRUESTATE_NEW:
 		{			
-			truestate_vars[? "Direction"] = image_xscale;
-			sprite_index = sLandDie;
-			image_xscale = truestate_vars[? "Direction"];
+			
+		}break;
+		
+		case TRUESTATE_DRAW:
+		{
+			draw_self_facing();
 		}break;
 	
 		case TRUESTATE_STEP:

@@ -10,12 +10,12 @@ function scr_follow_the_path(nPath) {
 	
 	// TODO bad handling of direction sprite
 	if path_direction > 0 {
-		image_xscale = -1;
+		face_direction = -1;
 		//max_speed *= 1.2;
 		//jump_height *= 1.2;
 	}
 	else if path_direction < 0 {
-		image_xscale = 1;
+		face_direction = 1;
 	}
 		
 	if action == 0
