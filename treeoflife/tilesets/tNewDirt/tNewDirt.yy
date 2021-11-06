@@ -20,7 +20,7 @@
   "tile_count": 32,
   "autoTileSets": [
     {"tiles":[
-        9,
+        5,
         17,
         16,
         4,

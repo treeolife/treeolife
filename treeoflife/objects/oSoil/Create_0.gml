@@ -6,14 +6,26 @@ defenderObj = 0;
 
 function loadDefender() {
 	defenderId = ds_map_find_value(global.defenders,defenderPosition[0]);
-	defenderId.x = x;
-	defenderId.y = y;
-	defenderId.visible = true;
+	if (defenderId != -1)
+	{
+		defenderId.x = x;
+		defenderId.y = y;
+		defenderId.visible = true;
+	}
+	
+	if (debugger_mode)
+		if (hasDefender())
+			if (instance_exists(defenderId.defenderArea))
+				defenderId.defenderArea.visible = true;
 }
 
 function hideDefender() {
-	if(instance_exists(defenderId))
+	if(instance_exists(defenderId)) {
 		defenderId.visible = false;
+		if(instance_exists(defenderId.defenderArea)) {
+			defenderId.defenderArea.visible = false;
+		}
+	}
 }
 
 function getYHeight(defender_obj) {
