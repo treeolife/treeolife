@@ -6,10 +6,11 @@ defenderObj = 0;
 
 function loadDefender() {
 	defenderId = ds_map_find_value(global.defenders,defenderPosition[0]);
-	if (defenderId != -1)
+	if (defenderId != 0)
 	{
 		defenderId.x = x;
 		defenderId.y = y;
+		defenderId.soil = id;
 		defenderId.visible = true;
 	}
 	
@@ -48,8 +49,10 @@ function createDefender(defender_obj) {
 			defender_obj);
 		defenderObj = defender_obj;
 		if instance_exists(defenderId) {
-			defenderId.persistent = true;
-			defenderId.soil = self;
+			with(defenderId) {
+				persistent = true;
+				soil = other.id;
+			}
 		}
 		
 		if defenderPosition[0] != 0
@@ -104,5 +107,6 @@ function hasDefender() {
 function removeDefender() {
 	defenderId = 0;	
 	defenderObj = 0;
+	ds_map_delete(global.defenders,defenderPosition[0]);
 	return;
 }
