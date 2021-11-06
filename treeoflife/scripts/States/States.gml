@@ -1,6 +1,7 @@
 // GameMakerStation - Matharoo, State Machines
-function State(_sprite) constructor {
+function State(_sprite, _name) constructor {
 	sprite = _sprite;
+	stateName = _name;
 	
 	stateOnEnd = undefined;
 	static StateOnEnd = function (_state) { // method name caps, differentiate from atr

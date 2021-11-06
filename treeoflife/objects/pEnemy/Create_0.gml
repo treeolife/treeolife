@@ -1,6 +1,6 @@
 /// @description initialise
 
-state = "-";
+state = -1;
 
 damage = 0.1;
 

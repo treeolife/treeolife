@@ -81,6 +81,7 @@
     {"id":{"name":"spr_Particle_Rain_Hard__White","path":"sprites/spr_Particle_Rain_Hard__White/spr_Particle_Rain_Hard__White.yy",},"order":5,},
     {"id":{"name":"tNewDirt","path":"tilesets/tNewDirt/tNewDirt.yy",},"order":5,},
     {"id":{"name":"sMidori","path":"sprites/sMidori/sMidori.yy",},"order":0,},
+    {"id":{"name":"Chance","path":"scripts/Chance/Chance.yy",},"order":14,},
     {"id":{"name":"sSoilTrace","path":"sprites/sSoilTrace/sSoilTrace.yy",},"order":13,},
     {"id":{"name":"sAirDie","path":"sprites/sAirDie/sAirDie.yy",},"order":4,},
     {"id":{"name":"sKeyEsc","path":"sprites/sKeyEsc/sKeyEsc.yy",},"order":7,},

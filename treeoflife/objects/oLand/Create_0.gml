@@ -12,12 +12,12 @@ attackDefender = true;
 
 // Initialise states
 states = {
-	idle: new State(sLandIdle),
-	walk: new State(sLandWalk),
-	attack: new State(sLandIdle),
-	aggro: new State(sLandWalk),
-	flinch: new State(sLandFlinch),
-	die: new State(sLandDie),
+	idle: new State(sLandIdle, "Idle"),
+	walk: new State(sLandWalk, "Walk"),
+	attack: new State(sLandIdle, "Attack"),
+	aggro: new State(sLandWalk, "Aggro"),
+	flinch: new State(sLandFlinch, "Flinch"),
+	die: new State(sLandDie, "Die"),
 }
 
 function statePollutionInit() {
@@ -25,8 +25,8 @@ function statePollutionInit() {
 	//states.aggro.StateOnEnd(states.attack);
 	//states.aggro.StateOnEnd(states.walk);
 	//states.walk.StateOnEnd(states.idle);
-	states.idle.StateOnEnd(states.aggro);
-	//states.idle.StateOnEnd(states.walk);
+	states.idle.StateOnEnd(states.idle);
+	//states.idle.StateOnEnd(states.aggro);
 	//test
 	states.aggro.StateOnEnd(states.idle);
 	//states.idle.StateOnEnd(states.flinch);
