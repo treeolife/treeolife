@@ -34,7 +34,7 @@ if !place_meeting (x, y+1, oCollision) {
 scr_collision();
 
 // on death
-if hp <= 0 {
-	instance_destroy(healthBar);
-	instance_destroy();
-}
+//if hp <= 0 {
+//	instance_destroy(healthBar);
+//	instance_destroy();
+//}

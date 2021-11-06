@@ -26,5 +26,6 @@ function state_set_aggro(_state) {
 	_hitbox.sprite_index = sprite_index;
 	_hitbox.image_xscale = image_xscale;
 	
-	target(oTree.defenderArea);
+	if (instance_exists(oTree))
+		target(oTree.defenderArea);
 }
