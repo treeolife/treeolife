@@ -1,4 +1,4 @@
-function Template(_event) {
+function DefenderIdle(_event) {
 
 	switch(_event)
 	{
