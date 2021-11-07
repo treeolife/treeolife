@@ -4,8 +4,10 @@ function LandIdle(_event) {
 	{
 		case TRUESTATE_NEW:
 		{
-			if(truestate_previous_state == noone)
+			if(truestate_previous_state == noone) {
 				truestate_vars[? "Wander Dir"] = 1;
+				truestate_vars[? "Find target cooldown"] = 0;
+			}
 			if (truestate_previous_state == PSTATE.flinch)
 				image_speed = truestate_vars[? "Image speed"];
 			sprite_index = sLandIdle;
@@ -23,6 +25,11 @@ function LandIdle(_event) {
 			
 			var wanderCooldown = random_range(0,4) * room_speed;
 				
+			if (truestate_vars[? "Find target cooldown"] < (3 * room_speed))
+				truestate_vars[? "Find target cooldown"] += 1;
+			else
+				truestate_vars[? "Find target cooldown"] = 0;
+				
 			if(choose(true,false)) {
 				
 				if (truestate_timer > wanderCooldown)
@@ -35,7 +42,7 @@ function LandIdle(_event) {
 				{
 					truestate_switch(PSTATE.aggro);
 
-				} else if (currentTarget == noone || not instance_exists(currentTarget)) {
+				} else if ((currentTarget == noone || not instance_exists(currentTarget)) && truestate_vars[? "Find target cooldown"] == 0) {
 				
 					truestate_switch(PSTATE.findTarget);
 			}
@@ -60,6 +67,7 @@ function LandFindTarget(_event) {
 	{
 		case TRUESTATE_STEP:
 		{
+			truestate_vars[? "Find target cooldown"] = 0;
 			if (instance_exists(oTree))
 				currentTarget = oTree;
 				
@@ -163,6 +171,9 @@ function LandFlinch(_event) {
 		{			
 			sprite_index = sLandFlinch;	
 			truestate_vars[? "Image speed"] = image_speed;
+			speed_h = 0;
+			speed_v = 0;
+			
 		}break;
 		
 		case TRUESTATE_DRAW:
@@ -172,17 +183,24 @@ function LandFlinch(_event) {
 	
 		case TRUESTATE_STEP:
 		{
-			attacked = false;
-			speed_h = 0;
-			speed_v = 0;
 			if(animation_end()) {
-				if (hp < 0)
-					truestate_switch(PSTATE.die, true);
-					
-				if (truestate_timer > 60) {
-					truestate_switch(PSTATE.idle);
-				}
+				image_speed = 0;
+				image_index = 0;
 			}
+			
+			if (hp <= 0)
+				truestate_switch(PSTATE.die, true);
+					
+			if (truestate_timer > 20) {
+				truestate_switch(PSTATE.idle);
+			}
+			
+		}break;
+		
+		case TRUESTATE_FINAL:
+		{
+			attacked = false;
+			image_speed = truestate_vars[? "Image speed"];
 		}break;
 	}
 }
