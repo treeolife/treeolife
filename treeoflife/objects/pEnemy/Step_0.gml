@@ -1,4 +1,4 @@
-/// @description check path pEnemy
+/// @description ts pEnemy check path
 	
 //var distanceToDefender = 0;
 		
@@ -53,3 +53,5 @@ scr_collision();
 //	instance_destroy(healthBar);
 //	instance_destroy();
 //}
+
+truestate_step();

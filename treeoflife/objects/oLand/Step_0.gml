@@ -25,5 +25,3 @@ event_inherited();
 //			else
 //				state_set(states.idle);
 //}
-
-truestate_step();
