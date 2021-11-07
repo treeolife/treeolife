@@ -25,7 +25,7 @@ function LandIdle(_event) {
 			
 			var wanderCooldown = random_range(0,4) * room_speed;
 				
-			if (truestate_vars[? "Find target cooldown"] < (3 * room_speed))
+			if (truestate_vars[? "Find target cooldown"] < (2 * room_speed))
 				truestate_vars[? "Find target cooldown"] += 1;
 			else
 				truestate_vars[? "Find target cooldown"] = 0;
