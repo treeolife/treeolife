@@ -3,6 +3,7 @@
 // Inherit the parent event
 event_inherited();
 
+x = window_get_width() / 2 - (200 / 2);
 y = 40;
 ystart = y;
 
