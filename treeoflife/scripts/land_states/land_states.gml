@@ -172,7 +172,7 @@ function PollutionFlinch(_event) {
 			speed_h = 0;
 			speed_v = 0;
 			
-			if (instance_exists(attackedBy))
+			if (instance_exists(attackedBy) && attackDefender)
 				currentTarget = attackedBy;
 			
 		}break;

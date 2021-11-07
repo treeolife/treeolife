@@ -6,6 +6,8 @@ event_inherited();
 // Behaviour
 attackDefender = true;
 
+damage = 0.1;
+
 truestate_system_init();
 
 sprite_idle = sLandIdle;
