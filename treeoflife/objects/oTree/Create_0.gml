@@ -25,3 +25,7 @@ event_inherited();
 #endregion
 
 truestate_system_init();
+
+truestate_create_state(DSTATE.idle, DefenderIdle, "Idle");
+
+truestate_set_default(DSTATE.idle);

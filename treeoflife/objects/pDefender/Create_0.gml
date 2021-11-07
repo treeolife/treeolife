@@ -1,5 +1,11 @@
 /// @description pDefender
 
+enum DSTATE {
+	idle,
+	attack,
+	die,
+}
+
 event_inherited();
 
 defenderArea = noone;
