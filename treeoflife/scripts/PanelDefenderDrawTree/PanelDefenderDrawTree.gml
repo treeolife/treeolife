@@ -8,6 +8,7 @@ function PanelDefenderDrawTree(){
 	
 	with(oUIPanelRight) {
 		panelTitle = "Tree of Life";
+		panelIndex = 1;
 		var defender = originInstance.defenderId;
 		if (instance_exists(defender) && defender != 0) {
 			icon = defender.object_index.sprite_index;

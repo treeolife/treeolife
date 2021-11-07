@@ -3,6 +3,10 @@
 // Inherit the parent event
 event_inherited();
 
+image_speed = 0;
+
+panelIndex = 0;
+
 icon = sSeed;
 border = 18;
 panelTitle = "";
