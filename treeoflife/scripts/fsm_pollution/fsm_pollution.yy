@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "PState",
-    "path": "folders/Scripts/PState.yy",
+    "name": "States",
+    "path": "folders/Scripts/States.yy",
   },
   "resourceVersion": "1.0",
-  "name": "land_states",
+  "name": "fsm_pollution",
   "tags": [],
   "resourceType": "GMScript",
 }

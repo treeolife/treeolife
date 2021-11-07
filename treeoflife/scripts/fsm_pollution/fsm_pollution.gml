@@ -101,19 +101,35 @@ function PollutionWander(_event) {
 			speed_h = 0;
 			speed_v = game_gravity;
 			
-			if(truestate_vars[? "Walk"]) {
-				sprite_index = sprite_walk;
+			if(truestate_vars[? "Walk"] && not scr_collision()) {
+				var sprite_idle_index = image_number;
+				if (not scr_collision()) 
+					sprite_index = sprite_walk 
+				else { 
+					sprite_index = sprite_idle; 
+					image_index = sprite_idle_index;
+				}
+				
 				if (truestate_timer < truestate_vars[? "Back to Idle Timer"] || image_index >= 1) {
-					if (truestate_previous_state == PSTATE.aggro) {
+					
+					wallCollideAvoid(image_index);
+					
+					if (truestate_previous_state == PSTATE.aggro && not scr_collision()) {
 						speed_h = -1 * face_direction * GAME_SPEED;
 						speed_v = game_gravity;
+						
+						wallCollideAvoid(image_index);
+							
 					}
-					else {
+					else if (not scr_collision()){
 						speed_h = -1 * truestate_vars[? "Wander Dir"] * GAME_SPEED;
 						speed_v = game_gravity;
+						
+						wallCollideAvoid(image_index);
 					}
 				} else if (image_index < 1) {
-					image_index = 0;
+					if (sprite_index = sprite_walk) // avoid freezing idle sprite
+						image_index = 0;
 					truestate_switch(PSTATE.idle);
 				}
 			} else {
@@ -226,5 +242,13 @@ function PollutionDie(_event) {
 				instance_destroy();
 			}
 		}break;
+	}
+}
+
+function wallCollideAvoid(_image_index) {
+	// avoid walking into walls for too long
+	if (scr_collision()) {
+		sprite_index = sprite_idle;
+		image_index = _image_index
 	}
 }
