@@ -52,11 +52,6 @@ function LandIdle(_event) {
 		{
 			draw_self_facing()
 		}break;
-		
-		case TRUESTATE_FINAL:
-		{
-			
-		}break;
 	}
 }
 
