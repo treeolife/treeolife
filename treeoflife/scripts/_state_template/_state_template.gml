@@ -31,7 +31,7 @@ function _state_template(argument0) {
 
 }
 
-function LandTemplate(_event) {
+function Template(_event) {
 
 	switch(_event)
 	{
