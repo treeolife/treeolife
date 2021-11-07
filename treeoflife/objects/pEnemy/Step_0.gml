@@ -17,12 +17,14 @@ if (attacked) {
 	if (attackableTime > 0) {
 		attackable = false;	
 	}
-	
-	attackableTime--;
-	if (attackableTime == 0) { // Make attackable and vulnerable, reset timer
-		attackable = true;
-		attackableTime = attackableTimeMax;
-	}
+}
+
+if (attackableTime > 0)
+attackableTime--;
+
+if (attackableTime == 0) { // Make attackable and vulnerable, reset timer
+	attackable = true;
+	attackableTime = attackableTimeMax;
 }
 
 // Update location each step to determine if moving

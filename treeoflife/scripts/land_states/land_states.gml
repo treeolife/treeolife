@@ -60,8 +60,15 @@ function LandFindTarget(_event) {
 	{
 		case TRUESTATE_STEP:
 		{
-			currentTarget = oTree;
+			if (instance_exists(oTree))
+				currentTarget = oTree;
+				
 			truestate_switch(PSTATE.idle);
+		}break;
+		
+		case TRUESTATE_DRAW:
+		{
+			draw_self_facing();
 		}break;
 	}
 }
@@ -155,8 +162,6 @@ function LandFlinch(_event) {
 		case TRUESTATE_NEW:
 		{			
 			sprite_index = sLandFlinch;	
-			speed_h = 0;
-			speed_v = 0;
 			truestate_vars[? "Image speed"] = image_speed;
 		}break;
 		
@@ -167,6 +172,9 @@ function LandFlinch(_event) {
 	
 		case TRUESTATE_STEP:
 		{
+			attacked = false;
+			speed_h = 0;
+			speed_v = 0;
 			if(animation_end()) {
 				if (hp < 0)
 					truestate_switch(PSTATE.die, true);
