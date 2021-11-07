@@ -24,7 +24,6 @@ if path {
     scr_follow_the_path(path_building);
 }
 
-
 // Apply gravity
 if !place_meeting (x, y+1, oCollision) {
         speed_v += game_gravity ;
