@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Tree",
-    "path": "folders/Defenders/Tree.yy",
+    "name": "Idle",
+    "path": "folders/Defenders/Tree/Idle.yy",
   },
   "resourceVersion": "1.0",
   "name": "sTreeTwoRound",
