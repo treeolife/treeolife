@@ -1,4 +1,4 @@
-/// @description 
+/// @description oLand
 
 // Inherit the parent event
 event_inherited();

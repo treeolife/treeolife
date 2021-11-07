@@ -1,4 +1,4 @@
-function LandIdle(_event) {
+function PollutionIdle(_event) {
 
 	switch(_event)
 	{
@@ -56,7 +56,7 @@ function LandIdle(_event) {
 }
 
 
-function LandFindTarget(_event) {
+function PollutionFindTarget(_event) {
 
 	switch(_event)
 	{
@@ -78,7 +78,7 @@ function LandFindTarget(_event) {
 	}
 }
 
-function LandWander(_event) {
+function PollutionWander(_event) {
 
 	switch(_event)
 	{
@@ -131,7 +131,7 @@ function LandWander(_event) {
 	}
 }
 
-function LandAggro(_event) {
+function PollutionAggro(_event) {
 
 	switch(_event)
 	{
@@ -160,7 +160,7 @@ function LandAggro(_event) {
 	}
 }
 
-function LandFlinch(_event) {
+function PollutionFlinch(_event) {
 
 	switch(_event)
 	{
@@ -206,7 +206,7 @@ function LandFlinch(_event) {
 	}
 }
 
-function LandDie(_event) {
+function PollutionDie(_event) {
 
 	switch(_event)
 	{

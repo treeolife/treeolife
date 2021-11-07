@@ -1,2 +1,2 @@
-/// @description ts
+/// @description ts pEnemy
 truestate_begin_step();

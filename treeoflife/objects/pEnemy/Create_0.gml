@@ -1,4 +1,14 @@
-/// @description initialise
+/// @description initialise pEnemy
+
+enum PSTATE {
+	idle,
+	wander,
+	die,
+	aggro,
+	flinch,
+	attack,
+	findTarget,
+}
 
 state = -1;
 face_direction = -1;
@@ -8,6 +18,10 @@ path_found = 0;
 
 // Behaviour
 attackDefender = false;
+
+attacked = false;
+attackedBy = 0;
+damage = 0.5;
 
 currentTarget = noone;
 

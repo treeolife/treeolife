@@ -1,4 +1,4 @@
-/// @description check path
+/// @description check path pEnemy
 	
 //var distanceToDefender = 0;
 		

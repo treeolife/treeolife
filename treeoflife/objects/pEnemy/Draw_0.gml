@@ -1,4 +1,4 @@
-/// @description draw path
+/// @description draw path pEnemy
 
 // Draw the grid
 if ds_exists(ds_gridpathfinding,ds_type_grid) {
