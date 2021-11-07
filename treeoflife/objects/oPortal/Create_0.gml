@@ -1,5 +1,6 @@
 /// @description 
 
-enemy = noone;
+totalSpawns = 4;
+currentSpawns = 0;
 
-count = 1;
+monsterType = oLand;
