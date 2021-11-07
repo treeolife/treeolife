@@ -1,6 +1,6 @@
 /// @description 
 
-totalSpawns = 4;
-currentSpawns = 0;
+totalSpawns = 1;
 
+currentSpawns = 0;
 monsterType = oLand;
