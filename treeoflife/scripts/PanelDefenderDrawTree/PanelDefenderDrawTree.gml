@@ -6,6 +6,14 @@ enum treeMenu {
 function PanelDefenderDrawTree(){
 	if (debugger_mode) show_debug_message("Drawing in PanelDefenderDrawTree now");
 	
+	with(oUIPanelRight) {
+		panelTitle = "Tree of Life";
+		var defender = originInstance.defenderId;
+		if (instance_exists(defender) && defender != 0) {
+			icon = defender.object_index.sprite_index;
+		}
+	}
+	
 	buttons = array_create(2);
 	buttonNames = array_create(2);
 

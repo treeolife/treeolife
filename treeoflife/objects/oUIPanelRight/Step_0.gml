@@ -16,5 +16,9 @@ if (title != noone && originInstance != noone ) {
 	xTarget = window_get_width() - width - border;
 	y = border + fullPanelMarginTop;
 	
+	// update panel elements
+	title.message = panelTitle;
+	title.icon = icon;
+	
 	script_execute(state);
 }

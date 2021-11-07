@@ -7,6 +7,14 @@ enum upgradeMenu {
 function PanelDefenderDrawUpgrade(){
 	if (debugger_mode) show_debug_message("Drawing in PanelDefenderDrawUpgrade now");
 	
+	with(oUIPanelRight) {
+		panelTitle = "Upgrade";
+		var defender = originInstance.defenderId;
+		if (instance_exists(defender) && defender != 0) {
+			icon = defender.object_index.sprite_index;
+		}
+	}
+	
 	buttons = array_create(3);
 	buttonNames = array_create(3);
 	

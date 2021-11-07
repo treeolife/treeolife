@@ -5,7 +5,8 @@ function HandleTreeMenu(){
 		switch(buttonSelected) {
 			
 			case treeMenu.tree:
-				originInstance.createDefender(oTree);
+				if (global.wave == 0 || debugger_mode)
+					originInstance.createDefender(oTree);
 				
 				// successfully created
 				if(instance_exists(oTree) && global.wave == 0) {
