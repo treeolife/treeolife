@@ -166,8 +166,12 @@ function LandFlinch(_event) {
 		{			
 			sprite_index = sLandFlinch;	
 			truestate_vars[? "Image speed"] = image_speed;
+			
 			speed_h = 0;
 			speed_v = 0;
+			
+			if (instance_exists(attackedBy))
+				currentTarget = attackedBy;
 			
 		}break;
 		
