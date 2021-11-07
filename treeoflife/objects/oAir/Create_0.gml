@@ -13,7 +13,7 @@ truestate_system_init();
 sprite_idle = sAirIdle;
 sprite_die = sAirDie;
 sprite_flinch = sAirFlinch;
-sprite_walk = sAirWalk;
+sprite_walk = sAirIdle;
 
 truestate_create_state(PSTATE.idle, PollutionIdle, "Idle");
 truestate_create_state(PSTATE.findTarget, PollutionFindTarget, "Find target");
