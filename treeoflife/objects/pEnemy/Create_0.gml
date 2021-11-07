@@ -9,7 +9,7 @@ path_found = 0;
 // Behaviour
 attackDefender = false;
 
-tar = noone;
+currentTarget = noone;
 
 image_speed = 1;
 

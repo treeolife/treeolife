@@ -24,10 +24,20 @@ function LandIdle(_event) {
 			var wanderCooldown = random_range(0,4) * room_speed;
 				
 			if(choose(true,false)) {
+				
 				if (truestate_timer > wanderCooldown)
 					truestate_switch(PSTATE.wander);
-			} else if (instance_exists(oTree) && canReachTarget(oTree.defenderArea) && not collision_circle(x,y,32,oTree.defenderArea,false,false)) {
-				truestate_switch(PSTATE.aggro);
+					
+			} else if (currentTarget != noone 
+				&& instance_exists(currentTarget) 
+				&& canReachTarget(currentTarget.defenderArea) 
+				&& not collision_circle(x,y,32,currentTarget.defenderArea,false,false)) 
+				{
+					truestate_switch(PSTATE.aggro);
+
+				} else if (currentTarget == noone || not instance_exists(currentTarget)) {
+				
+					truestate_switch(PSTATE.findTarget);
 			}
 		}break;
 		
@@ -39,6 +49,19 @@ function LandIdle(_event) {
 		case TRUESTATE_FINAL:
 		{
 			
+		}break;
+	}
+}
+
+
+function LandFindTarget(_event) {
+
+	switch(_event)
+	{
+		case TRUESTATE_STEP:
+		{
+			currentTarget = oTree;
+			truestate_switch(PSTATE.idle);
 		}break;
 	}
 }
