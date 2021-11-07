@@ -41,17 +41,6 @@ function PanelDefenderOpen(){
 		key_enter = keyboard_check_pressed(vk_enter);
 		
 		if (action != noone && key_enter) script_execute(action);
-		
-		//var soilPosition = originInstance.defenderPosition[0];
-		//var upgradeDefender = -1;
-		//if (originInstance.hasDefender()) upgradeDefender = originInstance.defenderId.defenderLevel > 1;
-		//if (soilPosition == defenderType.tree) {
-		//	state = HandleTreeMenu; 
-		//} else if (upgradeDefender) {
-		//	state = HandleUpgradeMenu;
-		//} else {
-		//	state = HandleDrawMenu;
-		//}
 	
 	#endregion
 	
@@ -89,7 +78,7 @@ function PanelDefenderOpen(){
 			
 			var soilPosition = originInstance.defenderPosition[0];
 			var upgradeDefender = -1;
-			if (originInstance.hasDefender()) upgradeDefender = originInstance.defenderId.defenderLevel > 1;
+			if (originInstance.hasDefender()) upgradeDefender = originInstance.defenderId.defenderLevel > 0;
 			if (soilPosition == defenderType.tree) {
 				state = PanelDefenderDrawTree; 
 			} else if (upgradeDefender) {

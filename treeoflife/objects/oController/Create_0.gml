@@ -30,6 +30,8 @@ global.levelAccessed = {
 	four:	-1,
 }
 
+global.timeToLevel = noone;
+
 // Tracking firsts
 global.firstTime = {
 	pickingItem:	-1,

@@ -13,11 +13,15 @@ function PanelDefenderDrawTree(){
 	treeButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
 	
 	buttons[treeMenu.close]	= closeButton;
-	buttons[treeMenu.tree]		= treeButton;
+	buttons[treeMenu.tree]	= treeButton;
 	
 	buttonNames[treeMenu.close]	= "Close";
-	buttonNames[treeMenu.tree]		= "Tree of Life";
 	
+	if (global.wave == 0 && not instance_exists(oTree))
+		buttonNames[treeMenu.tree]	= "Tree of Life";
+	else
+		buttonNames[treeMenu.tree]	= "Next Level";
+		
 	for (var b = 0; b < array_length(buttons); b++) {
 		with(buttons[b]) {
 			width = other.width/2;

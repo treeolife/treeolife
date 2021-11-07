@@ -1,6 +1,6 @@
 function HandleDrawMenu(){
 	
-	show_debug_message("Handle Draw Menu");
+	if debugger_mode show_debug_message("Handle Draw Menu");
 	
 		switch(buttonSelected) {
 				

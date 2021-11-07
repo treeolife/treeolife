@@ -11,12 +11,14 @@ function PanelDefenderDrawUpgrade(){
 	buttonNames = array_create(3);
 	
 	closeButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
-	cactusButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
-	fernButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
+	upgradeCactusButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
+	upgradeFernButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
+	
+	
 	
 	buttons[upgradeMenu.close]	= closeButton;
-	buttons[upgradeMenu.cactus]	= cactusButton;
-	buttons[upgradeMenu.fern]		= fernButton;
+	buttons[upgradeMenu.cactus]	= upgradeCactusButton;
+	buttons[upgradeMenu.fern]		= upgradeFernButton;
 	
 	buttonNames[upgradeMenu.close]	= "Close";
 	buttonNames[upgradeMenu.cactus]	= "Upgrade Cactus";

@@ -1,6 +1,6 @@
 function HandleUpgradeMenu(){
 	
-	show_debug_message("Handle Upgrade Menu");
+	if debugger_mode show_debug_message("Handle Upgrade Menu");
 	
 		switch(buttonSelected) {
 				
