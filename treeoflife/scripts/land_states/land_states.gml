@@ -10,7 +10,7 @@ function LandIdle(_event) {
 			}
 			if (truestate_previous_state == PSTATE.flinch)
 				image_speed = truestate_vars[? "Image speed"];
-			sprite_index = sLandIdle;
+			sprite_index = sprite_idle;
 			
 		}break;
 	
@@ -102,7 +102,7 @@ function LandWander(_event) {
 			speed_v = game_gravity;
 			
 			if(truestate_vars[? "Walk"]) {
-				sprite_index = sLandWalk;
+				sprite_index = sprite_walk;
 				if (truestate_timer < truestate_vars[? "Back to Idle Timer"] || image_index >= 1) {
 					if (truestate_previous_state == PSTATE.aggro) {
 						speed_h = -1 * face_direction * GAME_SPEED;
@@ -117,7 +117,7 @@ function LandWander(_event) {
 					truestate_switch(PSTATE.idle);
 				}
 			} else {
-				sprite_index = sLandIdle;
+				sprite_index = sprite_idle;
 				if (truestate_timer > truestate_vars[? "Back to Idle Timer"])
 					truestate_switch(PSTATE.idle);
 			}
@@ -137,7 +137,7 @@ function LandAggro(_event) {
 	{
 		case TRUESTATE_NEW:
 		{
-			sprite_index = sLandWalk;
+			sprite_index = sprite_walk;
 			truestate_vars[? "Back to Wander Timer"] = random_range(0,2) * room_speed;
 			if (instance_exists(oTree))
 				target(oTree.defenderArea);
@@ -166,7 +166,7 @@ function LandFlinch(_event) {
 	{
 		case TRUESTATE_NEW:
 		{			
-			sprite_index = sLandFlinch;	
+			sprite_index = sprite_flinch;	
 			truestate_vars[? "Image speed"] = image_speed;
 			
 			speed_h = 0;
@@ -212,7 +212,7 @@ function LandDie(_event) {
 	{
 		case TRUESTATE_NEW:
 		{			
-			sprite_index = sLandDie;	
+			sprite_index = sprite_die;	
 		}break;
 		
 		case TRUESTATE_DRAW:

@@ -22,6 +22,11 @@ enum PSTATE {
 
 truestate_system_init();
 
+sprite_idle = sLandIdle;
+sprite_die = sLandDie;
+sprite_flinch = sLandFlinch;
+sprite_walk = sLandWalk;
+
 truestate_create_state(PSTATE.idle, LandIdle, "Idle");
 truestate_create_state(PSTATE.findTarget, LandFindTarget, "Find target");
 truestate_create_state(PSTATE.aggro, LandAggro, "Aggro");
