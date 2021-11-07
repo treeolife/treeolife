@@ -62,7 +62,9 @@ function LandFindTarget(_event) {
 	{
 		case TRUESTATE_STEP:
 		{
+			// this check isn't needed atm, but good to have for future expansion
 			truestate_vars[? "Find target cooldown"] = 0;
+			
 			if (instance_exists(oTree))
 				currentTarget = oTree;
 				

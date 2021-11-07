@@ -13,7 +13,7 @@ t.setup(
 	function() {
 		global.wave += 1;
 		oController.advanceLevel(global.wave);
-	} , "Advancing", 3, "Wave " + string(global.wave + 1) + "...");
+	} , "Advancing", 3, "Wave " + string(global.wave + 1) + "...", true);
 
 t.start();
 

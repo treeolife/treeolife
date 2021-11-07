@@ -1,5 +1,6 @@
 /// @description 
 
+show = false;
 seconds = room_speed;
 current_seconds = seconds;
 can_countdown = true;
@@ -21,14 +22,16 @@ panelTimer = instance_create_depth(
 	get_layer_depth(LAYER.ui),
 	oUIPanelTimer);
 
-setup = function(_time, _callback, _eventName, _bufferSeconds, _postText) {
+setup = function(_time, _callback, _eventName, _bufferSeconds, _postText, _show) {
 	callback = _callback;
 	time = _time;
 	startTime = _time;
 	eventName = _eventName;
 	postText = _postText;
 	bufferSeconds = _bufferSeconds;
+	show = _show;
 	
+	panelTimer.show = show;
 	panelTimer.time = time;
 	panelTimer.startTime = startTime;
 	panelTimer.eventName = eventName;
