@@ -4,7 +4,7 @@
 /// @param {var} xgoal X Position where we want to go
 /// @param {var} ygoal Y Position where we want to go
 function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
-	var path_found ;      // A way was found
+	//path_found ;      // A way was found
 	var n ;  // Variable when you fall
 	var a ; // Variable when you fall
 	path_found = 0;  // 0 means that the path is not found
@@ -46,6 +46,7 @@ function scr_fill_the_grid(ax, ay, xgoal, ygoal) {
 
 	        if ax==xgoal && ay==ygoal {
 		        path_found = 1 ;
+				
 		        scr_build_the_path(xgoal,ygoal);
 				break ;
 			}

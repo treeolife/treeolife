@@ -11,6 +11,20 @@
 //	state = pollutionState.aggroTree;
 //}
 
+// If pollution being attacked
+// Grant invulnerability for attackableTimer
+if (attacked) {
+	if (attackableTime > 0) {
+		attackable = false;	
+	}
+	
+	attackableTime--;
+	if (attackableTime == 0) { // Make attackable and vulnerable, reset timer
+		attackable = true;
+		attackableTime = attackableTimeMax;
+	}
+}
+
 // Update location each step to determine if moving
 old_x = x;
 old_y = y;
@@ -23,7 +37,6 @@ path = path_exists(path_building);
 if path {
     scr_follow_the_path(path_building);
 }
-
 
 // Apply gravity
 if !place_meeting (x, y+1, oCollision) {

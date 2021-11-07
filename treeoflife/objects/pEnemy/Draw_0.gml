@@ -1,7 +1,5 @@
 /// @description draw path
 
-draw_self();
-
 // Draw the grid
 if ds_exists(ds_gridpathfinding,ds_type_grid) {
 	if (debugger_mode) && draw_grids_debug
@@ -30,7 +28,5 @@ if (debugger_mode) {
 		draw_set_font(fSmall);
 		draw_text(x+20,y,"attacked: " + string(attacked));
 		draw_text(x+20,y+10,"attackedBy: " + string(attackedBy));
-		if (state != -1)
-			draw_text(x+20,y+20,"state: " + state.stateName);
 	})
 }

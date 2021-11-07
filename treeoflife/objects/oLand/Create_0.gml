@@ -10,34 +10,23 @@ damage = 0.5;
 // Behaviour
 attackDefender = true;
 
-// Initialise states
-states = {
-	idle: new State(sLandIdle, "Idle"),
-	walk: new State(sLandWalk, "Walk"),
-	attack: new State(sLandIdle, "Attack"),
-	aggro: new State(sLandWalk, "Aggro"),
-	flinch: new State(sLandFlinch, "Flinch"),
-	die: new State(sLandDie, "Die"),
+enum PSTATE {
+	idle,
+	wander,
+	die,
+	aggro,
+	flinch,
+	attack,
+	findTarget
 }
 
-function stateDecisionInit() {
-	//states.attack.StateOnEnd(states.idle);
-	//states.aggro.StateOnEnd(states.attack);
-	//states.aggro.StateOnEnd(states.walk);
-	//states.walk.StateOnEnd(states.idle);
-	states.idle.StateOnEnd(states.idle);
-	//states.idle.StateOnEnd(states.aggro);
-	//test
-	states.aggro.StateOnEnd(states.idle);
-	//states.idle.StateOnEnd(states.flinch);
-	//states.flinch.StateOnEnd(states.die);
-	states.flinch.StateOnEnd(states.aggro);
-}
+truestate_system_init();
 
-stateDecisionInit();
+truestate_create_state(PSTATE.idle, LandIdle, "Idle");
+truestate_create_state(PSTATE.findTarget, LandFindTarget, "Find target");
+truestate_create_state(PSTATE.aggro, LandAggro, "Aggro");
+truestate_create_state(PSTATE.die, LandDie, "Die");
+truestate_create_state(PSTATE.wander, LandWander, "Wander");
+truestate_create_state(PSTATE.flinch, LandFlinch, "Flinch");
 
-// Initial state
-state			= states.idle; 
-state_previous	= -1;
-state_next		= -1;
-state_time		= -1;
+truestate_set_default(PSTATE.idle);
