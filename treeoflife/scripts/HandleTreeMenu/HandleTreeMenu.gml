@@ -21,7 +21,7 @@ function HandleTreeMenu(){
 							3, 
 							function() {
 								global.wave = 1;
-								oCamera.initialised = false;
+								//oCamera.initialised = false;
 								TransitionRoom(rOne, "Level 1");
 							} , "Next Level", 3, "To Level 1", true);
 						
