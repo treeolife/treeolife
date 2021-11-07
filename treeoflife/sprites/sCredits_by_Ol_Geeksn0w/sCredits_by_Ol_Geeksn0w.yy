@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "treeoflife",
-    "path": "treeoflife.yyp",
+    "name": "_unused",
+    "path": "folders/_unused.yy",
   },
   "resourceVersion": "1.0",
   "name": "sCredits_by_Ol_Geeksn0w",

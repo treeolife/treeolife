@@ -73,8 +73,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Items",
-    "path": "folders/Items.yy",
+    "name": "Sprites",
+    "path": "folders/Items/Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "sWater",

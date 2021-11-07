@@ -21,8 +21,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "GUI",
-    "path": "folders/GUI.yy",
+    "name": "_old",
+    "path": "folders/GUI/_old.yy",
   },
   "resourceVersion": "1.0",
   "name": "oUIHud",

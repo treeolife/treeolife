@@ -23,8 +23,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "GUI",
-    "path": "folders/GUI.yy",
+    "name": "Game Stuff",
+    "path": "folders/GUI/Game Stuff.yy",
   },
   "resourceVersion": "1.0",
   "name": "oRoomInit",

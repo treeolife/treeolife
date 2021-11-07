@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "GUI",
-    "path": "folders/GUI.yy",
+    "name": "UI Sprites",
+    "path": "folders/GUI/UI Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "sNothing",

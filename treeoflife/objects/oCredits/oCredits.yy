@@ -25,8 +25,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "GUI",
-    "path": "folders/GUI.yy",
+    "name": "Pages",
+    "path": "folders/GUI/Pages.yy",
   },
   "resourceVersion": "1.0",
   "name": "oCredits",
