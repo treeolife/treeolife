@@ -1,4 +1,4 @@
-/// @description 
+/// @description ts
 
 event_inherited();
 
@@ -47,3 +47,5 @@ if hp <= 0 {
 	instance_destroy(healthBar);
 	instance_destroy();
 }
+
+truestate_step();

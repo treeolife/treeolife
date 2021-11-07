@@ -1,4 +1,4 @@
-/// @description attributes
+/// @description Tree
 
 event_inherited();
 
@@ -23,3 +23,5 @@ event_inherited();
 		//}
 
 #endregion
+
+truestate_system_init();
