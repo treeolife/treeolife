@@ -30,7 +30,7 @@ function PollutionIdle(_event) {
 			else
 				truestate_vars[? "Find target cooldown"] = 0;
 				
-			if(not global.gamePaused && not global.levelStarted == 0) {
+			if(not global.gamePaused && (not global.levelStarted == 0 || global.levelStarted == -1)) { // -1 allows start screen pollution to move
 				if(choose(true,false)) {
 				
 					if (truestate_timer > wanderCooldown)
