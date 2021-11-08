@@ -61,6 +61,8 @@ function DefenderAttack(_event) {
 			
 			if (truestate_timer == 1) {
 				var _hitbox = instance_create_depth(x,y,depth,oHitbox);
+				_hitbox.origin = id;
+				_hitbox.damage = damage; // use defender damage
 				_hitbox.sprite_index = sprite_attack;
 				_hitbox.image_xscale = image_xscale;
 			}

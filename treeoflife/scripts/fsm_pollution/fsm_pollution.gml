@@ -155,8 +155,8 @@ function PollutionAggro(_event) {
 		{
 			sprite_index = sprite_walk;
 			truestate_vars[? "Back to Wander Timer"] = random_range(0,2) * room_speed;
-			if (instance_exists(oTree))
-				target(oTree.defenderArea);
+			if (instance_exists(currentTarget))
+				target(currentTarget.defenderArea);
 		}break;
 	
 		case TRUESTATE_STEP:
@@ -188,8 +188,15 @@ function PollutionFlinch(_event) {
 			speed_h = 0;
 			speed_v = 0;
 			
-			if (instance_exists(attackedBy) && attackDefender)
-				currentTarget = attackedBy;
+			if (instance_exists(attackedBy) && attackDefender) {
+				
+				if (attackedBy.object_index == oHitbox) {
+					
+					currentTarget = attackedBy.origin;
+				} else {
+					currentTarget = attackedBy;
+				}
+			}
 			
 		}break;
 		
@@ -209,7 +216,7 @@ function PollutionFlinch(_event) {
 				truestate_switch(PSTATE.die, true);
 					
 			if (truestate_timer > 20) {
-				truestate_switch(PSTATE.idle);
+				truestate_switch(PSTATE.aggro);
 			}
 			
 		}break;
