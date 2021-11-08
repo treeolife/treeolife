@@ -6,7 +6,7 @@ event_inherited();
 // Behaviour
 attackDefender = true;
 
-damage = 0.1;
+damage = 1;
 
 truestate_system_init();
 
