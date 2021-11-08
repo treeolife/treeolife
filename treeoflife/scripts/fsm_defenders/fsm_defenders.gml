@@ -13,7 +13,6 @@ function DefenderIdle(_event) {
 				truestate_switch(DSTATE.idle, true);
 			
 			attacked = false;
-			
 			switch (id.object_index) {
 				
 				case oCactus:
@@ -27,7 +26,8 @@ function DefenderIdle(_event) {
 							false)
 						) 
 					{
-						truestate_switch(DSTATE.attack);
+						if (not global.gamePaused) 
+							truestate_switch(DSTATE.attack);
 					}
 					
 				case oTree: {

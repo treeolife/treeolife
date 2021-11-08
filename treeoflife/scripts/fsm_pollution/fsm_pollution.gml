@@ -15,7 +15,7 @@ function PollutionIdle(_event) {
 		}break;
 	
 		case TRUESTATE_STEP:
-		{
+		{	
 			speed_h = 0;
 			speed_v = game_gravity;
 			
@@ -30,21 +30,23 @@ function PollutionIdle(_event) {
 			else
 				truestate_vars[? "Find target cooldown"] = 0;
 				
-			if(choose(true,false)) {
+			if(not global.gamePaused) {
+				if(choose(true,false)) {
 				
-				if (truestate_timer > wanderCooldown)
-					truestate_switch(PSTATE.wander);
+					if (truestate_timer > wanderCooldown)
+						truestate_switch(PSTATE.wander);
 					
-			} else if (currentTarget != noone 
-				&& instance_exists(currentTarget) 
-				&& canReachTarget(currentTarget.defenderArea) 
-				&& not collision_circle(x,y,32,currentTarget.defenderArea,false,false)) 
-				{
-					truestate_switch(PSTATE.aggro);
+				} else if (currentTarget != noone 
+					&& instance_exists(currentTarget) 
+					&& canReachTarget(currentTarget.defenderArea) 
+					&& not collision_circle(x,y,32,currentTarget.defenderArea,false,false)) 
+					{
+						truestate_switch(PSTATE.aggro);
 
-				} else if ((currentTarget == noone || not instance_exists(currentTarget)) && truestate_vars[? "Find target cooldown"] == 0) {
+					} else if ((currentTarget == noone || not instance_exists(currentTarget)) && truestate_vars[? "Find target cooldown"] == 0) {
 				
-					truestate_switch(PSTATE.findTarget);
+						truestate_switch(PSTATE.findTarget);
+				}
 			}
 		}break;
 		
@@ -92,6 +94,9 @@ function PollutionWander(_event) {
 	
 		case TRUESTATE_STEP:
 		{	
+			if (global.gamePaused)
+				truestate_switch(PSTATE.idle);
+				
 			if (attacked && attackable) {
 				truestate_switch(PSTATE.flinch);
 			}
@@ -161,6 +166,9 @@ function PollutionAggro(_event) {
 	
 		case TRUESTATE_STEP:
 		{	
+			if (global.gamePaused)
+				truestate_switch(PSTATE.idle);
+			
 			if (attacked && attackable) {
 				truestate_switch(PSTATE.flinch);
 			}
