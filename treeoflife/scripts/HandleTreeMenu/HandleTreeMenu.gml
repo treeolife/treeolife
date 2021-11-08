@@ -87,8 +87,8 @@ function HandleTreeMenu(){
 							global.timeToLevel.setup(
 								3, 
 								function() {
-									global.wave = 1;
-									TransitionRoom(rTwo, "Level 3");
+									global.wave = 2;
+									TransitionRoom(rThree, "Level 3");
 								} , "Next Level", 3, "To Level 3", true);
 						
 							oTree.sprite_index = sAnimTree2;
