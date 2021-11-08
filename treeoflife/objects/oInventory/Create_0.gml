@@ -61,3 +61,23 @@ function playerHasResourcesFor(defender_obj) {
 		instance_destroy(_obj);
 	return true;
 }
+
+function playerHasResources(cost) {
+	var outstandingValue = cost.costQuantity;
+	
+	for (
+		var costItem = 0; 
+		costItem < instance_number(cost.cost); 
+		costItem++) {
+			
+		// quick check of items picked up
+		if (!instance_find(cost.cost, costItem).visible) {
+			outstandingValue--;
+		}
+		
+		if (outstandingValue == 0)
+			return true;
+	}
+	
+	return false;
+}
