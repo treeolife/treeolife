@@ -27,7 +27,7 @@ function PanelDefenderDrawTree(){
 	buttonNames[treeMenu.close]	= "Close";
 	
 	if (global.wave == 0 && not instance_exists(oTree))
-		buttonNames[treeMenu.tree]	= "Tree of Life";
+		buttonNames[treeMenu.tree]	= "Plant Seed";
 	else
 		buttonNames[treeMenu.tree]	= "Next Level";
 		
