@@ -32,7 +32,8 @@ old_x = x;
 old_y = y;
 
 // Update health bar
-healthBar.update(x, y, hp, hp_max, flash, false);
+if (instance_exists(healthBar))
+	healthBar.update(x, y, hp, hp_max, flash, false);
 
 // Follow the path if path exists
 path = path_exists(path_building);

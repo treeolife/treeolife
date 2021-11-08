@@ -40,7 +40,8 @@ if healthBar == noone {
 	}
 } else {
 	// Update health bar
-	healthBar.update(x, y, hp, hp_max, flash, true);
+	if (instance_exists(healthBar))
+		healthBar.update(x, y, hp, hp_max, flash, true);
 }
 
 // on death
