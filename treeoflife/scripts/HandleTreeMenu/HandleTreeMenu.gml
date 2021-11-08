@@ -67,6 +67,41 @@ function HandleTreeMenu(){
 					}
 				}
 				#endregion
+				
+				#region Level 2
+				if(instance_exists(oTree) && global.wave == 2) {
+					if (global.timeToLevel != noone)
+						global.timeToLevel.start();
+						
+					if (global.timeToLevel == noone) {
+						global.timeToLevel = instance_create_depth(0,0, get_layer_depth(LAYER.ui), oTimer);
+						
+							var	nextLevelCost = { 
+							costQuantity: 1,
+							cost: oFertiliser,
+						};
+					
+						if(oInventory.playerHasResources(nextLevelCost)) {
+						
+							oInventory.deductResources(nextLevelCost);
+							global.timeToLevel.setup(
+								3, 
+								function() {
+									global.wave = 1;
+									TransitionRoom(rTwo, "Level 3");
+								} , "Next Level", 3, "To Level 3", true);
+						
+							oTree.sprite_index = sAnimTree2;
+							if (animation_end())
+								oTree.sprite_index = sTreeThree;
+						
+							with(oPlayer) {
+								NewTextBox("The Tree of Life invites you to the next stage.", TEXTBOX.forest, ["16:Let's go!","0:Not yet."]);
+							};
+						}
+					}
+				}
+				#endregion
 					
 				state = PanelDefenderClose;
 				break;
