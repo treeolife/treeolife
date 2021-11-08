@@ -13,3 +13,10 @@ if (evenSpawningMode) {
 		totalSpawns--;
 	}
 }
+
+if (currentSpawns <= 0) {
+	image_alpha = Approach(image_alpha, 0, 1/(room_speed * 10));
+}
+
+if (image_alpha == 0)
+	instance_destroy();
