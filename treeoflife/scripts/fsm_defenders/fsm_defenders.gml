@@ -18,13 +18,22 @@ function DefenderIdle(_event) {
 				case oCactus:
 				case oFern:
 					
-					if(choose(true, false) && animation_end()) {
+					if(collision_circle(
+							x, y, 
+							tileDistance.two,
+							pEnemy,
+							false,
+							false)
+						) 
+					{
 						truestate_switch(DSTATE.attack);
 					}
 					
 				case oTree: {
 					
-					checkDeath();
+					if (hp <= 0) {
+						truestate_switch(DSTATE.die, true);
+					}
 					
 				}break;
 				
@@ -57,7 +66,9 @@ function DefenderAttack(_event) {
 	
 		case TRUESTATE_STEP:
 		{
-			checkDeath();
+			if (hp <= 0) {
+				truestate_switch(DSTATE.die, true);
+			}
 			
 			if (truestate_timer == 1) {
 				var _hitbox = instance_create_depth(x,y,depth,oHitbox);
@@ -140,11 +151,5 @@ function DefenderDie(_event) {
 		{
 			
 		}break;
-	}
-}
-
-function checkDeath() {
-	if (hp <= 0) {
-		truestate_switch(DSTATE.die, true);
 	}
 }

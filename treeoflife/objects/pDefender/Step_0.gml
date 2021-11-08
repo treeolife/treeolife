@@ -3,10 +3,9 @@
 event_inherited();
 
 // Creation grow animation
-//if (!curveCompleted) {
-//	if curvePosition >= 1
-//		curveCompleted = true;
-//}
+if (curvePosition >= 1) {
+	curveCompleted = true;
+}
 
 if defenderArea != noone && instance_exists(defenderArea) {
 	defenderArea.x = x;
@@ -31,12 +30,14 @@ image_xscale = curve.output;
 image_yscale = curve.output;
 
 if healthBar == noone {
-	if curveCompleted 
+	if curveCompleted {
 		healthBar = instance_create_depth(
 			x,
 			y,
 			get_layer_depth(LAYER.ui), 
 			oHealthbar);
+		healthBar.persistent = true;
+	}
 } else {
 	// Update health bar
 	healthBar.update(x, y, hp, hp_max, flash, true);
@@ -45,7 +46,6 @@ if healthBar == noone {
 // on death
 if hp <= 0 {
 	instance_destroy(healthBar);
-	instance_destroy();
 }
 
 truestate_step();

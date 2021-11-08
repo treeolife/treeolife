@@ -1,6 +1,7 @@
 /// @description 
 
-visible = false;
+if(not instance_exists(oPlayer))
+	visible = false;
 
 healthbar_width = 32;
 healthbar_height = 8;
