@@ -12,8 +12,9 @@ function DefenderIdle(_event) {
 			if not visible
 				truestate_switch(DSTATE.idle, true);
 			
+			attacked = false;
+			
 			switch (id.object_index) {
-				
 				
 				case oCactus:
 				case oFern:

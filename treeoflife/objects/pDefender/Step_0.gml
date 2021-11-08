@@ -1,6 +1,23 @@
-/// @description ts
+/// @description ts pDefender
 
 event_inherited();
+
+#region If defender being attacked, set invulnerability for timer
+	// Grant invulnerability for attackableTimer
+	if (attacked) {
+		if (attackableTime > 0) {
+			attackable = false;	
+		}
+	}
+
+	if (attackableTime > 0)
+	attackableTime--;
+
+	if (attackableTime == 0) { // Make attackable and vulnerable, reset timer
+		attackable = true;
+		attackableTime = attackableTimeMax;
+	}
+#endregion
 
 // Creation grow animation
 if (curvePosition >= 1) {

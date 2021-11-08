@@ -30,6 +30,12 @@ healthBar = noone;
 
 damage = 2;
 
+// Attackables
+attacked = false;
+attackable = true;
+attackableTimeMax = 15;
+attackableTime = 15;
+
 // Only visible after animating starts
 image_alpha = 0;
 

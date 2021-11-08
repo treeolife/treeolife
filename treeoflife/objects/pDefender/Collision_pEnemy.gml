@@ -10,8 +10,8 @@
 //}
 
 with (other) { // Other is pDefender
-	
-	other.hp = Approach(other.hp, 0, damage);
-	
+	if (other.attackable) {
+		other.attacked = true;	
+		other.hp = Approach(other.hp, 0, damage);
+	}
 }
-
