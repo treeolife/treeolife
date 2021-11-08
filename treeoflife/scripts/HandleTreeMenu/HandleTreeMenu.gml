@@ -5,7 +5,7 @@ function HandleTreeMenu(){
 		switch(buttonSelected) {
 			
 			case treeMenu.tree:
-				if (global.wave == 0 || debugger_mode)
+				if ((global.wave == 0 || debugger_mode) && not instance_exists(oTree))
 					originInstance.createDefender(oTree);
 				
 				// successfully created
@@ -23,7 +23,6 @@ function HandleTreeMenu(){
 								global.wave = 1;
 								//oCamera.initialised = false;
 								TransitionRoom(rOne, "Level 1");
-								global.timeToLevel = noone;
 							} , "Next Level", 3, "To Level 1", true);
 						
 						with(oPlayer) {
@@ -53,7 +52,6 @@ function HandleTreeMenu(){
 									global.wave = 1;
 									//oCamera.initialised = false;
 									TransitionRoom(rTwo, "Level 2");
-									global.timeToLevel = noone;
 								} , "Next Level", 3, "To Level 2", true);
 						
 							with(oPlayer) {
