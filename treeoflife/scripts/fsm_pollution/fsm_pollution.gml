@@ -23,14 +23,14 @@ function PollutionIdle(_event) {
 				truestate_switch(PSTATE.flinch);
 			}
 			
-			var wanderCooldown = random_range(0,4) * room_speed;
+			var wanderCooldown = random_range(0,2) * room_speed;
 				
-			if (truestate_vars[? "Find target cooldown"] < (2 * room_speed))
+			if (truestate_vars[? "Find target cooldown"] < (1 * room_speed))
 				truestate_vars[? "Find target cooldown"] += 1;
 			else
 				truestate_vars[? "Find target cooldown"] = 0;
 				
-			if(not global.gamePaused) {
+			if(not global.gamePaused && not global.levelStarted == 0) {
 				if(choose(true,false)) {
 				
 					if (truestate_timer > wanderCooldown)

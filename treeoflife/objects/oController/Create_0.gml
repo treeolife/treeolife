@@ -21,6 +21,7 @@ global.splashScreenTimer = 5;
 // Tracking levels accessed for replayability
 global.wave			= -1;
 global.gameStarted	= -1;
+global.levelStarted = -1;
 global.levelAccessed = {
 	start:	-1,
 	zero:	-1,
