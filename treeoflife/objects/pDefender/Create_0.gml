@@ -33,8 +33,8 @@ damage = 2;
 // Attackables
 attacked = false;
 attackable = true;
-attackableTimeMax = 15;
-attackableTime = 15;
+attackableTimeMax = 30;
+attackableTime = attackableTimeMax;
 
 // Only visible after animating starts
 image_alpha = 0;

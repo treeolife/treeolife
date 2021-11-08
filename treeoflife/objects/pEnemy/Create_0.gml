@@ -34,7 +34,7 @@ attacked = false;
 attackedBy = noone;
 attackable = true;
 attackableTimeMax = 15;
-attackableTime = 15;
+attackableTime = attackableTimeMax;
 
 // Health bar
 healthBar = instance_create_depth(x, y, get_layer_depth(LAYER.ui), oHealthbar);
