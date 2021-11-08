@@ -12,6 +12,8 @@ function loadDefender() {
 		defenderId.y = y;
 		defenderId.soil = id;
 		defenderId.visible = true;
+		if (instance_exists(defenderId.healthBar))
+			defenderId.healthBar.visible = true;
 	}
 	
 	if (debugger_mode)
@@ -25,6 +27,9 @@ function hideDefender() {
 		defenderId.visible = false;
 		if(instance_exists(defenderId.defenderArea)) {
 			defenderId.defenderArea.visible = false;
+		}
+		if(instance_exists(defenderId.healthBar)) {
+			defenderId.healthBar.visible = false;
 		}
 	}
 }
