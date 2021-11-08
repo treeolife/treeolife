@@ -5,7 +5,8 @@ event_inherited();
 truestate_system_init();
 
 sprite_idle = sCactusIdle;
-sprite_attack = sCactusAttack;
+sprite_attack = sCactusAttack2;
+sprite_attack_ranged = sCactusAttack;
 sprite_die = sCactusDie;
 
 truestate_create_state(DSTATE.idle, DefenderIdle, "Idle");
