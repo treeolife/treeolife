@@ -12,7 +12,6 @@ enum PSTATE {
 
 state = -1;
 face_direction = -1;
-damage = 0.1;
 
 path_found = 0;
 
@@ -21,7 +20,6 @@ attackDefender = false;
 
 attacked = false;
 attackedBy = 0;
-damage = 0.5;
 
 currentTarget = noone;
 

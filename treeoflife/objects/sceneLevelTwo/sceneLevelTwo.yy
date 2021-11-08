@@ -1,16 +1,10 @@
 {
-  "spriteId": {
-    "name": "sFernIdle",
-    "path": "sprites/sFernIdle/sFernIdle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "pDefender",
-    "path": "objects/pDefender/pDefender.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -24,18 +18,18 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":2,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":5,"eventType":7,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
-  "overriddenProperties": [
-    {"propertyId":{"name":"damage","path":"objects/pDefender/pDefender.yy",},"objectId":{"name":"pDefender","path":"objects/pDefender/pDefender.yy",},"value":"8","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-  ],
+  "overriddenProperties": [],
   "parent": {
-    "name": "Fern",
-    "path": "folders/Defenders/Fern.yy",
+    "name": "Exposition",
+    "path": "folders/GUI/Exposition.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oFern",
+  "name": "sceneLevelTwo",
   "tags": [],
   "resourceType": "GMObject",
 }

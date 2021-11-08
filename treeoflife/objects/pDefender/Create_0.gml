@@ -18,8 +18,8 @@ curveSpeed = 0.02;
 
 // Attributes
 defenderLevel = 1;
-hp = 100;
-hp_max = 100;
+
+hp = hp_max;
 flash = 0;
 
 cost = oSeed;
@@ -28,7 +28,6 @@ costQuantity = 1;
 // Health bar
 healthBar = noone;
 
-damage = 2;
 
 // Attackables
 attacked = false;

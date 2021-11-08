@@ -4,7 +4,7 @@ function PickUp(item){
 	if (item == -1) exit;
 	if (item.interactOrigin == noone) exit;
 	
-	if (global.firstTime.pickingItem == -1) {
+	if (global.firstTime.pickingItem == -1 && item.object_index == oSeed) {
 		NewHighlight(
 			sSeed,
 			window_get_width()/2,
@@ -15,6 +15,19 @@ function PickUp(item){
 			true,
 			true);
 		global.firstTime.pickingItem = 1;
+	}
+	
+	if (global.firstTime.pickingFertiliser == -1 && item.object_index == oFertiliser) {
+		NewHighlight(
+			sFertiliser,
+			window_get_width()/2,
+			0,
+			100,
+			"Feed the fertiliser to the tree!",
+			true,
+			true,
+			true);
+		global.firstTime.pickingFertiliser = 1;
 	}
 	
 	origin = item.interactOrigin;
