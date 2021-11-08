@@ -215,6 +215,9 @@ function PollutionFlinch(_event) {
 	
 		case TRUESTATE_STEP:
 		{
+			if (instance_exists(currentTarget))
+				face_direction = sign(x - currentTarget.x);
+			
 			if(animation_end()) {
 				image_speed = 0;
 				image_index = 0;
