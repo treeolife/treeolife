@@ -23,7 +23,7 @@ function scr_follow_the_path(nPath) {
 	    /// Check if the next point is to move left or right
 	    if path_get_point_y(nPath, path_point) == path_get_point_y(nPath, path_point+1) && path_get_point_x(nPath, path_point) + (oGrid.cell_width)*path_direction == path_get_point_x(nPath, path_point+1)
 	    {
-	    speed_h = max_speed * path_direction * GAME_SPEED;
+	    speed_h = max_speed * path_direction * movement_speed;
 	    action = 1;
 	    }
 	     else {
@@ -49,7 +49,7 @@ function scr_follow_the_path(nPath) {
 	                    /// Check if the next point is to fall
 	                    if path_get_point_y(nPath, path_point) < path_get_point_y(nPath, path_point+1)
 	                    {
-	                    speed_h = max_speed * path_direction * GAME_SPEED;
+	                    speed_h = max_speed * path_direction * movement_speed;
 	                        if x <= path_get_point_x(nPath, path_point+1) && path_get_point_x(nPath, path_point+1) <(x + speed_h*path_direction)
 	                        {
 	                        action = 1 ;

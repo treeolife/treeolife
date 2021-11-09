@@ -123,14 +123,14 @@ function PollutionWander(_event) {
 					wallCollideAvoid(image_index);
 					
 					if (truestate_previous_state == PSTATE.aggro && not scr_collision()) {
-						speed_h = -1 * face_direction * GAME_SPEED;
+						speed_h = -1 * face_direction * movement_speed;
 						speed_v = game_gravity;
 						
 						wallCollideAvoid(image_index);
 							
 					}
 					else if (not scr_collision()){
-						speed_h = -1 * truestate_vars[? "Wander Dir"] * GAME_SPEED;
+						speed_h = -1 * truestate_vars[? "Wander Dir"] * movement_speed;
 						speed_v = game_gravity;
 						
 						wallCollideAvoid(image_index);

@@ -5,8 +5,14 @@ function HandleTreeMenu(){
 		switch(buttonSelected) {
 			
 			case treeMenu.tree:
-				if ((global.wave == 0 || debugger_mode) && not instance_exists(oTree))
+				if ((global.wave == 0 || debugger_mode) && not instance_exists(oTree)) {
 					originInstance.createDefender(oTree);
+					
+					audio_listener_orientation(0, 1, 0, 0, 0, 1);
+					audio_falloff_set_model(audio_falloff_exponent_distance);
+					audio_play_sound_at(sndGrow, oPlayer.x, oPlayer.y, 0, 50, 5, 1, false, 1);
+					
+				}
 				
 				#region Level 0
 					if(instance_exists(oTree) && global.wave == 0) {
