@@ -4,4 +4,4 @@
 if (global.inventory != noone)
 	inventorySize = ds_list_size(global.inventory);
 
-tidyInventory();
+updateInventory();
