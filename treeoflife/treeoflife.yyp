@@ -184,6 +184,7 @@
     {"id":{"name":"rInit","path":"rooms/rInit/rInit.yy",},"order":1,},
     {"id":{"name":"truestate_reset_current_state","path":"scripts/truestate_reset_current_state/truestate_reset_current_state.yy",},"order":3,},
     {"id":{"name":"particle_rain_Mild_East","path":"objects/particle_rain_Mild_East/particle_rain_Mild_East.yy",},"order":8,},
+    {"id":{"name":"scr_play_audio_at","path":"scripts/scr_play_audio_at/scr_play_audio_at.yy",},"order":21,},
     {"id":{"name":"oHitbox","path":"objects/oHitbox/oHitbox.yy",},"order":6,},
     {"id":{"name":"Defender","path":"scripts/Defender/Defender.yy",},"order":0,},
     {"id":{"name":"oRainDropMachine","path":"objects/oRainDropMachine/oRainDropMachine.yy",},"order":17,},
