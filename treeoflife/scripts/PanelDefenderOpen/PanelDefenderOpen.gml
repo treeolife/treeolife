@@ -40,7 +40,10 @@ function PanelDefenderOpen(){
 		
 		key_enter = keyboard_check_pressed(vk_enter);
 		
-		if (action != noone && key_enter) script_execute(action);
+		if (action != noone && key_enter) {
+			scr_play_audio(snd_enter_key, 50, false);
+			script_execute(action);
+		}
 	
 	#endregion
 	

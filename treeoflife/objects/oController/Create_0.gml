@@ -1,5 +1,8 @@
 /// @description Runs 1st
 
+// BGM
+scr_play_audio(snd_bgm, 5, true);
+
 // Stores global variables
 global.water_amount = 100;
 global.cost			= 0;

@@ -63,6 +63,8 @@ function DefenderAttack(_event) {
 		case TRUESTATE_NEW:
 		{
 			sprite_index = sprite_attack;
+			scr_play_audio(snd_plant_attack, 20, false);
+			
 		}break;
 	
 		case TRUESTATE_STEP:
@@ -132,6 +134,7 @@ function DefenderDie(_event) {
 		case TRUESTATE_NEW:
 		{
 			sprite_index = sprite_die;
+			scr_play_audio(snd_plant_death, 20, false);
 		}break;
 	
 		case TRUESTATE_STEP:

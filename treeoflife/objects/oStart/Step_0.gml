@@ -34,6 +34,9 @@ if (menu_control) {
 		if (menu_cursor < 0) menu_cursor = menu_items - 1;
 	}
 	if (keyboard_check_pressed(vk_enter)) {
+		
+		scr_play_audio(snd_enter_key, 50, false);
+		
 		if (menu_cursor == menu_options.new_game) {
 			instance_create_depth(0,0,get_layer_depth(LAYER.ui),fadeOut);
 		}

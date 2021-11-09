@@ -25,6 +25,9 @@ if (menu_control) {
 	}
 	
 	if (keyboard_check_pressed(vk_enter)) {
+		
+		scr_play_audio(snd_enter_key, 50, false);
+		
 		menu_y_target	= gui_height + 200;
 		menu_committed	= menu_cursor;
 		menu_control	= false;

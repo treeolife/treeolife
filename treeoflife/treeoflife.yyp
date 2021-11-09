@@ -73,6 +73,7 @@
     {"id":{"name":"zapsplat_foley_plant_fern_broad_leaved_hit_ground_002_29802","path":"sounds/zapsplat_foley_plant_fern_broad_leaved_hit_ground_002_29802/zapsplat_foley_plant_fern_broad_leaved_hit_ground_002_29802.yy",},"order":0,},
     {"id":{"name":"spr_Particle_Rain_Soft__LightGreen","path":"sprites/spr_Particle_Rain_Soft__LightGreen/spr_Particle_Rain_Soft__LightGreen.yy",},"order":4,},
     {"id":{"name":"truestate_begin_step","path":"scripts/truestate_begin_step/truestate_begin_step.yy",},"order":0,},
+    {"id":{"name":"snd_enter_key","path":"sounds/snd_enter_key/snd_enter_key.yy",},"order":20,},
     {"id":{"name":"truestate_system_init","path":"scripts/truestate_system_init/truestate_system_init.yy",},"order":9,},
     {"id":{"name":"PanelDefenderOpen","path":"scripts/PanelDefenderOpen/PanelDefenderOpen.yy",},"order":0,},
     {"id":{"name":"rHidden","path":"rooms/rHidden/rHidden.yy",},"order":6,},

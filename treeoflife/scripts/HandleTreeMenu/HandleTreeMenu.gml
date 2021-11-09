@@ -8,7 +8,7 @@ function HandleTreeMenu(){
 				if ((global.wave == 0 || debugger_mode) && not instance_exists(oTree)) {
 					originInstance.createDefender(oTree);
 					
-					scr_play_audio(sndTreeGrow, 30);
+					scr_play_audio(snd_tree_grow, 50, false);
 					
 				}
 				

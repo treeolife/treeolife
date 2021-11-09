@@ -56,6 +56,8 @@ function PickUp(item){
 	// Add item to origin inventory
 	inventory = origin.inventory;
 	
+	scr_play_audio(snd_item, 20, false);
+	
 	// Add item to inventory;
 	ds_list_add(inventory, item);
 }
