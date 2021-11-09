@@ -29,8 +29,8 @@ function PanelDefenderDrawUpgrade(){
 	buttons[upgradeMenu.fern]		= upgradeFernButton;
 	
 	buttonNames[upgradeMenu.close]	= "Close";
-	buttonNames[upgradeMenu.cactus]	= "Upgrade Cactus";
-	buttonNames[upgradeMenu.fern]		= "Upgrade Fern";
+	buttonNames[upgradeMenu.cactus]	= "+ Range";
+	buttonNames[upgradeMenu.fern]		= "+ Dmg";
 	
 	for (var b = 0; b < array_length(buttons); b++) {
 		with(buttons[b]) {
