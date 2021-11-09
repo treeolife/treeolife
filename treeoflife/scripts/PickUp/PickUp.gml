@@ -23,7 +23,7 @@ function PickUp(item){
 			window_get_width()/2,
 			0,
 			100,
-			"Feed the fertiliser to the tree!",
+			"Upgrade your defenders with water before feeding the fertiliser to the tree.",
 			true,
 			true,
 			true);
@@ -45,6 +45,5 @@ function PickUp(item){
 	inventory = origin.inventory;
 	
 	// Add item to inventory;
-	oInventory.tidyInventory();
 	ds_list_add(inventory, item);
 }

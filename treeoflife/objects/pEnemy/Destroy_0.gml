@@ -12,7 +12,7 @@ if instance_exists(oLand) || instance_exists(oAir) {
 				window_get_width()/2,
 				0,
 				100,
-				"The last pollution has dropped the fertiliser.",
+				"The last pollution has dropped fertiliser.",
 				true,
 				true,
 				true);
