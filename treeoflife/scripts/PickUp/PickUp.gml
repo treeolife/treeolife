@@ -32,7 +32,7 @@ function PickUp(item){
 	
 	if (global.firstTime.pickingFertiliser != -1 && item.object_index == oFertiliser) {
 		NewHighlight(
-			sTreeOne,
+			sFernIdle,
 			window_get_width()/2,
 			0,
 			100,

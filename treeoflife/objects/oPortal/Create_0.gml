@@ -5,3 +5,4 @@ evenSpawningMode = false;
 
 currentSpawns = totalSpawns;
 
+timeToSpawn = 0;

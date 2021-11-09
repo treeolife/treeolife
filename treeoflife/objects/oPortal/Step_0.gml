@@ -3,9 +3,10 @@ if (evenSpawningMode) {
 	currentSpawns = totalSpawns;
 }
 
-if (oPlayer != noone && currentSpawns > 0 && not global.gamePaused) {
+if (oPlayer != noone && currentSpawns > 0 && not global.gamePaused && timeToSpawn > room_speed) {
 	instance_create_depth((x)+(32*image_xscale), y-80, get_layer_depth(LAYER.enemy), monsterType);
 	currentSpawns--;
+	timeToSpawn = 0;
 }
 
 if (evenSpawningMode) {
@@ -13,6 +14,9 @@ if (evenSpawningMode) {
 		totalSpawns--;
 	}
 }
+
+if (not global.gamePaused)
+	timeToSpawn++;
 
 if (currentSpawns <= 0) {
 	image_alpha = Approach(image_alpha, 0, 1/(room_speed * 10));

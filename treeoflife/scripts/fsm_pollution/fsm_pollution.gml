@@ -162,7 +162,7 @@ function PollutionAggro(_event) {
 		case TRUESTATE_NEW:
 		{
 			sprite_index = sprite_walk;
-			truestate_vars[? "Back to Wander Timer"] = random_range(0,2) * room_speed;
+			truestate_vars[? "Back to Wander Timer"] = random_range(0,4) * room_speed;
 			if (instance_exists(currentTarget))
 				target(currentTarget.defenderArea);
 		}break;
