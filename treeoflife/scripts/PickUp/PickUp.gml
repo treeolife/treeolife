@@ -17,6 +17,18 @@ function PickUp(item){
 		global.firstTime.pickingItem = 1;
 	}
 	
+	if (global.firstTime.pickingFertiliser != -1 && item.object_index == oFertiliser) {
+		NewHighlight(
+			sFernIdle,
+			window_get_width()/2,
+			0,
+			100,
+			"Remember to upgrade your defenders!",
+			true,
+			true,
+			true);
+	}
+	
 	if (global.firstTime.pickingFertiliser == -1 && item.object_index == oFertiliser) {
 		NewHighlight(
 			sWater,
@@ -28,18 +40,6 @@ function PickUp(item){
 			true,
 			true);
 		global.firstTime.pickingFertiliser = 1;
-	}
-	
-	if (global.firstTime.pickingFertiliser != -1 && item.object_index == oFertiliser) {
-		NewHighlight(
-			sFernIdle,
-			window_get_width()/2,
-			0,
-			100,
-			"Remember to upgrade your defenders!",
-			true,
-			true,
-			true);
 	}
 	
 	origin = item.interactOrigin;

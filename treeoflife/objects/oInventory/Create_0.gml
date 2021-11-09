@@ -24,7 +24,7 @@ function deductResources(price) {
 		if (!item.visible) {
 			outstandingValue--;
 			ds_list_delete(global.inventory,ds_list_find_index(global.inventory, item));
-			ds_list_delete(inventoryCreated,ds_list_find_index(inventoryCreated , item));
+			item.persistent = false;
 			instance_destroy(item);
 		}
 		
@@ -89,25 +89,72 @@ function updateInventory() {
 }
 
 function updateItemType(type) {
-		for (var item = 0; item < inventorySize; item++) {
-		itemId = ds_list_find_value(global.inventory, item);
+	_continue = false;
+	
+	with (type) {
+		if (persistent)
+			other._continue = true;
+	}
+
+	if (not _continue && inventoryHasType(type)) {
+		ds_list_delete(inventoryCreated, getItemIndexByType(type));
+	}
+		
+	if (not _continue) {
+		return;
+	}
+
+	var itemQuantity = 0;
+	var itemIcon = type.sprite_index;
+	var itemName = type.entityName;
+		
+	for (var item = 0; item < inventorySize; item++) {
+	itemId = ds_list_find_value(global.inventory, item);
 	
 		// If it is not already added, add to created list
-		if (ds_list_find_index(inventoryCreated, itemId) == -1) {
+		if (ds_list_find_index(global.inventory, itemId) != -1) {
 			
 			if (itemId.object_index == type) {
-		
-				ds_list_add(inventoryCreated, itemId);
-		
-				// Create UI element for inventoryCreated if not added
-				if (!instance_exists(oUIPanelUnits)) {
-			
-					instance_create_depth(0,0,get_layer_depth(LAYER.ui),oUIPanelUnits);
-				}
-		
-				// If not already added, draw item in oUIPanelUnits
-				oUIPanelUnits.units = inventoryCreated;
+				itemQuantity++;
 			}
 		}
 	}
+	
+	var itemText = string(itemName) + " x " + string(itemQuantity);
+
+	var itemIndex = getItemIndexByType(type);
+	
+	if itemIndex == -1
+		ds_list_add(inventoryCreated, [itemIcon, itemText, type]);
+	else if (itemQuantity > 0) {
+		ds_list_set(inventoryCreated, itemIndex, [itemIcon, itemText, type]);
+	} else {
+		ds_list_delete(inventoryCreated, itemIndex);
+	}
+	
+	// Create UI element for inventoryCreated if not added
+	if (!instance_exists(oUIPanelUnits)) {
+			
+		instance_create_depth(0,0,get_layer_depth(LAYER.ui),oUIPanelUnits);
+	}
+		
+	// If not already added, draw item in oUIPanelUnits
+	oUIPanelUnits.units = inventoryCreated;
+	
+}
+
+function getItemIndexByType(itemType) {
+	for (var index = 0; index < ds_list_size(inventoryCreated); index++) {
+		if (inventoryCreated[| index][2] == itemType)
+			return index;
+	}
+	return -1;
+}
+
+function inventoryHasType(type) {
+	for (var i = 0; i < ds_list_size(inventoryCreated); i++) {
+		if (inventoryCreated[| i][2] == type)
+			return true;
+	}
+	return false;
 }

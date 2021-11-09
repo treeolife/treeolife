@@ -17,9 +17,9 @@ scr_draw_set(1, c_black, function() {
 		for (unit = 0; unit < unitsSize; unit++) {
 			
 			u = ds_list_find_value(units, unit);
-			if (!instance_exists(u)) continue;
-			unitSprite	= u.sprite_index;
-			unitName	= u.entityName;
+			
+			unitSprite	= u[0];
+			unitName	= u[1];
 			
 			if (instance_exists(oInventory)) {
 				
@@ -28,7 +28,7 @@ scr_draw_set(1, c_black, function() {
 				var by = gridSize - border * 4 + 1 + factor * (sScale + 4);
 				var cy = gridSize + border / 2 + factor * (sScale + 4);
 				
-				var xx = (unit mod oInventory.inventoryRowLength) * 10 * sScale / 3;
+				var xx = (unit mod oInventory.inventoryRowLength) * 11.5 * sScale / 3;
 				
 				var lenItemName = string_length(unitName);
 				var widthItemNameOffset = string_width(unitName) + border * 3;
