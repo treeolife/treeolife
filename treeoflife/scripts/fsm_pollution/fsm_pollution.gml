@@ -12,6 +12,8 @@ function PollutionIdle(_event) {
 				image_speed = truestate_vars[? "Image speed"];
 			sprite_index = sprite_idle;
 			
+			truestate_vars[? "Start round"] = (not global.levelStarted == 0 || global.levelStarted == -1);
+			
 		}break;
 	
 		case TRUESTATE_STEP:
@@ -30,7 +32,7 @@ function PollutionIdle(_event) {
 			else
 				truestate_vars[? "Find target cooldown"] = 0;
 				
-			if(not global.gamePaused && (not global.levelStarted == 0 || global.levelStarted == -1)) { // -1 allows start screen pollution to move
+			if(not global.gamePaused) { // -1 allows start screen pollution to move
 				if(choose(true,false)) {
 				
 					if (truestate_timer > wanderCooldown)
@@ -39,7 +41,8 @@ function PollutionIdle(_event) {
 				} else if (currentTarget != noone 
 					&& instance_exists(currentTarget) 
 					&& canReachTarget(currentTarget.defenderArea) 
-					&& not collision_circle(x,y,32,currentTarget.defenderArea,false,false)) 
+					&& not collision_circle(x,y,32,currentTarget.defenderArea,false,false)
+					&& truestate_vars[? "Start round"]) 
 					{
 						truestate_switch(PSTATE.aggro);
 
