@@ -21,7 +21,7 @@ gui_width	= display_get_gui_width();
 gui_height	= display_get_gui_height();
 gui_margin	= 32;
 
-help_text		= "Press ENTER or SPACE to advance.\nTap again to fast forward.\nESC to skip story.";
+help_text		= "Press ENTER to advance story.\nAgain to fast forward.\nESC to skip.";
 //control_text	= "Use up, down keys, and ENTER to select";
 menu_help_font	= fDebug;
 menu_help_itemheight = font_get_size(menu_help_font);
