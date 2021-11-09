@@ -45,5 +45,6 @@ function PickUp(item){
 	inventory = origin.inventory;
 	
 	// Add item to inventory;
+	oInventory.tidyInventory();
 	ds_list_add(inventory, item);
 }
