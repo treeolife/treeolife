@@ -9,7 +9,7 @@ function scr_play_audio(index, volume){
 	var playAt = noone;
 	if (instance_exists(oPlayer))
 		playAt = oPlayer;
-	else
+	else if (instance_exists(oTree))
 		playAt = oTree;
 		
 	// position Z is 0 because this is a 2D game, has no Z axis
