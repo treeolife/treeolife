@@ -12,6 +12,7 @@ if (global.levelAccessed.three == -1) {
 	);	
 	
 	NewTextBox(
+		"Air pollution moves swiftly and does not stop at defenders.\n" +
 		"The round begins in 30 seconds.\n" +
 		"Plant your defenders!"
 		, TEXTBOX.forest, ["16:"]);

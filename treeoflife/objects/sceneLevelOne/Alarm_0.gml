@@ -12,8 +12,8 @@ if (global.levelAccessed.two == -1) {
 	);	
 	
 	NewTextBox(
+		"Plan to defend TWO sides against Land pollution.\n" +
 		"The round begins in 30 seconds.\n" +
-		"Plan to defend TWO sides.\n" +
 		"Plant your defenders!"
 		, TEXTBOX.forest, ["16:"]);
 		//, TEXTBOX.forest, ["13:"]);
