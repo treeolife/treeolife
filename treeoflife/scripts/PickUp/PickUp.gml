@@ -30,6 +30,18 @@ function PickUp(item){
 		global.firstTime.pickingFertiliser = 1;
 	}
 	
+	if (global.firstTime.pickingFertiliser != -1 && item.object_index == oFertiliser) {
+		NewHighlight(
+			sTreeOne,
+			window_get_width()/2,
+			0,
+			100,
+			"Remember to upgrade your defenders!",
+			true,
+			true,
+			true);
+	}
+	
 	origin = item.interactOrigin;
 	item.picked = true;
 	

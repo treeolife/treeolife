@@ -1,6 +1,5 @@
 NewTextBox(
-	"Earth," +
-	"\nYear 2100." +
+	"Earth, Year 2100." +
 	"\nHuman pollution is out of control."
 	, TEXTBOX.empty);
 NewTextBox(
