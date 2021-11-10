@@ -37,6 +37,9 @@ global.roomReplay = false;
 
 global.timeToLevel = noone;
 
+global.oSnapshot = instance_create_depth(0,0,0, oSnapshot);
+oSnapshot.persistent = true;
+
 // Tracking firsts
 global.firstTime = {
 	pickingItem:	-1,
