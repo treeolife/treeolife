@@ -1,16 +1,5 @@
 /// @description ts pEnemy check path
 	
-//var distanceToDefender = 0;
-		
-//if (instance_exists(oDefenderArea)) {
-//	distanceToDefender = point_distance(x, y, oDefenderArea.x, oDefenderArea.y);
-			
-//	if (distanceToDefender < tileDistance.five)
-//		state = pollutionState.aggro;
-//	else
-//	state = pollutionState.aggroTree;
-//}
-
 // If pollution being attacked
 // Grant invulnerability for attackableTimer
 if (attacked) {
@@ -48,11 +37,5 @@ if !place_meeting (x, y+1, oCollision) {
 
 // Check if there is a collsiion
 scr_collision();
-
-// on death
-//if hp <= 0 {
-//	instance_destroy(healthBar);
-//	instance_destroy();
-//}
 
 truestate_step();

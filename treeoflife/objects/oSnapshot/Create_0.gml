@@ -23,16 +23,6 @@ function makeDefendersPersistent() {
 		oldDefender.persistent = false;
 	}
 }
-	
-	//with(oSoil) {
-	//	if (not hasDefender()) return;
-	//	//if (defenderPosition[0] == 0) return;
-			
-	//	var newDefender = global.defendersStart[? defenderPosition[0]];
-	//	var oldDefender = global.defenders[? defenderPosition[0]];
-	//	newDefender.persistent = true;
-	//	oldDefender.persistent = false;
-	//}
 
 function triggerReplay() {
 	
@@ -54,6 +44,5 @@ function triggerReplay() {
 		ds_list_destroy(_temp_i);
 		ds_map_destroy(_temp);
 	
-		//room_restart();
 	}
 }

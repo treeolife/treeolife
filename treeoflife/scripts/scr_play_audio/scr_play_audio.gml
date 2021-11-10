@@ -22,7 +22,7 @@ function scr_play_audio(index, volume, loop){
 	
 	audio_falloff_set_model(audio_falloff_exponent_distance);
 	if (playAt != noone)
-		snd = audio_play_sound_at(index, x, y, 0, volume, 5, 1, loop, priority);
+		snd = audio_play_sound_at(index, x, y, 0, volume, window_get_width(), 1, loop, priority);
 	else
 		snd = audio_play_sound(index, priority, loop);
 		
