@@ -98,6 +98,7 @@
     {"id":{"name":"PanelDefenderClose","path":"scripts/PanelDefenderClose/PanelDefenderClose.yy",},"order":1,},
     {"id":{"name":"DialogResponses","path":"scripts/DialogResponses/DialogResponses.yy",},"order":5,},
     {"id":{"name":"sceneLevelTwo","path":"objects/sceneLevelTwo/sceneLevelTwo.yy",},"order":5,},
+    {"id":{"name":"oSnapshot","path":"objects/oSnapshot/oSnapshot.yy",},"order":14,},
     {"id":{"name":"sLandWalk","path":"sprites/sLandWalk/sLandWalk.yy",},"order":3,},
     {"id":{"name":"oMountain","path":"sprites/oMountain/oMountain.yy",},"order":1,},
     {"id":{"name":"truestate_enqueue","path":"scripts/truestate_enqueue/truestate_enqueue.yy",},"order":4,},

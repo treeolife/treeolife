@@ -35,12 +35,20 @@ if (global.gamePaused) {
 			default:
 		
 			case PAUSE.continue_game: {
-					global.gamePaused = false;
-					checkHelpMenu();
-					oUIPause.hide();
+				global.gamePaused = false;
+				checkHelpMenu();
+				oUIPause.hide();
 			}
 			break;
 		
+			case PAUSE.replay: {
+				global.roomReplay = true;
+				with(oSnapshot) {
+					triggerReplay();
+				}
+			}
+			break;
+			
 			case PAUSE.help: {
 				if(!instance_exists(oUIPanelMiddle)) {
 					help = NewPanelMiddle(

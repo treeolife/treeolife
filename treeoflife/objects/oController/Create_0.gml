@@ -33,6 +33,7 @@ global.levelAccessed = {
 	three:	-1,
 	four:	-1,
 }
+global.roomReplay = false;
 
 global.timeToLevel = noone;
 

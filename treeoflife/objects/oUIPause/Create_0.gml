@@ -2,9 +2,10 @@
 
 enum PAUSE {
 	continue_game	= 0,
-	help			= 1,
-	graphics		= 2,
-	exit_game		= 3,
+	replay			= 1,
+	help			= 2,
+	graphics		= 3,
+	exit_game		= 4,
 }
 
 visible = false;
@@ -12,6 +13,7 @@ col_msg = c_white;
 selection = 0;
 
 pauseOption[PAUSE.continue_game] = "Continue";
+pauseOption[PAUSE.replay] = "Replay";
 pauseOption[PAUSE.help] = "Help";
 pauseOption[PAUSE.graphics] = "Graphics";
 pauseOption[PAUSE.exit_game] = "Back to Main Menu";
