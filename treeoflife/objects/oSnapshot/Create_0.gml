@@ -54,6 +54,6 @@ function triggerReplay() {
 		ds_list_destroy(_temp_i);
 		ds_map_destroy(_temp);
 	
-		room_restart();
+		//room_restart();
 	}
 }
