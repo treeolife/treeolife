@@ -11,12 +11,12 @@ function HandleUpgradeMenu(){
 			case upgradeMenu.cactus:
 				originInstance.defenderId.hp_max += 100;
 				originInstance.defenderId.hp += 100;
-				state = PanelDefenderClose;
+				//state = PanelDefenderClose;
 				break;
 					
 			case upgradeMenu.fern:
 				originInstance.defenderId.damage += 1;
-				state = PanelDefenderClose;
+				//state = PanelDefenderClose;
 				break;
 					
 			default:
