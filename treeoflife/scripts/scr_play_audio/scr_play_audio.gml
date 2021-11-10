@@ -4,6 +4,8 @@ function scr_play_audio(index, volume, loop){
 	//var volume = 50;
 	//var loop = false;
 	
+	snd = noone;
+	
 	var priority = 1;
 	
 	var playAt = noone;
@@ -20,7 +22,10 @@ function scr_play_audio(index, volume, loop){
 	
 	audio_falloff_set_model(audio_falloff_exponent_distance);
 	if (playAt != noone)
-		audio_play_sound_at(index, x, y, 0, volume, 5, 1, loop, priority);
+		snd = audio_play_sound_at(index, x, y, 0, volume, 5, 1, loop, priority);
 	else
-		audio_play_sound(index, priority, loop);
+		snd = audio_play_sound(index, priority, loop);
+		
+	if (index == snd_enter_key && snd != noone)
+		audio_sound_set_track_position(snd, 0.21);
 }

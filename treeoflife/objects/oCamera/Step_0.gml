@@ -4,9 +4,9 @@ if (initialised == false) {
 	switch(global.wave) {
 		case 0:
 		default: 
-			factor = 0.5;
+			factor = 0.625;
 			original_width = 1366*factor; original_height = 768*factor;
-			zoom = 0.5; target_zoom = 0.625;
+			zoom = 0.625; target_zoom = 0.8;
 			initialised = true;
 			break;
 		case 1:

@@ -83,9 +83,11 @@ function playerHasResources(cost) {
 }
 
 function updateInventory() {
-	updateItemType(oSeed);
-	updateItemType(oWater);
-	updateItemType(oFertiliser);
+	if (instance_exists(oPlayer)) {
+		updateItemType(oSeed);
+		updateItemType(oWater);
+		updateItemType(oFertiliser);
+	}
 }
 
 function updateItemType(type) {
@@ -110,7 +112,7 @@ function updateItemType(type) {
 		
 	for (var item = 0; item < inventorySize; item++) {
 	itemId = ds_list_find_value(global.inventory, item);
-	
+	 
 		// If it is not already added, add to created list
 		if (ds_list_find_index(global.inventory, itemId) != -1) {
 			

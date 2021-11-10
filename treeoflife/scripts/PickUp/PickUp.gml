@@ -35,7 +35,7 @@ function PickUp(item){
 			window_get_width()/2,
 			0,
 			100,
-			"Upgrade your defenders with water before feeding the fertiliser to the tree.",
+			"Upgrade your defenders with droplets before feeding the fertiliser to the tree.",
 			true,
 			true,
 			true);

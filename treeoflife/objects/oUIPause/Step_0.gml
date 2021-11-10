@@ -26,8 +26,9 @@ if (global.gamePaused) {
 	}
 	
 	if (keyActivate) {
-		
-		scr_play_audio(snd_enter_key, 50, false);
+		with(oPlayer) {
+			scr_play_audio(snd_enter_key, 50, false);
+		}
 		
 		switch (pauseOptionSelected) {
 		

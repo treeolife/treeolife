@@ -31,8 +31,9 @@ function PanelDefenderOpen(){
 			}
 		}
 	
-		if(key_quit)
+		if(key_quit) {
 			state = PanelDefenderClose;
+		}
 	
 	#endregion
 	
@@ -40,9 +41,18 @@ function PanelDefenderOpen(){
 		
 		key_enter = keyboard_check_pressed(vk_enter);
 		
-		if (action != noone && key_enter) {
-			scr_play_audio(snd_enter_key, 50, false);
+		if (not key_enter && action_complete) {
+			action_complete = false;
+		}
+		
+		if (action != noone && key_enter && not action_complete) {
+			with(oPlayer) {
+				scr_play_audio(snd_enter_key, 50, false);
+			}
 			script_execute(action);
+			
+			//// run action once
+			//action_complete = false;
 		}
 	
 	#endregion

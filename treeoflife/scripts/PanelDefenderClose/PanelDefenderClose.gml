@@ -21,6 +21,7 @@ function PanelDefenderClose(){
 			}
 		}
 		instance_destroy();	
+		action_complete = true;
 	}
 	
 	if (instance_exists(oPlayer)) {
