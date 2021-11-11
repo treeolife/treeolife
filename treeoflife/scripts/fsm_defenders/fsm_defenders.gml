@@ -15,20 +15,32 @@ function DefenderIdle(_event) {
 			attacked = false;
 			switch (id.object_index) {
 				
-				case oCactus:
-				case oFern:
+				case oFern: {
 					
+					if(collision_circle(x,y,tileDistance.seven,pEnemy,false,true))
+					{
+						if (not global.gamePaused) 
+							truestate_switch(DSTATE.ranged_attack);
+					}
+				
+				}break;
+				
+				case oCactus: {
+				
 					if(collision_circle(
 							x, y, 
 							tileDistance.two,
 							pEnemy,
 							false,
-							false)
+							true)
 						) 
 					{
 						if (not global.gamePaused) 
 							truestate_switch(DSTATE.attack);
 					}
+				}
+				break;
+				
 					
 				case oTree: {
 					
@@ -84,18 +96,6 @@ function DefenderAttack(_event) {
 			}
 			
 		}break;
-	
-	
-		case TRUESTATE_DRAW:
-		{
-	
-		}break;
-	
-	
-		case TRUESTATE_FINAL:
-		{
-			
-		}break;
 	}
 }
 
@@ -110,7 +110,28 @@ function DefenderAttackTwo(_event) {
 	
 		case TRUESTATE_STEP:
 		{
-	
+			if (hp <= 0) {
+				truestate_switch(DSTATE.die, true);
+			}
+			
+			if (animation_end()) {
+				
+				nearest = instance_nearest(x,y,pEnemy);
+				if (distance_to_object(nearest) < tileDistance.seven) {
+					var _slice = instance_create_depth(x,y,depth, oSlice);
+					//_slice.image_speed = 0;
+
+					_slice.target_to_hit = nearest;
+					_slice.sprite_index = sSlice;
+					_slice.origin = id;
+					_slice.damage = damage;
+					_slice.image_xscale = image_xscale;
+			
+				}
+				
+				truestate_switch(DSTATE.idle);
+			}
+			
 		}break;
 	
 	

@@ -46,8 +46,8 @@ if (global.gamePaused) {
 				global.gamePaused = false;
 				oUIPause.hide();
 				with(global.oSnapshot) {
-					triggerReplay();
 					TransitionRoom(oController.getLevelRoom(), "Replay");
+					triggerReplay();
 				}
 			}
 			break;
@@ -79,14 +79,15 @@ if (global.gamePaused) {
 			case PAUSE.exit_game: {
 				global.gamePaused = false;
 				global.roomReplay = true;
+				
 				checkHelpMenu();
 				if debugger_mode {
 					show_debug_message("PAUSE.exit_game");
 				}
 				with(global.oSnapshot) {
+					TransitionRoom(rStart, global.loadingGeneric);
 					triggerReplay();
 				}
-				TransitionRoom(rStart, global.loadingGeneric);
 			}
 			break;
 		}

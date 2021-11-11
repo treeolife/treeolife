@@ -201,7 +201,7 @@ function PollutionFlinch(_event) {
 			
 			if (instance_exists(attackedBy) && attackDefender) {
 				
-				if (attackedBy.object_index == oHitbox) {
+				if (attackedBy.object_index == oHitbox || attackedBy.object_index == oSlice) {
 					
 					currentTarget = attackedBy.origin;
 				} else {

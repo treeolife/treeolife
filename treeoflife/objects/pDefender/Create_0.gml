@@ -3,6 +3,7 @@
 enum DSTATE {
 	idle,
 	attack,
+	ranged_attack,
 	die,
 }
 
