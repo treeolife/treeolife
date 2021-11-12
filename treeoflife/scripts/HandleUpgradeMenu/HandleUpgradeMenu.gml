@@ -16,13 +16,15 @@ function HandleUpgradeMenu(){
 				};
 				
 				if(oInventory.playerHasResources(healCost)) {
-					oInventory.deductResources(healCost);
 
-					originInstance.defenderId.hp = 
-						Approach(
-							originInstance.defenderId.hp, 
-							originInstance.defenderId.hp_max, 
-							20);
+					if (instance_exists(originInstance.defenderId)) {
+						oInventory.deductResources(healCost);
+						originInstance.defenderId.hp = 
+							Approach(
+								originInstance.defenderId.hp, 
+								originInstance.defenderId.hp_max, 
+								20);
+					}
 				}
 
 			} break;
@@ -35,9 +37,11 @@ function HandleUpgradeMenu(){
 				};
 				
 				if(oInventory.playerHasResources(upgradeHealthCost)) {
-					oInventory.deductResources(upgradeHealthCost);
-					originInstance.defenderId.hp_max += 40;
-					originInstance.defenderId.hp += 40;
+					if (instance_exists(originInstance.defenderId)) {
+						oInventory.deductResources(upgradeHealthCost);
+						originInstance.defenderId.hp_max += 40;
+						originInstance.defenderId.hp += 40;
+					}
 				}
 
 			} break;
@@ -50,8 +54,10 @@ function HandleUpgradeMenu(){
 				};
 					
 				if(oInventory.playerHasResources(damageUpgradeCost)) {
-					oInventory.deductResources(damageUpgradeCost);
-					originInstance.defenderId.damage += 1;
+					if (instance_exists(originInstance.defenderId)) {
+						oInventory.deductResources(damageUpgradeCost);
+						originInstance.defenderId.damage += 1;
+					}
 				}
 
 			} break;
