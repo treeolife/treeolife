@@ -22,7 +22,7 @@ scr_draw_set(1, c_white, function() {
 	
 	draw_text_ext_transformed(
 		pauseGUI_X/2, 
-		pauseGUI_Y/2, "Paused", 0, 400, 1, 1,0);
+		pauseGUI_Y/2, pauseTitle, 0, window_get_width() - 100, 1, 1,0);
 		
 	// Options
 	for (var i = 0; i < array_length(pauseOption); i++) {

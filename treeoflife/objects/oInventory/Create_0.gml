@@ -14,7 +14,7 @@ if (inventory != noone)
 function findMyResources(type) {
 	var amount = 0;
 	for (var i = 0; i < ds_list_size(global.inventory) ; i++) {
-		if (global.inventory[| i].object_index == type) {
+		if (instance_exists(global.inventory[|i]) && global.inventory[| i].object_index == type) {
 			amount++;
 		}
 	}

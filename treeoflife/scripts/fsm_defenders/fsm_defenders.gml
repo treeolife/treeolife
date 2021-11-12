@@ -46,6 +46,7 @@ function DefenderIdle(_event) {
 				case oTree: {
 					
 					if (hp <= 0) {
+						global.gameLost = true;
 						truestate_switch(DSTATE.die, true);
 					}
 					
