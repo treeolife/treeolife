@@ -2,7 +2,7 @@ function HandleDrawMenu(){
 	
 	if debugger_mode show_debug_message("Handle Draw Menu");
 	
-	if (global.firstTime.unlockFern == -1) {
+	if (global.firstTime.unlockFern == -1 && global.wave > 1) {
 		NewHighlight(sFernIdle,window_get_width()/2,0,100,"Unlocked Fern Defender!",true, true, true);
 		global.firstTime.unlockFern = 1;
 	}
