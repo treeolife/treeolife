@@ -32,6 +32,7 @@ global.levelAccessed = {
 	two	:	-1,
 	three:	-1,
 	four:	-1,
+	five:	-1, // end of the game
 }
 global.roomReplay = false;
 
