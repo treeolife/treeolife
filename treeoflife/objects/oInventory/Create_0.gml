@@ -24,34 +24,36 @@ function findMyResources(type) {
 function deductResources(price) {
 	var outstandingValue = price.costQuantity;	
 		
-	for (var i = 0; i < ds_list_size(global.inventory) ; i++) {
-		if (global.inventory[| i].object_index == price.cost && outstandingValue != 0) {
-			var item = global.inventory[| i];
-			item.persistent = false;
-			instance_destroy(item);
-			outstandingValue--;
-		}
-	}
-
-	return;
-	//for (
-	//	var costItem = 0; 
-	//	costItem < findMyResources(price.cost); 
-	//	costItem++) {
-			
-	//	// quick check of items picked up
-	//	item = instance_find(price.cost, costItem);
-				
-	//	if (!item.visible) {
-	//		outstandingValue--;
-	//		ds_list_delete(global.inventory,ds_list_find_index(global.inventory, item));
+	//for (var i = 0; i < ds_list_size(global.inventory) ; i++) {
+	//	if (global.inventory[| i].object_index == price.cost && outstandingValue != 0) {
+	//		var item = global.inventory[| i];
 	//		item.persistent = false;
 	//		instance_destroy(item);
+	//		outstandingValue--;
 	//	}
-		
-	//	if (outstandingValue == 0)
-	//		return;
 	//}
+
+	//return;
+	
+	
+	for (
+		var costItem = 0; 
+		costItem < findMyResources(price.cost); 
+		costItem++) {
+			
+		// quick check of items picked up
+		item = instance_find(price.cost, costItem);
+				
+		if (!item.visible) {
+			outstandingValue--;
+			ds_list_delete(global.inventory,ds_list_find_index(global.inventory, item));
+			item.persistent = false;
+			instance_destroy(item);
+		}
+		
+		if (outstandingValue == 0)
+			return;
+	}
 }
 
 // handle uncoupled logic from defender to check on cost
