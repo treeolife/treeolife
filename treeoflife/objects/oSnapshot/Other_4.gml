@@ -10,6 +10,7 @@ if (instance_exists(oPlayer)) {
 						);
 		// we dont want to see the items already picked
 		copied_item.visible = false;
+		instance_deactivate_object(copied_item);
 	
 		ds_list_add(global.inventoryStart, copied_item);
 	}

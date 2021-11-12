@@ -12,7 +12,7 @@ function DefenderIdle(_event) {
 			truestate_vars[? "Start round"] = global.levelStarted == 1;
 			
 			if not visible
-				truestate_switch(DSTATE.idle);
+				truestate_switch(DSTATE.idle, true);
 			
 			attacked = false;
 			switch (id.object_index) {

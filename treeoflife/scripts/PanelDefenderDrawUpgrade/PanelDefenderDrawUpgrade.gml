@@ -32,7 +32,7 @@ function PanelDefenderDrawUpgrade(){
 	buttonNames[upgradeMenu.close]	= "Close";
 	buttonNames[upgradeMenu.heal]	= "Heal (2)";
 	buttonNames[upgradeMenu.addHp]	= "Tank up (10)";
-	buttonNames[upgradeMenu.addDamage]		= "Damage up (5)";
+	buttonNames[upgradeMenu.addDamage]		= "Dmg up (5)";
 	
 	for (var b = 0; b < array_length(buttons); b++) {
 		with(buttons[b]) {

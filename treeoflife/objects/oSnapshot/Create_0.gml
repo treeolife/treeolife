@@ -3,7 +3,9 @@
 function makeItemsPersistent() {
 	
 	for (var i = 0; i < ds_list_size(global.inventoryStart); i++) {	
-		global.inventoryStart[| i].persistent = true;
+		var item = global.inventoryStart[| i];
+		instance_activate_object(item);
+		item.persistent = true;
 	}
 		
 	for (var i = 0; i < ds_list_size(global.inventory); i++) {
