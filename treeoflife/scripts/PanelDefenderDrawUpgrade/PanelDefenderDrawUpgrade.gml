@@ -1,7 +1,7 @@
 enum upgradeMenu {
-	cactus,
-	fern,
 	close,
+	addHp,
+	addDamage,
 }
 
 function PanelDefenderDrawUpgrade(){
@@ -15,22 +15,22 @@ function PanelDefenderDrawUpgrade(){
 		}
 	}
 	
-	buttons = array_create(3);
-	buttonNames = array_create(3);
+	buttons = array_create();
+	buttonNames = array_create();
 	
 	closeButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
-	upgradeCactusButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
-	upgradeFernButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
+	upgradeHpButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
+	upgradeDamageButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
 	
 	
 	
 	buttons[upgradeMenu.close]	= closeButton;
-	buttons[upgradeMenu.cactus]	= upgradeCactusButton;
-	buttons[upgradeMenu.fern]		= upgradeFernButton;
+	buttons[upgradeMenu.addHp]	= upgradeHpButton;
+	buttons[upgradeMenu.addDamage]		= upgradeDamageButton;
 	
 	buttonNames[upgradeMenu.close]	= "Close";
-	buttonNames[upgradeMenu.cactus]	= "Add Range";
-	buttonNames[upgradeMenu.fern]		= "Add Damage";
+	buttonNames[upgradeMenu.addHp]	= "Add HP";
+	buttonNames[upgradeMenu.addDamage]		= "Add Damage";
 	
 	for (var b = 0; b < array_length(buttons); b++) {
 		with(buttons[b]) {

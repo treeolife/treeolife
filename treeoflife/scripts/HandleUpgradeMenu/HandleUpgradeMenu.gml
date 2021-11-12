@@ -8,13 +8,13 @@ function HandleUpgradeMenu(){
 				state = PanelDefenderClose;
 				break;
 					
-			case upgradeMenu.cactus:
+			case upgradeMenu.addHp:
 				originInstance.defenderId.hp_max += 100;
 				originInstance.defenderId.hp += 100;
 				//state = PanelDefenderClose;
 				break;
 					
-			case upgradeMenu.fern:
+			case upgradeMenu.addDamage:
 				originInstance.defenderId.damage += 1;
 				//state = PanelDefenderClose;
 				break;

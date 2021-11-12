@@ -28,7 +28,7 @@ scr_draw_set(1, c_black, function() {
 				var by = gridSize - border * 4 + 1 + factor * (sScale + 4);
 				var cy = gridSize + border / 2 + factor * (sScale + 4);
 				
-				var xx = (unit mod oInventory.inventoryRowLength) * 12 * sScale / 3;
+				var xx = (unit mod oInventory.inventoryRowLength) * 13 * sScale / 3;
 				
 				var lenItemName = string_length(unitName);
 				var widthItemNameOffset = string_width(unitName) + border * 3;

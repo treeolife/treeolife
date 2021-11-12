@@ -1,6 +1,6 @@
 enum treeMenu {
-	tree,
 	close,
+	tree,
 }
 
 function PanelDefenderDrawTree(){
