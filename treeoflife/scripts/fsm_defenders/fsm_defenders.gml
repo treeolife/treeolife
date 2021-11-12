@@ -9,8 +9,10 @@ function DefenderIdle(_event) {
 	
 		case TRUESTATE_STEP:
 		{
+			truestate_vars[? "Start round"] = global.levelStarted == 1;
+			
 			if not visible
-				truestate_switch(DSTATE.idle, true);
+				truestate_switch(DSTATE.idle);
 			
 			attacked = false;
 			switch (id.object_index) {
@@ -32,8 +34,7 @@ function DefenderIdle(_event) {
 							tileDistance.two,
 							pEnemy,
 							false,
-							true)
-						) 
+							true))
 					{
 						if (not global.gamePaused) 
 							truestate_switch(DSTATE.attack);
@@ -52,6 +53,9 @@ function DefenderIdle(_event) {
 				
 			}
 			
+			if (not truestate_vars[? "Start round"]) // Prevent attacking prematurely
+				truestate_switch(DSTATE.idle);
+				
 		}break;
 	
 	

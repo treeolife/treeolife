@@ -29,6 +29,7 @@
   "properties": [],
   "overriddenProperties": [
     {"propertyId":{"name":"damage","path":"objects/pDefender/pDefender.yy",},"objectId":{"name":"pDefender","path":"objects/pDefender/pDefender.yy",},"value":"5","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"hp_max","path":"objects/pDefender/pDefender.yy",},"objectId":{"name":"pDefender","path":"objects/pDefender/pDefender.yy",},"value":"60","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "Cactus",

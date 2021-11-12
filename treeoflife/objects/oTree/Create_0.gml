@@ -4,8 +4,8 @@ event_inherited();
 
 #region Attributes
 
-	hp = 250;
-	hp_max = 250;
+	hp_max = 50;
+	hp = hp_max;
 
 #endregion
 

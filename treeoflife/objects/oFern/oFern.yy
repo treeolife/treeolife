@@ -28,7 +28,8 @@
   ],
   "properties": [],
   "overriddenProperties": [
-    {"propertyId":{"name":"damage","path":"objects/pDefender/pDefender.yy",},"objectId":{"name":"pDefender","path":"objects/pDefender/pDefender.yy",},"value":"8","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"damage","path":"objects/pDefender/pDefender.yy",},"objectId":{"name":"pDefender","path":"objects/pDefender/pDefender.yy",},"value":"6","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"hp_max","path":"objects/pDefender/pDefender.yy",},"objectId":{"name":"pDefender","path":"objects/pDefender/pDefender.yy",},"value":"20","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "Fern",
