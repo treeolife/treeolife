@@ -273,6 +273,7 @@
     {"id":{"name":"oUIPanelRight","path":"objects/oUIPanelRight/oUIPanelRight.yy",},"order":1,},
     {"id":{"name":"sBox","path":"sprites/sBox/sBox.yy",},"order":0,},
     {"id":{"name":"sCactus","path":"sprites/sCactus/sCactus.yy",},"order":1,},
+    {"id":{"name":"sceneLevelThree","path":"objects/sceneLevelThree/sceneLevelThree.yy",},"order":6,},
     {"id":{"name":"oSignpost","path":"objects/oSignpost/oSignpost.yy",},"order":1,},
     {"id":{"name":"truestate_set_default","path":"scripts/truestate_set_default/truestate_set_default.yy",},"order":6,},
     {"id":{"name":"oUIPanelMiddle","path":"objects/oUIPanelMiddle/oUIPanelMiddle.yy",},"order":2,},
