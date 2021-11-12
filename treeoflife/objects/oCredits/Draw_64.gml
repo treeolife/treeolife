@@ -39,7 +39,7 @@ for (var i = 0; i < credits_menu_items; i++)
 	var txt = credits_menu[i];
 	col = c_white;
 	var xx = gui_width/2 - gui_margin/2;
-	var yy = gui_height/2 
+	var yy = gui_height
 		- (menu_itemheight * (i * 1.1)) 
 		- gui_margin
 		- 100;
@@ -57,7 +57,7 @@ for (var i = 0; i < roles_menu_items; i++)
 	var txt = roles_menu[i];
 	col = c_white;
 	var xx = gui_width/2 + gui_margin/2;
-	var yy = gui_height/2
+	var yy = gui_height
 		- (menu_itemheight * (i * 1.1)) 
 		- gui_margin
 		- 100;
