@@ -39,7 +39,8 @@ function deductResources(price) {
 	for (
 		var costItem = 0; 
 		costItem < findMyResources(price.cost); 
-		costItem++) {
+		costItem++) 
+	{
 			
 		// quick check of items picked up
 		item = instance_find(price.cost, costItem);

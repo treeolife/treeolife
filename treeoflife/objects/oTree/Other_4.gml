@@ -16,5 +16,9 @@ if (global.wave == 4) {
 	oTree.sprite_index = sTreeFour;
 }
 
+if (global.wave == 5) {
+	oTree.sprite_index = sTreeFour;
+}
+
 if (instance_exists(soil))
 	ystart = soil.y;
