@@ -1,8 +1,8 @@
 /// @description 
 
-global.wave = 3;
+global.wave = 2;
 
-global.levelAccessed.three = 1;
+global.levelAccessed.two = 1;
 
 global.levelStarted = 0;
 
