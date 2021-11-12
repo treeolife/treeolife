@@ -7,6 +7,11 @@ function NewPanelDefender(id) {
 	// 3. Check for origin
 	// 4. State machine
 	
+	if (global.firstTime.unlockFern == -1 && global.wave > 1) {
+		NewHighlight(sFernIdle,window_get_width()/2,0,100,"Unlocked Fern Defender!",true, true, true);
+		global.firstTime.unlockFern = 1;
+	}
+	
 	panelState = global.panelState;
 	defenderPanel = noone;
 	if instance_exists(oUIPanelRight) {
