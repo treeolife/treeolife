@@ -44,6 +44,7 @@ oSnapshot.persistent = true;
 global.firstTime = {
 	pickingItem:	-1,
 	planting:		-1,
+	unlockFern:		-1,
 	upgrading:		-1,
 	pickingFertiliser: -1,
 	droppingFertiliser: -1,
