@@ -134,7 +134,7 @@ function HandleTreeMenu(){
 								function() {
 									global.wave = 4;
 									TransitionRoom(rFour, "Final Level");
-								} , "Final Level", 3, "To Final Level", true);
+								} , "Final Level", 3, "Final Level", true);
 						
 							oTree.sprite_index = sAnimTree3;
 						

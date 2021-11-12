@@ -2,15 +2,10 @@
 
 event_inherited();
 
-//if healthBar == noone {
-//	healthBar = instance_create_depth(x, y, get_layer_depth(LAYER.defender), oHealthbar)
-//}
+if (sprite_index == sTreeTree && instance_exists(healthBar)) {
+	healthBar.y = ystart - 32;
+}
 
-// on death
-//if hp == 0 {
-//	//instance_destroy(healthBar);
-//	//instance_destroy();
-//}
-
-// Update health bar
-//healthBar.update(x, y, hp, hp_max, flash, true);
+if (sprite_index == sTreeFour && instance_exists(healthBar)) {
+	healthBar.y = ystart - 48;
+}

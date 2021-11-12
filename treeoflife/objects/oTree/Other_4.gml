@@ -15,3 +15,5 @@ if (global.wave == 3) {
 if (global.wave == 4) {
 	oTree.sprite_index = sTreeFour;
 }
+
+ystart = y;
