@@ -11,26 +11,47 @@ inventoryCreated = ds_list_create();
 if (inventory != noone)
 	inventorySize = ds_list_size(inventory);
 
+function findMyResources(type) {
+	var amount = 0;
+	for (var i = 0; i < ds_list_size(global.inventory) ; i++) {
+		if (global.inventory[| i].object_index == type) {
+			amount++;
+		}
+	}
+	return amount;
+}
+
 function deductResources(price) {
-	var outstandingValue = price.costQuantity;
-	
-	for (
-		var costItem = 0; 
-		costItem < instance_number(price.cost); 
-		costItem++) {
-			
-		// quick check of items picked up
-		item = instance_find(price.cost, costItem);
-		if (!item.visible) {
-			outstandingValue--;
-			ds_list_delete(global.inventory,ds_list_find_index(global.inventory, item));
+	var outstandingValue = price.costQuantity;	
+		
+	for (var i = 0; i < ds_list_size(global.inventory) ; i++) {
+		if (global.inventory[| i].object_index == price.cost && outstandingValue != 0) {
+			var item = global.inventory[| i];
 			item.persistent = false;
 			instance_destroy(item);
+			outstandingValue--;
 		}
-		
-		if (outstandingValue == 0)
-			return;
 	}
+
+	return;
+	//for (
+	//	var costItem = 0; 
+	//	costItem < findMyResources(price.cost); 
+	//	costItem++) {
+			
+	//	// quick check of items picked up
+	//	item = instance_find(price.cost, costItem);
+				
+	//	if (!item.visible) {
+	//		outstandingValue--;
+	//		ds_list_delete(global.inventory,ds_list_find_index(global.inventory, item));
+	//		item.persistent = false;
+	//		instance_destroy(item);
+	//	}
+		
+	//	if (outstandingValue == 0)
+	//		return;
+	//}
 }
 
 // handle uncoupled logic from defender to check on cost
@@ -65,21 +86,23 @@ function playerHasResourcesFor(defender_obj) {
 function playerHasResources(cost) {
 	var outstandingValue = cost.costQuantity;
 	
-	for (
-		var costItem = 0; 
-		costItem < instance_number(cost.cost); 
-		costItem++) {
-			
-		// quick check of items picked up
-		if (!instance_find(cost.cost, costItem).visible) {
-			outstandingValue--;
-		}
-		
-		if (outstandingValue == 0)
-			return true;
-	}
+	return findMyResources(cost.cost) >= cost.costQuantity;
 	
-	return false;
+	//for (
+	//	var costItem = 0; 
+	//	costItem < findMyResources(cost.cost); 
+	//	costItem++) {
+			
+	//	// quick check of items picked up
+	//	if (!instance_find(cost.cost, costItem).visible) {
+	//		outstandingValue--;
+	//	}
+		
+	//	if (outstandingValue == 0)
+	//		return true;
+	//}
+	
+	//return false;
 }
 
 function updateInventory() {
