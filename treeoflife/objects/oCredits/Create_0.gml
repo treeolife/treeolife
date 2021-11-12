@@ -9,6 +9,10 @@ enum credits {
 	break_things	= 17,
 	draw_art_2		= 16,
 	write_code		= 15,
+	empty_space_5	= 14,
+	empty_space_4	= 13,
+	empty_space_3	= 12,
+	empty_space_2	= 11,
 	empty_space		= 10,
 	sound_fx_2		= 9,
 	shaun			= 8,
@@ -51,19 +55,26 @@ menu_items = array_length(menu);
 
 menu_cursor = credits_options.back;
 
-
+roles_menu[credits.empty_space_5] = "";
+roles_menu[credits.empty_space_4] = "";
+roles_menu[credits.empty_space_3] = "";
+roles_menu[credits.empty_space_2] = "";
 roles_menu[credits.empty_space] = "";
 roles_menu[credits.sound_fx_2] = "Sound effects";
 roles_menu[credits.shaun] = "Textboxes";
-credits_menu[credits.sound_fx_1] = "Sound effects";
+roles_menu[credits.sound_fx_1] = "Sound effects";
 roles_menu[credits.portal_art] = "Portal art";
 roles_menu[credits.particles_art] = "Weather particles";
 roles_menu[credits.background_3] = "Main menu background";
 roles_menu[credits.background_2] = "Landfill background";
 roles_menu[credits.font_credit] = "Fonts, m3x6 m5x7";
-roles_menu[credits.background_1] = "Credits forest background";
+roles_menu[credits.background_1] = "Forest background";
 roles_menu[credits.music_credit] = "Ultimate Battle BGM";
 
+credits_menu[credits.empty_space_5] = "";
+credits_menu[credits.empty_space_4] = "";
+credits_menu[credits.empty_space_3] = "";
+credits_menu[credits.empty_space_2] = "";
 credits_menu[credits.empty_space] = "";
 credits_menu[credits.sound_fx_2] = "Feliyanstudios";
 credits_menu[credits.shaun] = "Shaun Spalding";
