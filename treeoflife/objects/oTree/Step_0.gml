@@ -3,10 +3,10 @@
 event_inherited();
 
 if (sprite_index == sTreeTree && instance_exists(healthBar)) {
-	healthBar.y = ystart - 32;
+	healthBar.y = ystart - 64;
 }
 
 if (sprite_index == sTreeFour && instance_exists(healthBar)) {
-	healthBar.y = ystart - 48;
+	healthBar.y = ystart - 80;
 }
 
