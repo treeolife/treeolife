@@ -22,6 +22,12 @@ function DialogResponses(argument0) {
 		case 14: instance_create_depth(x,y,depth,oWater); break;
 		case 15: instance_create_depth(x,y,depth,oFertiliser); break;
 		case 16: global.timeToLevel.start(); break;
+		case 17: {
+			NewHighlight(sSeed,window_get_width()/2,0,100,"Pollution eradicated, Nature has won!",true, true, true); break;
+			NewTextBox("Rejoice, like the child in you.", TEXTBOX.defender, ["18:"]);
+			} break;
+		case 18: TransitionRoom(rCredits, "Congrats!"); break;
+		
 		default: break;
 	}
 

@@ -57,7 +57,7 @@ function HandleTreeMenu(){
 							global.timeToLevel.setup(
 								3, 
 								function() {
-									global.wave = 1;
+									global.wave = 2;
 									//oCamera.initialised = false;
 									TransitionRoom(rTwo, "Level 2");
 								} , "Next Level", 3, "To Level 2", true);
@@ -95,7 +95,7 @@ function HandleTreeMenu(){
 							global.timeToLevel.setup(
 								3, 
 								function() {
-									global.wave = 2;
+									global.wave = 3;
 									TransitionRoom(rThree, "Level 3");
 								} , "Next Level", 3, "To Level 3", true);
 						
@@ -132,7 +132,7 @@ function HandleTreeMenu(){
 							global.timeToLevel.setup(
 								3, 
 								function() {
-									global.wave = 3;
+									global.wave = 4;
 									TransitionRoom(rFour, "Final Level");
 								} , "Final Level", 3, "To Final Level", true);
 						
@@ -150,40 +150,19 @@ function HandleTreeMenu(){
 				}
 				#endregion
 				
-				#region Level 4
-				if(instance_exists(oTree) && global.wave == 3) {
-					if (global.timeToLevel != noone)
-						global.timeToLevel.start();
-						
-					if (global.timeToLevel == noone) {
-						global.timeToLevel = instance_create_depth(0,0, get_layer_depth(LAYER.ui), oTimer);
-						
-							var	nextLevelCost = { 
+				#region Game complete!!
+				if(instance_exists(oTree) && global.wave == 4) {
+						var	nextLevelCost = { 
 							costQuantity: 1,
 							cost: oFertiliser,
 						};
 					
 						if(oInventory.playerHasResources(nextLevelCost)) {
-						
+							global.wave = 5;
 							oInventory.deductResources(nextLevelCost);
-							global.timeToLevel.setup(
-								3, 
-								function() {
-									global.wave = 3;
-									TransitionRoom(rFour, "Final Level");
-								} , "Final Level", 3, "To Final Level", true);
-						
-							oTree.sprite_index = sAnimTree3;
-						
-							with(oTree) {
-								hp += 50;
-							}
-						
-							with(oPlayer) {
-								NewTextBox("The Tree of Life invites you to the final stage.", TEXTBOX.forest, ["16:Let's go!","0:Not yet."]);
-							};
+							NewTextBox("Thank you, Midori. You have saved us from pollution!\n"
+							, TEXTBOX.forest, ["17:"]);
 						}
-					}
 				}
 				#endregion
 					

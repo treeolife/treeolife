@@ -17,7 +17,19 @@ function PickUp(item){
 		global.firstTime.pickingItem = 1;
 	}
 	
-	if (global.firstTime.pickingFertiliser != -1 && item.object_index == oFertiliser) {
+	if (global.firstTime.pickingFertiliser != -1 && item.object_index == oFertiliser && global.wave == 4) {
+		NewHighlight(
+			sFernIdle,
+			window_get_width()/2,
+			0,
+			100,
+			"The tree of life beckons...",
+			true,
+			true,
+			true);
+	}
+	
+	if (global.firstTime.pickingFertiliser != -1 && item.object_index == oFertiliser && global.wave > 4) {
 		NewHighlight(
 			sFernIdle,
 			window_get_width()/2,
