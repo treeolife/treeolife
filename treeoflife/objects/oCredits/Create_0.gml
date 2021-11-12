@@ -55,6 +55,7 @@ menu_cursor = credits_options.back;
 roles_menu[credits.empty_space] = "";
 roles_menu[credits.sound_fx_2] = "Sound effects";
 roles_menu[credits.shaun] = "Textboxes";
+credits_menu[credits.sound_fx_1] = "Sound effects";
 roles_menu[credits.portal_art] = "Portal art";
 roles_menu[credits.particles_art] = "Weather particles";
 roles_menu[credits.background_3] = "Main menu background";
