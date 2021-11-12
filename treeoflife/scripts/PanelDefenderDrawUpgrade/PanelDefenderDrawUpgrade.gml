@@ -1,5 +1,6 @@
 enum upgradeMenu {
 	close,
+	heal,
 	addHp,
 	addDamage,
 }
@@ -19,18 +20,20 @@ function PanelDefenderDrawUpgrade(){
 	buttonNames = array_create();
 	
 	closeButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
+	healButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
+	healButton.image_index = TEXTBOX.entity;
 	upgradeHpButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
 	upgradeDamageButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
 	
-	
-	
 	buttons[upgradeMenu.close]	= closeButton;
+	buttons[upgradeMenu.heal]	= healButton;
 	buttons[upgradeMenu.addHp]	= upgradeHpButton;
 	buttons[upgradeMenu.addDamage]		= upgradeDamageButton;
 	
 	buttonNames[upgradeMenu.close]	= "Close";
-	buttonNames[upgradeMenu.addHp]	= "Add HP";
-	buttonNames[upgradeMenu.addDamage]		= "Add Damage";
+	buttonNames[upgradeMenu.heal]	= "Heal (2)";
+	buttonNames[upgradeMenu.addHp]	= "More Life (10)";
+	buttonNames[upgradeMenu.addDamage]		= "More Strength (5)";
 	
 	for (var b = 0; b < array_length(buttons); b++) {
 		with(buttons[b]) {

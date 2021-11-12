@@ -8,7 +8,7 @@ function NewPanelDefender(id) {
 	// 4. State machine
 	
 	if (global.firstTime.unlockFern == -1 && global.wave > 1) {
-		NewHighlight(sFernIdle,window_get_width()/2,0,100,"Unlocked Fern Defender!",true, true, true);
+		NewHighlight(sFernIdle,window_get_width()/2,0,100,"Unlocked Fern Defender, with ranged attacks, they are very effective against air!",true, true, true);
 		global.firstTime.unlockFern = 1;
 	}
 	

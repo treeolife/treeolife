@@ -34,7 +34,7 @@ menu_control	= true;
 menu_txt_offset	= 2;
 menu_fade		= 0;
 
-menu[credits_options.back]	= "Back";
+menu[credits_options.back]	= "Main Screen";
 
 menu_items = array_length(menu);
 

@@ -8,10 +8,29 @@ function HandleUpgradeMenu(){
 				state = PanelDefenderClose;
 				break;
 					
+			case upgradeMenu.heal: {
+				
+				var	damageUpgradeCost = { 
+							costQuantity: 2,
+							cost: oWater,
+				};
+				
+				if(oInventory.playerHasResources(damageUpgradeCost)) {
+					oInventory.deductResources(damageUpgradeCost);
+
+					originInstance.defenderId.hp += 
+						Approach(
+							originInstance.defenderId.hp, 
+							originInstance.defenderId.hp_max, 
+							20);
+				}
+
+			} break;
+					
 			case upgradeMenu.addHp: {
 				
 				var	damageUpgradeCost = { 
-							costQuantity: 1,
+							costQuantity: 10,
 							cost: oWater,
 				};
 				
@@ -26,13 +45,13 @@ function HandleUpgradeMenu(){
 			case upgradeMenu.addDamage: {
 			
 				var	damageUpgradeCost = { 
-							costQuantity: 1,
+							costQuantity: 5,
 							cost: oWater,
 				};
 					
 				if(oInventory.playerHasResources(damageUpgradeCost)) {
 					oInventory.deductResources(damageUpgradeCost);
-					originInstance.defenderId.damage += 2;
+					originInstance.defenderId.damage += 1;
 				}
 
 			} break;
