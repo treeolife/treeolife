@@ -36,8 +36,8 @@ function HandleUpgradeMenu(){
 				
 				if(oInventory.playerHasResources(upgradeHealthCost)) {
 					oInventory.deductResources(upgradeHealthCost);
-					originInstance.defenderId.hp_max += 50;
-					originInstance.defenderId.hp += 50;
+					originInstance.defenderId.hp_max += 40;
+					originInstance.defenderId.hp += 40;
 				}
 
 			} break;

@@ -21,7 +21,6 @@ function PanelDefenderDrawUpgrade(){
 	
 	closeButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
 	healButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
-	healButton.image_index = TEXTBOX.entity;
 	upgradeHpButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
 	upgradeDamageButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
 	
@@ -32,8 +31,8 @@ function PanelDefenderDrawUpgrade(){
 	
 	buttonNames[upgradeMenu.close]	= "Close";
 	buttonNames[upgradeMenu.heal]	= "Heal (2)";
-	buttonNames[upgradeMenu.addHp]	= "More Life (10)";
-	buttonNames[upgradeMenu.addDamage]		= "More Strength (5)";
+	buttonNames[upgradeMenu.addHp]	= "Tank up (10)";
+	buttonNames[upgradeMenu.addDamage]		= "Damage up (5)";
 	
 	for (var b = 0; b < array_length(buttons); b++) {
 		with(buttons[b]) {
