@@ -18,7 +18,7 @@ function HandleUpgradeMenu(){
 				if(oInventory.playerHasResources(healCost)) {
 					oInventory.deductResources(healCost);
 
-					originInstance.defenderId.hp += 
+					originInstance.defenderId.hp = 
 						Approach(
 							originInstance.defenderId.hp, 
 							originInstance.defenderId.hp_max, 

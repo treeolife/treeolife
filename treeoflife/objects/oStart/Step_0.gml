@@ -80,6 +80,9 @@ if (menu_y > gui_height + 150) && (menu_committed != -1) {
 		
 		case menu_options.start_game:
 
+			if (global.wave == 5)
+				game_restart();
+
 			if (global.gameStarted == -1) {
 				TransitionRoom(ROOM_START, global.loadingGeneric);
 			} else {

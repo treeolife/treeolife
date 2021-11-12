@@ -32,9 +32,9 @@ menu_control	= true;
 menu_txt_offset	= 2;
 menu_fade		= 0;
 
-if (global.gameStarted == -1) {
+if (global.gameStarted == -1 || global.wave == 5) {
 	menu[menu_options.start_game]	= "Play";
-} else {
+} else if (global.wave < 5) {
 	menu[menu_options.start_game]	= "Continue";
 	menu[menu_options.new_game]		= "New Game";
 }

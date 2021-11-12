@@ -64,20 +64,22 @@ function animateCurve(
 
 function checkResources(price) {
 	var outstandingValue = price.costQuantity;
-	
-	for (
-		var costItem = 0; 
-		costItem < instance_number(price.cost); 
-		costItem++) {
-			
-		// quick check of items picked up
-		if (!instance_find(price.cost, costItem).visible) {
-			outstandingValue--;
-		}
 		
-		if (outstandingValue == 0)
-			return true;
-	}
+	//for (
+	//	var costItem = 0; 
+	//	costItem < instance_number(price.cost); 
+	//	costItem++) {
+			
+	//	// quick check of items picked up
+	//	if (!instance_find(price.cost, costItem).visible) {
+	//		outstandingValue--;
+	//	}
+		
+	//	if (outstandingValue == 0)
+	//		return true;
+	//}
 	
-	return false;
+	//return false;
+	
+	return oInventory.findMyResources(price.cost) >= price.costQuantity;
 }

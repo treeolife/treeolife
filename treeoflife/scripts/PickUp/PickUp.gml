@@ -29,7 +29,7 @@ function PickUp(item){
 			true);
 	}
 	
-	if (global.firstTime.pickingFertiliser != -1 && item.object_index == oFertiliser && global.wave > 4) {
+	if (global.firstTime.pickingFertiliser != -1 && item.object_index == oFertiliser && global.wave < 4) {
 		NewHighlight(
 			sFernIdle,
 			window_get_width()/2,

@@ -152,21 +152,31 @@ function HandleTreeMenu(){
 				
 				#region Game complete!!
 				if(instance_exists(oTree) && global.wave == 4) {
+					if (global.timeToLevel != noone)
+						global.timeToLevel.start();
+						
+					if (global.timeToLevel == noone) {
+						global.timeToLevel = instance_create_depth(0,0, get_layer_depth(LAYER.ui), oTimer);
+					
 						var	nextLevelCost = { 
 							costQuantity: 1,
 							cost: oFertiliser,
 						};
 					
 						if(oInventory.playerHasResources(nextLevelCost)) {
+							oInventory.deductResources(nextLevelCost);
+
 							global.timeToLevel.setup(
 								0, 
 								function() {
 									global.wave = 5;
-									oInventory.deductResources(nextLevelCost);
-									NewHighlight(sTreeOne,window_get_width()/2,0,100,"Pollution eradicated, Nature has won!",true, true, true);
-									NewTextBox("Thank you, Midori. You have saved us from pollution.", TEXTBOX.forest, ["17:"]);
-								} , "", 2, "", false);
+									TransitionRoom(rCredits, "Credits");
+								} , "Winner!", 2, "Credits", false);
+							
+							NewHighlight(sTreeOne,window_get_width()/2,0,100,"Pollution eradicated, Nature has won!",true, true, true);
+							NewTextBox("Thank you, Midori. You have saved us from pollution.", TEXTBOX.forest, ["16:"]);
 						}
+					}
 				}
 				#endregion
 					

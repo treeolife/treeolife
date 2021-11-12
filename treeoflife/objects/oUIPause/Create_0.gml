@@ -12,6 +12,8 @@ visible = false;
 col_msg = c_white;
 selection = 0;
 
+pauseTitle = "Paused";
+
 pauseOption[PAUSE.continue_game] = "Continue";
 pauseOption[PAUSE.replay] = "Replay";
 pauseOption[PAUSE.help] = "Help";

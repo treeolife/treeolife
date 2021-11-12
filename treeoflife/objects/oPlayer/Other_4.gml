@@ -7,4 +7,8 @@ oInventory.persistent = true;
 
 global.roomReplay = false;
 
+oUIPause.pauseTitle = "Paused";
+
+global.gameLost = false;
+
 instance_create_depth(x,y,0, oCamera);

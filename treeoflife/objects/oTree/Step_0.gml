@@ -9,3 +9,4 @@ if (sprite_index == sTreeTree && instance_exists(healthBar)) {
 if (sprite_index == sTreeFour && instance_exists(healthBar)) {
 	healthBar.y = ystart - 48;
 }
+

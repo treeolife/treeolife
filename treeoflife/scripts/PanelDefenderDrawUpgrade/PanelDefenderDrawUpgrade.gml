@@ -1,8 +1,8 @@
 enum upgradeMenu {
 	close,
 	heal,
-	addHp,
 	addDamage,
+	addHp,
 }
 
 function PanelDefenderDrawUpgrade(){

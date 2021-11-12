@@ -16,6 +16,7 @@ global.inventory	= ds_list_create();
 global.inventoryStart = noone;
 global.defenders	= ds_map_create();
 global.defendersStart = noone;
+global.gameLost		= false;
 
 // Tracking to complete transition only once
 global.transitioning = false;
