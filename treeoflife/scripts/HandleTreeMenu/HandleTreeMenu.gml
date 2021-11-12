@@ -64,6 +64,10 @@ function HandleTreeMenu(){
 						
 							oTree.sprite_index = sAnimTree1;
 						
+							with(oTree) {
+								hp += 50;
+							}
+						
 							with(oPlayer) {
 								NewTextBox("The Tree of Life invites you to the next stage.", TEXTBOX.forest, ["16:Let's go!","0:Not yet."]);
 							};
@@ -97,6 +101,10 @@ function HandleTreeMenu(){
 						
 							oTree.sprite_index = sAnimTree2;
 						
+							with(oTree) {
+								hp += 50;
+							}
+						
 							with(oPlayer) {
 								NewTextBox("The Tree of Life invites you to the next stage.", TEXTBOX.forest, ["16:Let's go!","0:Not yet."]);
 							};
@@ -129,6 +137,10 @@ function HandleTreeMenu(){
 								} , "Final Level", 3, "To Final Level", true);
 						
 							oTree.sprite_index = sAnimTree3;
+						
+							with(oTree) {
+								hp += 50;
+							}
 						
 							with(oPlayer) {
 								NewTextBox("The Tree of Life invites you to the final stage.", TEXTBOX.forest, ["16:Let's go!","0:Not yet."]);
