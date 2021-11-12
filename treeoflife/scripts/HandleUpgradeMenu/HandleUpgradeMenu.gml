@@ -10,13 +10,13 @@ function HandleUpgradeMenu(){
 					
 			case upgradeMenu.heal: {
 				
-				var	damageUpgradeCost = { 
+				var	healCost = { 
 							costQuantity: 2,
 							cost: oWater,
 				};
 				
-				if(oInventory.playerHasResources(damageUpgradeCost)) {
-					oInventory.deductResources(damageUpgradeCost);
+				if(oInventory.playerHasResources(healCost)) {
+					oInventory.deductResources(healCost);
 
 					originInstance.defenderId.hp += 
 						Approach(
@@ -29,13 +29,13 @@ function HandleUpgradeMenu(){
 					
 			case upgradeMenu.addHp: {
 				
-				var	damageUpgradeCost = { 
+				var	upgradeHealthCost = { 
 							costQuantity: 10,
 							cost: oWater,
 				};
 				
-				if(oInventory.playerHasResources(damageUpgradeCost)) {
-					oInventory.deductResources(damageUpgradeCost);
+				if(oInventory.playerHasResources(upgradeHealthCost)) {
+					oInventory.deductResources(upgradeHealthCost);
 					originInstance.defenderId.hp_max += 50;
 					originInstance.defenderId.hp += 50;
 				}
