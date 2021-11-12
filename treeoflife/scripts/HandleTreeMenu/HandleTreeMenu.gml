@@ -158,10 +158,14 @@ function HandleTreeMenu(){
 						};
 					
 						if(oInventory.playerHasResources(nextLevelCost)) {
-							global.wave = 5;
-							oInventory.deductResources(nextLevelCost);
-							NewTextBox("Thank you, Midori. You have saved us from pollution!\n"
-							, TEXTBOX.forest, ["17:"]);
+							global.timeToLevel.setup(
+								0, 
+								function() {
+									global.wave = 5;
+									oInventory.deductResources(nextLevelCost);
+									NewHighlight(sTreeOne,window_get_width()/2,0,100,"Pollution eradicated, Nature has won!",true, true, true);
+									NewTextBox("Thank you, Midori. You have saved us from pollution.", TEXTBOX.forest, ["17:"]);
+								} , "", 2, "", false);
 						}
 				}
 				#endregion
