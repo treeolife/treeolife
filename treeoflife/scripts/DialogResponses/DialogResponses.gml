@@ -21,7 +21,9 @@ function DialogResponses(argument0) {
 			"Press ESC to pause the game.",true,true,true); break;
 		case 14: instance_create_depth(x,y,depth,oWater); break;
 		case 15: instance_create_depth(x,y,depth,oFertiliser); break;
-		case 16: global.timeToLevel.start(); break;
+		case 16: 
+			global.timeToLevel.start(); 
+			break;
 		case 17: TransitionRoom(rCredits, "Congrats!"); break;
 		
 		default: break;

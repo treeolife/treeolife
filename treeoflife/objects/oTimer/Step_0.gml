@@ -3,7 +3,7 @@ if (!timer_paused) {
 		panelTimer.time = time;
 }
 
-if can_countdown && setup {
+if can_countdown {
 	can_countdown = false;
 	current_seconds = seconds;
 	

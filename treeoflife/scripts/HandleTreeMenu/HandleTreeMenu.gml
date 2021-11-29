@@ -173,8 +173,8 @@ function HandleTreeMenu(){
 									TransitionRoom(rCredits, "Credits");
 								} , "Winner!", 3, "Credits", true);
 							
-							NewHighlight(sTreeOne,window_get_width()/2,0,100,"Pollution eradicated, Nature has won!",true, true, true);
 							NewTextBox("Thank you, Midori. You have saved us from pollution.", TEXTBOX.forest, ["16:"]);
+							NewHighlight(sTreeOne,window_get_width()/2,0,100,"Pollution eradicated, Nature has won!",true, true, true);
 						}
 					}
 				}

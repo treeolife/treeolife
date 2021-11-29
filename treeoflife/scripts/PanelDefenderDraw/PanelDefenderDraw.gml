@@ -7,8 +7,16 @@ enum orderedButtonMenu {
 function PanelDefenderDraw(){
 	if (debugger_mode) show_debug_message("Drawing in PanelDefenderDraw now");
 	
-	buttons = array_create();
-	buttonNames = array_create();
+	with(oUIPanelRight) {
+		panelTitle = "Default";
+		var defender = originInstance.defenderId;
+		if (instance_exists(defender) && defender != 0) {
+			icon = defender.object_index.sprite_index;
+		}
+	}
+	
+	buttons = array_create(3)
+	buttonNames = array_create(3);
 	
 	closeButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
 	cactusButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);

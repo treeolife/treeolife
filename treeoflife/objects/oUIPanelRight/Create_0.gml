@@ -25,6 +25,8 @@ action = noone;
 action_complete = true;
 
 buttons = array_create(0);
+buttonNames = array_create(0);
+
 buttonSelected = 0;
 buttonsDrawn = false;
 

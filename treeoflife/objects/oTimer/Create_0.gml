@@ -14,8 +14,6 @@ bufferSeconds = 0;
 startTime = 0;
 time = 0;
 
-setup = false;
-
 panelTimer = instance_create_depth(
 	0,
 	0,
