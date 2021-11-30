@@ -16,8 +16,8 @@ function PanelDefenderDrawUpgrade(){
 		}
 	}
 	
-	buttons = array_create(4);
-	buttonNames = array_create(4);
+	buttons = array_create();
+	buttonNames = array_create();
 	
 	closeButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
 	healButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);

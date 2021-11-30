@@ -15,8 +15,8 @@ function PanelDefenderDrawTree(){
 		}
 	}
 	
-	buttons = array_create(2);
-	buttonNames = array_create(2);
+	buttons = array_create();
+	buttonNames = array_create();
 
 	closeButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);
 	treeButton = instance_create_depth(x, y, get_layer_depth(LAYER.ui)-200, oButton);

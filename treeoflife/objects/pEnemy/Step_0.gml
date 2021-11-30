@@ -38,4 +38,4 @@ if !place_meeting (x, y+1, oCollision) {
 // Check if there is a collsiion
 scr_collision();
 
-truestate_step();
+truestate_step(ts_pollution);

@@ -54,4 +54,4 @@ if debugger_mode {
 	})
 }
 
-truestate_draw();
+truestate_draw(ts_pollution);

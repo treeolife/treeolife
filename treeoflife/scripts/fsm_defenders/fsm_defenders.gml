@@ -1,4 +1,4 @@
-function DefenderIdle(_event) {
+function DefenderIdle(_event, _layer) {
 
 	switch(_event)
 	{
@@ -9,10 +9,10 @@ function DefenderIdle(_event) {
 	
 		case TRUESTATE_STEP:
 		{
-			truestate_vars[? "Start round"] = global.levelStarted == 1;
+			_layer.vars[? "Start round"] = global.levelStarted == 1;
 			
 			if not visible
-				truestate_switch(DSTATE.idle, true);
+				_layer.state_switch(DSTATE_IDLE, true);
 			
 			attacked = false;
 			switch (id.object_index) {
@@ -22,7 +22,7 @@ function DefenderIdle(_event) {
 					if(collision_circle(x,y,tileDistance.seven,pEnemy,false,true))
 					{
 						if (not global.gamePaused) 
-							truestate_switch(DSTATE.ranged_attack);
+							_layer.state_switch(DSTATE_RANGED_ATTACK);
 					}
 				
 				}break;
@@ -37,7 +37,7 @@ function DefenderIdle(_event) {
 							true))
 					{
 						if (not global.gamePaused) 
-							truestate_switch(DSTATE.attack);
+							_layer.state_switch(DSTATE_ATTACK);
 					}
 				}
 				break;
@@ -47,15 +47,15 @@ function DefenderIdle(_event) {
 					
 					if (hp <= 0) {
 						global.gameLost = true;
-						truestate_switch(DSTATE.die, true);
+						_layer.state_switch(DSTATE_DIE, true);
 					}
 					
 				}break;
 				
 			}
 			
-			if (not truestate_vars[? "Start round"]) // Prevent attacking prematurely
-				truestate_switch(DSTATE.idle);
+			if (not _layer.vars[? "Start round"]) // Prevent attacking prematurely
+				_layer.state_switch(DSTATE_IDLE);
 				
 		}break;
 	
@@ -73,7 +73,7 @@ function DefenderIdle(_event) {
 	}
 }
 
-function DefenderAttack(_event) {
+function DefenderAttack(_event, _layer) {
 
 	switch(_event)
 	{
@@ -87,7 +87,7 @@ function DefenderAttack(_event) {
 		case TRUESTATE_STEP:
 		{
 			if (hp <= 0) {
-				truestate_switch(DSTATE.die, true);
+				_layer.state_switch(DSTATE_DIE, true);
 			}
 			
 			if (animation_end()) {
@@ -97,14 +97,14 @@ function DefenderAttack(_event) {
 				_hitbox.sprite_index = sprite_attack;
 				_hitbox.image_xscale = image_xscale;
 				
-				truestate_switch(DSTATE.idle);
+				_layer.state_switch(DSTATE_IDLE);
 			}
 			
 		}break;
 	}
 }
 
-function DefenderAttackTwo(_event) {
+function DefenderAttackTwo(_event, _layer) {
 
 	switch(_event)
 	{
@@ -116,7 +116,7 @@ function DefenderAttackTwo(_event) {
 		case TRUESTATE_STEP:
 		{
 			if (hp <= 0) {
-				truestate_switch(DSTATE.die, true);
+				_layer.state_switch(DSTATE_DIE, true);
 			}
 			
 			if (animation_end()) {
@@ -134,7 +134,7 @@ function DefenderAttackTwo(_event) {
 			
 				}
 				
-				truestate_switch(DSTATE.idle);
+				_layer.state_switch(DSTATE_IDLE);
 			}
 			
 		}break;
@@ -153,7 +153,7 @@ function DefenderAttackTwo(_event) {
 	}
 }
 
-function DefenderDie(_event) {
+function DefenderDie(_event, _layer) {
 
 	switch(_event)
 	{

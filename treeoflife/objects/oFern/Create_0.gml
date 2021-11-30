@@ -2,16 +2,14 @@
 
 event_inherited();
 
-truestate_system_init();
-
 sprite_idle = sFernIdle;
 sprite_attack = sFernAttackSpin;
 sprite_die = sFernDie;
 sprite_ranged_attack = sSlice;
 
-truestate_create_state(DSTATE.idle, DefenderIdle, "Idle");
-truestate_create_state(DSTATE.attack, DefenderAttack, "Attack");
-truestate_create_state(DSTATE.ranged_attack, DefenderAttackTwo, "Ranged Attack");
-truestate_create_state(DSTATE.die, DefenderDie, "Die");
+ts_defender.state_create(DSTATE_IDLE, DefenderIdle, "Idle");
+ts_defender.state_create(DSTATE_ATTACK, DefenderAttack, "Attack");
+ts_defender.state_create(DSTATE_RANGED_ATTACK, DefenderAttackTwo, "Ranged Attack");
+ts_defender.state_create(DSTATE_DIE, DefenderDie, "Die");
 
-truestate_set_default(DSTATE.idle);
+ts_defender.set_default(DSTATE_IDLE);

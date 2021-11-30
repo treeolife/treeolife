@@ -9,13 +9,11 @@ event_inherited();
 
 #endregion
 
-truestate_system_init();
-
 sprite_idle = sTreeOne;
 sprite_attack = sTreeOne;
 sprite_die = sTreeOne;
 
-truestate_create_state(DSTATE.idle, DefenderIdle, "Idle");
-truestate_create_state(DSTATE.die, DefenderDie, "Die");
+ts_defender.state_create(DSTATE_IDLE, DefenderIdle, "Idle");
+ts_defender.state_create(DSTATE_DIE, DefenderDie, "Die");
 
-truestate_set_default(DSTATE.idle);
+ts_defender.set_default(DSTATE_IDLE);

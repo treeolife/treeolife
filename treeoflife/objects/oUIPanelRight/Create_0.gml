@@ -24,8 +24,8 @@ state = PanelDefenderOpen;
 action = noone;
 action_complete = true;
 
-buttons = array_create(0);
-buttonNames = array_create(0);
+buttons = array_create();
+buttonNames = array_create();
 
 buttonSelected = 0;
 buttonsDrawn = false;

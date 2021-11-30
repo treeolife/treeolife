@@ -1,18 +1,19 @@
-function PollutionIdle(_event) {
+function PollutionIdle(_event, _layer) {
 
 	switch(_event)
 	{
 		case TRUESTATE_NEW:
 		{
-			if(truestate_previous_state == noone) {
-				truestate_vars[? "Wander Dir"] = 1;
-				truestate_vars[? "Find target cooldown"] = 0;
+			if(ts_pollution.previous_state == noone) {
+				_layer.vars[? "Wander Dir"] = 1;
+				_layer.vars[? "Find target cooldown"] = 0;
 			}
-			if (truestate_previous_state == PSTATE.flinch)
-				image_speed = truestate_vars[? "Image speed"];
+			if (ts_pollution.previous_state == PSTATE_FLINCH)
+				image_speed = _layer.vars[? "Image speed"];
+			
 			sprite_index = sprite_idle;
 			
-			truestate_vars[? "Start round"] = (not global.levelStarted == 0 || global.levelStarted == -1);
+			_layer.vars[? "Start round"] = (not global.levelStarted == 0 || global.levelStarted == -1);
 			
 		}break;
 	
@@ -22,33 +23,33 @@ function PollutionIdle(_event) {
 			speed_v = game_gravity;
 			
 			if (attacked && attackable) {
-				truestate_switch(PSTATE.flinch);
+				_layer.state_switch(PSTATE_FLINCH);
 			}
 			
 			var wanderCooldown = random_range(0,2) * room_speed;
 				
-			if (truestate_vars[? "Find target cooldown"] < (1 * room_speed))
-				truestate_vars[? "Find target cooldown"] += 1;
+			if (_layer.vars[? "Find target cooldown"] < (1 * room_speed))
+				_layer.vars[? "Find target cooldown"] += 1;
 			else
-				truestate_vars[? "Find target cooldown"] = 0;
+				_layer.vars[? "Find target cooldown"] = 0;
 				
 			if(not global.gamePaused) { // -1 allows start screen pollution to move
 				if(choose(true,false)) {
 				
-					if (truestate_timer > wanderCooldown)
-						truestate_switch(PSTATE.wander);
+					if (_layer.timer > wanderCooldown)
+						_layer.state_switch(PSTATE_WANDER);
 					
 				} else if (currentTarget != noone 
 					&& instance_exists(currentTarget) 
 					&& canReachTarget(currentTarget.defenderArea) 
 					&& not collision_circle(x,y,32,currentTarget.defenderArea,false,false)
-					&& truestate_vars[? "Start round"]) 
+					&& _layer.vars[? "Start round"]) 
 					{
-						truestate_switch(PSTATE.aggro);
+						_layer.state_switch(PSTATE_AGGRO);
 
-					} else if ((currentTarget == noone || not instance_exists(currentTarget)) && truestate_vars[? "Find target cooldown"] == 0) {
+					} else if ((currentTarget == noone || not instance_exists(currentTarget)) && _layer.vars[? "Find target cooldown"] == 0) {
 				
-						truestate_switch(PSTATE.findTarget);
+						_layer.state_switch(PSTATE_FIND_TARGET);
 				}
 			}
 		}break;
@@ -61,19 +62,19 @@ function PollutionIdle(_event) {
 }
 
 
-function PollutionFindTarget(_event) {
+function PollutionFindTarget(_event, _layer) {
 
 	switch(_event)
 	{
 		case TRUESTATE_STEP:
 		{
 			// this check isn't needed atm, but good to have for future expansion
-			truestate_vars[? "Find target cooldown"] = 0;
+			_layer.vars[? "Find target cooldown"] = 0;
 			
 			if (instance_exists(oTree))
 				currentTarget = oTree;
 				
-			truestate_switch(PSTATE.idle);
+			_layer.state_switch(PSTATE_IDLE);
 		}break;
 		
 		case TRUESTATE_DRAW:
@@ -83,33 +84,33 @@ function PollutionFindTarget(_event) {
 	}
 }
 
-function PollutionWander(_event) {
+function PollutionWander(_event, _layer) {
 
 	switch(_event)
 	{
 		case TRUESTATE_NEW:
 		{
-			if (truestate_previous_state != PSTATE.aggro)
-				truestate_vars[? "Wander Dir"] = choose(-1,1);
-			truestate_vars[? "Back to Idle Timer"] = random_range(0,2) * room_speed;
-			truestate_vars[? "Walk"] = choose(true,false);
+			if (ts_pollution.previous_state != PSTATE_AGGRO)
+				_layer.vars[? "Wander Dir"] = choose(-1,1);
+			_layer.vars[? "Back to Idle Timer"] = random_range(0,2) * room_speed;
+			_layer.vars[? "Walk"] = choose(true,false);
 		}break;
 	
 		case TRUESTATE_STEP:
 		{	
 			if (global.gamePaused)
-				truestate_switch(PSTATE.idle);
+				_layer.state_switch(PSTATE_IDLE);
 				
 			if (attacked && attackable) {
-				truestate_switch(PSTATE.flinch);
+				_layer.state_switch(PSTATE_FLINCH);
 			}
 			
-			if (truestate_previous_state != PSTATE.aggro)
-				face_direction = truestate_vars[? "Wander Dir"];
+			if (ts_pollution.previous_state != PSTATE_AGGRO)
+				face_direction = _layer.vars[? "Wander Dir"];
 			speed_h = 0;
 			speed_v = game_gravity;
 			
-			if(truestate_vars[? "Walk"] && not scr_collision()) {
+			if(_layer.vars[? "Walk"] && not scr_collision()) {
 				var sprite_idle_index = image_number;
 				if (not scr_collision()) 
 					sprite_index = sprite_walk 
@@ -118,11 +119,11 @@ function PollutionWander(_event) {
 					image_index = sprite_idle_index;
 				}
 				
-				if (truestate_timer < truestate_vars[? "Back to Idle Timer"] || image_index >= 1) {
+				if (_layer.timer < _layer.vars[? "Back to Idle Timer"] || image_index >= 1) {
 					
 					wallCollideAvoid(image_index);
 					
-					if (truestate_previous_state == PSTATE.aggro && not scr_collision()) {
+					if (ts_pollution.previous_state == PSTATE_AGGRO && not scr_collision()) {
 						speed_h = -1 * face_direction * movement_speed;
 						speed_v = game_gravity;
 						
@@ -130,7 +131,7 @@ function PollutionWander(_event) {
 							
 					}
 					else if (not scr_collision()){
-						speed_h = -1 * truestate_vars[? "Wander Dir"] * movement_speed;
+						speed_h = -1 * _layer.vars[? "Wander Dir"] * movement_speed;
 						speed_v = game_gravity;
 						
 						wallCollideAvoid(image_index);
@@ -138,12 +139,12 @@ function PollutionWander(_event) {
 				} else if (image_index < 1) {
 					if (sprite_index = sprite_walk) // avoid freezing idle sprite
 						image_index = 0;
-					truestate_switch(PSTATE.idle);
+					_layer.state_switch(PSTATE_IDLE);
 				}
 			} else {
 				sprite_index = sprite_idle;
-				if (truestate_timer > truestate_vars[? "Back to Idle Timer"])
-					truestate_switch(PSTATE.idle);
+				if (_layer.timer > _layer.vars[? "Back to Idle Timer"])
+					_layer.state_switch(PSTATE_IDLE);
 			}
 			
 		}break;
@@ -155,14 +156,14 @@ function PollutionWander(_event) {
 	}
 }
 
-function PollutionAggro(_event) {
+function PollutionAggro(_event, _layer) {
 
 	switch(_event)
 	{
 		case TRUESTATE_NEW:
 		{
 			sprite_index = sprite_walk;
-			truestate_vars[? "Back to Wander Timer"] = random_range(0,4) * room_speed;
+			_layer.vars[? "Back to Wander Timer"] = random_range(0,4) * room_speed;
 			if (instance_exists(currentTarget))
 				target(currentTarget.defenderArea);
 		}break;
@@ -170,14 +171,14 @@ function PollutionAggro(_event) {
 		case TRUESTATE_STEP:
 		{	
 			if (global.gamePaused)
-				truestate_switch(PSTATE.idle);
+				_layer.state_switch(PSTATE_IDLE);
 			
 			if (attacked && attackable) {
-				truestate_switch(PSTATE.flinch);
+				_layer.state_switch(PSTATE_FLINCH);
 			}
 			
-			if (truestate_timer > truestate_vars[? "Back to Wander Timer"])
-				truestate_switch(PSTATE.wander);
+			if (_layer.timer > _layer.vars[? "Back to Wander Timer"])
+				_layer.state_switch(PSTATE_WANDER);
 		}break;
 		
 		case TRUESTATE_DRAW:
@@ -187,14 +188,14 @@ function PollutionAggro(_event) {
 	}
 }
 
-function PollutionFlinch(_event) {
+function PollutionFlinch(_event, _layer) {
 
 	switch(_event)
 	{
 		case TRUESTATE_NEW:
 		{			
 			sprite_index = sprite_flinch;	
-			truestate_vars[? "Image speed"] = image_speed;
+			_layer.vars[? "Image speed"] = image_speed;
 			
 			speed_h = 0;
 			speed_v = 0;
@@ -227,10 +228,10 @@ function PollutionFlinch(_event) {
 			}
 			
 			if (hp <= 0)
-				truestate_switch(PSTATE.die, true);
+				_layer.state_switch(PSTATE_DIE, true);
 					
-			if (truestate_timer > 20) {
-				truestate_switch(PSTATE.aggro);
+			if (_layer.timer > 20) {
+				_layer.state_switch(PSTATE_AGGRO);
 			}
 			
 		}break;
@@ -238,12 +239,12 @@ function PollutionFlinch(_event) {
 		case TRUESTATE_FINAL:
 		{
 			attacked = false;
-			image_speed = truestate_vars[? "Image speed"];
+			image_speed = _layer.vars[? "Image speed"];
 		}break;
 	}
 }
 
-function PollutionDie(_event) {
+function PollutionDie(_event, _layer) {
 
 	switch(_event)
 	{

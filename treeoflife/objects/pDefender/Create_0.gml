@@ -1,11 +1,9 @@
 /// @description pDefender
 
-enum DSTATE {
-	idle,
-	attack,
-	ranged_attack,
-	die,
-}
+#macro DSTATE_IDLE		10
+#macro DSTATE_ATTACK	11
+#macro DSTATE_RANGED_ATTACK	12
+#macro DSTATE_DIE		13
 
 event_inherited();
 
@@ -83,3 +81,7 @@ function checkResources(price) {
 	
 	return oInventory.findMyResources(price.cost) >= price.costQuantity;
 }
+
+truestate_system_init();
+
+ts_defender = truestate_create_layer();

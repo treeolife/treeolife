@@ -22,10 +22,10 @@ function PanelDefenderOpen(){
 	
 		// Options
 		for (var i = 0; i < array_length(buttons); i++) {
-			if (i == buttonSelected) {
+			if (i == buttonSelected && buttons[i] != noone) {
 				buttons[i].outline = true;
 				buttons[i].col_text = c_white;
-			} else {
+			} else if (buttons[i] != noone) {
 				buttons[i].outline = false;
 				buttons[i].col_text = c_black;
 			}

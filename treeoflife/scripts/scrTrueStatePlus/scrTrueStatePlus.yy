@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "TrueState System",
-    "path": "folders/Scripts/TrueState System.yy",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "truestate_queue_start",
+  "name": "scrTrueStatePlus",
   "tags": [],
   "resourceType": "GMScript",
 }

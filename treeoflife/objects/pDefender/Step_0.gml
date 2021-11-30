@@ -66,4 +66,4 @@ if hp <= 0 {
 	instance_destroy(healthBar);
 }
 
-truestate_step();
+truestate_step(ts_defender);

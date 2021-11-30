@@ -8,18 +8,16 @@ attackDefender = true;
 
 damage = 1;
 
-truestate_system_init();
-
 sprite_idle = sLandIdle;
 sprite_die = sLandDie;
 sprite_flinch = sLandFlinch;
 sprite_walk = sLandWalk;
 
-truestate_create_state(PSTATE.idle, PollutionIdle, "Idle");
-truestate_create_state(PSTATE.findTarget, PollutionFindTarget, "Find target");
-truestate_create_state(PSTATE.aggro, PollutionAggro, "Aggro");
-truestate_create_state(PSTATE.die, PollutionDie, "Die");
-truestate_create_state(PSTATE.wander, PollutionWander, "Wander");
-truestate_create_state(PSTATE.flinch, PollutionFlinch, "Flinch");
+ts_pollution.state_create(PSTATE_IDLE, PollutionIdle, "Idle");
+ts_pollution.state_create(PSTATE_FIND_TARGET, PollutionFindTarget, "Find target");
+ts_pollution.state_create(PSTATE_AGGRO, PollutionAggro, "Aggro");
+ts_pollution.state_create(PSTATE_DIE, PollutionDie, "Die");
+ts_pollution.state_create(PSTATE_WANDER, PollutionWander, "Wander");
+ts_pollution.state_create(PSTATE_FLINCH, PollutionFlinch, "Flinch");
 
-truestate_set_default(PSTATE.idle);
+ts_pollution.set_default(PSTATE_IDLE);

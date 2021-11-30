@@ -1,14 +1,22 @@
 /// @description initialise pEnemy
 
-enum PSTATE {
-	idle,
-	wander,
-	die,
-	aggro,
-	flinch,
-	attack,
-	findTarget,
-}
+#macro PSTATE_IDLE			1
+#macro PSTATE_WANDER		2
+#macro PSTATE_DIE			3
+#macro PSTATE_AGGRO			4
+#macro PSTATE_FLINCH		5
+#macro PSTATE_ATTACK		6
+#macro PSTATE_FIND_TARGET	7
+
+//enum PSTATE {
+//	idle,
+//	wander,
+//	die,
+//	aggro,
+//	flinch,
+//	attack,
+//	findTarget,
+//}
 
 state = -1;
 face_direction = -1;
@@ -110,3 +118,6 @@ function arrivedAtTarget(targ) {
 	return scr_arrived(path_building);
 }
 
+truestate_system_init();
+
+ts_pollution = truestate_create_layer();
